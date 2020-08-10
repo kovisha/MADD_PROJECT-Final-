@@ -8,9 +8,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
-        android:layout_width="406dp"
-        android:layout_height="730dp"
-        android:background="@drawable/bg1"
+        android:layout_width="405dp"
+        android:layout_height="597dp"
+        android:background="@drawable/homescreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,17 +19,17 @@
 
         <Button
             android:id="@+id/startbtn"
-            android:layout_width="245dp"
-            android:layout_height="91dp"
-            android:background="@color/colorAccentButton"
+            android:layout_width="176dp"
+            android:layout_height="151dp"
+            android:background="@drawable/round_button"
             android:onClick="getStarted"
             android:text="@string/HomeStart"
             android:textColor="@color/colorAccentHome"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.545"
+            app:layout_constraintHorizontal_bias="0.56"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.884" />
+            app:layout_constraintVertical_bias="0.476" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
