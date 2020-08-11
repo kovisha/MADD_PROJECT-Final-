@@ -4,4 +4,9 @@
     <string name="moveToDashboard">Dashboard</string>
 
 
+    <string name="BMIDashboard">Calculate My BMI</string>
+    <string name="WaterDashboard">Remind My Water</string>
+    <string name="PeriodsDashboard">Track My Period</string>
+
+
 </resources>
