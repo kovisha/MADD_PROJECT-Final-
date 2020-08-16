@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settingsBg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/altback"
+    tools:context=".PeriodSettingsHome">
+
+    <TextView
+        android:id="@+id/PSettings"
+        android:layout_width="239dp"
+        android:layout_height="61dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/PSettingCaption"
+        android:textColor="@color/PeriodCaptions"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.052" />
+
+    <View
+        android:id="@+id/dividerSettings"
+        android:layout_width="400dp"
+        android:layout_height="1dp"
+        android:background="@color/PeriodCaptions"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13" />
+
+    <Button
+        android:id="@+id/PLengthSet"
+        android:layout_width="254dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="32dp"
+        android:background="@color/PeriodBtn"
+        android:fontFamily="sans-serif-smallcaps"
+        android:onClick="PeriodLengthSet"
+        android:text="@string/PSetting1"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.249" />
+
+    <Button
+        android:id="@+id/PCyclelnSet"
+        android:layout_width="254dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="32dp"
+        android:background="@color/PeriodBtn"
+        android:fontFamily="sans-serif-smallcaps"
+        android:onClick="CycleLengthSet"
+        android:text="@string/PSetting2"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.523" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="254dp"
+        android:layout_height="102dp"
+        android:background="@color/PeriodBtn"
+        android:fontFamily="sans-serif-smallcaps"
+        android:hint="@string/HIntSEt3"
+        android:onClick="OvulaionlengthSet"
+        android:text="@string/PSetting3"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.809" />
+
+    <TextView
+        android:id="@+id/getPeriodLength"
+        android:layout_width="85dp"
+        android:layout_height="79dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:hint="@string/HintSet1"
+        android:textColor="@color/colorAccentButton"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/PLengthSet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintStart_toEndOf="@+id/PLengthSet" />
+
+    <TextView
+        android:id="@+id/getCycleLength"
+        android:layout_width="97dp"
+        android:layout_height="70dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:hint="@string/HintSEt2"
+        android:textColor="@color/colorAccentButton"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/PCyclelnSet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/PCyclelnSet" />
+
+    <TextView
+        android:id="@+id/getOvulationLength"
+        android:layout_width="90dp"
+        android:layout_height="70dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:hint="@string/HIntSEt3"
+        android:textColor="@color/colorAccentButton"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/button3" />
+
+    <ImageView
+        android:id="@+id/settingsImage"
+        android:layout_width="122dp"
+        android:layout_height="93dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.003"
+        app:srcCompat="@drawable/settings" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/calBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/altback"
+    android:orientation="vertical"
+    tools:context=".DisplayCalendar">
+
+    <TextView
+        android:id="@+id/myCalendar"
+        android:layout_width="208dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/myCal"
+        android:textColor="@color/PeriodCaptions"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.06" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:background="@color/PeriodCaptions"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/bg_calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <CalendarView
+            android:id="@+id/DisplayCalendar"
+            android:layout_width="wrap_content"
+            android:layout_height="350dp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_marginTop="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/PeriodCaptions" />
+
+    <TextView
+        android:id="@+id/presentDate"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textAlignment="textEnd"
+        android:textColor="@color/PeriodCaptions"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/userNotes"
+        android:layout_width="match_parent"
+        android:layout_height="193dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/userNote"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccentButton"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

@@ -9,16 +9,16 @@ import android.widget.Button;
 
 public class DashBoard extends AppCompatActivity {
 
-    Button btnP ;
+    Button btnP ,btnS;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
 
-        Intent myIntent = getIntent();
+        Intent myIntent = getIntent(); //gets the intent from common Attribute page
     }
 
-    public void PeriodHome(View view){
+    public void PeriodHome(View view){ // Navigate to period home page
          btnP = findViewById(R.id.btnMens);
          btnP.setOnClickListener(new View.OnClickListener() {
              @Override
@@ -30,4 +30,16 @@ public class DashBoard extends AppCompatActivity {
          });
 
     }
+
+    public void settingsHome(View view){
+
+        btnS = findViewById(R.id.settingsHome);
+        btnS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DashBoard.this , PeriodSettingsHome.class);
+                startActivity(intent);
+            }
+        });
+        }
 }

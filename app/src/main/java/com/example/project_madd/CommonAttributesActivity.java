@@ -15,10 +15,10 @@ public class CommonAttributesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common_attributes);
 
-        Intent myIntent = getIntent();
+        Intent myIntent = getIntent(); //gets the intent from main Activity Page
     }
 
-    public void toDashboard(View view){
+    public void toDashboard(View view){ //adding record will redirect to common dashboard page
 
         btnd = findViewById(R.id.dashboardbtn);
         btnd.setOnClickListener(new View.OnClickListener() {

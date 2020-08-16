@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MenstrualHome"></activity>
+        <activity android:name=".AddNote"></activity>
+        <activity android:name=".setOvulationLength" />
+        <activity android:name=".SetCycleLength" />
+        <activity android:name=".SetPeriodLength" />
+        <activity android:name=".PeriodSettingsHome" />
+        <activity android:name=".DisplayCalendar" />
+        <activity android:name=".EndPeriodActivity" />
+        <activity android:name=".DisplayStartDateHome" />
+        <activity android:name=".AddPeriodActivity" />
+        <activity android:name=".MenstrualHome" />
         <activity android:name=".DashBoard" />
         <activity android:name=".CommonAttributesActivity" />
         <activity android:name=".MainActivity">

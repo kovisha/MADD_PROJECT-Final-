@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void getStarted(View view){
+    public void getStarted(View view){ //navigates to common user input page.
 
         startBtn = findViewById(R.id.startbtn);
         startBtn.setOnClickListener(new View.OnClickListener() {

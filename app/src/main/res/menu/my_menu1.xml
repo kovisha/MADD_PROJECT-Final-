@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_1"
+        android:enabled="true"
+        android:icon="@android:drawable/btn_dialog"
+        android:title="@string/AHome"
+        app:showAsAction="withText" />
+    <item
+        android:id="@+id/menu_2"
+        android:enabled="true"
+        android:icon="@drawable/settings"
+        android:title="@string/ASettings"
+        app:showAsAction="withText" />
+
+
+</menu>

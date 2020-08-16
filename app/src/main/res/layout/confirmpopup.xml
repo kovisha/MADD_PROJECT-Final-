@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="320dp"
+    android:layout_height="190dp"
+    android:layout_gravity="center"
+    android:background="@color/PeriodCaptions"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="350dp"
+        android:layout_height="64dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/Perioddelete"
+        android:textColor="@color/PopUp"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/cnfrmdlt"
+        android:layout_width="350dp"
+        android:layout_height="59dp"
+        android:background="@color/PopUp"
+        android:backgroundTint="@color/PeriodBtn"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/PeriodDeleteYes"
+        android:textAlignment="center"
+        android:textColor="@color/PopUp"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/cnclDelete"
+        android:layout_width="320dp"
+        android:layout_height="66dp"
+        android:background="@color/PopUp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/PeriodDeleteNo"
+        android:textColor="@color/PeriodCaptions"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
