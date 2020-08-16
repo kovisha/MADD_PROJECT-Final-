@@ -9,16 +9,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Water_home"></activity>
-        <activity android:name=".MenstrualHome" />
-        <activity android:name=".DashBoard" />
-        <activity android:name=".CommonAttributesActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".User_profile">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".page7">
+
+        </activity>
+        <activity android:name=".page6"></activity>
+        <activity android:name=".page5" />
+        <activity android:name=".page4" />
+        <activity android:name=".page3" />
+        <activity android:name=".MainActivity2" />
+        <activity android:name=".Water_home" />
+        <activity android:name=".MenstrualHome" />
+        <activity android:name=".DashBoard" >
+
+        </activity>
+        <activity android:name=".CommonAttributesActivity" >
+
+        </activity>
+        <activity android:name=".MainActivity" >
+
         </activity>
 
         <meta-data
