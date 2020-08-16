@@ -10,17 +10,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class DashBoard extends AppCompatActivity {
+public class tips_and_more extends AppCompatActivity {
 
-    Button btnP ;
-    Button btnW;
+    Button btnFlavour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dash_board);
+        setContentView(R.layout.activity_tips_and_more);
 
-        Intent myIntent = getIntent();
+
     }
 
     @Override
@@ -44,29 +43,17 @@ public class DashBoard extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void PeriodHome(View view){
-         btnP = findViewById(R.id.btnMens);
-         btnP.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 Intent intent = new Intent(DashBoard.this , MenstrualHome.class);
-
-                 startActivity(intent);
-             }
-         });
-
-    }
-
-    public void WaterHome(View view){
-        btnW = findViewById(R.id.btnWater);
-        btnW.setOnClickListener(new View.OnClickListener() {
+    public void moreTips(View view){
+        btnFlavour = findViewById(R.id.btnFlavourWater);
+        btnFlavour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DashBoard.this , Water_home.class);
-
+                Intent intent = new Intent(tips_and_more.this,Flavored_Water.class);
                 startActivity(intent);
             }
         });
 
+
     }
+
 }

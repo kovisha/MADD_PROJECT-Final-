@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Water_home"></activity>
+        <activity android:name=".Flavored_Water"></activity>
+        <activity android:name=".settings_changeExercise" />
+        <activity android:name=".settings_changeUnit" />
+        <activity android:name=".Settings" />
+        <activity android:name=".add_drink" />
+        <activity android:name=".flavoured_water" />
+        <activity android:name=".tips_and_more" />
+        <activity android:name=".viewMyWater" />
+        <activity android:name=".water_calculation" />
+        <activity android:name=".Water_home" />
         <activity android:name=".MenstrualHome" />
         <activity android:name=".DashBoard" />
         <activity android:name=".CommonAttributesActivity" />

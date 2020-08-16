@@ -4,23 +4,33 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class DashBoard extends AppCompatActivity {
+public class Flavored_Water extends AppCompatActivity {
 
-    Button btnP ;
-    Button btnW;
+    Button btnLearnMore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dash_board);
+        setContentView(R.layout.activity_flavored__water);
 
-        Intent myIntent = getIntent();
+        btnLearnMore = findViewById(R.id.btnLearnMore);
+
+        btnLearnMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://www.slenderkitchen.com/article/how-to-calculate-how-much-water-you-should-drink-a-day#:~:text=Multiply%20by%202%2F3%3A%20Next,ounces%20of%20water%20every%20day"));
+                        startActivity(i);
+            }
+        });
+
     }
 
     @Override
@@ -44,29 +54,7 @@ public class DashBoard extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void PeriodHome(View view){
-         btnP = findViewById(R.id.btnMens);
-         btnP.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 Intent intent = new Intent(DashBoard.this , MenstrualHome.class);
 
-                 startActivity(intent);
-             }
-         });
 
-    }
 
-    public void WaterHome(View view){
-        btnW = findViewById(R.id.btnWater);
-        btnW.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(DashBoard.this , Water_home.class);
-
-                startActivity(intent);
-            }
-        });
-
-    }
 }

@@ -3,10 +3,87 @@
     <string name="HomeStart">Get Started</string>
     <string name="moveToDashboard">Dashboard</string>
 
+    <string name="menu1">Home</string>
+    <string name="menu2">Settings</string>
+    <string name="menu3">My Account</string>
+
 
     <string name="BMIDashboard">Calculate My BMI</string>
     <string name="WaterDashboard">Remind My Water</string>
     <string name="PeriodsDashboard">Track My Period</string>
+
+    <string name="Water_home_title">SET YOUR GOALS</string>
+    <string name="Water_home_goal1">Stay Hydrated</string>
+    <string name="Water_home_goal2">Loose Weight</string>
+    <string name="Water_home_goal3">Look Amazing</string>
+    <string name="Water_home_goal4">Get Fit</string>
+
+    <string name="water_calculation_title">LET\'S GET STARTED</string>
+    <string name="water_calculation_units">Select Your Preferred Unit</string>
+    <string name="water_calculation_weight">Enter Your Weight</string>
+    <string name="water_calculation_exercise">Select Your Approximate Time Of Exercise</string>
+
+    <string-array name="units_array">
+        <item>Metric</item>
+        <item>Imperial</item>
+        <item>US</item>
+    </string-array>
+
+    <string-array name="exercise_array">
+        <item>00 minutes</item>
+        <item>30 minutes</item>
+        <item>45 minutes</item>
+        <item>1 hour</item>
+        <item>2 hour</item>
+    </string-array>
+
+
+    <string name="maxDate">31/12/2020</string>
+    <string name="minDate">01/01/2020</string>
+    <string name="waterAmount">500ml of 2000ml</string>
+    <string name="addDrink">Add Drink</string>
+    <string name="drink1">Water</string>
+    <string name="drink2">Milk</string>
+    <string name="drink3">Coffee</string>
+    <string name="drink4">Tea</string>
+    <string name="drink5">Juices</string>
+    <string name="moreTools">Facts To Know</string>
+    <string name="flavouredDrink">Flavoured Drinking</string>
+
+
+    <string name="AddMore">ADD TO YOUR KNOWLEDGE</string>
+    <string name="Flavoured">FLAVOUR YOUR DRINK</string>
+
+
+
+    <string name="tip1">1. Drink 2 cups of water before every meal</string>
+    <string name="tip2">2. Drink a glass of water after you wake up</string>
+    <string name="tip3">3. Drink a glass of water before you go to bed</string>
+    <string name="tip4">4. Drink a glass of water after you wake up</string>
+    <string name="tip5">5. Keep a track of the container</string>
+    <string name="tip6">6. Have more water than required if the climate is hot</string>
+    <string name="tip7">7. If you are breastfeeding or pregnant you will need more water than an average person</string>
+    <string name="tip8">8. If food with more sodium consumed you will need more water to flush it out</string>
+    <string name="tip9">9. Add flavour to your water</string>
+    <string name="flavour">MORE ABOUT FLAVOURS</string>
+
+    <string name="learnMore">Learn More</string>
+    <string name="recipe1">Few pieces of  LIME , A CUCUMBER and A MINT plus your WATER </string>
+    <string name="recipe2">Few pieces of  LIME , A STRAWBERRY and A GINGER plus your WATER </string>
+    <string name="recipe3">Few pieces of  ORANGE , A FENNEL and A GINGER plus your WATER </string>
+    <string name="recipe4">Few pieces of  APPLE , A CINNAMON plus your WATER </string>
+
+
+    <string name="settingsPage">SETTINGS</string>
+    <string name="settings_reminder">Reminder</string>
+    <string name="settings_unit">Units</string>
+    <string name="settings_goals">Personal Goals</string>
+    <string name="settings_exercise">Exercise Time</string>
+    <string name="settings_delete">Delete My Water Records</string>
+
+    <string name="chooseUnit">Select Unit</string>
+    <string name="chooseTime">Select Time</string>
+    <string name="changed">Reset</string>
 
 
 </resources>

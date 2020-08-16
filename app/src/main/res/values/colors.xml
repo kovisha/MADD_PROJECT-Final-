@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimary">#0C0C0C</color>
     <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccent">#1588E4</color>
     <color name="colorAccentHome">#1c1a1b</color>
     <color name="colorAccentButton">#32396e</color>
+    <color name="colorAccentCheckBox">#1588E4</color>
+    <color name="WaterHomeText">#1588E4</color>
+    <color name="Add_water_btn">#7ABBEF</color>
+
 </resources>

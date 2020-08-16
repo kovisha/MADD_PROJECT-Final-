@@ -10,17 +10,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class DashBoard extends AppCompatActivity {
+public class viewMyWater extends AppCompatActivity {
 
-    Button btnP ;
-    Button btnW;
+    Button btnTips;
+    Button btnAddDrink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dash_board);
-
-        Intent myIntent = getIntent();
+        setContentView(R.layout.activity_view_my_water);
     }
 
     @Override
@@ -44,29 +42,35 @@ public class DashBoard extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void PeriodHome(View view){
-         btnP = findViewById(R.id.btnMens);
-         btnP.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 Intent intent = new Intent(DashBoard.this , MenstrualHome.class);
 
-                 startActivity(intent);
-             }
-         });
-
-    }
-
-    public void WaterHome(View view){
-        btnW = findViewById(R.id.btnWater);
-        btnW.setOnClickListener(new View.OnClickListener() {
+    public void viewTips(View view){
+        btnTips = findViewById(R.id.btnMoreWater);
+        btnTips.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DashBoard.this , Water_home.class);
+                Intent intent = new Intent(viewMyWater.this
+                        , tips_and_more.class);
 
                 startActivity(intent);
             }
         });
 
     }
+
+    public void addDrink(View view){
+        btnAddDrink = findViewById(R.id.btnAddDrink);
+        btnAddDrink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(viewMyWater.this
+                        , add_drink.class);
+
+                startActivity(intent);
+            }
+        });
+
+    }
+
+
+
 }

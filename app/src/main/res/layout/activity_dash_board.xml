@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#656060"
+    android:background="@drawable/dashboard"
     tools:context=".DashBoard">
 
     <Button
         android:id="@+id/btnMens"
-        android:layout_width="426dp"
-        android:layout_height="111dp"
+        android:layout_width="352dp"
+        android:layout_height="62dp"
         android:background="#32396e"
         android:fontFamily="@font/cambo"
         android:onClick="PeriodHome"
@@ -18,37 +18,15 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="411dp"
-        android:layout_height="319dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/btnMens"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="290dp"
-            android:layout_gravity="center"
-            android:background="@android:color/background_light"
-            android:src="@drawable/d2" />
-
-
-    </LinearLayout>
+        app:layout_constraintVertical_bias="0.626" />
 
     <Button
         android:id="@+id/btnWater"
-        android:layout_width="420dp"
-        android:layout_height="105dp"
+        android:layout_width="358dp"
+        android:layout_height="74dp"
         android:background="#32396e"
         android:fontFamily="@font/cambo"
         android:onClick="WaterHome"
@@ -56,24 +34,22 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.768" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.808" />
 
     <Button
         android:id="@+id/btnBMI"
-        android:layout_width="418dp"
-        android:layout_height="101dp"
+        android:layout_width="312dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="44dp"
         android:background="#32396e"
         android:fontFamily="@font/cambo"
         android:text="@string/BMIDashboard"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btnMens"
-        app:layout_constraintHorizontal_bias="0.375"
-        app:layout_constraintStart_toStartOf="@+id/btnMens"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.974" />
+        app:layout_constraintStart_toStartOf="@+id/btnMens" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,18 +9,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
-public class DashBoard extends AppCompatActivity {
+public class settings_changeUnit extends AppCompatActivity {
 
-    Button btnP ;
-    Button btnW;
+    Button resetUnit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dash_board);
+        setContentView(R.layout.activity_settings_change_unit);
 
-        Intent myIntent = getIntent();
+
     }
 
     @Override
@@ -44,29 +45,14 @@ public class DashBoard extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void PeriodHome(View view){
-         btnP = findViewById(R.id.btnMens);
-         btnP.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 Intent intent = new Intent(DashBoard.this , MenstrualHome.class);
-
-                 startActivity(intent);
-             }
-         });
-
-    }
-
-    public void WaterHome(View view){
-        btnW = findViewById(R.id.btnWater);
-        btnW.setOnClickListener(new View.OnClickListener() {
+    public void resetTheUnit(View view){
+        resetUnit = findViewById(R.id.btnResetUnit);
+        resetUnit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DashBoard.this , Water_home.class);
-
-                startActivity(intent);
+                Intent i1 = new Intent(settings_changeUnit.this,Settings.class);
+                startActivity(i1);
             }
         });
-
     }
 }
