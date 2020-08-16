@@ -13,5 +13,6 @@ public class AddNote extends AppCompatActivity {
         setContentView(R.layout.activity_add_note);
 
         Intent intent = getIntent();
+
     }
 }

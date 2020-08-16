@@ -9,8 +9,8 @@
 
     <Button
         android:id="@+id/dashboardbtn"
-        android:layout_width="168dp"
-        android:layout_height="74dp"
+        android:layout_width="164dp"
+        android:layout_height="81dp"
         android:layout_marginBottom="76dp"
         android:background="@android:color/darker_gray"
         android:onClick="toDashboard"

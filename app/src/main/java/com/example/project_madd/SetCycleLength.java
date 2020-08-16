@@ -63,7 +63,6 @@ public class SetCycleLength extends AppCompatActivity {
             }
         });
 
-
     }
 
 }

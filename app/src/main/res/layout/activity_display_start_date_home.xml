@@ -125,7 +125,7 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/calendarNavigaetBtn"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.737"
+            app:layout_constraintVertical_bias="0.735"
             app:srcCompat="@drawable/calendaricon" />
 
         <ImageView
@@ -138,7 +138,7 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.957"
+            app:layout_constraintVertical_bias="0.974"
             app:srcCompat="@drawable/addnoteicon" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

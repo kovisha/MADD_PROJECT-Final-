@@ -127,6 +127,7 @@ public class EndPeriodActivity extends AppCompatActivity {
         });
     }
 
+
     /*public void DeleteRecord(View view){ //delete record will navigate to home page
         delete = findViewById(R.id.buttonDelete);
         delete.setOnClickListener(new View.OnClickListener() {

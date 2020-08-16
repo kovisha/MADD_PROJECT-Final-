@@ -28,7 +28,7 @@
         android:text="@string/PeriodDeleteYes"
         android:textAlignment="center"
         android:textColor="@color/PopUp"
-        android:textSize="30sp"
+        android:textSize="36sp"
         android:textStyle="bold" />
 
     <Button
@@ -39,7 +39,7 @@
         android:fontFamily="sans-serif-smallcaps"
         android:text="@string/PeriodDeleteNo"
         android:textColor="@color/PeriodCaptions"
-        android:textSize="30sp"
+        android:textSize="36sp"
         android:textStyle="bold" />
 
 </LinearLayout>

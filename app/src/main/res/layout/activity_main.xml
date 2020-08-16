@@ -19,8 +19,8 @@
 
         <Button
             android:id="@+id/startbtn"
-            android:layout_width="176dp"
-            android:layout_height="151dp"
+            android:layout_width="175dp"
+            android:layout_height="152dp"
             android:background="@drawable/round_button"
             android:onClick="getStarted"
             android:text="@string/HomeStart"

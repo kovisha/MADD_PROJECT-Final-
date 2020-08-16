@@ -66,7 +66,7 @@ public class MenstrualHome extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) { //creating menu
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.menu_1:
