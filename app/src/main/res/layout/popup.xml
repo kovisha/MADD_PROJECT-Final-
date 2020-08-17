@@ -3,7 +3,7 @@
     android:layout_width="320dp"
     android:layout_height="210dp"
     android:layout_gravity="center"
-    android:background="@color/color2"
+    android:background="@drawable/userinputs"
     android:orientation="vertical"
     android:padding="5dp">
 

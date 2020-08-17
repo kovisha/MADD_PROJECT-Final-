@@ -50,29 +50,43 @@ public class User_profile extends AppCompatActivity {
 
     public void showPopup(View view){
 
-        Button confirm , cancel;
+       Button delete;
 
-        myDialog.setContentView(R.layout.popup);
-
-        confirm = myDialog.findViewById(R.id.btn_delete_yes);
-        cancel = myDialog.findViewById(R.id.btn_delete_no);
+        delete = findViewById(R.id.btn_delete);
 
         myDialog.show();
 
-        cancel.setOnClickListener(new View.OnClickListener() {
+        delete.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
-                myDialog.dismiss();
+
+                Button confirm , cancel;
+
+                myDialog.setContentView(R.layout.popup);
+
+                confirm = myDialog.findViewById(R.id.btn_delete_yes);
+                cancel = myDialog.findViewById(R.id.btn_delete_no);
+
+                cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        myDialog.dismiss();
+                    }
+                });
+
+                confirm.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(User_profile.this,User_profile.class);
+                        startActivity(intent);
+                    }
+                });
+
+
             }
         });
 
-        confirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(User_profile.this,User_profile.class);
-                startActivity(intent);
-            }
-        });
 
 
 

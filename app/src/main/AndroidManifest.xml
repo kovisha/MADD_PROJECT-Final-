@@ -10,11 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".User_profile">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity android:name=".page7">
@@ -29,8 +25,14 @@
         <activity android:name=".MenstrualHome" />
         <activity android:name=".DashBoard" >
 
+
         </activity>
         <activity android:name=".CommonAttributesActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity android:name=".MainActivity" >
