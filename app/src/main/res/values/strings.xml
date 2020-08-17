@@ -104,5 +104,9 @@
     <string name="MaleGender">Male</string>
     <string name="FemaleGender">Female</string>
 
+    <string name="confirmdelete">Confirm Delete ? </string>
+    <string name="confirmdeleteYes">Yes </string>
+    <string name="confirmdeleteNo">NO </string>
+
 
 </resources>

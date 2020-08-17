@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:layout_height="210dp"
+    android:layout_gravity="center"
+    android:background="@color/color2"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+
+    <TextView
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:fontFamily="@font/delius_swash_caps"
+        android:text="@string/confirmdelete"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_delete_yes"
+        android:layout_width="310dp"
+        android:layout_height="37dp"
+        android:background="@color/color4"
+        android:fontFamily="@font/aclonica"
+        android:text="@string/confirmdeleteYes"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_delete_no"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:background="@color/color4"
+        android:fontFamily="@font/aclonica"
+        android:text="@string/confirmdeleteNo"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
