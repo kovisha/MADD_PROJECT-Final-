@@ -9,11 +9,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MenstrualHome extends AppCompatActivity {
 
     Button btn1 ,btn2 , btn3;
-
+    ImageView v1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,10 +23,22 @@ public class MenstrualHome extends AppCompatActivity {
         Intent intent = getIntent(); //get intent from dashboard page
     }
 
-    public void addRecord(View view) { //clicking add record button will redirect to page where start date is prompted
+    /*public void addRecord(View view) { //clicking add record button will redirect to page where start date is prompted
 
         btn1 = findViewById(R.id.addrecord);
         btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenstrualHome.this, AddPeriodActivity.class);
+                startActivity(intent);
+            }
+        });
+    }*/
+
+    public void addRecord(View view) { //tap image to  redirect to page where start date is prompted
+
+        v1 = findViewById(R.id.imageView);
+        v1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MenstrualHome.this, AddPeriodActivity.class);

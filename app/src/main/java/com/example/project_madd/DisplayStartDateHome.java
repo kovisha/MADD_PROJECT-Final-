@@ -9,12 +9,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DisplayStartDateHome extends AppCompatActivity {
 
     String takeExtra1;
     Button btn2;
+    ImageView v2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +33,22 @@ public class DisplayStartDateHome extends AppCompatActivity {
 
     }
 
-    public void addEndRecord(View view) { //adding end date record
+    /*public void addEndRecord(View view) { //adding end date record
         btn2 = findViewById(R.id.addEndRecord);
         btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { //navigates to end period adding page
+                Intent intent = new Intent(DisplayStartDateHome.this, EndPeriodActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+    }*/
+
+    public void addEndRecord(View view) { //adding end date record
+      v2 = findViewById(R.id.imageView2);
+        v2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) { //navigates to end period adding page
                 Intent intent = new Intent(DisplayStartDateHome.this, EndPeriodActivity.class);

@@ -22,8 +22,8 @@
     <string name="MaleGender">Male</string>
     <string name="FemaleGender">Female</string>
     <string name="PAppWelcome">Welcome!!!</string>
-    <string name="PAppInitiate">Period Starts  Add  Record</string>
-    <string name="PAppEnd">Period Ends  Add  Record</string>
+    <string name="PAppInitiate">Period Starts Tap me</string>
+    <string name="PAppEnd">Period Ends Tap me</string>
     <string name="PAppEndDate">Add End Date</string>
     <string name="PDelete">Delete </string>
     <string name="AHome">Home</string>

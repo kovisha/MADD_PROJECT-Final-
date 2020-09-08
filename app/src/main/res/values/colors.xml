@@ -6,7 +6,10 @@
     <color name="colorAccentHome">#1c1a1b</color>
     <color name="colorAccentButton">#32396e</color>
     <color name="PeriodBtn">#d66d96</color>
+
     <color name="PeriodCaptions">#e04883</color>
+
     <color name="PopUp">#ffffff</color>
+
 
 </resources>

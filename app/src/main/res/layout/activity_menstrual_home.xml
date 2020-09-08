@@ -20,23 +20,6 @@
         app:layout_constraintVertical_bias="0.0">
 
         <Button
-            android:id="@+id/addrecord"
-            android:layout_width="203dp"
-            android:layout_height="85dp"
-            android:backgroundTint="@color/PeriodBtn"
-            android:fontFamily="sans-serif-smallcaps"
-            android:onClick="addRecord"
-            android:text="@string/addRecordBtn"
-            android:textColor="@android:color/background_light"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.298"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.537" />
-
-        <Button
             android:id="@+id/addRecordNavigatebtn"
             android:layout_width="0dp"
             android:layout_height="111dp"
@@ -110,15 +93,16 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="228dp"
-            android:layout_height="311dp"
+            android:layout_width="263dp"
+            android:layout_height="349dp"
             android:contentDescription="@string/HomeStart"
+            android:onClick="addRecord"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.178"
+            app:layout_constraintVertical_bias="0.272"
             app:srcCompat="@drawable/ss" />
 
         <ImageView
