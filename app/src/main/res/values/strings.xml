@@ -56,15 +56,15 @@
 
 
 
-    <string name="tip1">1. Drink 2 cups of water before every meal</string>
-    <string name="tip2">2. Drink a glass of water after you wake up</string>
-    <string name="tip3">3. Drink a glass of water before you go to bed</string>
-    <string name="tip4">4. Drink a glass of water after you wake up</string>
-    <string name="tip5">5. Keep a track of the container</string>
-    <string name="tip6">6. Have more water than required if the climate is hot</string>
-    <string name="tip7">7. If you are breastfeeding or pregnant you will need more water than an average person</string>
-    <string name="tip8">8. If food with more sodium consumed you will need more water to flush it out</string>
-    <string name="tip9">9. Add flavour to your water</string>
+    <string name="water_tip1">1. Drink 2 cups of water before every meal</string>
+    <string name="water_tip2">2. Drink a glass of water after you wake up</string>
+    <string name="water_tip3">3. Drink a glass of water before you go to bed</string>
+    <string name="water_tip4">4. Drink a glass of water after you wake up</string>
+    <string name="water_tip5">5. Keep a track of the container</string>
+    <string name="water_tip6">6. Have more water than required if the climate is hot</string>
+    <string name="water_tip7">7. If you are breastfeeding or pregnant you will need more water than an average person</string>
+    <string name="water_tip8">8. If food with more sodium consumed you will need more water to flush it out</string>
+    <string name="water_tip9">9. Add flavour to your water</string>
     <string name="flavour">MORE ABOUT FLAVOURS</string>
 
     <string name="learnMore">Learn More</string>
