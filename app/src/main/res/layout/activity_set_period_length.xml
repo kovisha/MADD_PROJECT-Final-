@@ -74,7 +74,7 @@
         android:id="@+id/calculation"
         android:layout_width="135dp"
         android:layout_height="59dp"
-        android:fontFamily="@font/cambo"
+        android:fontFamily="@font/capriola"
         android:hint="@string/CalHint"
         android:textColor="@color/projectText"
         android:textSize="36sp"
@@ -153,25 +153,24 @@
         android:thumb="@drawable/thumb1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintHorizontal_bias="0.996"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.683"
+        app:layout_constraintVertical_bias="0.691"
         app:showText="true"
         app:track="@drawable/track" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccentButton"
+    <ImageView
+        android:id="@+id/btnInfo"
+        android:layout_width="81dp"
+        android:layout_height="66dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.686"
-        app:srcCompat="@android:drawable/ic_menu_info_details" />
+        app:layout_constraintVertical_bias="0.702"
+        app:srcCompat="@drawable/ic_baseline_info_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

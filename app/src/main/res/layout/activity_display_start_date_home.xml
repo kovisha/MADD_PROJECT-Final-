@@ -20,23 +20,23 @@
 
         <TextView
             android:id="@+id/getStartDate"
-            android:layout_width="251dp"
-            android:layout_height="139dp"
+            android:layout_width="254dp"
+            android:layout_height="118dp"
             android:fontFamily="@font/capriola"
             android:textAlignment="center"
             android:textColor="@color/projectText"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintHorizontal_bias="0.093"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.199" />
+            app:layout_constraintVertical_bias="0.3" />
 
         <Button
             android:id="@+id/calendarNavigaetBtn"
-            android:layout_width="408dp"
-            android:layout_height="80dp"
+            android:layout_width="418dp"
+            android:layout_height="67dp"
             android:background="@drawable/rounded_corners"
             android:backgroundTint="@color/projectBtns"
             android:fontFamily="@font/aldrich"
@@ -54,8 +54,8 @@
 
         <Button
             android:id="@+id/addRecordNavigatebtn"
-            android:layout_width="412dp"
-            android:layout_height="81dp"
+            android:layout_width="418dp"
+            android:layout_height="67dp"
             android:background="@drawable/rounded_corners"
             android:backgroundTint="@color/projectBtns"
             android:fontFamily="@font/aldrich"
@@ -73,19 +73,20 @@
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="351dp"
-            android:layout_height="54dp"
+            android:layout_width="354dp"
+            android:layout_height="49dp"
             android:background="@color/projectBtns"
             android:fontFamily="@font/cambo"
             android:text="@string/PAppEnd"
+            android:textAlignment="center"
             android:textColor="@color/prjctBtnTextclr"
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.238"
+            app:layout_constraintHorizontal_bias="0.561"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.046" />
+            app:layout_constraintVertical_bias="0.042" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -102,12 +103,12 @@
 
         <ImageView
             android:id="@+id/imageViewCal2"
-            android:layout_width="105dp"
-            android:layout_height="122dp"
+            android:layout_width="93dp"
+            android:layout_height="109dp"
             android:elevation="@android:dimen/thumbnail_width"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.95"
             app:layout_constraintStart_toStartOf="@+id/calendarNavigaetBtn"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.745"
@@ -115,15 +116,15 @@
 
         <ImageView
             android:id="@+id/imageViewaddNote2"
-            android:layout_width="94dp"
-            android:layout_height="112dp"
+            android:layout_width="80dp"
+            android:layout_height="85dp"
             android:elevation="@android:dimen/thumbnail_width"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/addRecordNavigatebtn"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.979"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.949"
+            app:layout_constraintVertical_bias="0.928"
             app:srcCompat="@drawable/addnoteicon" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

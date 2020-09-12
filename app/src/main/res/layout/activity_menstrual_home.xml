@@ -21,8 +21,8 @@
 
         <Button
             android:id="@+id/addRecordNavigatebtn"
-            android:layout_width="417dp"
-            android:layout_height="76dp"
+            android:layout_width="418dp"
+            android:layout_height="67dp"
             android:background="@drawable/rounded_corners"
             android:backgroundTint="@color/projectBtns"
             android:fontFamily="@font/aldrich"
@@ -41,8 +41,8 @@
 
         <Button
             android:id="@+id/calendarNavigaetBtn"
-            android:layout_width="411dp"
-            android:layout_height="78dp"
+            android:layout_width="418dp"
+            android:layout_height="67dp"
             android:background="@drawable/rounded_corners"
             android:backgroundTint="@color/projectBtns"
             android:fontFamily="@font/aldrich"
@@ -61,8 +61,8 @@
 
         <TextView
             android:id="@+id/welcomeText"
-            android:layout_width="270dp"
-            android:layout_height="70dp"
+            android:layout_width="293dp"
+            android:layout_height="53dp"
             android:background="@color/projectBtns"
             android:fontFamily="@font/cambo"
             android:text="@string/PAppWelcome"
@@ -78,8 +78,8 @@
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="200dp"
-            android:layout_height="115dp"
+            android:layout_width="241dp"
+            android:layout_height="102dp"
             android:fontFamily="@font/capriola"
             android:text="@string/PAppInitiate"
             android:textAlignment="center"
@@ -94,8 +94,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="263dp"
-            android:layout_height="349dp"
+            android:layout_width="189dp"
+            android:layout_height="337dp"
             android:contentDescription="@string/HomeStart"
             android:onClick="addRecord"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -103,7 +103,7 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.308"
+            app:layout_constraintVertical_bias="0.378"
             app:srcCompat="@drawable/ss" />
 
         <ImageView
@@ -122,8 +122,8 @@
 
         <ImageView
             android:id="@+id/imageViewaddNote"
-            android:layout_width="108dp"
-            android:layout_height="80dp"
+            android:layout_width="90dp"
+            android:layout_height="77dp"
             android:layout_marginBottom="16dp"
             android:elevation="@android:dimen/thumbnail_width"
             app:layout_constraintBottom_toBottomOf="@+id/addRecordNavigatebtn"
@@ -131,7 +131,7 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/addRecordNavigatebtn"
             app:layout_constraintTop_toTopOf="@+id/addRecordNavigatebtn"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_bias="0.384"
             app:srcCompat="@drawable/addnoteicon" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -38,9 +38,9 @@
 
     <Button
         android:id="@+id/PLengthSet"
-        android:layout_width="254dp"
-        android:layout_height="102dp"
-        android:layout_marginStart="32dp"
+        android:layout_width="265dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/projectBtns"
         android:fontFamily="@font/aldrich"
@@ -51,13 +51,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.249" />
+        app:layout_constraintVertical_bias="0.248" />
 
     <Button
         android:id="@+id/PCyclelnSet"
-        android:layout_width="254dp"
-        android:layout_height="102dp"
-        android:layout_marginStart="32dp"
+        android:layout_width="265dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/projectBtns"
         android:fontFamily="@font/aldrich"
@@ -68,12 +68,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.523" />
+        app:layout_constraintVertical_bias="0.528" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="254dp"
-        android:layout_height="102dp"
+        android:layout_width="265dp"
+        android:layout_height="80dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/projectBtns"
         android:fontFamily="@font/aldrich"
@@ -85,10 +85,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.809" />
+        app:layout_constraintVertical_bias="0.806" />
 
     <TextView
         android:id="@+id/getPeriodLength"
@@ -100,7 +100,7 @@
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/PLengthSet"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/PLengthSet" />
 
     <TextView
@@ -120,7 +120,7 @@
         android:id="@+id/getOvulationLength"
         android:layout_width="90dp"
         android:layout_height="70dp"
-        android:fontFamily="@font/cambo"
+        android:fontFamily="@font/capriola"
         android:hint="@string/HIntSEt3"
         android:textColor="@color/prjctBtnTextclr"
         android:textSize="24sp"

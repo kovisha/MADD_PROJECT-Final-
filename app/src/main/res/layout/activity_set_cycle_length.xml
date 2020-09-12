@@ -75,7 +75,7 @@
         android:id="@+id/calCycleLength"
         android:layout_width="135dp"
         android:layout_height="59dp"
-        android:fontFamily="@font/cambo"
+        android:fontFamily="@font/capriola"
         android:hint="@string/CalHint"
         android:textColor="@color/projectText"
         android:textSize="36sp"
