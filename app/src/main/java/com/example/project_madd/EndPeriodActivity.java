@@ -68,27 +68,9 @@ public class EndPeriodActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) { //create options menu
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.my_menu1, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.menu_1:
 
-                return true;
-            case R.id.menu_2:
 
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 
     public void endClick(View view){   // navigate back to home after adding end date
         eConfirm = findViewById(R.id.endConfirm);

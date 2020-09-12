@@ -4,7 +4,7 @@
     android:layout_width="320dp"
     android:layout_height="190dp"
     android:layout_gravity="center"
-    android:background="@color/PeriodCaptions"
+    android:background="@color/projectText"
     android:orientation="vertical"
     android:padding="5dp">
 
@@ -12,34 +12,32 @@
         android:id="@+id/textView"
         android:layout_width="350dp"
         android:layout_height="64dp"
-        android:fontFamily="sans-serif-smallcaps"
+        android:background="@color/projectBtns"
+        android:fontFamily="@font/bubblegum_sans"
         android:text="@string/Perioddelete"
-        android:textColor="@color/PopUp"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textAlignment="center"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/cnfrmdlt"
         android:layout_width="350dp"
         android:layout_height="59dp"
-        android:background="@color/PopUp"
-        android:backgroundTint="@color/PeriodBtn"
-        android:fontFamily="sans-serif-smallcaps"
+        android:backgroundTint="@color/projectText"
+        android:fontFamily="@font/bubblegum_sans"
         android:text="@string/PeriodDeleteYes"
         android:textAlignment="center"
         android:textColor="@color/PopUp"
-        android:textSize="36sp"
-        android:textStyle="bold" />
+        android:textSize="36sp" />
 
     <Button
         android:id="@+id/cnclDelete"
         android:layout_width="320dp"
         android:layout_height="66dp"
-        android:background="@color/PopUp"
-        android:fontFamily="sans-serif-smallcaps"
+        android:background="@color/prjctBtnTextclr"
+        android:fontFamily="@font/bubblegum_sans"
         android:text="@string/PeriodDeleteNo"
-        android:textColor="@color/PeriodCaptions"
-        android:textSize="36sp"
-        android:textStyle="bold" />
+        android:textColor="@color/projectBtns"
+        android:textSize="36sp" />
 
 </LinearLayout>

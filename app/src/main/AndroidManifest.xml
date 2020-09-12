@@ -9,7 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".test"></activity>
+        <activity android:name=".Settings_Home_Common"></activity>
+        <activity android:name=".User_profile" />
+        <activity android:name=".waistHeight_calculation" />
+        <activity android:name=".bmr_instructions" />
+        <activity android:name=".bmr_calculation" />
+        <activity android:name=".bmi_tips" />
+        <activity android:name=".bmi_Home" />
+        <activity android:name=".bmi_calculation" />
+        <activity android:name=".water_calculation" />
+        <activity android:name=".viewMyWater" />
+        <activity android:name=".tips_and_more" />
+        <activity android:name=".settings_changeUnit" />
+        <activity android:name=".add_drink" />
+        <activity android:name=".Water_home" />
+        <activity android:name=".Settings" />
+        <activity android:name=".Flavored_Water" />
         <activity android:name=".AddNote" />
         <activity android:name=".setOvulationLength" />
         <activity android:name=".SetCycleLength" />
@@ -29,6 +44,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

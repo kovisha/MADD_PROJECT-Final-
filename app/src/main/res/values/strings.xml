@@ -1,7 +1,9 @@
 <resources>
+
+    /*********************************************Kovisha**************************************************************************/
     <string name="app_name">Project_MADD</string>
     <string name="HomeStart">Get Started</string>
-    <string name="moveToDashboard">Next</string>
+    <string name="moveToNext">Next</string>
     <string name="addRecordBtn">Add Record</string>
     <string name="addPeriodCaption"> Start  </string>
     <string name="endPeriodCaption"> End </string>
@@ -12,15 +14,7 @@
     <string name="ViewAddRecordBTN">Add Note</string>
     <string name="ViewEndPeriodCaption">Period Ends</string>
     <string name="PBleed">Bleeding Days</string>
-    <string name="CAge">Age</string>
-    <string name="CWeight">Weight</string>
-    <string name="CHeight">Height</string>
-    <string name="CGender">Gender</string>
-    <string name="CInfo">Your Information</string>
-    <string name="CAgeHint">21</string>
-    <string name="CWeightHint">54</string>
-    <string name="MaleGender">Male</string>
-    <string name="FemaleGender">Female</string>
+
     <string name="PAppWelcome">Welcome!!!</string>
     <string name="PAppInitiate">Period Starts Tap me</string>
     <string name="PAppEnd">Period Ends Tap me</string>
@@ -54,5 +48,182 @@
     <string name="Perioddelete">Confirm Delete!</string>
     <string name="PeriodDeleteYes">Confirm</string>
     <string name="PeriodDeleteNo">Cancel</string>
+
+
+    /*********************************************Maryam**************************************************************************/
+
+    <string name="moveToDashboard">Dashboard</string>
+    <string name="menu1">Home</string>
+    <string name="menu2">Settings</string>
+    <string name="menu3">My Account</string>
+
+    <string name="Water_home_title">SET YOUR GOALS</string>
+    <string name="Water_home_goal1">Stay Hydrated</string>
+    <string name="Water_home_goal2">Loose Weight</string>
+    <string name="Water_home_goal3">Look Amazing</string>
+    <string name="Water_home_goal4">Get Fit</string>
+
+    <string name="water_calculation_title">LET\'S GET STARTED</string>
+    <string name="water_calculation_units">Select Your Preferred Unit</string>
+    <string name="water_calculation_weight">Enter Your Weight</string>
+    <string name="water_calculation_exercise">Select Your Approximate Time Of Exercise</string>
+
+    <string-array name="units_array">
+        <item>Metric</item>
+        <item>Imperial</item>
+        <item>US</item>
+    </string-array>
+
+    <string-array name="exercise_array">
+        <item>00 minutes</item>
+        <item>30 minutes</item>
+        <item>45 minutes</item>
+        <item>1 hour</item>
+        <item>2 hour</item>
+    </string-array>
+
+    <string name="maxDate">31/12/2020</string>
+    <string name="minDate">01/01/2020</string>
+    <string name="waterAmount">500ml of 2000ml</string>
+    <string name="addDrink">Add Drink</string>
+    <string name="drink1">Water</string>
+    <string name="drink2">Milk</string>
+    <string name="drink3">Coffee</string>
+    <string name="drink4">Tea</string>
+    <string name="drink5">Juices</string>
+    <string name="moreTools">Facts To Know</string>
+    <string name="flavouredDrink">Flavoured Drinking</string>
+
+    <string name="AddMore">ADD TO YOUR KNOWLEDGE</string>
+    <string name="Flavoured">FLAVOUR YOUR DRINK</string>
+
+    <string name="water_tip1">1. Drink 2 cups of water before every meal</string>
+    <string name="water_tip2">2. Drink a glass of water after you wake up</string>
+    <string name="water_tip3">3. Drink a glass of water before you go to bed</string>
+    <string name="water_tip4">4. Drink a glass of water after you wake up</string>
+    <string name="water_tip5">5. Keep a track of the container</string>
+    <string name="water_tip6">6. Have more water than required if the climate is hot</string>
+    <string name="water_tip7">7. If you are breastfeeding or pregnant you will need more water than an average person</string>
+    <string name="water_tip8">8. If food with more sodium consumed you will need more water to flush it out</string>
+    <string name="water_tip9">9. Add flavour to your water</string>
+    <string name="flavour">MORE ABOUT FLAVOURS</string>
+
+    <string name="learnMore">Learn More</string>
+    <string name="recipe1">Few pieces of  LIME , A CUCUMBER and A MINT plus your WATER </string>
+    <string name="recipe2">Few pieces of  LIME , A STRAWBERRY and A GINGER plus your WATER </string>
+    <string name="recipe3">Few pieces of  ORANGE , A FENNEL and A GINGER plus your WATER </string>
+    <string name="recipe4">Few pieces of  APPLE , A CINNAMON plus your WATER </string>
+
+    <string name="settingsPage">SETTINGS</string>
+    <string name="settings_reminder">Reminder</string>
+    <string name="settings_unit">Units</string>
+    <string name="settings_goals">Personal Goals</string>
+    <string name="settings_exercise">Exercise Time</string>
+    <string name="settings_delete">Delete My Water Records</string>
+
+    <string name="chooseUnit">Select Unit</string>
+    <string name="chooseTime">Select Time</string>
+    <string name="changed">Reset</string>
+
+    /*********************************************Krushy**************************************************************************/
+
+    <string name="bmi_btn1">BMI Calculator</string>
+    <string name="bmi_btn2">BMR Calculator</string>
+    <string name="bmi_btn3">WTH Percentage</string>
+    <string name="txt1">Keep Your health in check !!!</string>
+    <string name="txt2">Click me !</string>
+    <string name="btxt3">Welcome !!!</string>
+    <string name="btxt4">BMI </string>
+    <string name="btxt5">IDEAL WEIGHT </string>
+    <string name="btxt6">Great Shape!! Congratulations !! </string>
+    <string name="desc1">desc1</string>
+    <string name="desc2">desc2</string>
+    <string name="bmi">BMI Classification</string>
+    <string name="bmi1"> Below 16 </string>
+    <string name="bmi2"> 16.0 - 16.9  </string>
+    <string name="bmi3"> 17.0 - 18.4  </string>
+    <string name="bmi4"> 18.5 - 24.9  </string>
+    <string name="bmi5"> 25.0 - 29.9  </string>
+    <string name="bmi6"> 30.0 - 34.9  </string>
+    <string name="bmi7"> 35.0 - 39.9  </string>
+    <string name="bmi8"> >=40.0  </string>
+    <string name="bmi11"> very severely under weight </string>
+    <string name="bmi22">  severely under weight </string>
+    <string name="bmi33">   under weight </string>
+    <string name="bmi44">    Normal </string>
+    <string name="bmi55">   over weight </string>
+    <string name="bmi66">   Obese class 1 </string>
+    <string name="bmi77">  Obese class 2</string>
+    <string name="bmi88">  Obese class 3</string>
+    <string name="bmivalue">  19.6</string>
+    <string name="bmiideal">  65.3</string>
+    <string name="tips"> TIPS TO GREAT A PLATE</string>
+    <string name="btn4"> GOT IT !!!</string>
+    <string name="bmr"> BMR</string>
+    <string name="calo">CALORIES|DAY</string>
+    <string name="caloclass">Hii !! You can follow Group A !!</string>
+    <string name="classi">TDEE Classification..</string>
+    <string name="tip1">Maintain your calorie level..</string>
+    <string name="tip2">Make half your plate !! </string>
+    <string name="tip2.1">fruits and vegetables.. </string>
+    <string name="tip3">Switch to fat free..</string>
+    <string name="tip4">Eat whole grains more often..</string>
+    <string name="tip5">Always Listen to your body..</string>
+    <string name="bmrr">1891</string>
+    <string name="caloo">2345</string>
+    <string name="ins">Instructions</string>
+    <string name="insA">A</string>
+    <string name="insB">B</string>
+    <string name="insC">C</string>
+    <string name="ins1"> - To maintain current weight</string>
+    <string name="ins2"> - To lose weight</string>
+    <string name="ins3"> - To gain weight</string>
+    <string name="gotit"> Got it ? </string>
+    <string name="btn_ok">  OK </string>
+    <string name="wth">WAIST TO HEIGHT PERCENTAGE</string>
+    <string name="waist"> Enter your waist (cm) : </string>
+    <string name="waistn"> Enter your Waist </string>
+    <string name="calc_waist"> Calculate</string>
+    <string name="res_waist"> Your WTH percentage : </string>
+    <string name="res_waistwish"> you are perfectly healthy .. </string>
+    <string name="result"> 45% </string>
+    <string name="wish_bmr">Keep up the good work!!! </string>
+    <string name="edit_height">Height </string>
+    <string name="edit_heightval">165 Cm </string>
+    <string name="edit_weight">Weight</string>
+    <string name="edit_weightval">60 Kg</string>
+    <string name="edit_age">Age</string>
+    <string name="edit_ageval">20</string>
+    <string name="edit_gender">Gender </string>
+    <string name="edit_genderval">Female </string>
+    <string name="edit_waist">Waist </string>
+    <string name="edit_waistval">86.36 Cm</string>
+    <string name="edit">Edit </string>
+    <string name="delete">Delete</string>
+    <string name="user_profile">Hello User !!! </string>
+    <string name="camera">Change your profile </string>
+    <string name="fat">FAT </string>
+    <string name="fatval">22% </string>
+    <string name="bmiTips"> Tips for u ! </string>
+    <string name="menu_item1"> Home</string>
+    <string name="menu_item2"> My Profile</string>
+    <string name="menu_item3"> Settings</string>
+    <string name="menu_item4"> Tips</string>
+    <string name="wth_desc"> The Waist-height ratio is calculated as waist measurement divided by height measurement, W/H ,in centimeters</string>
+
+
+    <string name="CAge">Age</string>
+    <string name="CWeight">Weight</string>
+    <string name="CHeight">Height</string>
+    <string name="CGender">Gender</string>
+    <string name="CInfo">Your Information</string>
+    <string name="CAgeHint">21</string>
+    <string name="CWeightHint">54</string>
+    <string name="MaleGender">Male</string>
+    <string name="FemaleGender">Female</string>
+
+    <string name="confirmdelete">Confirm Delete ? </string>
+    <string name="confirmdeleteYes">Yes </string>
+    <string name="confirmdeleteNo">NO </string>
 
 </resources>

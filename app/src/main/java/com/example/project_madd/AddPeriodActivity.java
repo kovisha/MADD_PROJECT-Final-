@@ -82,25 +82,7 @@ public class AddPeriodActivity extends AppCompatActivity {
         startActivity(secondIntent);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) { //options menu created
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.my_menu1, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.menu_1:
-
-                return true;
-            case R.id.menu_2:
 
 
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
+
 }

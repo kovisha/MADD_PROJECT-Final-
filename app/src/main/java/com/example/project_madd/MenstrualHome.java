@@ -71,27 +71,7 @@ public class MenstrualHome extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) { //Options menu is set for page .This option displays only options
-        MenuInflater inflater = getMenuInflater(); // related to period app.(Not entire app settings)
-        inflater.inflate(R.menu.my_menu1, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) { //creating menu
-        // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.menu_1:
-               return true;
-            case R.id.menu_2:
-                Intent intent = new Intent(MenstrualHome.this ,PeriodSettingsHome.class);
-                startActivity(intent);
-               return true;
 
-            default:
-                return super.onOptionsItemSelected(item);
-        }
 
-    }
 }

@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#1c1a1b</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#d66d96</color>
-    <color name="colorAccentHome">#1c1a1b</color>
-    <color name="colorAccentButton">#32396e</color>
-    <color name="PeriodBtn">#d66d96</color>
 
-    <color name="PeriodCaptions">#e04883</color>
+    /********************************************Common*************************************************************************/
+    <color name="colorPrimary">#000000</color> /*action bar*/
+    <color name="colorPrimaryDark">#000000</color>/*wifi position*/
+    <color name="colorAccent">#11ba9b</color>/*default text*/
+
+    <color name="colorAccentHome">#000000</color> /*1st page button text*/
+    <color name="colorAccentButton">#32396e</color>/*1st page button color*/
+
+
+    <color name="projectBtns">#ED473B</color>/*All page button colors*/
+    <color name="projectText">#07e3c6</color>/*All page text colors*/
+    <color name="projectBgcolor">#2c334d</color>/*All page background colors*/
+    <color name="prjctBtnTextclr">#ffffff</color>/*All button text colors*/
+
+
+
+    /********************************************Kovisha*************************************************************************/
 
     <color name="PopUp">#ffffff</color>
+
+
+
+
+
+
 
 
 </resources>
