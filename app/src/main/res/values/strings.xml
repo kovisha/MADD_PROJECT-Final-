@@ -19,9 +19,10 @@
     <string name="Water_home_goal4">Get Fit</string>
 
     <string name="water_calculation_title">LET\'S GET STARTED</string>
-    <string name="water_calculation_units">Select Your Preferred Unit</string>
-    <string name="water_calculation_weight">Enter Your Weight</string>
-    <string name="water_calculation_exercise">Select Your Approximate Time Of Exercise</string>
+    <string name="preference">Select Your Preference</string>
+    <string name="water_calculation_units">Unit : </string>
+    <string name="water_calculation_weight">Weight : </string>
+    <string name="water_calculation_exercise">Exercise Time : </string>
 
     <string-array name="units_array">
         <item>Metric</item>

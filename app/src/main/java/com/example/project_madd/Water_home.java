@@ -23,7 +23,7 @@ public class Water_home extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.common_menu,menu);
+        getMenuInflater().inflate(R.menu.my_menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -31,15 +31,21 @@ public class Water_home extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int menuId = item.getItemId();
 
-        if (menuId == R.id.menuHome){
-            startActivity(new Intent(this,viewMyWater.class));
+        if (menuId == R.id.settings_icon){
+            Intent intent = new Intent(Water_home.this , Settings.class);
+            startActivity(intent);
+            return true;
+            //startActivity(new Intent(this,viewMyWater.class));
         }
 
-        if(menuId == R.id.menuSettings){
-            startActivity(new Intent(this,Settings.class));
+        else if(menuId == R.id.home_icon){
+            Intent intent = new Intent(Water_home.this , DashBoard.class);
+            startActivity(intent);
+            return true;
         }
 
-        return super.onOptionsItemSelected(item);
+        else
+            return super.onOptionsItemSelected(item);
     }
 
     public void CalcWater(View view){

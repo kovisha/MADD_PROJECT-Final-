@@ -24,7 +24,7 @@
             android:background="@drawable/round_button"
             android:onClick="getStarted"
             android:text="@string/HomeStart"
-            android:textColor="@color/colorAccentHome"
+            android:textColor="@color/design_default_color_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.56"

@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/bg"
     tools:context=".viewMyWater">
 
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="390dp"
         android:layout_height="349dp"
-        android:background="@color/design_default_color_on_primary"
+        android:background="@drawable/calender_customization"
         android:maxDate="@string/maxDate"
         android:minDate="@string/minDate"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,13 +35,15 @@
 
         <TextView
             android:id="@+id/textView13"
-            android:layout_width="353dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:fontFamily="@font/cambo"
+            android:background="@color/btnColor"
+            android:fontFamily="@font/capriola"
             android:text="@string/waterAmount"
             android:textAlignment="center"
-            android:textSize="30sp" />
+            android:textColor="@color/prjctBtnTextclr"
+            android:textSize="24sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -61,10 +63,11 @@
         android:id="@+id/textView9"
         android:layout_width="118dp"
         android:layout_height="33dp"
-        android:fontFamily="@font/cambo"
+        android:fontFamily="@font/capriola"
         android:text="Water 200ml"
         android:textAlignment="center"
-        android:textSize="18sp"
+        android:textColor="@color/txtColor"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.054"
@@ -91,10 +94,11 @@
         android:id="@+id/textView11"
         android:layout_width="118dp"
         android:layout_height="42dp"
-        android:fontFamily="@font/cambo"
+        android:fontFamily="@font/capriola"
         android:text="Tea 200ml"
         android:textAlignment="center"
-        android:textSize="18sp"
+        android:textColor="@color/txtColor"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.542"
@@ -106,35 +110,33 @@
         android:id="@+id/btnAddDrink"
         android:layout_width="157dp"
         android:layout_height="34dp"
-        android:background="@color/WaterHomeText"
-        android:fontFamily="@font/cambo"
+        android:background="@drawable/rounded_corners"
+        android:fontFamily="@font/aldrich"
         android:onClick="addDrink"
         android:text="@string/addDrink"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnMoreWater"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.881"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.978" />
+        app:layout_constraintHorizontal_bias="0.858"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnMoreWater"
-        android:layout_width="157dp"
-        android:layout_height="34dp"
-        android:background="@color/WaterHomeText"
-        android:fontFamily="@font/cambo"
+        android:layout_width="166dp"
+        android:layout_height="31dp"
+        android:background="@drawable/rounded_corners"
+        android:fontFamily="@font/aldrich"
         android:onClick="viewTips"
         android:text="@string/moreTools"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/prjctBtnTextclr"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.212"
+        app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977" />
+        app:layout_constraintVertical_bias="0.974" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
