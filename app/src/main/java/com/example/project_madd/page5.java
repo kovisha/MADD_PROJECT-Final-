@@ -15,30 +15,5 @@ public class page5 extends AppCompatActivity {
         setContentView(R.layout.activity_page5);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.bmi_menu, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.item1:
-
-                return true;
-            case R.id.item2:
-
-                return true;
-
-            case R.id.item3:
-
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 }

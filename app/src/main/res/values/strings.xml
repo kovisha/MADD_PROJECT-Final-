@@ -9,9 +9,9 @@
     <string name="PeriodsDashboard">Track My Period</string>
 
 
-    <string name="btn1">BMI Calculator</string>
-    <string name="btn2">BMR Calculator</string>
-    <string name="btn3">WTH Percentage</string>
+    <string name="bmi_btn1">BMI Calculator</string>
+    <string name="bmi_btn2">BMR Calculator</string>
+    <string name="bmi_btn3">WTH Percentage</string>
     <string name="txt1">Keep Your health in check !!!</string>
     <string name="txt2">Click me !</string>
     <string name="btxt3">Welcome !!!</string>
@@ -40,17 +40,16 @@
     <string name="bmivalue">  19.6</string>
     <string name="bmiideal">  65.3</string>
     <string name="tips"> TIPS TO GREAT A PLATE</string>
-    <string name="btn4"> GOT IT !!!</string>
+    <string name="btn4"> Got it !!!</string>
     <string name="bmr"> BMR</string>
     <string name="calo">CALORIES|DAY</string>
     <string name="caloclass">Hii !! You can follow Group A !!</string>
     <string name="classi">TDEE Classification..</string>
-    <string name="tip1">Maintain your calorie level..</string>
-    <string name="tip2">Make half your plate !! </string>
-    <string name="tip2.1">fruits and vegetables.. </string>
-    <string name="tip3">Switch to fat free..</string>
-    <string name="tip4">Eat whole grains more often..</string>
-    <string name="tip5">Always Listen to your body..</string>
+    <string name="bmi_tip1">Maintain your calorie level..</string>
+    <string name="bmi_tip2">Make half your plate !! fruits and vegetables.. </string>
+    <string name="bmi_tip3">Switch to fat free..</string>
+    <string name="bmi_tip4">Eat whole grains more often..</string>
+    <string name="bmi_tip5">Always Listen to your body..</string>
     <string name="bmrr">1891</string>
     <string name="caloo">2345</string>
     <string name="ins">Instructions</string>
@@ -107,6 +106,14 @@
     <string name="confirmdelete">Confirm Delete ? </string>
     <string name="confirmdeleteYes">Yes </string>
     <string name="confirmdeleteNo">NO </string>
+    <string name="signIn">Sign In</string>
+    <string name="SignUp">Sign Up</string>
+
+
+    <string name="loginfrag_username">User Name</string>
+    <string name="loginfrag_password">Password</string>
+    <string name="loginfrag_loginBtn">SIGN IN</string>
+    <string name="signUpfrag_signUpBtn">SIGN UP</string>
 
 
 </resources>
