@@ -21,7 +21,14 @@
 
     <color name="PopUp">#ffffff</color>
 
+    /********************************************Mariyam*************************************************************************/
 
+    <color name="bg">#2c334d</color>
+    <color name="btnColor">#ED473B</color>
+    <color name="txtColor">#07e3c6</color>
+
+    <color name="popUpColor">#fafafa</color>
+    <color name="popUpbtn">#1c203d</color>
 
 
 

@@ -12,7 +12,7 @@ import android.widget.Button;
 
 public class DashBoard extends AppCompatActivity {
 
-    Button btnP ,btnS;
+    Button btnP ,btnS , btnW;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +33,18 @@ public class DashBoard extends AppCompatActivity {
          });
 
 
+    }
+
+    public void WaterHome(View view){
+        btnW = findViewById(R.id.btnWater);
+        btnW.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DashBoard.this , Water_home.class);
+
+                startActivity(intent);
+            }
+        });
     }
 
     public void settingsHome(View view){

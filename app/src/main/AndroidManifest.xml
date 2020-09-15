@@ -20,7 +20,6 @@
         <activity android:name=".water_calculation" />
         <activity android:name=".viewMyWater" />
         <activity android:name=".tips_and_more" />
-        <activity android:name=".settings_changeUnit" />
         <activity android:name=".add_drink" />
         <activity android:name=".Water_home" />
         <activity android:name=".Settings" />

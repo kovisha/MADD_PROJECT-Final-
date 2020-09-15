@@ -1,7 +1,7 @@
 <resources>
 
     /*********************************************Kovisha**************************************************************************/
-    <string name="app_name">Project_MADD</string>
+    <string name="app_name">Elite!</string>
     <string name="HomeStart">Get Started</string>
     <string name="moveToNext">Next</string>
     <string name="addRecordBtn">Add Record</string>
@@ -64,6 +64,7 @@
     <string name="Water_home_goal4">Get Fit</string>
 
     <string name="water_calculation_title">LET\'S GET STARTED</string>
+    <string name="preference">Select your preference</string>
     <string name="water_calculation_units">Select Your Preferred Unit</string>
     <string name="water_calculation_weight">Enter Your Weight</string>
     <string name="water_calculation_exercise">Select Your Approximate Time Of Exercise</string>
