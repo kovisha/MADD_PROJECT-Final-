@@ -15,7 +15,9 @@
         <activity android:name=".bmr_instructions" />
         <activity android:name=".bmr_calculation" />
         <activity android:name=".bmi_tips" />
-        <activity android:name=".bmi_Home" />
+        <activity android:name=".bmi_Home"/>
+
+
         <activity android:name=".bmi_calculation" />
         <activity android:name=".water_calculation" />
         <activity android:name=".viewMyWater" />
@@ -43,6 +45,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
 
         <meta-data
             android:name="preloaded_fonts"

@@ -6,79 +6,70 @@
     android:layout_height="match_parent"
     android:background="@color/projectBgcolor"
     tools:context=".bmi_Home">
+
     <Button
-        android:id="@+id/btn1"
+        android:id="@+id/bmi_btn1"
         android:layout_width="380dp"
         android:layout_height="50dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/projectBtns"
-        android:fontFamily="@font/bubblegum_sans"
+        android:fontFamily="@font/aldrich"
         android:text="@string/bmi_btn1"
         android:textAllCaps="false"
         android:textColor="@color/prjctBtnTextclr"
-        android:textSize="40sp"
+        android:textSize="30sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.148" />
+        app:layout_constraintVertical_bias="0.174" />
+
     <Button
-        android:id="@+id/btn2"
+        android:id="@+id/bmr_btn1"
         android:layout_width="380dp"
         android:layout_height="50dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/projectBtns"
-        android:fontFamily="@font/bubblegum_sans"
+        android:fontFamily="@font/aldrich"
         android:text="@string/bmi_btn2"
         android:textAllCaps="false"
         android:textColor="@color/prjctBtnTextclr"
-        android:textSize="40sp"
+        android:textSize="30sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.306" />
+        app:layout_constraintVertical_bias="0.325" />
+
     <Button
-        android:id="@+id/btn3"
+        android:id="@+id/wth_btn1"
         style="@android:style/Widget.DeviceDefault.Button"
         android:layout_width="380dp"
         android:layout_height="50dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/projectBtns"
-        android:fontFamily="@font/bubblegum_sans"
+        android:fontFamily="@font/aldrich"
         android:text="@string/bmi_btn3"
         android:textAllCaps="false"
         android:textColor="@color/prjctBtnTextclr"
-        android:textSize="40sp"
+        android:textSize="30sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.471" />
-    <ImageView
-        android:id="@+id/image1_1st"
-        android:layout_width="377dp"
-        android:layout_height="280dp"
-        android:contentDescription="@string/desc1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.929"/>
-        <!--app:srcCompat="@drawable/blackboard"-->
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/txt1"
-        android:fontFamily="@font/cambo"
+        android:fontFamily="@font/capriola"
         android:text="@string/txt1"
         android:textColor="@color/projectText"
         android:textSize="18sp"
@@ -105,6 +96,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.792" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
@@ -115,16 +107,18 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.789"
+        app:layout_constraintVertical_bias="0.799"
         app:srcCompat="@android:drawable/ic_dialog_info" />
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="279dp"
         android:layout_height="53dp"
-        android:fontFamily="@font/bubblegum_sans"
+        android:background="@color/projectBtns"
+        android:fontFamily="@font/cambo"
         android:text="@string/btxt3"
         android:textAlignment="center"
-        android:textColor="@color/projectText"
+        android:textColor="@color/prjctBtnTextclr"
         android:textSize="50sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -133,4 +127,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.037" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

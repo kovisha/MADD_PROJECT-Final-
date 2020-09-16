@@ -3,6 +3,9 @@ package com.example.project_madd;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 public class bmr_instructions extends AppCompatActivity {
 
@@ -11,4 +14,5 @@ public class bmr_instructions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmr_instructions);
     }
+
 }

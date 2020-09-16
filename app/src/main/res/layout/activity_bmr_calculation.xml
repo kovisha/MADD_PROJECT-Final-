@@ -4,6 +4,399 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/projectBgcolor"
     tools:context=".bmr_calculation">
+
+    <Button
+        android:id="@+id/bmr_done"
+        android:layout_width="153dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded_corners"
+        android:fontFamily="@font/aldrich"
+        android:text="Done"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+    <Button
+        android:id="@+id/bmr_done2"
+        android:layout_width="234dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded_corners"
+        android:fontFamily="@font/aldrich"
+        android:text="click me"
+        android:textAlignment="gravity"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.183" />
+
+    <EditText
+        android:id="@+id/calo_val"
+        android:layout_width="205dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@android:color/black"
+        android:ems="10"
+        android:fontFamily="@font/capriola"
+        android:inputType="textPersonName"
+        android:text="@string/caloo"
+        android:textAlignment="center"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.094" />
+
+    <EditText
+        android:id="@+id/bmival"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@android:color/black"
+        android:ems="10"
+        android:fontFamily="@font/capriola"
+        android:inputType="textPersonName"
+        android:text="@string/bmrr"
+        android:textAlignment="center"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.094" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="400dp"
+        android:layout_height="111dp"
+        android:background="@color/projectBtns"
+        android:fontFamily="@font/cambo"
+        android:text="@string/classi"
+        android:textAlignment="center"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.275" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="142dp"
+        android:layout_height="53dp"
+        android:backgroundTintMode="add"
+        android:fontFamily="@font/capriola"
+        android:text="@string/bmr"
+        android:textAlignment="center"
+        android:textColor="@color/projectText"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.043" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="237dp"
+        android:layout_height="31dp"
+        android:backgroundTint="#719E3D"
+        android:backgroundTintMode="add"
+        android:fontFamily="@font/capriola"
+        android:text="@string/calo"
+        android:textAlignment="center"
+        android:textColor="@color/projectText"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.921"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.043" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="22dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="268dp"
+        android:elevation="@android:dimen/thumbnail_width"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.189"
+        app:srcCompat="@android:drawable/ic_dialog_info" />
+
+    <TableLayout
+        android:layout_width="404dp"
+        android:layout_height="238dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.653">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#32396e"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cambo"
+                android:text="Activity"
+                android:textAlignment="center"
+                android:textColor="@color/projectText"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cambo"
+                android:text="Description"
+                android:textAlignment="center"
+                android:textColor="@color/projectText"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cambo"
+                android:text="TDEE"
+                android:textAlignment="center"
+                android:textColor="@color/projectText"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:background="#3d4580"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cambo"
+                android:text="Sedentary"
+                android:textColor="@color/projectText"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cambo"
+                android:text="Little or No Excercise"
+                android:textAlignment="center"
+                android:textColor="@color/projectText"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cambo"
+                android:text="1.2*Bmr"
+                android:textAlignment="center"
+                android:textColor="@color/projectText"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:background="#3d4580"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cambo"
+                android:text="Lightly Active"
+                android:textColor="@color/projectText"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cambo"
+                android:text="sports 1-3 days/week"
+                android:textAlignment="center"
+                android:textColor="@color/projectText"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cambo"
+                android:text="1.375*Bmr"
+                android:textAlignment="center"
+                android:textColor="@color/projectText"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:background="#3d4580"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cambo"
+                android:text="Moderately Active"
+                android:textColor="@color/projectText"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cambo"
+                android:text="sports 3-5 days/week"
+                android:textAlignment="center"
+                android:textColor="@color/projectText"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cambo"
+                android:text="1.55*Bmr"
+                android:textAlignment="center"
+                android:textColor="@color/projectText"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:background="#3d4580"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cambo"
+                android:text="Very Active"
+                android:textColor="@color/projectText"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cambo"
+                android:text="sports 6-7 days/week"
+                android:textAlignment="center"
+                android:textColor="@color/projectText"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cambo"
+                android:text="1.725*Bmr"
+                android:textAlignment="center"
+                android:textColor="@color/projectText"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:background="#3d4580"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cambo"
+                android:text="Extremely Active"
+                android:textColor="@color/projectText"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cambo"
+                android:text="physical job/daily training"
+                android:textAlignment="center"
+                android:textColor="@color/projectText"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/cambo"
+                android:text="1.9*bmr "
+                android:textAlignment="center"
+                android:textColor="@color/projectText"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="225dp"
+        android:layout_height="67dp"
+        android:fontFamily="@font/capriola"
+        android:text="@string/wish_bmr"
+        android:textAlignment="center"
+        android:textColor="@color/projectText"
+        android:textSize="25sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.87" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
