@@ -14,28 +14,43 @@ import android.widget.TextView;
 public class PeriodSettingsHome extends AppCompatActivity {
 
     Button PeriodLength , CycleLength , OvuLength;
-    String periodLength , PCycleLength , fertilityLength;
+    String periodLength , PCycleLength , fertilityLength ,  AvgCycleLength;
+    TextView tv1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_period_settings_home);
 
         Intent intent = getIntent();
+        Intent switchIntent = getIntent();//get intent for switch on state
 
         periodLength = intent.getStringExtra("PeriodSetLength"); //getting the user decided period length
 
-        TextView tv = findViewById(R.id.getPeriodLength);
+        TextView tv = findViewById(R.id.getPeriodLength); //setting the user decided period length
         tv.setText(periodLength);
 
+        /*Handling the cycle length with avg and user entered value and switch*/
         PCycleLength = intent.getStringExtra("CycleSetLength"); //getting the user decided cycle length
+        AvgCycleLength = switchIntent.getStringExtra("AverageValue");//getting the avg value through switch
 
-        TextView tv1 = findViewById(R.id.getCycleLength);
-        tv1.setText(PCycleLength);
+        if(PCycleLength == null){
+            tv1 = findViewById(R.id.getCycleLength);
+            tv1.setText(AvgCycleLength);
+        }
+
+        else {
+            tv1 = findViewById(R.id.getCycleLength);
+            tv1.setText(PCycleLength);
+        }
+
+        /* End of Handling the cycle length with avg and user entered value and switch*/
 
         fertilityLength = intent.getStringExtra("FertilitySetLength"); //getting the user decided fertile length
 
         TextView tv2 = findViewById(R.id.getOvulationLength);
         tv2.setText(fertilityLength);
+
+
 
     }
 
@@ -65,6 +80,8 @@ public class PeriodSettingsHome extends AppCompatActivity {
             }
         });
     }
+
+
 
     public void OvulaionlengthSet(View view){
 

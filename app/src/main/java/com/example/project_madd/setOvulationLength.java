@@ -66,6 +66,7 @@ public class setOvulationLength extends AppCompatActivity {
 
     }
 
+    /*******************menu code************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu,menu);

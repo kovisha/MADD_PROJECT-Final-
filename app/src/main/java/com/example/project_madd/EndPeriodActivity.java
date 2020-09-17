@@ -3,8 +3,10 @@ package com.example.project_madd;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
@@ -64,15 +66,15 @@ public class EndPeriodActivity extends AppCompatActivity {
         btnGet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tvw.setText(eText.getText());
+
+                Toast.makeText(EndPeriodActivity.this, "Your record is being processed!",Toast.LENGTH_SHORT).show();
+                tvw.setText(eText.getText()); //remove this later .
             }
         });
     }
 
 
-
-
-
+    /***********************************************navigate back to home page ****************************************************/
     public void endClick(View view){   // navigate back to home after adding end date
         eConfirm = findViewById(R.id.endConfirm);
         eConfirm.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +87,7 @@ public class EndPeriodActivity extends AppCompatActivity {
             }
         });
     }
-
+/*************
     public void showPopup(View view){
         Button confirm , cancel;
         myDialog.setContentView(R.layout.confirmpopup);
@@ -108,7 +110,50 @@ public class EndPeriodActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }****************/
+
+/*************************display alert before deleting record****************************/
+    public void deleteAlert(View view){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+        // Setting Alert Dialog Title
+        alertDialogBuilder.setTitle("Confirm Delete..!!!");
+
+        // Icon Of Alert Dialog
+        alertDialogBuilder.setIcon(R.drawable.ic_baseline_help_24);
+
+        // Setting Alert Dialog Message
+        alertDialogBuilder.setMessage("Are you sure,You want to delete record?");
+        alertDialogBuilder.setCancelable(false);
+
+        alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                Toast.makeText(getApplicationContext(),"Deleting record",Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(EndPeriodActivity.this , MenstrualHome.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+        alertDialogBuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                Toast.makeText(getApplicationContext(),"You clicked on Cancel",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Dialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+
+
     }
+
+    /**************************************Menu code************************************/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

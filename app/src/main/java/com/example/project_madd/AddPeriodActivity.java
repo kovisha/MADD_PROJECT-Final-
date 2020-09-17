@@ -23,7 +23,7 @@ import java.util.Calendar;
 public class AddPeriodActivity extends AppCompatActivity {
 
 
-    DatePickerDialog picker;
+    DatePickerDialog picker; /*declaring calendar date picker*/
     EditText eText;
     Button btnGet;
     TextView tvw;
@@ -37,7 +37,9 @@ public class AddPeriodActivity extends AppCompatActivity {
 
         Intent intent = getIntent(); //get intent from menstrual home .
 
-        tvw = (TextView) findViewById(R.id.displayDate); //function to get date through calendar and display it in date format.
+        /********************************************function to get date through calendar and display it in date format.*********************/
+
+        tvw = (TextView) findViewById(R.id.displayDate);
         eText = findViewById(R.id.enterDateInput);
         eText.setInputType(InputType.TYPE_NULL);
         eText.setOnClickListener(new View.OnClickListener() {
@@ -63,14 +65,18 @@ public class AddPeriodActivity extends AppCompatActivity {
         btnGet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tvw.setText(eText.getText());
+
+                Toast.makeText(AddPeriodActivity.this , "Your record is ready to be added!",Toast.LENGTH_SHORT).show(); //display message
+
+                tvw.setText(eText.getText()); //remove this after data insertion is done
             }
         });
     }
 
     public void tick(View view) { //if record addition confirmed
+        /****************Onclick should call insert method to add start date in database ********************/
 
-        Toast.makeText(AddPeriodActivity.this , "Adding record!",Toast.LENGTH_SHORT).show(); //display message
+        Toast.makeText(getApplicationContext(),"Adding record",Toast.LENGTH_SHORT).show();//display message
 
         Intent secondIntent = new Intent(AddPeriodActivity.this, DisplayStartDateHome.class);//navigate back to home page
 
@@ -83,6 +89,7 @@ public class AddPeriodActivity extends AppCompatActivity {
         startActivity(secondIntent);
     }
 
+    /********************************************************Menu code************************************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu,menu);

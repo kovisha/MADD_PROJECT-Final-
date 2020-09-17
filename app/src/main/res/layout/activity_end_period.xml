@@ -154,7 +154,7 @@
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/projectBtns"
         android:fontFamily="@font/aldrich"
-        android:onClick="showPopup"
+        android:onClick="deleteAlert"
         android:text="@string/PDelete"
         android:textColor="@android:color/background_light"
         android:textSize="26sp"

@@ -29,25 +29,14 @@ public class DisplayStartDateHome extends AppCompatActivity {
         takeExtra1 = intent.getStringExtra("MAIN_EXTRA"); //get the value passed from add period activity
 
         TextView tv = findViewById(R.id.getStartDate);
-        tv.setText("Start date" + takeExtra1); //display start date in home
+        tv.setText("Start date\n" + takeExtra1); //display start date in home
 
 
     }
 
-    /*public void addEndRecord(View view) { //adding end date record
-        btn2 = findViewById(R.id.addEndRecord);
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) { //navigates to end period adding page
-                Intent intent = new Intent(DisplayStartDateHome.this, EndPeriodActivity.class);
-                startActivity(intent);
-            }
-        });
+   /******Navigate to add end date activity to register the end date of period by tapping the image*********/
 
-
-    }*/
-
-    public void addEndRecord(View view) { //adding end date record
+    public void addEndRecord(View view) {
       v2 = findViewById(R.id.imageView2);
         v2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +49,8 @@ public class DisplayStartDateHome extends AppCompatActivity {
 
     }
 
+
+    /********************************************************Menu code************************************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu,menu);

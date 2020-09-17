@@ -19,6 +19,8 @@ public class AddNote extends AppCompatActivity {
 
     }
 
+
+    /********************************************************Menu code************************************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu,menu);

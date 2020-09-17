@@ -2,6 +2,7 @@ package com.example.project_madd;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +10,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.RadioGroup;
+import android.widget.Switch;
 import android.widget.TextView;
 
 public class SetCycleLength extends AppCompatActivity {
@@ -46,6 +50,18 @@ public class SetCycleLength extends AppCompatActivity {
             }
         });
 
+
+
+        SwitchCompat simpleSwitch = findViewById(R.id.switch2);
+
+        boolean switchState = simpleSwitch.isChecked();
+
+        if(switchState){
+            Intent switchIntent = new Intent(SetCycleLength.this,PeriodSettingsHome.class);
+
+            switchIntent.putExtra("AverageValue",28);
+            startActivity(switchIntent);
+        }
     }
 
     public void confirmCycleLength(View view) {
@@ -91,5 +107,7 @@ public class SetCycleLength extends AppCompatActivity {
         else
             return super.onOptionsItemSelected(item);
     }
+
+
 
 }

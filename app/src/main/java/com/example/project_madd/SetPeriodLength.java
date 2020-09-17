@@ -70,6 +70,7 @@ public class SetPeriodLength extends AppCompatActivity {
             });
 
     }
+    /**********************Menu code************************/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
