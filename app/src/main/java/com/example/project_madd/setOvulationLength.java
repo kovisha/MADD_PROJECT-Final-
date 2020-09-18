@@ -3,6 +3,9 @@ package com.example.project_madd;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class setOvulationLength extends AppCompatActivity {
 
@@ -63,6 +67,24 @@ public class setOvulationLength extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    public void OvulationInfoMessage(View view){
+        final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+        // Setting Alert Dialog Title
+        alertDialogBuilder.setTitle("Average Length");
+
+        // Icon Of Alert Dialog
+        alertDialogBuilder.setIcon(R.drawable.ic_baseline_info_24);
+
+        // Setting Alert Dialog Message
+        alertDialogBuilder.setMessage("Turn on the option,use average value to predict your next ovulation");
+        alertDialogBuilder.setCancelable(true);
+
+        Dialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
 
     }
 

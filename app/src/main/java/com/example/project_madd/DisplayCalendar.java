@@ -10,6 +10,9 @@ import android.view.MenuItem;
 import android.widget.CalendarView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+
 public class DisplayCalendar extends AppCompatActivity {
 
     CalendarView calendarview;
@@ -25,6 +28,8 @@ public class DisplayCalendar extends AppCompatActivity {
         calendarview = findViewById(R.id.DisplayCalendar);
         myDate = findViewById(R.id.presentDate);
 
+
+
         calendarview.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
@@ -32,6 +37,7 @@ public class DisplayCalendar extends AppCompatActivity {
                 myDate.setText(date);
             }
         });
+
 
 
 

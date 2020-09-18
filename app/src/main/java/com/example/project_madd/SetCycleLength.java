@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -21,6 +23,7 @@ public class SetCycleLength extends AppCompatActivity {
     TextView tv1;
     int count1;
     TextView calCycleLength;
+    SwitchCompat simpleSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,16 +55,25 @@ public class SetCycleLength extends AppCompatActivity {
 
 
 
-        SwitchCompat simpleSwitch = findViewById(R.id.switch2);
 
-        boolean switchState = simpleSwitch.isChecked();
+    }
 
-        if(switchState){
-            Intent switchIntent = new Intent(SetCycleLength.this,PeriodSettingsHome.class);
+    public void onSwitchMoment(View view){
+        simpleSwitch = findViewById(R.id.switch2);
 
-            switchIntent.putExtra("AverageValue",28);
-            startActivity(switchIntent);
-        }
+        boolean result = simpleSwitch.isChecked();
+
+        simpleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean result) {
+
+                Intent switchIntent = new Intent(SetCycleLength.this,PeriodSettingsHome.class);
+
+                switchIntent.putExtra("AverageValue",28);
+                startActivity(switchIntent);
+            }
+        });
+
     }
 
     public void confirmCycleLength(View view) {
@@ -81,6 +93,24 @@ public class SetCycleLength extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    public void cycleInfoMessage(View view){
+        final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+        // Setting Alert Dialog Title
+        alertDialogBuilder.setTitle("Average Length");
+
+        // Icon Of Alert Dialog
+        alertDialogBuilder.setIcon(R.drawable.ic_baseline_info_24);
+
+        // Setting Alert Dialog Message
+        alertDialogBuilder.setMessage("Turn on the option,use average value to predict your next menstrual cycle");
+        alertDialogBuilder.setCancelable(true);
+
+        Dialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
 
     }
 

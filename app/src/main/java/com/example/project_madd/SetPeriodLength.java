@@ -3,6 +3,8 @@ package com.example.project_madd;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -68,6 +70,24 @@ public class SetPeriodLength extends AppCompatActivity {
 
                 }
             });
+
+    }
+
+    public void PeriodInfoMessage(View view){
+        final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+        // Setting Alert Dialog Title
+        alertDialogBuilder.setTitle("Average Length");
+
+        // Icon Of Alert Dialog
+        alertDialogBuilder.setIcon(R.drawable.ic_baseline_info_24);
+
+        // Setting Alert Dialog Message
+        alertDialogBuilder.setMessage("Turn on the option,use average value as your period length ");
+        alertDialogBuilder.setCancelable(true);
+
+        Dialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
 
     }
     /**********************Menu code************************/

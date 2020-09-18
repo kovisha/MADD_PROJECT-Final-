@@ -121,7 +121,10 @@
         android:id="@+id/CLengthSetButtn"
         android:layout_width="115dp"
         android:layout_height="68dp"
-        android:background="@color/projectBtns"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="@color/projectBtns"
+        android:elevation="@android:dimen/thumbnail_width"
+        android:icon="@drawable/ic_baseline_thumb_up_24"
         android:onClick="confirmCycleLength"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -130,26 +133,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.058" />
 
-    <ImageView
-        android:id="@+id/imageViewTick2"
-        android:layout_width="113dp"
-        android:layout_height="93dp"
-        android:background="@drawable/rounded_corners"
-        android:backgroundTint="@color/projectBtns"
-        android:elevation="@android:dimen/thumbnail_width"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.043"
-        app:srcCompat="@drawable/tickicon" />
-
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switch2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:onClick="onSwitchMoment"
         android:textOff="Off"
         android:textOn="On"
         android:thumb="@drawable/thumb1"
@@ -166,6 +155,7 @@
         android:id="@+id/imageView5"
         android:layout_width="88dp"
         android:layout_height="67dp"
+        android:onClick="cycleInfoMessage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.659"
