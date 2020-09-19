@@ -69,7 +69,7 @@ public class viewMyWater extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(viewMyWater.this
-                        , add_drink.class);
+                        , select_drink.class);
 
                 startActivity(intent);
             }

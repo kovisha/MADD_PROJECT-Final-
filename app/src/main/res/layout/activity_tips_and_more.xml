@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg"
+    android:background="@color/projectBgcolor"
     tools:context=".tips_and_more">
 
     <TextView
@@ -272,7 +272,7 @@
         android:id="@+id/btnFlavourWater"
         android:layout_width="344dp"
         android:layout_height="49dp"
-        android:background="@drawable/btn_custom"
+        android:background="@drawable/rounded_corners"
         android:fontFamily="@font/aldrich"
         android:onClick="moreTips"
         android:text="@string/flavour"

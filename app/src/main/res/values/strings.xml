@@ -56,7 +56,6 @@
     <string name="Flavoured">FLAVOUR YOUR DRINK</string>
 
 
-
     <string name="water_tip1">1. Drink 2 cups of water before every meal</string>
     <string name="water_tip2">2. Drink a glass of water after you wake up</string>
     <string name="water_tip3">3. Drink a glass of water before you go to bed</string>
@@ -85,6 +84,11 @@
     <string name="chooseUnit">Select Unit</string>
     <string name="chooseTime">Select Time</string>
     <string name="changed">Reset</string>
+
+
+    /*-----------------------NEW STRINGS---------------------------------------------*/
+    <string name="addDrinkTopic">SELECT A DRINK</string>
+    <string name="addAmountTopic">Select Amount</string>
 
 
 </resources>

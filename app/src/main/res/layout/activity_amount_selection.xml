@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/projectBgcolor"
+    tools:context=".amount_selection">
+
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="265dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/projectBtns"
+        android:fontFamily="@font/cambo"
+        android:text="@string/addAmountTopic"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="284dp"
+        android:layout_height="247dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded_corners"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView37"
+        app:srcCompat="@drawable/waterdrinknew" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="129dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/capriola"
+        android:text="@string/drink1"
+        android:textColor="@color/projectText"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+
+    <SeekBar
+        android:id="@+id/seekBarAmnt"
+        android:layout_width="347dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="72dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="@color/popUpbtn"
+        android:max="1000"
+        android:progress="0"
+        app:layout_constraintBottom_toTopOf="@+id/btnAmountSelected"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/capriola"
+        android:text="@string/addAmountTopic"
+        android:textColor="@color/projectText"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/seekBarAmnt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView38"
+        app:layout_constraintVertical_bias="0.14" />
+
+    <TextView
+        android:id="@+id/textAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="84dp"
+        android:fontFamily="@font/capriola"
+        android:textColor="@color/projectText"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarAmnt"
+        app:layout_constraintVertical_bias="0.146" />
+
+    <Button
+        android:id="@+id/btnAmountSelected"
+        android:layout_width="111dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_corners"
+        android:fontFamily="@font/aldrich"
+        android:text="Done"
+        android:textColor="@color/prjctBtnTextclr"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

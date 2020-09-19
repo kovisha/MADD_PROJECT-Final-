@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Flavored_Water"></activity>
+        <activity android:name=".Dashboard_Male"></activity>
+        <activity android:name=".amount_coffee" />
+        <activity android:name=".select_drink" />
+        <activity android:name=".amount_juice" />
+        <activity android:name=".amount_tea" />
+        <activity android:name=".amount_milk" />
+        <activity android:name=".amount_selection" />
+        <activity android:name=".select_drink_amount" />
+        <activity android:name=".addition_of_drink" />
+        <activity android:name=".Flavored_Water" />
         <activity android:name=".settings_changeExercise" />
         <activity android:name=".settings_changeUnit" />
         <activity android:name=".Settings" />
