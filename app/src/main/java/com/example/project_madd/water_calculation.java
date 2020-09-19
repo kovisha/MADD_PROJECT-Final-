@@ -12,12 +12,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class water_calculation extends AppCompatActivity {
+public class water_calculation extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
 
     Button waterCalc;
@@ -27,10 +28,6 @@ public class water_calculation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_water_calculation);
 
-        /*List<String> list = new ArrayList<>();
-        list.add("Metrics");
-        list.add("Imperial");
-        list.add("US");*/
 
         //spinner for units
         Spinner spinnerUnit = (Spinner) findViewById(R.id.UnitSpinner);
@@ -40,18 +37,7 @@ public class water_calculation extends AppCompatActivity {
 
         myAdapter.setDropDownViewResource(R.layout.custom_spinner_dropdown);
         spinnerUnit.setAdapter(myAdapter);
-
-        /*spinnerUnit.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                String itemVal = adapterView.getItemAtPosition(position).toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });*/
+        spinnerUnit.setOnItemSelectedListener(this);
 
 
         //spinner for exercise
@@ -109,13 +95,13 @@ public class water_calculation extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
+    }
 
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
 
-
-
-
-
-
-
+    }
 }
