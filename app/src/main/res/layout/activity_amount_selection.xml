@@ -98,9 +98,26 @@
         android:fontFamily="@font/aldrich"
         android:text="Done"
         android:textColor="@color/prjctBtnTextclr"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintEnd_toStartOf="@+id/btnCancelDrink"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnCancelDrink"
+        android:layout_width="111dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="56dp"
+        android:background="@drawable/rounded_corners"
+        android:fontFamily="@font/aldrich"
+        android:onClick="cancelDrink"
+        android:text="@android:string/cancel"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textColorHighlight="@color/prjctBtnTextclr"
+        android:textColorLink="@color/prjctBtnTextclr"
+        android:textCursorDrawable="@color/prjctBtnTextclr"
+        android:textSize="22sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnAmountSelected"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

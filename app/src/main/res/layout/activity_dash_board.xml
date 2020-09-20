@@ -17,6 +17,7 @@
         android:onClick="PeriodHome"
         android:text="@string/PeriodsDashboard"
         android:textColor="@color/prjctBtnTextclr"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
@@ -34,6 +35,7 @@
         android:onClick="WaterHome"
         android:text="@string/WaterDashboard"
         android:textColor="@color/prjctBtnTextclr"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/btnBMI"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.547"
@@ -51,6 +53,7 @@
         android:fontFamily="@font/aldrich"
         android:text="@string/BMIDashboard"
         android:textColor="@color/prjctBtnTextclr"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btnMens"
         app:layout_constraintStart_toStartOf="@+id/btnMens" />

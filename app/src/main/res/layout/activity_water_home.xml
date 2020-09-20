@@ -250,8 +250,9 @@
 
     <Button
         android:id="@+id/btnWaterDone"
-        android:layout_width="110dp"
-        android:layout_height="53dp"
+        android:layout_width="128dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="64dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/aldrich"
         android:onClick="CalcWater"
@@ -259,28 +260,26 @@
         android:text="DONE"
         android:textColor="@color/prjctBtnTextclr"
         android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox5"
-        app:layout_constraintVertical_bias="0.325" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnCancelGoals"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnCancelGoals"
         android:layout_width="138dp"
         android:layout_height="44dp"
+        android:layout_marginEnd="40dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/aldrich"
+        android:onClick="exit"
         android:text="@android:string/cancel"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnWaterDone"
         app:layout_constraintTop_toBottomOf="@+id/checkBox5"
-        app:layout_constraintVertical_bias="0.823" /><![CDATA[
+        app:layout_constraintVertical_bias="0.422" /><![CDATA[
 
 
 

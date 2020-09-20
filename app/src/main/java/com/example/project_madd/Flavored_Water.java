@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Flavored_Water extends AppCompatActivity {
 
@@ -27,7 +28,9 @@ public class Flavored_Water extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(Intent.ACTION_VIEW,
                         Uri.parse("https://www.slenderkitchen.com/article/how-to-calculate-how-much-water-you-should-drink-a-day#:~:text=Multiply%20by%202%2F3%3A%20Next,ounces%20of%20water%20every%20day"));
-                        startActivity(i);
+                Toast.makeText(getApplicationContext(), "Redirecting to Browser!", Toast.LENGTH_SHORT).show();
+                startActivity(i);
+
             }
         });
 

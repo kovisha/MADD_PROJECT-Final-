@@ -1,9 +1,11 @@
 package com.example.project_madd;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -138,5 +140,37 @@ public class Settings extends AppCompatActivity {
 
            myDialog.show();
        }
+
+
+       public void deleteRecords(View v){
+           AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+           // Setting Alert Dialog Title
+           alertDialogBuilder.setTitle("Cancel Drink!!");
+           // Icon Of Alert Dialog
+           alertDialogBuilder.setIcon(R.drawable.warning);
+           // Setting Alert Dialog Message
+           alertDialogBuilder.setMessage("Are You sure? Do you want to delete your water records?");
+           alertDialogBuilder.setCancelable(false);
+
+           alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+
+               @Override
+               public void onClick(DialogInterface arg0, int arg1) {
+                   Toast.makeText(Settings.this, "Your records are deleted!", Toast.LENGTH_SHORT).show();
+               }
+           });
+
+           alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+               @Override
+               public void onClick(DialogInterface dialog, int which) {
+                   Toast.makeText(Settings.this, "Great! Your records are safe!", Toast.LENGTH_SHORT).show();
+               }
+           });
+
+
+           AlertDialog alertDialog = alertDialogBuilder.create();
+           alertDialog.show();
+       }
+
 
 }

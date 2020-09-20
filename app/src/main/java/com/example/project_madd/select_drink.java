@@ -32,6 +32,7 @@ public class select_drink extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(select_drink.this,amount_selection.class);
+                Toast.makeText(getApplicationContext(),"You Selected Water",Toast.LENGTH_SHORT).show();
                 startActivity(i);
             }
         });
@@ -40,6 +41,7 @@ public class select_drink extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(select_drink.this,amount_coffee.class);
+                Toast.makeText(getApplicationContext(),"You Selected Coffee",Toast.LENGTH_SHORT).show();
                 startActivity(i);
             }
         });
@@ -48,6 +50,7 @@ public class select_drink extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(select_drink.this,amount_milk.class);
+                Toast.makeText(getApplicationContext(),"You Selected Milk",Toast.LENGTH_SHORT).show();
                 startActivity(i);
             }
         });
@@ -56,6 +59,7 @@ public class select_drink extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(select_drink.this,amount_tea.class);
+                Toast.makeText(getApplicationContext(),"You Selected Tea",Toast.LENGTH_SHORT).show();
                 startActivity(i);
             }
         });
@@ -64,6 +68,7 @@ public class select_drink extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(select_drink.this,amount_juice.class);
+                Toast.makeText(getApplicationContext(),"You Selected Juices",Toast.LENGTH_SHORT).show();
                 startActivity(i);
             }
         });

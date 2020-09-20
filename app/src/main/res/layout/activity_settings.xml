@@ -101,7 +101,7 @@
         android:onClick="changeUnits"
         android:text="@string/settings_unit"
         android:textColor="@color/prjctBtnTextclr"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.742"
@@ -144,7 +144,7 @@
         android:onClick="changeGoals"
         android:text="@string/settings_goals"
         android:textColor="@color/prjctBtnTextclr"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.83"
@@ -194,34 +194,35 @@
 
     <Button
         android:id="@+id/btnChangeExerciseTime"
-        android:layout_width="153dp"
-        android:layout_height="56dp"
+        android:layout_width="165dp"
+        android:layout_height="51dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/aldrich"
         android:onClick="changeExercise"
         android:text="@string/settings_exercise"
         android:textColor="@color/prjctBtnTextclr"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintHorizontal_bias="0.821"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.594" />
 
     <Button
         android:id="@+id/btnDeleteRecords"
-        android:layout_width="355dp"
-        android:layout_height="71dp"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/aldrich"
+        android:onClick="deleteRecords"
         android:text="@string/settings_delete"
         android:textColor="@color/prjctBtnTextclr"
-        android:textSize="25sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.762" />
+        app:layout_constraintVertical_bias="0.786" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

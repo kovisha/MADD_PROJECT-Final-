@@ -93,14 +93,33 @@
         android:id="@+id/btnMilkAmount"
         android:layout_width="111dp"
         android:layout_height="41dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/aldrich"
         android:text="Done"
         android:textColor="@color/prjctBtnTextclr"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"  />
+        app:layout_constraintEnd_toStartOf="@+id/btnCancelMilk"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnCancelMilk"
+        android:layout_width="111dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="72dp"
+        android:background="@drawable/rounded_corners"
+        android:fontFamily="@font/aldrich"
+        android:onClick="cancelMilk"
+        android:text="@android:string/cancel"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textColorHighlight="@color/prjctBtnTextclr"
+        android:textColorHint="@color/prjctBtnTextclr"
+        android:textColorLink="@color/prjctBtnTextclr"
+        android:textCursorDrawable="@color/prjctBtnTextclr"
+        android:textSize="22sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnMilkAmount"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
