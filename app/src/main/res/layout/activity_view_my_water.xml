@@ -31,80 +31,45 @@
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65">
+        app:layout_constraintVertical_bias="0.69">
 
         <TextView
-            android:id="@+id/textView13"
-            android:layout_width="match_parent"
+            android:id="@+id/DrankAmt"
+            android:layout_width="400dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/btnColor"
             android:fontFamily="@font/capriola"
-            android:text="@string/waterAmount"
+            android:text="500ml"
+            android:textAlignment="textEnd"
+            android:textColor="@color/prjctBtnTextclr"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/btnColor"
+            android:fontFamily="@font/capriola"
+            android:text="of"
             android:textAlignment="center"
             android:textColor="@color/prjctBtnTextclr"
             android:textSize="24sp" />
+
+
+        <TextView
+            android:id="@+id/totalAmt"
+            android:layout_width="400dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/btnColor"
+            android:fontFamily="@font/capriola"
+            android:text="2000ml"
+            android:textAlignment="textStart"
+            android:textColor="@color/prjctBtnTextclr"
+            android:textSize="24sp" />
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="107dp"
-        android:layout_height="104dp"
-        android:background="@drawable/waterdrinknew"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.802"></LinearLayout>
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="118dp"
-        android:layout_height="33dp"
-        android:fontFamily="@font/capriola"
-        android:text="Water 200ml"
-        android:textAlignment="center"
-        android:textColor="@color/txtColor"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.879" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout5"
-        android:layout_width="113dp"
-        android:layout_height="102dp"
-        android:background="@drawable/teanew"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.799">
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="118dp"
-        android:layout_height="42dp"
-        android:fontFamily="@font/capriola"
-        android:text="Tea 200ml"
-        android:textAlignment="center"
-        android:textColor="@color/txtColor"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.891" />
 
     <Button
         android:id="@+id/btnAddDrink"
@@ -138,5 +103,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.974" />
+
+    <TextView
+        android:id="@+id/txtRemaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:fontFamily="@font/capriola"
+        android:text="Remaining : "
+        android:textColor="@color/projectText"
+        android:textColorHighlight="@color/projectText"
+        android:textColorHint="@color/projectText"
+        android:textColorLink="@color/projectText"
+        android:textCursorDrawable="@color/projectText"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnMoreWater"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="0.503" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/capriola"
+        android:text="1500ml"
+        android:textColor="@color/projectText"
+        android:textColorHighlight="@color/projectText"
+        android:textColorHint="@color/projectText"
+        android:textColorLink="@color/projectText"
+        android:textCursorDrawable="@color/projectText"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddDrink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintStart_toEndOf="@+id/txtRemaining"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="0.505" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
