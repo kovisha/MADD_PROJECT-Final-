@@ -108,7 +108,7 @@
         android:layout_height="81dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/projectBtns"
-        android:onClick="confirmPeriodLength"
+        android:elevation="@android:dimen/thumbnail_width"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.942"
@@ -159,6 +159,33 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.702"
         app:srcCompat="@drawable/ic_baseline_info_24" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="84dp"
+        android:layout_height="96dp"
+        android:elevation="@android:dimen/thumbnail_width"
+        app:layout_constraintBottom_toBottomOf="@+id/PlengthSettingBtn"
+        app:layout_constraintEnd_toEndOf="@+id/PlengthSettingBtn"
+        app:layout_constraintHorizontal_bias="0.612"
+        app:layout_constraintStart_toStartOf="@+id/PlengthSettingBtn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_baseline_check_24" />
+
+    <Button
+        android:id="@+id/SaveBtn"
+        android:layout_width="234dp"
+        android:layout_height="71dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="@color/btnColor"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.916" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

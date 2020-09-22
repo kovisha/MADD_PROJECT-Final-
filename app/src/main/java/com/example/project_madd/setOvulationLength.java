@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,9 +19,14 @@ import android.widget.Toast;
 
 public class setOvulationLength extends AppCompatActivity {
 
+    Button btSave,btGo;
     Button ovuleLengthSet , incFertile , deFertile;
     TextView fertilityLength , tv4;
     int counterFertile;
+
+    SharedPreferences sharedPreferences;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,10 +54,37 @@ public class setOvulationLength extends AppCompatActivity {
                 tv4.setText(counterFertile + " Days");
             }
         });
+
+        btSave = findViewById(R.id.SaveBtn);
+        btGo = findViewById(R.id.FertileLengthbtnSet);
+
+        btSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sharedPreferences = getSharedPreferences("SaveData2", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("Value2",tv4.getText().toString());
+                editor.apply();
+            }
+        });
+
+        btGo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myintent = new Intent(getApplicationContext(),PeriodSettingsHome.class);
+                startActivity(myintent);
+            }
+        });
+
+
     }
 
 
-    public void confirmFertilityLength(View view){
+
+
+
+
+    /*public void confirmFertilityLength(View view){
 
         ovuleLengthSet = findViewById(R.id.FertileLengthbtnSet);
         ovuleLengthSet.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +102,7 @@ public class setOvulationLength extends AppCompatActivity {
             }
         });
 
-    }
+    }*/
 
     public void OvulationInfoMessage(View view){
         final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);

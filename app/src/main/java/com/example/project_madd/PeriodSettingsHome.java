@@ -3,7 +3,9 @@ package com.example.project_madd;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,25 +17,73 @@ public class PeriodSettingsHome extends AppCompatActivity {
 
     Button PeriodLength , CycleLength , OvuLength;
     String periodLength , PCycleLength , fertilityLength ,  AvgCycleLength;
-    TextView tv1;
+    TextView tvOvule , tvGo,tvPeriod;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_period_settings_home);
 
         Intent intent = getIntent();
-        Intent switchIntent = getIntent();//get intent for switch on state
+        Intent myintent = getIntent();
 
-        periodLength = intent.getStringExtra("PeriodSetLength"); //getting the user decided period length
+        /**************************************setting the user preferred cyclelength*************************************************/
+        tvGo = findViewById(R.id.getCycleLength);
 
-        TextView tv = findViewById(R.id.getPeriodLength); //setting the user decided period length
-        tv.setText(periodLength);
+        SharedPreferences result = getSharedPreferences("SaveData", Context.MODE_PRIVATE);
 
-        /*Handling the cycle length with avg and user entered value and switch*/
-        PCycleLength = intent.getStringExtra("CycleSetLength"); //getting the user decided cycle length
+        String value = result.getString("Value","Data Not found");
+
+        tvGo.setText(value);
+        /*********************************************End of user preferred cycleLength*********************************************/
+
+
+
+
+        /**************************************setting the user preferred ovulationLength*************************************************/
+        tvOvule = findViewById(R.id.getOvulationLength); //setting the user decided period length
+
+        SharedPreferences result2 = getSharedPreferences("SaveData2", Context.MODE_PRIVATE);
+
+        String value2 = result2.getString("Value2","Data Not found");
+
+        tvOvule.setText(value2);
+
+        /*********************************************End of user preferred ovuleLength*********************************************/
+
+
+        /**************************************setting the user preferred PeriodLength*************************************************/
+
+        tvPeriod=findViewById(R.id.getPeriodLength);
+
+        SharedPreferences result3 = getSharedPreferences("SaveData3", Context.MODE_PRIVATE);
+
+        String value3 = result3.getString("Value3","Data Not found");
+
+        tvPeriod.setText(value3);
+
+
+
+
+        /*********************************************End of user preferred ovuleLength*********************************************/
+
+
+
+
+
+
+
+
+
+
+        /****************Handling the cycle length with avg and user entered value and switch*****************/
+
+       /* PCycleLength = intent.getStringExtra("CycleSetLength"); //getting the user decided cycle length
         AvgCycleLength = switchIntent.getStringExtra("AverageValue");//getting the avg value through switch
 
-        if(PCycleLength == null){
+        if(PCycleLength == ""){
             tv1 = findViewById(R.id.getCycleLength);
             tv1.setText(AvgCycleLength);
         }
@@ -45,10 +95,9 @@ public class PeriodSettingsHome extends AppCompatActivity {
 
         /* End of Handling the cycle length with avg and user entered value and switch*/
 
-        fertilityLength = intent.getStringExtra("FertilitySetLength"); //getting the user decided fertile length
+        //fertilityLength = intent.getStringExtra("FertilitySetLength"); //getting the user decided fertile length
 
-        TextView tv2 = findViewById(R.id.getOvulationLength);
-        tv2.setText(fertilityLength);
+
 
 
 

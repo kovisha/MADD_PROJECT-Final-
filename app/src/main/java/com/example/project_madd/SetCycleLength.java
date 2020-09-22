@@ -6,24 +6,32 @@ import androidx.appcompat.widget.SwitchCompat;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SetCycleLength extends AppCompatActivity {
 
+
+    Button btSave,btGo;
     Button inc1, dec1, pCycleLengthConfirm;
     TextView tv1;
     int count1;
-    TextView calCycleLength;
-    SwitchCompat simpleSwitch;
+    //TextView calCycleLength;
+     //SwitchCompat simpleSwitch;
+
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,48 +61,98 @@ public class SetCycleLength extends AppCompatActivity {
             }
         });
 
+        btSave = findViewById(R.id.SaveBtn);
+        btGo = findViewById(R.id.CLengthSetButtn);
 
-
-
-    }
-
-    public void onSwitchMoment(View view){
-        simpleSwitch = findViewById(R.id.switch2);
-
-        boolean result = simpleSwitch.isChecked();
-
-        simpleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean result) {
-
-                Intent switchIntent = new Intent(SetCycleLength.this,PeriodSettingsHome.class);
-
-                switchIntent.putExtra("AverageValue",28);
-                startActivity(switchIntent);
-            }
-        });
-
-    }
-
-    public void confirmCycleLength(View view) {
-
-        pCycleLengthConfirm = findViewById(R.id.CLengthSetButtn);
-        pCycleLengthConfirm.setOnClickListener(new View.OnClickListener() {
+        btSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                calCycleLength = findViewById(R.id.calCycleLength);
-                String userCycleLength = calCycleLength.getText().toString();
-
-                Intent intent = new Intent(SetCycleLength.this, PeriodSettingsHome.class);
-
-                intent.putExtra("CycleSetLength", userCycleLength);
-
-                startActivity(intent);
-
+                sharedPreferences = getSharedPreferences("SaveData", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("Value",tv1.getText().toString());
+                editor.apply();
             }
         });
 
+        btGo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),PeriodSettingsHome.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
+
+
+ /*public void switchConfirmCycleLength(View view){
+
+
+     simpleSwitch = findViewById(R.id.switch2);//getting the id of switch
+
+     //Save switch state in shared preferences
+     SharedPreferences sharedPreferences = getSharedPreferences("save",MODE_PRIVATE);
+     simpleSwitch.setChecked(sharedPreferences.getBoolean("value",true));
+
+     simpleSwitch.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
+
+             if(simpleSwitch.isChecked()){
+                 SharedPreferences.Editor editor = getSharedPreferences("save",MODE_PRIVATE).edit();
+                 editor.putBoolean("value",true);
+                 editor.apply();
+                 simpleSwitch.setChecked(true);
+
+                 Toast.makeText(SetCycleLength.this, "switchActivated", Toast.LENGTH_SHORT).show();
+
+                 Intent switchIntent = new Intent(SetCycleLength.this, PeriodSettingsHome.class);
+
+                 switchIntent.putExtra("AverageValue", 28);
+                 startActivity(switchIntent);
+
+             }
+             else{
+                 SharedPreferences.Editor editor = getSharedPreferences("save",MODE_PRIVATE).edit();
+                 editor.putBoolean("value",false);
+                 editor.apply();
+                 simpleSwitch.setChecked(false);
+
+             }
+         }
+     });
+
+ }
+
+ public void buttoncnfrmCycleLength(View view){
+     pCycleLengthConfirm = findViewById(R.id.CLengthSetButtn);
+
+     pCycleLengthConfirm.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
+             calCycleLength = findViewById(R.id.calCycleLength); //getting the user input cycle length
+
+              String userCycleLength = calCycleLength.getText().toString();
+
+
+             Toast.makeText(SetCycleLength.this, "switchInActivated", Toast.LENGTH_SHORT).show();
+             Intent intent = new Intent(SetCycleLength.this, PeriodSettingsHome.class);
+
+             intent.putExtra("CycleSetLength", userCycleLength);
+
+             startActivity(intent);
+
+         }
+     });
+
+ }*/
+
+
+
+
+
+
 
     public void cycleInfoMessage(View view){
         final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);

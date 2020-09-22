@@ -48,10 +48,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.557"
+        app:layout_constraintHorizontal_bias="0.651"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354" />
+        app:layout_constraintVertical_bias="0.355" />
 
     <Button
         android:id="@+id/decrement2"
@@ -66,15 +66,15 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.858"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354" />
+        app:layout_constraintVertical_bias="0.353" />
 
     <TextView
         android:id="@+id/calCycleLength"
-        android:layout_width="135dp"
-        android:layout_height="59dp"
+        android:layout_width="195dp"
+        android:layout_height="61dp"
         android:fontFamily="@font/capriola"
         android:hint="@string/CalHint"
         android:textColor="@color/projectText"
@@ -125,11 +125,10 @@
         android:backgroundTint="@color/projectBtns"
         android:elevation="@android:dimen/thumbnail_width"
         android:icon="@drawable/ic_baseline_thumb_up_24"
-        android:onClick="confirmCycleLength"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.952"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/CycleLengthCaption"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.058" />
 
@@ -138,7 +137,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:onClick="onSwitchMoment"
         android:textOff="Off"
         android:textOn="On"
         android:thumb="@drawable/thumb1"
@@ -163,4 +161,29 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.792"
         app:srcCompat="@drawable/ic_baseline_info_24" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="88dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="36dp"
+        android:elevation="@android:dimen/thumbnail_width"
+        app:layout_constraintEnd_toEndOf="@+id/CLengthSetButtn"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="@+id/CLengthSetButtn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_check_24" />
+
+    <Button
+        android:id="@+id/SaveBtn"
+        android:layout_width="304dp"
+        android:layout_height="51dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="@color/btnColor"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.914" />
 </androidx.constraintlayout.widget.ConstraintLayout>

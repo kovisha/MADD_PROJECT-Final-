@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,11 +20,13 @@ import android.widget.TextView;
 
 public class SetPeriodLength extends AppCompatActivity {
 
+    Button btSave,btGo;
     Button inc , dec , PLenConfirm;
     TextView tv;
     int count;
     TextView periodLength;
 
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +55,30 @@ public class SetPeriodLength extends AppCompatActivity {
            }
        });
 
+       btSave = findViewById(R.id.SaveBtn);
+       btGo=findViewById(R.id.PlengthSettingBtn);
+
+       btSave.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               sharedPreferences = getSharedPreferences("SaveData3", Context.MODE_PRIVATE);
+               SharedPreferences.Editor editor = sharedPreferences.edit();
+               editor.putString("Value3",tv.getText().toString());
+               editor.apply();
+           }
+       });
+
+       btGo.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent = new Intent(getApplicationContext(),PeriodSettingsHome.class);
+               startActivity(intent);
+           }
+       });
+
     }
 
-    public void confirmPeriodLength(View view){
+   /* public void confirmPeriodLength(View view){
 
             PLenConfirm = findViewById(R.id.PlengthSettingBtn);
             PLenConfirm.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +96,7 @@ public class SetPeriodLength extends AppCompatActivity {
                 }
             });
 
-    }
+    }*/
 
     public void PeriodInfoMessage(View view){
         final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
