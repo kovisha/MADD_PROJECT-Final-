@@ -79,7 +79,7 @@ public class Settings extends AppCompatActivity {
             btnGoals.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent1 = new Intent(Settings.this,Water_home.class);
+                    Intent intent1 = new Intent(Settings.this,settings_goals.class);
                     startActivity(intent1);
                 }
             });
@@ -145,7 +145,7 @@ public class Settings extends AppCompatActivity {
        public void deleteRecords(View v){
            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
            // Setting Alert Dialog Title
-           alertDialogBuilder.setTitle("Cancel Drink!!");
+           alertDialogBuilder.setTitle("Delete Record!!");
            // Icon Of Alert Dialog
            alertDialogBuilder.setIcon(R.drawable.warning);
            // Setting Alert Dialog Message
@@ -170,6 +170,37 @@ public class Settings extends AppCompatActivity {
 
            AlertDialog alertDialog = alertDialogBuilder.create();
            alertDialog.show();
+       }
+
+       public void resetRecords(View v){
+           AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+           // Setting Alert Dialog Title
+           alertDialogBuilder.setTitle("Reset Record!");
+           // Icon Of Alert Dialog
+           alertDialogBuilder.setIcon(R.drawable.warning);
+           // Setting Alert Dialog Message
+           alertDialogBuilder.setMessage("Reset Records???");
+           alertDialogBuilder.setCancelable(false);
+
+           alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+
+               @Override
+               public void onClick(DialogInterface arg0, int arg1) {
+                   Toast.makeText(Settings.this, "Your records are reset!", Toast.LENGTH_SHORT).show();
+               }
+           });
+
+           alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+               @Override
+               public void onClick(DialogInterface dialog, int which) {
+                   Toast.makeText(Settings.this, "Your records were not reset!", Toast.LENGTH_SHORT).show();
+               }
+           });
+
+
+           AlertDialog alertDialog = alertDialogBuilder.create();
+           alertDialog.show();
+
        }
 
 

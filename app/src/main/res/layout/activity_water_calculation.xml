@@ -7,7 +7,8 @@
     android:background="@color/bg"
     android:scrollbarThumbHorizontal="@color/WaterHomeText"
     android:scrollbarThumbVertical="@color/WaterHomeText"
-    tools:context=".water_calculation">
+    tools:context=".water_calculation"
+    tools:ignore="ExtraText">
 
     <TextView
         android:id="@+id/textView2"
@@ -40,20 +41,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.298" />
 
-    <Spinner
-        android:id="@+id/UnitSpinner"
-        android:layout_width="168dp"
-        android:layout_height="34dp"
-        android:fontFamily="@font/cambo"
-        android:scrollbarThumbHorizontal="@color/colorAccentHome"
-        android:scrollbarThumbVertical="@color/colorPrimary"
-        android:textSize="12sp"
-        android:entries="@array/units_array"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.294" />
+        <Spinner
+            android:id="@+id/UnitSpinner"
+            android:layout_width="168dp"
+            android:layout_height="34dp"
+            android:fontFamily="@font/cambo"
+            android:scrollbarThumbHorizontal="@color/colorAccentHome"
+            android:scrollbarThumbVertical="@color/colorPrimary"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintVertical_bias="0.294" />
+
+
 
     <TextView
         android:id="@+id/exerciseSpinner"

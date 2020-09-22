@@ -29,6 +29,16 @@
         <item>Imperial</item>
         <item>US</item>
     </string-array>
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
 
     <string-array name="exercise_array">
         <item>00 minutes</item>
@@ -89,6 +99,7 @@
     /*-----------------------NEW STRINGS---------------------------------------------*/
     <string name="addDrinkTopic">SELECT A DRINK</string>
     <string name="addAmountTopic">Select Amount</string>
+    <string name="resetWater">Reset My Water</string>
 
 
 </resources>

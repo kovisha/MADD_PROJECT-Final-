@@ -28,9 +28,14 @@ public class water_calculation extends AppCompatActivity implements AdapterView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_water_calculation);
 
+        //Spinner spinner = (Spinner) findViewById(R.id.UnitSpinner);
 
+        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+          //      R.array.planets_array, android.R.layout.simple_spinner_item);
+        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+       // spinner.setAdapter(adapter);
         //spinner for units
-        Spinner spinnerUnit = (Spinner) findViewById(R.id.UnitSpinner);
+       Spinner spinnerUnit = (Spinner) findViewById(R.id.UnitSpinner);
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(water_calculation.this,
                 R.layout.custom_spinner,
                 getResources().getStringArray(R.array.units_array));
@@ -38,7 +43,6 @@ public class water_calculation extends AppCompatActivity implements AdapterView.
         myAdapter.setDropDownViewResource(R.layout.custom_spinner_dropdown);
         spinnerUnit.setAdapter(myAdapter);
         spinnerUnit.setOnItemSelectedListener(this);
-
 
         //spinner for exercise
         Spinner spinnerExercise = (Spinner) findViewById(R.id.exercise_spinner);
@@ -51,6 +55,14 @@ public class water_calculation extends AppCompatActivity implements AdapterView.
 
 
     }
+    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+        
+    }
+
+    public void onNothingSelected(AdapterView<?> parent) {
+        // Another interface callback
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -95,13 +107,5 @@ public class water_calculation extends AppCompatActivity implements AdapterView.
     }
 
 
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
 }

@@ -51,20 +51,19 @@
 
     <Switch
         android:id="@+id/reminderSwitch"
-        android:layout_width="161dp"
+        android:layout_width="63dp"
         android:layout_height="37dp"
+        android:layout_marginEnd="12dp"
         android:background="@color/projectBgcolor"
         android:fontFamily="@font/bubblegum_sans"
-        android:text="@string/settings_reminder"
         android:textColor="@color/prjctBtnTextclr"
         android:textColorHint="@color/prjctBtnTextclr"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.771"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.159" />
+        app:layout_constraintVertical_bias="0.155"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <View
         android:id="@+id/divider8"
@@ -104,10 +103,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.742"
+        app:layout_constraintHorizontal_bias="0.78"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298" />
+        app:layout_constraintVertical_bias="0.294" />
 
     <View
         android:id="@+id/divider12"
@@ -147,10 +146,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintHorizontal_bias="0.831"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.452" />
+        app:layout_constraintVertical_bias="0.445" />
 
     <View
         android:id="@+id/divider13"
@@ -207,22 +206,58 @@
         app:layout_constraintHorizontal_bias="0.821"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.594" />
+        app:layout_constraintVertical_bias="0.597" />
 
     <Button
         android:id="@+id/btnDeleteRecords"
         android:layout_width="338dp"
         android:layout_height="46dp"
+        android:layout_marginBottom="48dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/aldrich"
         android:onClick="deleteRecords"
         android:text="@string/settings_delete"
         android:textColor="@color/prjctBtnTextclr"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnResetRecords"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/divider14"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnResetRecords"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/rounded_corners"
+        android:fontFamily="@font/aldrich"
+        android:onClick="resetRecords"
+        android:text="@string/resetWater"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.786" />
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnReminder"
+        android:layout_width="115dp"
+        android:layout_height="44dp"
+        android:background="@drawable/rounded_corners"
+        android:fontFamily="@font/aldrich"
+        android:text="@string/settings_reminder"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textColorHighlight="@color/prjctBtnTextclr"
+        android:textColorHint="@color/prjctBtnTextclr"
+        android:textColorLink="@color/prjctBtnTextclr"
+        android:textCursorDrawable="@color/prjctBtnTextclr"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/reminderSwitch"
+        app:layout_constraintEnd_toStartOf="@+id/reminderSwitch"
+        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
