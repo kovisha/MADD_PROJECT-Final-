@@ -68,7 +68,7 @@ public class water_calculation extends AppCompatActivity{
             public void onClick(View view) {
                 Intent intent = new Intent(water_calculation.this
                         , viewMyWater.class);
-
+                Toast.makeText(getApplicationContext(),"Calculating Your Water",Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
         });

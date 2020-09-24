@@ -7,9 +7,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -52,6 +55,22 @@ public class amount_selection extends AppCompatActivity {
         btnWaterSelected.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+               // Intent i = new Intent(amount_selection.this,viewMyWater.class);
+                //startActivity(i);
+
+                //Creating the LayoutInflater instance
+                LayoutInflater li = getLayoutInflater();
+
+                //Getting the View object as defined in the custom toast.xml file
+                View layout = li.inflate(R.layout.custom_toast_water,(ViewGroup) findViewById(R.id.custom_toast_water));
+
+                //Creating the Toast object
+                Toast toast = new Toast(getApplicationContext());
+                toast.setDuration(Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+                toast.setView(layout);
+                toast.show();
+
                 Intent i = new Intent(amount_selection.this,viewMyWater.class);
                 startActivity(i);
             }

@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlarmManager;
 import android.app.Dialog;
+import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,6 +18,8 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 public class Settings extends AppCompatActivity {
 
@@ -45,6 +49,19 @@ public class Settings extends AppCompatActivity {
                     editor.apply();
                     switch1.setChecked(true);
                     Toast.makeText(getApplicationContext(),"Reminders On" , Toast.LENGTH_SHORT).show();
+
+
+                    Calendar cal = Calendar.getInstance();
+
+                    cal.set(Calendar.HOUR_OF_DAY,16);
+                    cal.set(Calendar.MINUTE,24);
+                    cal.set(Calendar.SECOND,25);
+
+                    Intent i = new Intent(getApplicationContext(),ReminderWater.class);
+                    PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),100,i,PendingIntent.FLAG_UPDATE_CURRENT);
+                    AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+                    alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,cal.getTimeInMillis(),AlarmManager.INTERVAL_HOUR,pendingIntent);
+
 
                 }else{
                     SharedPreferences.Editor editor = getSharedPreferences("save",MODE_PRIVATE).edit();
