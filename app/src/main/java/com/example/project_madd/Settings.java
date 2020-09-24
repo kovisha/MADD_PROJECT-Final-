@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,7 +20,7 @@ import android.widget.Toast;
 public class Settings extends AppCompatActivity {
 
     Switch switch1;
-    Button btnUnits , btnExercise, btnGoals;
+    Button btnExercise, btnGoals;
     Dialog myDialog;
 
     @Override
@@ -30,7 +31,35 @@ public class Settings extends AppCompatActivity {
         myDialog = new Dialog(this);
         //reminder Switch Method
         switch1 = (Switch) findViewById(R.id.reminderSwitch);
-        switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+        SharedPreferences sharedPreferences = getSharedPreferences("save", MODE_PRIVATE);
+        switch1.setChecked(sharedPreferences.getBoolean("value", true));
+
+        switch1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(switch1.isChecked()){
+                    SharedPreferences.Editor editor = getSharedPreferences("save",MODE_PRIVATE).edit();
+                    editor.putBoolean("value",true);
+                    editor.apply();
+                    switch1.setChecked(true);
+                    Toast.makeText(getApplicationContext(),"Reminders On" , Toast.LENGTH_SHORT).show();
+
+                }else{
+                    SharedPreferences.Editor editor = getSharedPreferences("save",MODE_PRIVATE).edit();
+                    editor.putBoolean("value",false);
+                    editor.apply();
+                    switch1.setChecked(false);
+                    Toast.makeText(getApplicationContext(),"Reminders Off" , Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+        });
+
+
+        /*switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(b == true){
@@ -39,7 +68,7 @@ public class Settings extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Reminders Off" , Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
 
 
     }
@@ -112,25 +141,11 @@ public class Settings extends AppCompatActivity {
         });
        }*/
 
-       public void changeExercise(View view){
+       public void changeExercise(View view) {
            //btnExercise = findViewById(R.id.btnChangeExerciseTime);
            myDialog.setContentView(R.layout.popup);
-           btnExercise = (Button)myDialog.findViewById(R.id.btnChangeExerciseTime);
-           Button btnReset = (Button)myDialog.findViewById(R.id.btnSetTime);
-           btnReset.setOnClickListener(new View.OnClickListener() {
-               @Override
-               public void onClick(View view) {
-                   myDialog.dismiss();
-               }
-           });
-
-           myDialog.show();
-       }
-
-       public void changeUnits(View view){
-           myDialog.setContentView(R.layout.popup_unit);
-           btnUnits = (Button)myDialog.findViewById(R.id.btnChangeUnits);
-           Button btnReset = (Button)myDialog.findViewById(R.id.btnSetUnit);
+           btnExercise = (Button) myDialog.findViewById(R.id.btnChangeExerciseTime);
+           Button btnReset = (Button) myDialog.findViewById(R.id.btnSetTime);
            btnReset.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View view) {

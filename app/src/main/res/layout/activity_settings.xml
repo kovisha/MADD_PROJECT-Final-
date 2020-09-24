@@ -79,35 +79,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.235" />
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="87dp"
-        android:layout_height="71dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.286"
-        app:srcCompat="@drawable/scale" />
-
-    <Button
-        android:id="@+id/btnChangeUnits"
-        android:layout_width="120dp"
-        android:layout_height="48dp"
-        android:background="@drawable/rounded_corners"
-        android:fontFamily="@font/aldrich"
-        android:onClick="changeUnits"
-        android:text="@string/settings_unit"
-        android:textColor="@color/prjctBtnTextclr"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.78"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.294" />
-
     <View
         android:id="@+id/divider12"
         android:layout_width="409dp"
@@ -128,10 +99,10 @@
         android:layout_height="71dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintHorizontal_bias="0.164"
         app:layout_constraintStart_toStartOf="@+id/divider12"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.443"
+        app:layout_constraintVertical_bias="0.283"
         app:srcCompat="@drawable/goals" />
 
     <Button
@@ -146,10 +117,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.831"
+        app:layout_constraintHorizontal_bias="0.847"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.445" />
+        app:layout_constraintVertical_bias="0.307" />
 
     <View
         android:id="@+id/divider13"
@@ -171,10 +142,10 @@
         android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintHorizontal_bias="0.158"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.601"
+        app:layout_constraintVertical_bias="0.439"
         app:srcCompat="@drawable/time" />
 
     <View
@@ -203,16 +174,16 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.821"
+        app:layout_constraintHorizontal_bias="0.837"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.597" />
+        app:layout_constraintVertical_bias="0.438" />
 
     <Button
         android:id="@+id/btnDeleteRecords"
         android:layout_width="338dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/aldrich"
         android:onClick="deleteRecords"
@@ -222,15 +193,13 @@
         app:layout_constraintBottom_toTopOf="@+id/btnResetRecords"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/divider14"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnResetRecords"
         android:layout_width="338dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="164dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/aldrich"
         android:onClick="resetRecords"
@@ -240,7 +209,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/divider14"
+        app:layout_constraintVertical_bias="0.589" />
 
     <Button
         android:id="@+id/btnReminder"

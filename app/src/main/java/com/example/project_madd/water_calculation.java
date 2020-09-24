@@ -1,8 +1,10 @@
 package com.example.project_madd;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,7 +20,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class water_calculation extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class water_calculation extends AppCompatActivity{
 
 
     Button waterCalc;
@@ -28,39 +30,6 @@ public class water_calculation extends AppCompatActivity implements AdapterView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_water_calculation);
 
-        //Spinner spinner = (Spinner) findViewById(R.id.UnitSpinner);
-
-        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-          //      R.array.planets_array, android.R.layout.simple_spinner_item);
-        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-       // spinner.setAdapter(adapter);
-        //spinner for units
-       Spinner spinnerUnit = (Spinner) findViewById(R.id.UnitSpinner);
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(water_calculation.this,
-                R.layout.custom_spinner,
-                getResources().getStringArray(R.array.units_array));
-
-        myAdapter.setDropDownViewResource(R.layout.custom_spinner_dropdown);
-        spinnerUnit.setAdapter(myAdapter);
-        spinnerUnit.setOnItemSelectedListener(this);
-
-        //spinner for exercise
-        Spinner spinnerExercise = (Spinner) findViewById(R.id.exercise_spinner);
-        ArrayAdapter<String> myAdapter2 = new ArrayAdapter<String>(water_calculation.this,
-                R.layout.custom_spinner,
-                getResources().getStringArray(R.array.exercise_array));
-
-        myAdapter2.setDropDownViewResource(R.layout.custom_spinner_dropdown);
-        spinnerExercise.setAdapter(myAdapter2);
-
-
-    }
-    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-        
-    }
-
-    public void onNothingSelected(AdapterView<?> parent) {
-        // Another interface callback
     }
 
 
@@ -104,6 +73,37 @@ public class water_calculation extends AppCompatActivity implements AdapterView.
             }
         });
 
+    }
+
+    public void exitWaterTrack(View view){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        // Setting Alert Dialog Title
+        alertDialogBuilder.setTitle("Cancel!!");
+        // Icon Of Alert Dialog
+        alertDialogBuilder.setIcon(R.drawable.warning);
+        // Setting Alert Dialog Message
+        alertDialogBuilder.setMessage("Do you really want to cancel??");
+        alertDialogBuilder.setCancelable(false);
+
+        alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface arg0, int arg1) {
+                Intent i = new Intent(water_calculation.this,Water_home.class);
+                startActivity(i);
+            }
+        });
+
+        alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(water_calculation.this, "Great! You changed your mind", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
     }
 
 

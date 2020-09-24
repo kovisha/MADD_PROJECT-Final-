@@ -22,7 +22,7 @@
     <string name="preference">Select Your Preference</string>
     <string name="water_calculation_units">Unit : </string>
     <string name="water_calculation_weight">Weight : </string>
-    <string name="water_calculation_exercise">Exercise Time : </string>
+    <string name="water_calculation_exercise">Exercise Time In Minutes : </string>
 
     <string-array name="units_array">
         <item>Metric</item>
@@ -93,6 +93,11 @@
 
     <string name="chooseUnit">Select Unit</string>
     <string name="chooseTime">Select Time</string>
+    <string name="time1">00</string>
+    <string name="time2">30</string>
+    <string name="time3">45</string>
+    <string name="time4">60</string>
+    <string name="time5">90</string>
     <string name="changed">Reset</string>
 
 
