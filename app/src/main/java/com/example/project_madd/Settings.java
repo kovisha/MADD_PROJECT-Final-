@@ -19,6 +19,8 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.example.project_madd.Database.DBOpenHelper;
+
 import java.util.Calendar;
 
 public class Settings extends AppCompatActivity {
@@ -133,30 +135,6 @@ public class Settings extends AppCompatActivity {
         }
 
 
-     //navigate to change units
-        /*public void changeUnits(View view){
-            btnUnits = findViewById(R.id.btnChangeUnits);
-            btnUnits.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent2 = new Intent(Settings.this,settings_changeUnit.class);
-                    startActivity(intent2);
-                }
-            });
-        }*/
-
-
-     //navigate to change exercise time
-       /*public void changeExerciseTime(View view){
-        btnExercise = findViewById(R.id.btnChangeExerciseTime);
-        btnExercise.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent3 = new Intent(Settings.this, settings_changeExercise.class);
-                startActivity(intent3);
-            }
-        });
-       }*/
 
        public void changeExercise(View view) {
            //btnExercise = findViewById(R.id.btnChangeExerciseTime);
@@ -174,7 +152,8 @@ public class Settings extends AppCompatActivity {
        }
 
 
-       public void deleteRecords(View v){
+       //delete records----------------------------------------------------------------------------
+       public void deleteRecords(final View v){
            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
            // Setting Alert Dialog Title
            alertDialogBuilder.setTitle("Delete Record!!");
@@ -188,7 +167,8 @@ public class Settings extends AppCompatActivity {
 
                @Override
                public void onClick(DialogInterface arg0, int arg1) {
-                   Toast.makeText(Settings.this, "Your records are deleted!", Toast.LENGTH_SHORT).show();
+                    deleteData(v);
+                  // Toast.makeText(Settings.this, "Your records are deleted!", Toast.LENGTH_SHORT).show();
                }
            });
 
@@ -204,6 +184,8 @@ public class Settings extends AppCompatActivity {
            alertDialog.show();
        }
 
+
+       //--------------------------------- RESET RECORDS -------------------------------------------------------------------------------------------
        public void resetRecords(View v){
            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
            // Setting Alert Dialog Title
@@ -232,6 +214,18 @@ public class Settings extends AppCompatActivity {
 
            AlertDialog alertDialog = alertDialogBuilder.create();
            alertDialog.show();
+
+       }
+
+
+       //----------------------------------- METHOD TO CALL DELETE METHOD ----------------------------------------------------------------
+       public void deleteData(View view)
+       {
+           DBOpenHelper dbHelper=new DBOpenHelper(this);
+
+           dbHelper.deleteRecord();
+
+           Toast.makeText(this,"deleted successfully",Toast.LENGTH_SHORT).show();
 
        }
 

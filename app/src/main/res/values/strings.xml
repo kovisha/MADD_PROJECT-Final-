@@ -103,7 +103,7 @@
 
     /*-----------------------NEW STRINGS---------------------------------------------*/
     <string name="addDrinkTopic">SELECT A DRINK</string>
-    <string name="addAmountTopic">Select Amount</string>
+    <string name="addAmountTopic">Select Amount in ml</string>
     <string name="resetWater">Reset My Water</string>
 
 

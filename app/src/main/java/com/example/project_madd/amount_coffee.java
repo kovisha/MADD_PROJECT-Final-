@@ -7,13 +7,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.project_madd.Database.DBOpenHelper;
 
 public class amount_coffee extends AppCompatActivity {
 
@@ -33,7 +38,7 @@ public class amount_coffee extends AppCompatActivity {
         seekCoffee.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-                txtCoffee.setText(progress+" ml");
+                txtCoffee.setText(progress+" ");
             }
 
             @Override
@@ -47,15 +52,52 @@ public class amount_coffee extends AppCompatActivity {
             }
         });
 
-        btnCoffeeAmtSelected.setOnClickListener(new View.OnClickListener() {
+        /*btnCoffeeAmtSelected.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(amount_coffee.this,viewMyWater.class);
                 startActivity(i);
             }
-        });
+        });*/
     }
 
+    public void updateAmount(View view){
+        DBOpenHelper dbHelper=new DBOpenHelper(this);
+
+        Double amount = (Double.parseDouble(txtCoffee.getText().toString()))*0.8;
+
+
+        int val=dbHelper.updateInfo(amount);
+
+        if(val>0)
+        {
+
+            //Creating the LayoutInflater instance
+            LayoutInflater li = getLayoutInflater();
+
+            //Getting the View object as defined in the custom toast.xml file
+            View layout = li.inflate(R.layout.custom_toast_coffee,(ViewGroup) findViewById(R.id.custom_toast_coffee));
+
+            //Creating the Toast object
+            Toast toast = new Toast(getApplicationContext());
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+            toast.setView(layout);
+            toast.show();
+
+            Intent i = new Intent(amount_coffee.this,viewMyWater.class);
+            startActivity(i);
+
+        }
+        else
+        {
+            Toast.makeText(this,"Could Not update! ",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+
+    //-------------------------------------------- MENU --------------------------------------------------------------------------
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu,menu);
@@ -83,7 +125,10 @@ public class amount_coffee extends AppCompatActivity {
             return super.onOptionsItemSelected(item);
     }
 
+//----------------------------- END OF MENU----------------------------------------------------------------------------------------------------
 
+
+    //-------------------------CANCEL ADD DRINK-------------------------------------------------------------------------------
     public void cancelCoffee(View v){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         // Setting Alert Dialog Title
@@ -106,7 +151,7 @@ public class amount_coffee extends AppCompatActivity {
         alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(amount_coffee.this, "You clicked No! Please select the amount", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "You clicked No! Please select the amount", Toast.LENGTH_SHORT).show();
             }
         });
 

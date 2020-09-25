@@ -13,8 +13,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.project_madd.Database.DBOpenHelper;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -24,15 +29,21 @@ public class water_calculation extends AppCompatActivity{
 
 
     Button waterCalc;
+    EditText etWgt;
+    RadioGroup rgTime;
+    RadioButton rbTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_water_calculation);
 
+        etWgt = findViewById(R.id.edtWeight);
+        rgTime = findViewById(R.id.ExTime);
+
     }
 
-
+ //------------------------------------------ MENU -------------------------------------------------------------------------
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu,menu);
@@ -59,10 +70,35 @@ public class water_calculation extends AppCompatActivity{
         else
             return super.onOptionsItemSelected(item);
     }
-
+//------------------------------------------ END OF MENU ------------------------------------------------------------------------------------
 
     public void waterCalcDone(View view){
-        waterCalc = findViewById(R.id.btnWaterCalcDone);
+
+        int id = rgTime.getCheckedRadioButtonId();
+        rbTime = (RadioButton)findViewById(id);
+
+        DBOpenHelper dbHelper=new DBOpenHelper(this);
+
+        Double tot = (Integer.parseInt(etWgt.getText().toString())/30.0);
+        Double ex = ((Integer.parseInt(rbTime.getText().toString())/30.0)*0.35);
+        Double finalTot = (tot + ex)*1000;
+
+        long val=dbHelper.addWater(Integer.parseInt(etWgt.getText().toString()),Integer.parseInt(rbTime.getText().toString()),finalTot);
+
+        if(val>0)
+        {
+            Intent i = new Intent(water_calculation.this,viewMyWater.class);
+            Toast.makeText(this,"Your Water Amount Calculated!",Toast.LENGTH_SHORT).show();
+            startActivity(i);
+        }
+        else
+        {
+            Intent i = new Intent(water_calculation.this,water_calculation.class);
+            //Toast.makeText(this,"Data NOT successful",Toast.LENGTH_SHORT).show();
+        }
+
+
+        /*waterCalc = findViewById(R.id.btnWaterCalcDone);
         waterCalc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,7 +107,7 @@ public class water_calculation extends AppCompatActivity{
                 Toast.makeText(getApplicationContext(),"Calculating Your Water",Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
-        });
+        });*/
 
     }
 

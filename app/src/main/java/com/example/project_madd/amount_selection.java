@@ -18,6 +18,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.project_madd.Database.DBOpenHelper;
+
 public class amount_selection extends AppCompatActivity {
 
 
@@ -37,7 +39,7 @@ public class amount_selection extends AppCompatActivity {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-                txtViewAmt.setText(progress+" ml");
+                txtViewAmt.setText(progress+" ");
             }
 
             @Override
@@ -52,7 +54,7 @@ public class amount_selection extends AppCompatActivity {
         });
 
 
-        btnWaterSelected.setOnClickListener(new View.OnClickListener() {
+       /* btnWaterSelected.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                // Intent i = new Intent(amount_selection.this,viewMyWater.class);
@@ -74,10 +76,48 @@ public class amount_selection extends AppCompatActivity {
                 Intent i = new Intent(amount_selection.this,viewMyWater.class);
                 startActivity(i);
             }
-        });
+        });*/
     }
 
 
+    //Update method to call the update in DB HELPER----------------------------------------------------
+    public void updateAmount(View view){
+        DBOpenHelper dbHelper=new DBOpenHelper(this);
+
+        Double amount = Double.parseDouble(txtViewAmt.getText().toString());
+
+
+        int val=dbHelper.updateInfo(amount);
+
+        if(val>0)
+        {
+
+            //Creating the LayoutInflater instance
+            LayoutInflater li = getLayoutInflater();
+
+            //Getting the View object as defined in the custom toast.xml file
+            View layout = li.inflate(R.layout.custom_toast_water,(ViewGroup) findViewById(R.id.custom_toast_water));
+
+            //Creating the Toast object
+            Toast toast = new Toast(getApplicationContext());
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+            toast.setView(layout);
+            toast.show();
+
+            Intent i = new Intent(amount_selection.this,viewMyWater.class);
+            startActivity(i);
+
+        }
+        else
+        {
+            Toast.makeText(this,"Could Not update! ",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+
+    //--------------------------------------------- MENU ---------------------------------------------------------------------------
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu,menu);
@@ -105,6 +145,7 @@ public class amount_selection extends AppCompatActivity {
             return super.onOptionsItemSelected(item);
     }
 
+    //------------------------------------- END OF MENU -----------------------------------------------------------------------------------------
 
 
     public void cancelDrink(View v){
