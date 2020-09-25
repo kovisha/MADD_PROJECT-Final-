@@ -9,23 +9,6 @@
     tools:context=".bmi_calculation">
 
     <TextView
-        android:id="@+id/text_bmi3"
-        android:layout_width="147dp"
-        android:layout_height="42dp"
-        android:backgroundTintMode="add"
-        android:fontFamily="@font/capriola"
-        android:text="@string/fat"
-        android:textAlignment="center"
-        android:textColor="@color/projectText"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.628"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
-
-    <TextView
         android:id="@+id/text_bmi2"
         android:layout_width="142dp"
         android:layout_height="35dp"
@@ -411,25 +394,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.085" />
 
-    <EditText
-        android:id="@+id/val_ideal3"
-        android:layout_width="145dp"
-        android:layout_height="51dp"
-        android:ems="10"
-        android:fontFamily="@font/delius_swash_caps"
-        android:inputType="textPersonName"
-        android:text="@string/fatval"
-        android:textAlignment="center"
-        android:textColor="@color/prjctBtnTextclr"
-        android:textSize="19sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.981" />
-
     <Button
         android:id="@+id/tips_bmi"
         android:layout_width="184dp"
@@ -461,9 +425,8 @@
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.981" />
+        app:layout_constraintTop_toBottomOf="@+id/textclass8_1"
+        app:layout_constraintVertical_bias="0.384" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

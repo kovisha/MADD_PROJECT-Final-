@@ -8,14 +8,13 @@
     tools:context=".CommonAttributesActivity">
 
     <Button
-        android:id="@+id/dashboardbtn"
+        android:id="@+id/Add"
         android:layout_width="308dp"
         android:layout_height="49dp"
         android:layout_marginBottom="40dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/projectBtns"
         android:fontFamily="@font/aldrich"
-        android:onClick="toDashboard"
 
         android:text="Add details"
         android:textColor="@color/prjctBtnTextclr"
@@ -67,7 +66,7 @@
         android:fontFamily="@font/capriola"
         android:inputType="number"
         android:textColor="@color/prjctBtnTextclr"
-        android:textSize="14sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -97,7 +96,7 @@
         android:fontFamily="@font/capriola"
         android:inputType="number"
         android:textColor="@color/prjctBtnTextclr"
-        android:textSize="14sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.73"
@@ -127,7 +126,7 @@
         android:fontFamily="@font/capriola"
         android:inputType="number"
         android:textColor="@color/prjctBtnTextclr"
-        android:textSize="14sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.73"
@@ -155,7 +154,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/capriola"
-        android:text="Waist"
+        android:text="Waist(Cm)"
         android:textColor="@color/projectText"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -196,12 +195,14 @@
     </RadioGroup>
 
     <EditText
-        android:id="@+id/Activity"
+        android:id="@+id/waist"
         android:layout_width="110dp"
         android:layout_height="64dp"
         android:layout_marginEnd="80dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

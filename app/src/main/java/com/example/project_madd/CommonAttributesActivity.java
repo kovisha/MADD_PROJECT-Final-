@@ -4,16 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class CommonAttributesActivity extends AppCompatActivity {
 
     Button btnd;
-    EditText age,height,weight,activity;
+    EditText age,height,weight,waist;
     RadioGroup Gender;
     RadioButton male,female;
 
@@ -30,74 +32,45 @@ public class CommonAttributesActivity extends AppCompatActivity {
         Gender = findViewById(R.id.radioGender);
         male = findViewById(R.id.maleGender);
         female = findViewById(R.id.femaleGender);
+        btnd = findViewById(R.id.Add);
+        waist = findViewById(R.id.waist);
 
-
-
-    }
-
-    public void toDashboard(View view){
-
-        btnd = findViewById(R.id.dashboardbtn);
         btnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                
-                Intent intent = new Intent(CommonAttributesActivity.this , bmi_Home.class);
+               validateFields();
 
-                startActivity(intent);
             }
         });
 
     }
 
+    private void validateFields() {
 
-    public void calcBmi(View v){
+        String a = age.getText().toString();
+        String h = height.getText().toString();
+        String w = weight.getText().toString();
+        String wa = waist.getText().toString();
 
-        String height_val = height.getText().toString();
-        String weight_val = weight.getText().toString();
-
-        if(height_val != null && !"".equals(height_val) && weight_val != null && !"".equals(weight_val))
-        {
-            float height_result = Float.parseFloat(height_val) / 100;
-            float weight_result = Float.parseFloat(height_val);
-
-            float bmi = weight_result / (height_result*height_result);
-
+        if (TextUtils.isEmpty(a)) {
+            Toast.makeText(this,"Please Enter Age",Toast.LENGTH_SHORT).show();
         }
 
-    }
+        if (TextUtils.isEmpty(h)) {
+            Toast.makeText(this,"Please Enter Height",Toast.LENGTH_SHORT).show();
+        }
 
+        if (TextUtils.isEmpty(w)) {
+            Toast.makeText(this,"Please Enter Weight",Toast.LENGTH_SHORT).show();
+        }
 
-    public void calcBmr(View v){
-
-        String height_val = height.getText().toString();
-        String weight_val = weight.getText().toString();
-        String age_val = age.getText().toString();
-
-        if(height_val != null && !"".equals(height_val) && weight_val != null && !"".equals(weight_val))
-        {
-
-            float height_result = Float.parseFloat(height_val);
-            float weight_result = Float.parseFloat(height_val);
-         //   int age
-
-            if(Gender.getCheckedRadioButtonId() == R.id.maleGender){
-
-           //     float bmr = 88.362 + (13.397 * weight_result) + (4.799 * height_result) ;
-
-            }else if (Gender.getCheckedRadioButtonId() == R.id.femaleGender){
-
-
-            }
-       //     float height_result = Float.parseFloat(height_val) / 100;
-        //    float weight_result = Float.parseFloat(height_val);
-
-            float bmi = weight_result / (height_result*height_result);
-
+        if (TextUtils.isEmpty(wa)) {
+            Toast.makeText(this,"Please Enter Waist",Toast.LENGTH_SHORT).show();
         }
 
 
     }
+
 
 }

@@ -19,7 +19,10 @@
         <activity android:name=".bmr_calculation" />
         <activity android:name=".bmi_tips" />
         <activity android:name=".bmi_calculation" />
-        <activity android:name=".bmi_Home"></activity>
+        <activity android:name=".bmi_Home">
+
+
+        </activity>
         <activity android:name=".User_profile" />
         <activity android:name=".page7" />
         <activity android:name=".page6" />
@@ -37,6 +40,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity android:name=".MainActivity" />
 
