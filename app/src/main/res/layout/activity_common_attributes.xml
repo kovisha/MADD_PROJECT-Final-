@@ -11,7 +11,7 @@
         android:id="@+id/dashboardbtn"
         android:layout_width="308dp"
         android:layout_height="49dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/projectBtns"
         android:fontFamily="@font/aldrich"
@@ -22,7 +22,7 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -45,24 +45,26 @@
         android:id="@+id/commonAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
         android:fontFamily="@font/capriola"
         android:text="@string/CAge"
         android:textColor="@color/projectText"
         android:textSize="30sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextNumber"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextNumber"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/height"
+        app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.181" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/age"
         android:layout_width="110dp"
         android:layout_height="64dp"
         android:ems="10"
         android:fontFamily="@font/capriola"
-        android:hint="@string/CAgeHint"
         android:inputType="number"
         android:textColor="@color/prjctBtnTextclr"
         android:textSize="14sp"
@@ -81,16 +83,16 @@
         android:text="@string/CHeight"
         android:textColor="@color/projectText"
         android:textSize="30sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextNumber2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/height"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextNumber2"
+        app:layout_constraintEnd_toStartOf="@+id/height"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
-        android:layout_width="111dp"
-        android:layout_height="69dp"
+        android:id="@+id/height"
+        android:layout_width="110dp"
+        android:layout_height="64dp"
         android:ems="10"
         android:fontFamily="@font/capriola"
         android:inputType="number"
@@ -98,10 +100,10 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/commonHeight"
+        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.341" />
+        app:layout_constraintVertical_bias="0.319" />
 
     <TextView
         android:id="@+id/commonWeight"
@@ -111,27 +113,27 @@
         android:text="@string/CWeight"
         android:textColor="@color/projectText"
         android:textSize="30sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextNumber3"
+        app:layout_constraintBaseline_toBaselineOf="@+id/weight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextNumber3"
+        app:layout_constraintEnd_toStartOf="@+id/weight"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNumber3"
-        android:layout_width="99dp"
-        android:layout_height="69dp"
+        android:id="@+id/weight"
+        android:layout_width="110dp"
+        android:layout_height="64dp"
         android:ems="10"
         android:fontFamily="@font/capriola"
-        android:hint="@string/CWeightHint"
         android:inputType="number"
         android:textColor="@color/prjctBtnTextclr"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/commonWeight"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
     <TextView
         android:id="@+id/commonGender"
@@ -147,6 +149,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.68" />
+
+    <TextView
+        android:id="@+id/Waist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/capriola"
+        android:text="Waist"
+        android:textColor="@color/projectText"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.196"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.799" />
 
     <RadioGroup
         android:id="@+id/radioGender"
@@ -177,4 +194,17 @@
             android:textColor="@color/projectText"
             android:textSize="30sp" />
     </RadioGroup>
+
+    <EditText
+        android:id="@+id/Activity"
+        android:layout_width="110dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="80dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.812" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

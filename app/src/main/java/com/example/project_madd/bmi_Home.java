@@ -17,9 +17,9 @@ public class bmi_Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi__home);
+
         Button btn_bmi;
         btn_bmi = findViewById(R.id.bmi_btn1);
-
 
         btn_bmi.setOnClickListener(new View.OnClickListener() {
             @Override
