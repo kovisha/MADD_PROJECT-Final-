@@ -37,6 +37,7 @@ public class MenstrualHome extends AppCompatActivity {
         });
     }
 
+
     /*********************************************tap calendar button to  redirect to page where calendar is displayed*************************/
     public void goToCalendar(View view){
 
@@ -49,7 +50,6 @@ public class MenstrualHome extends AppCompatActivity {
             }
         });
     }
-
 
 
 

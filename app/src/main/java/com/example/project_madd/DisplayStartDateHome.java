@@ -32,6 +32,7 @@ public class DisplayStartDateHome extends AppCompatActivity {
     String takeExtra1;
     ImageView v2;
     TextView displayStartDate ,startDateCaption, displayNextStartDate;
+    Button btn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +94,20 @@ public class DisplayStartDateHome extends AppCompatActivity {
         });
 
 
+    }
+
+
+    /*********************************************tap calendar button to  redirect to page where calendar is displayed*************************/
+    public void goToCalendar(View view){
+
+        btn2 = findViewById(R.id.calendarNavigaetBtn);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DisplayStartDateHome.this , DisplayCalendar.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

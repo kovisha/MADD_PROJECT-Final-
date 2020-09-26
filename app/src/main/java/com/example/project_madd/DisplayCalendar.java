@@ -4,19 +4,28 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CalendarView;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.project_madd.Database.DBOpenHelper;
+import com.example.project_madd.Database.DBStructure;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
 public class DisplayCalendar extends AppCompatActivity {
 
     CustomCalendarView customCalendarView;
-
+    String startDate;
+    TextView viewMyStartDate,viewExpectedEndDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +33,49 @@ public class DisplayCalendar extends AppCompatActivity {
         setContentView(R.layout.activity_display_calendar);
 
         customCalendarView = (CustomCalendarView) findViewById(R.id.custom_calendar_view);
+
+
+        /*******************************Retrieve start date and expected end date in calendar view*********************************************/
+
+        /******************************Retrieve start date from database*********************************************************/
+
+        DBOpenHelper dbOpenHelper = new DBOpenHelper(this);
+        SQLiteDatabase database = dbOpenHelper.getReadableDatabase();
+        Cursor cursor = dbOpenHelper.readStartDate(database);
+
+        while(cursor.moveToNext()) {
+            startDate = cursor.getString(cursor.getColumnIndex(DBStructure.PeriodTracker.COLUMN_NAME_START_DATE));
+
+            viewMyStartDate = findViewById(R.id.viewMyStartDate);
+
+            viewMyStartDate.setText(startDate); //retrieve start date from database and display it here
+
+            /******************************display expected end date from database*********************************************************/
+
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+            int bleedingDays =5;
+
+            Calendar c = Calendar.getInstance();
+            try{
+                c.setTime(sdf.parse(startDate));
+
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+
+            c.add(Calendar.DAY_OF_MONTH,bleedingDays); //add  bleeding days to predict the end date of period
+
+            String expectedEndDate=sdf.format(c.getTime());
+
+
+
+            viewExpectedEndDate = findViewById(R.id.viewMyEndDate);
+            viewExpectedEndDate.setText(expectedEndDate); //setting the expected  end date which is the addition of start date and 5 days of avergae period days.
+        }
+        /*******************************End of start date retrieval****************************************************/
+
 
 
     }

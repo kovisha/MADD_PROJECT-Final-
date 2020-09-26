@@ -160,7 +160,6 @@ public class EndPeriodActivity extends AppCompatActivity {
     }
 
 
-
     public void  calPeriod(View view) throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
         Date firstDate = sdf.parse(startDate);

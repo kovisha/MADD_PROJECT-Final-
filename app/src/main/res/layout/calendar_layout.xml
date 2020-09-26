@@ -121,7 +121,7 @@
     <GridView
         android:id="@+id/gridView"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="300dp"
         android:background="@color/popUpColor"
         android:numColumns="7" />
 
@@ -134,7 +134,7 @@
         android:textColor="@color/colorPrimary"
         android:textStyle="bold" />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="center"
@@ -152,11 +152,10 @@
         android:textColor="@color/colorPrimary"
         android:textStyle="bold" />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="center"
-
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:id="@+id/viewMyEndDate"/>

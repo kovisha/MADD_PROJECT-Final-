@@ -41,6 +41,7 @@
             android:background="@drawable/rounded_corners"
             android:backgroundTint="@color/projectBtns"
             android:fontFamily="@font/aldrich"
+            android:onClick="goToCalendar"
             android:text="@string/ViewCalendarBtn"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
