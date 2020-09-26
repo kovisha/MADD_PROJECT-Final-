@@ -28,15 +28,7 @@ public class bmr_calculation extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-         Button done2;
-         done2 = findViewById(R.id.bmr_done2);
-         done2.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 Intent intent = new Intent(bmr_calculation.this, bmi_tips.class);
-                 startActivity(intent);
-             }
-         });
+
 
     }
 

@@ -75,7 +75,7 @@
         app:srcCompat="@drawable/shape" />
 
     <TextView
-        android:id="@+id/text_bmrComment"
+        android:id="@+id/text_bmiComment"
         android:layout_width="344dp"
         android:layout_height="32dp"
         android:fontFamily="@font/delius_swash_caps"

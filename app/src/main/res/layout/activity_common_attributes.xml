@@ -16,6 +16,7 @@
         android:backgroundTint="@color/projectBtns"
         android:fontFamily="@font/aldrich"
 
+        android:onClick="addDetails"
         android:text="Add details"
         android:textColor="@color/prjctBtnTextclr"
         android:textSize="30sp"

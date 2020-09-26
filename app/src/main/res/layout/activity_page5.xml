@@ -166,28 +166,30 @@
         app:srcCompat="@android:drawable/ic_dialog_info" />
 
     <TableLayout
-        android:layout_width="404dp"
-        android:layout_height="238dp"
+        android:id="@+id/tableLayout2"
+        android:layout_width="396dp"
+        android:layout_height="185dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.653">
+        app:layout_constraintVertical_bias="0.701">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#3cb371"
+            android:background="#32396e"
             android:padding="5dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/aclonica"
+                android:fontFamily="@font/cambo"
                 android:text="Activity"
                 android:textAlignment="center"
+                android:textColor="@color/projectText"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -195,9 +197,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/aclonica"
+                android:fontFamily="@font/cambo"
                 android:text="Description"
                 android:textAlignment="center"
+                android:textColor="@color/projectText"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -205,9 +208,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/aclonica"
+                android:fontFamily="@font/cambo"
                 android:text="TDEE"
                 android:textAlignment="center"
+                android:textColor="@color/projectText"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -215,15 +219,16 @@
         </TableRow>
 
         <TableRow
-            android:background="#90EE90"
+            android:background="#3d4580"
             android:padding="5dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/delius_swash_caps"
+                android:fontFamily="@font/cambo"
                 android:text="Sedentary"
+                android:textColor="@color/projectText"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
@@ -231,9 +236,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/delius_swash_caps"
+                android:fontFamily="@font/cambo"
                 android:text="Little or No Excercise"
                 android:textAlignment="center"
+                android:textColor="@color/projectText"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
@@ -241,23 +247,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/delius_swash_caps"
+                android:fontFamily="@font/cambo"
                 android:text="1.2*Bmr"
                 android:textAlignment="center"
+                android:textColor="@color/projectText"
                 android:textSize="16dp"
                 android:textStyle="bold" />
         </TableRow>
 
         <TableRow
-            android:background="#90EE90"
+            android:background="#3d4580"
             android:padding="5dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/delius_swash_caps"
+                android:fontFamily="@font/cambo"
                 android:text="Lightly Active"
+                android:textColor="@color/projectText"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
@@ -265,9 +273,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/delius_swash_caps"
+                android:fontFamily="@font/cambo"
                 android:text="sports 1-3 days/week"
                 android:textAlignment="center"
+                android:textColor="@color/projectText"
                 android:textSize="15dp"
                 android:textStyle="bold" />
 
@@ -275,23 +284,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/delius_swash_caps"
+                android:fontFamily="@font/cambo"
                 android:text="1.375*Bmr"
                 android:textAlignment="center"
+                android:textColor="@color/projectText"
                 android:textSize="15dp"
                 android:textStyle="bold" />
         </TableRow>
 
         <TableRow
-            android:background="#90EE90"
+            android:background="#3d4580"
             android:padding="5dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/delius_swash_caps"
+                android:fontFamily="@font/cambo"
                 android:text="Moderately Active"
+                android:textColor="@color/projectText"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
@@ -299,9 +310,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/delius_swash_caps"
+                android:fontFamily="@font/cambo"
                 android:text="sports 3-5 days/week"
                 android:textAlignment="center"
+                android:textColor="@color/projectText"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
@@ -309,23 +321,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/delius_swash_caps"
+                android:fontFamily="@font/cambo"
                 android:text="1.55*Bmr"
                 android:textAlignment="center"
+                android:textColor="@color/projectText"
                 android:textSize="15dp"
                 android:textStyle="bold" />
         </TableRow>
 
         <TableRow
-            android:background="#90EE90"
+            android:background="#3d4580"
             android:padding="5dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/delius_swash_caps"
+                android:fontFamily="@font/cambo"
                 android:text="Very Active"
+                android:textColor="@color/projectText"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
@@ -333,9 +347,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/delius_swash_caps"
+                android:fontFamily="@font/cambo"
                 android:text="sports 6-7 days/week"
                 android:textAlignment="center"
+                android:textColor="@color/projectText"
                 android:textSize="15dp"
                 android:textStyle="bold" />
 
@@ -343,23 +358,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/delius_swash_caps"
+                android:fontFamily="@font/cambo"
                 android:text="1.725*Bmr"
                 android:textAlignment="center"
+                android:textColor="@color/projectText"
                 android:textSize="15dp"
                 android:textStyle="bold" />
         </TableRow>
 
         <TableRow
-            android:background="#90EE90"
+            android:background="#3d4580"
             android:padding="5dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/delius_swash_caps"
+                android:fontFamily="@font/cambo"
                 android:text="Extremely Active"
+                android:textColor="@color/projectText"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
@@ -367,9 +384,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/delius_swash_caps"
+                android:fontFamily="@font/cambo"
                 android:text="physical job/daily training"
                 android:textAlignment="center"
+                android:textColor="@color/projectText"
                 android:textSize="15dp"
                 android:textStyle="bold" />
 
@@ -377,9 +395,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/delius_swash_caps"
+                android:fontFamily="@font/cambo"
                 android:text="1.9*bmr "
                 android:textAlignment="center"
+                android:textColor="@color/projectText"
                 android:textSize="15dp"
                 android:textStyle="bold" />
         </TableRow>
