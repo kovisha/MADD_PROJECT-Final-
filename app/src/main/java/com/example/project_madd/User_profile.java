@@ -1,23 +1,32 @@
 package com.example.project_madd;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.project_madd.Database.DBOpenHelper;
 import com.example.project_madd.Database.DBStructure;
 
 public class User_profile extends AppCompatActivity {
+
+    private ImageView img ;
+    private  static final int REQUEST_IMAGE_CAPTURE = 101;
 
 
     Dialog myDialog;
@@ -29,7 +38,9 @@ public class User_profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
-        /*****************retrieve bmi from database *************/
+        img = findViewById(R.id.imgview);
+
+        /*****************retrieve userprofile from database *************/
         DBOpenHelper dbOpenHelper = new DBOpenHelper(this);
         SQLiteDatabase sqLiteDatabase = dbOpenHelper.getReadableDatabase();
 
@@ -66,6 +77,40 @@ public class User_profile extends AppCompatActivity {
 
     }
 
+    public void takepicture(View view){
+
+        Intent imagecapture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+        if(imagecapture.resolveActivity(getPackageManager()) !=null){
+
+            startActivityForResult(imagecapture,REQUEST_IMAGE_CAPTURE);
+
+        }
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){
+
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap)extras.get("data");
+            img.setImageBitmap(imageBitmap);
+
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void deleteData(View view){
+
+        DBOpenHelper dbOpenHelper =new DBOpenHelper(this);
+        dbOpenHelper.deleteInfo();
+
+        Toast.makeText(this,"Deleted Successfully!!" ,Toast.LENGTH_LONG).show();
+
+    }
+
    
 
     public void showPopup(View view){
@@ -98,7 +143,7 @@ public class User_profile extends AppCompatActivity {
                 confirm.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(User_profile.this,User_profile.class);
+                        Intent intent = new Intent(User_profile.this,bmi_Home.class);
                         startActivity(intent);
                     }
                 });
@@ -111,6 +156,9 @@ public class User_profile extends AppCompatActivity {
 
 
     }
+
+
+
 
 
 }

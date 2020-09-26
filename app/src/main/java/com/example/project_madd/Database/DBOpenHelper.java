@@ -124,4 +124,15 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         return count ;
 
     }
+
+
+    public void deleteInfo(){
+
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase() ;
+        String selection = DBStructure.BMITracker._ID+ " LIKE?";
+        String selectionArgs[] = {"1"};
+        sqLiteDatabase.delete(DBStructure.BMITracker.TABLE_NAME,selection,selectionArgs);
+
+
+    }
 }

@@ -107,12 +107,16 @@ public class CommonAttributesActivity extends AppCompatActivity {
         if(gender.equals("Male")){
 
             bmr  = (float) ((10 * W)+(6.25 * H)-(5 * A)+5 );
+            Intent intent =new Intent(CommonAttributesActivity.this,page3.class);
+            startActivity(intent);
 
         }
 
         if(gender.equals("Female")){
 
             bmr  = (float) (66.5+(13.75 * W)+(5.0 * H)-(6.7 *A ));
+            Intent intent =new Intent(CommonAttributesActivity.this,page4.class);
+            startActivity(intent);
 
         }
 
@@ -128,6 +132,7 @@ public class CommonAttributesActivity extends AppCompatActivity {
         if (val > 0) {
 
             Toast.makeText(this, "Data successfully inserted!!!", Toast.LENGTH_SHORT).show();
+
 
         }
 
