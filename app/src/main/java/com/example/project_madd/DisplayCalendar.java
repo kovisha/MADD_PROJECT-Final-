@@ -50,9 +50,10 @@ public class DisplayCalendar extends AppCompatActivity {
 
             viewMyStartDate.setText(startDate); //retrieve start date from database and display it here
 
-            /******************************display expected end date from database*********************************************************/
+            /******************************Calculate expected period end date *********************************************************/
 
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String finalExpectedEndDate = expectedPeriodEndDate(startDate,5);
+            /*SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
             int bleedingDays =5;
 
@@ -67,12 +68,12 @@ public class DisplayCalendar extends AppCompatActivity {
 
             c.add(Calendar.DAY_OF_MONTH,bleedingDays); //add  bleeding days to predict the end date of period
 
-            String expectedEndDate=sdf.format(c.getTime());
+            String expectedEndDate=sdf.format(c.getTime());*/
 
 
 
             viewExpectedEndDate = findViewById(R.id.viewMyEndDate);
-            viewExpectedEndDate.setText(expectedEndDate); //setting the expected  end date which is the addition of start date and 5 days of avergae period days.
+            viewExpectedEndDate.setText(finalExpectedEndDate); //setting the expected  end date which is the addition of start date and 5 days of avergae period days.
         }
         /*******************************End of start date retrieval****************************************************/
 
@@ -81,8 +82,30 @@ public class DisplayCalendar extends AppCompatActivity {
     }
 
 
+    /************************Calculating expected period end date*********************************************************/
+
+    public String expectedPeriodEndDate(String startDate , int bleedingDays){
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
 
+
+        Calendar c = Calendar.getInstance();
+        try{
+            c.setTime(sdf.parse(startDate));
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+        c.add(Calendar.DAY_OF_MONTH,bleedingDays); //add  bleeding days to predict the end date of period
+
+        String expectedEndDate=sdf.format(c.getTime());
+
+        return expectedEndDate;
+
+    }
 
 
 

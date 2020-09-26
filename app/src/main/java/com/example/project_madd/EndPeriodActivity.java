@@ -99,14 +99,24 @@ public class EndPeriodActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+/*********************************************calling the update end date method during add end date button click***********************************************************************/
+                updateEndDate(view);
 
-                updateEndDate(view); //calling the update end date method during add end date button click
-
-                Toast.makeText(getApplicationContext(), "Bleeding days are processed!",Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getApplicationContext(), "Bleeding days are processed!",Toast.LENGTH_SHORT).show();
 
 
-                try {
+                /*try {
                     calPeriod(view); //calling the method to calculate period date.
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }*/
+/***************************************Calculating the bleedingDays**************************************************************************************/
+                try {
+                   long finalCalculation =  calculateMyPeriod(startDate,endDate);
+
+                   String dayDifference = Long.toString(finalCalculation);
+                    BleedDisplay = findViewById(R.id.textBleed);
+                     BleedDisplay.setText(dayDifference);
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
@@ -165,7 +175,24 @@ public class EndPeriodActivity extends AppCompatActivity {
     }
 
 
-    public void  calPeriod(View view) throws ParseException {
+    public  long calculateMyPeriod(String startDate,String endDate) throws ParseException {
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+        Date firstDate = sdf.parse(startDate);
+        Date secondDate = sdf.parse(endDate);
+
+        long difInMillies= Math.abs(secondDate.getTime() - firstDate.getTime());
+        long diff = TimeUnit.DAYS.convert(difInMillies,TimeUnit.MILLISECONDS);
+
+
+        //String dayDifference = Long.toString(diff);
+
+        //BleedDisplay = findViewById(R.id.textBleed);
+       // BleedDisplay.setText(dayDifference);
+        return  diff;
+    }
+
+   /* public void  calPeriod(View view) throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
         Date firstDate = sdf.parse(startDate);
         Date secondDate = sdf.parse(endDate);
@@ -178,7 +205,7 @@ public class EndPeriodActivity extends AppCompatActivity {
 
         BleedDisplay = findViewById(R.id.textBleed);
         BleedDisplay.setText(dayDifference);
-    }
+    }*/
 
 
     /***********************************************navigate back to home page ****************************************************/

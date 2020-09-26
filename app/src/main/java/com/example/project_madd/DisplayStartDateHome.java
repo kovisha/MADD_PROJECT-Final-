@@ -62,7 +62,7 @@ public class DisplayStartDateHome extends AppCompatActivity {
             displayStartDate.setText(startDate);//display the retrieved start date here
 
 
-           SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+           /*SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
           int menstrualDays = 28;
 
@@ -77,10 +77,13 @@ public class DisplayStartDateHome extends AppCompatActivity {
 
             c.add(Calendar.DAY_OF_MONTH, menstrualDays); //add  days to predict the next period date.
 
-            String nextPeriodDate=sdf.format(c.getTime());
+            String nextPeriodDate=sdf.format(c.getTime());*/
+
+/****************************Calling the method to calculate and predict next period date*****************************************/
+           String finalNextDate = nextStartDate(startDate,28);
 
             displayNextStartDate = findViewById(R.id.displayNextPeriodDate);
-            displayNextStartDate.setText(nextPeriodDate); // display the retrieved next start date here
+            displayNextStartDate.setText(finalNextDate); // display the retrieved next start date here
 
             /**********************************Save nextStart date as a shared preference*************************************************************/
             sharedPreferences = getSharedPreferences("SaveStartDate", Context.MODE_PRIVATE);
@@ -91,6 +94,31 @@ public class DisplayStartDateHome extends AppCompatActivity {
 
 
     }
+
+    public String nextStartDate(String startDate , int menstrualDays){
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+
+        Calendar c = Calendar.getInstance();
+        try{
+            c.setTime(sdf.parse(startDate));
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+        c.add(Calendar.DAY_OF_MONTH, menstrualDays); //add  days to predict the next period date.
+
+        String nextPeriodDate=sdf.format(c.getTime());
+
+        return nextPeriodDate;
+    }
+
+
+
+
 
    /******Navigate to add end date activity to register the end date of period by tapping the image*********/
 
