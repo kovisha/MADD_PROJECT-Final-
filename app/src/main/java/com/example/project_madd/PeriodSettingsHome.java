@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class PeriodSettingsHome extends AppCompatActivity {
@@ -28,6 +29,8 @@ public class PeriodSettingsHome extends AppCompatActivity {
 
         Intent intent = getIntent();
         Intent myintent = getIntent();
+
+
 
         /**************************************setting the user preferred cyclelength*************************************************/
         tvGo = findViewById(R.id.getCycleLength);
@@ -65,9 +68,7 @@ public class PeriodSettingsHome extends AppCompatActivity {
         tvPeriod.setText(value3);
 
 
-
-
-        /*********************************************End of user preferred ovuleLength*********************************************/
+        /*********************************************End of user preferred PeriodLength*********************************************/
 
 
 

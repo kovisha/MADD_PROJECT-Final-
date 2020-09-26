@@ -20,23 +20,24 @@
 
         <TextView
             android:id="@+id/getStartDate"
-            android:layout_width="254dp"
-            android:layout_height="118dp"
+            android:layout_width="207dp"
+            android:layout_height="62dp"
             android:fontFamily="@font/capriola"
             android:textAlignment="center"
             android:textColor="@color/projectText"
             android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.093"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.3" />
+            app:layout_constraintVertical_bias="0.262" />
 
         <Button
             android:id="@+id/calendarNavigaetBtn"
-            android:layout_width="418dp"
-            android:layout_height="67dp"
+            android:layout_width="420dp"
+            android:layout_height="96dp"
             android:background="@drawable/rounded_corners"
             android:backgroundTint="@color/projectBtns"
             android:fontFamily="@font/aldrich"
@@ -47,29 +48,10 @@
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.728" />
-
-        <Button
-            android:id="@+id/addRecordNavigatebtn"
-            android:layout_width="418dp"
-            android:layout_height="67dp"
-            android:background="@drawable/rounded_corners"
-            android:backgroundTint="@color/projectBtns"
-            android:fontFamily="@font/aldrich"
-            android:text="@string/ViewAddRecordBTN"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@android:color/background_light"
-            android:textSize="36sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calendarNavigaetBtn"
-            app:layout_constraintVertical_bias="0.51" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.937" />
 
         <TextView
             android:id="@+id/textView4"
@@ -90,15 +72,15 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="185dp"
-            android:layout_height="428dp"
+            android:layout_width="247dp"
+            android:layout_height="474dp"
             android:onClick="addEndRecord"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.148"
+            app:layout_constraintVertical_bias="0.42"
             app:srcCompat="@drawable/ss" />
 
         <ImageView
@@ -108,24 +90,57 @@
             android:elevation="@android:dimen/thumbnail_width"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/calendarNavigaetBtn"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.745"
+            app:layout_constraintVertical_bias="0.935"
             app:srcCompat="@drawable/calendaricon" />
 
-        <ImageView
-            android:id="@+id/imageViewaddNote2"
-            android:layout_width="80dp"
-            android:layout_height="85dp"
-            android:elevation="@android:dimen/thumbnail_width"
+        <TextView
+            android:id="@+id/displayStartDate"
+            android:layout_width="243dp"
+            android:layout_height="49dp"
+            android:fontFamily="@font/capriola"
+            android:textAlignment="center"
+            android:textColor="@color/prjctBtnTextclr"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/addRecordNavigatebtn"
-            app:layout_constraintHorizontal_bias="0.979"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.017"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/getStartDate"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/getNextPeriodDate"
+            android:layout_width="246dp"
+            android:layout_height="62dp"
+            android:fontFamily="@font/capriola"
+            android:text="Your Next Period"
+            android:textAlignment="center"
+            android:textColor="@color/projectText"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.928"
-            app:srcCompat="@drawable/addnoteicon" />
+            app:layout_constraintVertical_bias="0.499" />
+
+        <TextView
+            android:id="@+id/displayNextPeriodDate"
+            android:layout_width="212dp"
+            android:layout_height="54dp"
+            android:textAlignment="center"
+            android:textColor="@color/prjctBtnTextclr"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.584" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

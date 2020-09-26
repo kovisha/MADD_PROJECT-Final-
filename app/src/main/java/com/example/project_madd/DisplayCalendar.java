@@ -15,33 +15,23 @@ import java.util.Calendar;
 
 public class DisplayCalendar extends AppCompatActivity {
 
-    CalendarView calendarview;
-    TextView myDate;
+    CustomCalendarView customCalendarView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_calendar);
 
-        Intent intent = getIntent(); //getting intent from home
-
-        calendarview = findViewById(R.id.DisplayCalendar);
-        myDate = findViewById(R.id.presentDate);
-
-
-
-        calendarview.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
-                String date = (i1 + 1)  + "/" + i2 + "/" + i;
-                myDate.setText(date);
-            }
-        });
-
-
-
-
+        customCalendarView = (CustomCalendarView) findViewById(R.id.custom_calendar_view);
     }
+
+
+
+
+
+
+
 
     /******************menu code******************/
 

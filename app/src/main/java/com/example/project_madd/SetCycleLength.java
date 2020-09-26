@@ -29,7 +29,7 @@ public class SetCycleLength extends AppCompatActivity {
     TextView tv1;
     int count1;
     //TextView calCycleLength;
-     //SwitchCompat simpleSwitch;
+     SwitchCompat simpleSwitch;
 
     SharedPreferences sharedPreferences;
 
@@ -86,8 +86,9 @@ public class SetCycleLength extends AppCompatActivity {
     }
 
 
- /*public void switchConfirmCycleLength(View view){
 
+
+ /*public void switchConfirmCycleLength(View view){
 
      simpleSwitch = findViewById(R.id.switch2);//getting the id of switch
 
@@ -123,9 +124,9 @@ public class SetCycleLength extends AppCompatActivity {
          }
      });
 
- }
+ }*/
 
- public void buttoncnfrmCycleLength(View view){
+ /*public void buttoncnfrmCycleLength(View view){
      pCycleLengthConfirm = findViewById(R.id.CLengthSetButtn);
 
      pCycleLengthConfirm.setOnClickListener(new View.OnClickListener() {

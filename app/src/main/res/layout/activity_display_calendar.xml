@@ -1,81 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/calBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/projectBgcolor"
-    android:orientation="vertical"
     tools:context=".DisplayCalendar">
 
-    <TextView
-        android:id="@+id/myCalendar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/projectBtns"
-        android:fontFamily="@font/cambo"
-        android:text="@string/myCal"
-        android:textAlignment="center"
-        android:textColor="@color/prjctBtnTextclr"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06" />
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="409dp"
-        android:layout_height="1dp"
-        android:background="@color/projectText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="35dp"
-        android:background="@drawable/bg_calendar">
-
-        <CalendarView
-            android:id="@+id/DisplayCalendar"
-            android:layout_width="wrap_content"
-            android:layout_height="350dp" />
-    </LinearLayout>
-
-    <View
-        android:id="@+id/divider5"
+    <com.example.project_madd.CustomCalendarView
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="35dp"
-        android:background="@color/projectText" />
+        android:id="@+id/custom_calendar_view"/>
 
-    <TextView
-        android:id="@+id/presentDate"
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:fontFamily="@font/capriola"
-        android:textAlignment="textEnd"
-        android:textColor="@color/projectText"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/userNotes"
-        android:layout_width="match_parent"
-        android:layout_height="195dp"
-        android:fontFamily="@font/capriola"
-        android:text="@string/userNote"
-        android:textAlignment="center"
-        android:textColor="@color/projectText"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

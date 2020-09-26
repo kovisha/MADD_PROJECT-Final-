@@ -8,6 +8,8 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.Menu;
@@ -20,15 +22,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.project_madd.Database.DBOpenHelper;
+import com.example.project_madd.Database.DBStructure;
+
 import java.util.Calendar;
 
 public class EndPeriodActivity extends AppCompatActivity {
 
     DatePickerDialog picker;
-    TextView tvw;
-    EditText eText;
-    Button btnGet , eConfirm , delete;
+
+    EditText eText,getEndDate;
+    Button btnGet , eConfirm ;
     Dialog myDialog;
+    TextView displayStartDate , displayEndDate;
+    String startDate,endDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +46,24 @@ public class EndPeriodActivity extends AppCompatActivity {
         Intent intent = getIntent(); //get intent from start date display page
 
 
-        tvw = (TextView) findViewById(R.id.textView6);
+
+        /******************************Retrieve start date from database*********************************************************/
+
+        DBOpenHelper dbOpenHelper = new DBOpenHelper(this);
+        SQLiteDatabase database = dbOpenHelper.getReadableDatabase();
+        Cursor cursor = dbOpenHelper.readStartDate(database);
+
+        while(cursor.moveToNext()) {
+            startDate = cursor.getString(cursor.getColumnIndex(DBStructure.PeriodTracker.COLUMN_NAME_START_DATE));
+
+            displayStartDate = findViewById(R.id.displayStart);
+
+            displayStartDate.setText(startDate); //retrieve start date from database and display it here
+        }
+        /*******************************End of start date retrieval****************************************************/
+
+
+
         eText = findViewById(R.id.enterEndDateInput);
         eText.setInputType(InputType.TYPE_NULL);
 
@@ -67,10 +91,56 @@ public class EndPeriodActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(EndPeriodActivity.this, "Your record is being processed!",Toast.LENGTH_SHORT).show();
-                tvw.setText(eText.getText()); //remove this later .
+                //Toast.makeText(getApplicationContext(), "Your record is being processed!",Toast.LENGTH_SHORT).show();
+
+                updateEndDate(view); //calling the update end date method during add end date button click
+
             }
         });
+
+
+
+    }
+
+
+/*******************************End date update method***********************************************************************************/
+
+    public  void updateEndDate(View view){
+        DBOpenHelper dbOpenHelper = new DBOpenHelper(this);
+
+       // SQLiteDatabase database = dbOpenHelper.getReadableDatabase();
+
+        getEndDate = findViewById(R.id.enterEndDateInput);
+
+        endDate = getEndDate.getText().toString();
+
+        long val = dbOpenHelper.updatePeriodEndDate(endDate);
+
+
+        if(val > 0){
+            Toast.makeText(getApplicationContext(), " End Date update success", Toast.LENGTH_SHORT).show();
+
+
+        }
+        else{
+            Toast.makeText(getApplicationContext(), " End Date update failed", Toast.LENGTH_SHORT).show();
+        }
+
+
+    }
+
+    public void deletePeriodRecord(View view){
+        DBOpenHelper dbOpenHelper = new DBOpenHelper(this);
+
+        long val = dbOpenHelper.deletePeriodRecord();
+
+        if(val > 0){
+            Toast.makeText(getApplicationContext(), " Record deleted successfully", Toast.LENGTH_SHORT).show();
+        }
+
+        else{
+            Toast.makeText(getApplicationContext(), " Record Deletion  failed", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
@@ -80,8 +150,7 @@ public class EndPeriodActivity extends AppCompatActivity {
         eConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //display message
-                Toast.makeText(EndPeriodActivity.this, "Adding record!",Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(EndPeriodActivity.this , MenstrualHome.class);
                 startActivity(intent);
             }
@@ -113,7 +182,7 @@ public class EndPeriodActivity extends AppCompatActivity {
     }****************/
 
 /*************************display alert before deleting record****************************/
-    public void deleteAlert(View view){
+    public void deleteAlert(final View view){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         // Setting Alert Dialog Title
@@ -130,7 +199,9 @@ public class EndPeriodActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                Toast.makeText(getApplicationContext(),"Deleting record",Toast.LENGTH_SHORT).show();
+                deletePeriodRecord(view);
+
+                //Toast.makeText(getApplicationContext(),"Deleting record",Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(EndPeriodActivity.this , MenstrualHome.class);
                 startActivity(intent);

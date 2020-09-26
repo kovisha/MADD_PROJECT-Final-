@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,11 +15,18 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.project_madd.Database.DBOpenHelper;
+import com.example.project_madd.Database.DBStructure;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class DisplayStartDateHome extends AppCompatActivity {
 
     String takeExtra1;
-    Button btn2;
     ImageView v2;
+    TextView displayStartDate ,startDateCaption, displayNextStartDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +35,35 @@ public class DisplayStartDateHome extends AppCompatActivity {
 
         Intent intent = getIntent(); //get intent from add Period activity
 
-        takeExtra1 = intent.getStringExtra("MAIN_EXTRA"); //get the value passed from add period activity
+        /*************Retrieve start date values from retrieve method here**********************/
 
-        TextView tv = findViewById(R.id.getStartDate);
-        tv.setText("Start date\n" + takeExtra1); //display start date in home
+        DBOpenHelper dbOpenHelper = new DBOpenHelper(this);
+        SQLiteDatabase database = dbOpenHelper.getReadableDatabase();
+        Cursor cursor = dbOpenHelper.readStartDate(database);
+
+        while(cursor.moveToNext()) {
+            String startDate = cursor.getString(cursor.getColumnIndex(DBStructure.PeriodTracker.COLUMN_NAME_START_DATE));
+
+            startDateCaption = findViewById(R.id.getStartDate);
+            startDateCaption.setText("Start Date");
+            displayStartDate = findViewById(R.id.displayStartDate);
+            displayStartDate.setText(startDate);//display the retrieved start date here
+
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Calendar c = Calendar.getInstance();
+            try{
+                c.setTime(sdf.parse(startDate));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            c.add(Calendar.DAY_OF_MONTH,34); //add  days to predict the next period date.
+
+            String nextPeriodDate=sdf.format(c.getTime());
+
+            displayNextStartDate = findViewById(R.id.displayNextPeriodDate);
+            displayNextStartDate.setText(nextPeriodDate); // display the retrieved next start date here
+        }
 
 
     }

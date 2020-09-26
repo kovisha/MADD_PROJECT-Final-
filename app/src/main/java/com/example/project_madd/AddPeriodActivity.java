@@ -18,6 +18,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.project_madd.Database.DBOpenHelper;
+
 import java.util.Calendar;
 
 public class AddPeriodActivity extends AppCompatActivity {
@@ -27,8 +29,9 @@ public class AddPeriodActivity extends AppCompatActivity {
     EditText eText;
     Button btnGet;
     TextView tvw;
+    EditText getStartDate;
 
-    public String EXTRA;
+    public String StartDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,17 +69,55 @@ public class AddPeriodActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(AddPeriodActivity.this , "Your record is ready to be added!",Toast.LENGTH_SHORT).show(); //display message
+                Toast.makeText(getApplicationContext() , "Your record is ready to be added!",Toast.LENGTH_SHORT).show(); //display message
 
-                tvw.setText(eText.getText()); //remove this after data insertion is done
+                tvw.setText("Tap the tick icon to confirm"); //remove this after data insertion is done
             }
         });
     }
 
-    public void tick(View view) { //if record addition confirmed
+
+    /**********Start date insertion method************************/
+    public void addStartDate(View view) {
+
+        DBOpenHelper dbOpenHelper = new DBOpenHelper(this);
+
+        getStartDate = findViewById(R.id.enterDateInput); //get date input in addPeriod activity
+
+        StartDate= getStartDate.getText().toString();
+
+        long val = dbOpenHelper.addMenstrualStartDate( StartDate);
+
+
+        if(val >0){
+            Toast.makeText(getApplicationContext(), " Start Date insertion success", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(getApplicationContext(), " Start Date insertion failed", Toast.LENGTH_SHORT).show();
+        }
+
+        Intent secondIntent = new Intent(AddPeriodActivity.this, DisplayStartDateHome.class);//navigate back to home page
+
+        //call the retrieve method here
+
+        startActivity(secondIntent);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+  /*  public void tick(View view) { //if record addition confirmed
         /****************Onclick should call insert method to add start date in database ********************/
 
-        Toast.makeText(getApplicationContext(),"Adding record",Toast.LENGTH_SHORT).show();//display message
+        /*Toast.makeText(getApplicationContext(),"Adding record",Toast.LENGTH_SHORT).show();//display message
 
         Intent secondIntent = new Intent(AddPeriodActivity.this, DisplayStartDateHome.class);//navigate back to home page
 
@@ -84,10 +125,8 @@ public class AddPeriodActivity extends AppCompatActivity {
 
         EXTRA = editText.getText().toString();
 
-        secondIntent.putExtra("MAIN_EXTRA", EXTRA); //pass it to the home page
 
-        startActivity(secondIntent);
-    }
+    }*/
 
     /********************************************************Menu code************************************************************************/
     @Override

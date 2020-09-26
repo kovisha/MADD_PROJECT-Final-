@@ -50,21 +50,11 @@ public class MenstrualHome extends AppCompatActivity {
         });
     }
 
-    /*********************************************tap addNote button to  redirect to page where notes are entered*************************/
 
-    public void goToAddNotes(View view){
-        btn3 = findViewById(R.id.addRecordNavigatebtn);
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MenstrualHome.this , AddNote.class);
-                startActivity(intent);
-            }
-        });
 
 
         /********************************************************Menu code************************************************************************/
-    }@Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu,menu);
         return super.onCreateOptionsMenu(menu);

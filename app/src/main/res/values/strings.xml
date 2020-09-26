@@ -235,4 +235,15 @@
     <string name="signUpfrag_signUpBtn">SIGN UP</string>
 
 
+
+
+    /*--------------------------------------------Common-------------------------------------------------------------------------------*/
+    <string name="settings_water_tracker">Personalize Water Tracker</string>
+    <string name="settings_period_tracker">Personalize Period Tracker</string>
+    <string name="settings_BMI_tracker">Personalize BMI Tracker</string>
+    <string name="settingsHeader">Personalize</string>
+
+
+
+
 </resources>
