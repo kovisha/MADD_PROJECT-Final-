@@ -418,7 +418,7 @@
         app:srcCompat="@drawable/banner4" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/bmr_comment"
         android:layout_width="214dp"
         android:layout_height="74dp"
         android:fontFamily="@font/delius_swash_caps"

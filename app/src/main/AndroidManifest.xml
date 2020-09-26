@@ -9,14 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".spinner">
-
-        </activity>
-        <activity android:name=".Settings_Home_Common" />
-        <activity android:name=".signIn_signUp"></activity>
-        <activity android:name=".waistHeight_calculation" />
-        <activity android:name=".bmr_instructions" />
-        <activity android:name=".bmr_calculation" >
+        <activity android:name=".UpdateAttributes">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,13 +18,21 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".spinner"></activity>
+        <activity android:name=".Settings_Home_Common" />
+        <activity android:name=".signIn_signUp" />
+        <activity android:name=".waistHeight_calculation" />
+        <activity android:name=".bmr_instructions" />
+        <activity android:name=".bmr_calculation"></activity>
         <activity android:name=".bmi_tips" />
-        <activity android:name=".bmi_calculation" />
+        <activity android:name=".bmi_calculation">
+
+        </activity>
         <activity android:name=".bmi_Home">
 
 
         </activity>
-        <activity android:name=".User_profile" />
+        <activity android:name=".User_profile"></activity>
         <activity android:name=".page7" />
         <activity android:name=".page6" />
         <activity android:name=".page5" />
@@ -42,7 +43,6 @@
         <activity android:name=".MenstrualHome" />
         <activity android:name=".DashBoard" />
         <activity android:name=".CommonAttributesActivity">
-
 
 
         </activity>

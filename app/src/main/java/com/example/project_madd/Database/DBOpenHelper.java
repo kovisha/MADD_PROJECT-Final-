@@ -60,7 +60,6 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         long row = db.insert( DBStructure.BMITracker.TABLE_NAME, null ,contentValues);
         return row;
 
-
     }
 
     public Cursor readBmi(SQLiteDatabase sqLiteDatabase){
@@ -76,12 +75,53 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
     public Cursor readBmr(SQLiteDatabase sqLiteDatabase){
 
-        String [] projection = {DBStructure.BMITracker.COLUMN_NAME_BMI,DBStructure.BMITracker.COLUMN_NAME_HEIGHT};
+        String [] projection = {DBStructure.BMITracker.COLUMN_NAME_BMR,DBStructure.BMITracker.COLUMN_NAME_BMI};
         String selection = DBStructure.BMITracker._ID+"=?";
         String [] selectionArgs = {"1"};
 
         return sqLiteDatabase.query(DBStructure.BMITracker.TABLE_NAME,projection,selection,selectionArgs,null,null,null);
 
+
+    }
+
+    public Cursor readWTH(SQLiteDatabase sqLiteDatabase){
+
+        String [] projection = {DBStructure.BMITracker.COLUMN_NAME_WHPERCENTAGE};
+        String selection = DBStructure.BMITracker._ID+"=?";
+        String [] selectionArgs = {"1"};
+
+        return sqLiteDatabase.query(DBStructure.BMITracker.TABLE_NAME,projection,selection,selectionArgs,null,null,null);
+
+
+    }
+
+    public Cursor UserProfile(SQLiteDatabase sqLiteDatabase){
+
+        String [] projection = {DBStructure.BMITracker.COLUMN_NAME_HEIGHT,DBStructure.BMITracker.COLUMN_NAME_WEIGHT,DBStructure.BMITracker.COLUMN_NAME_AGE,
+                                DBStructure.BMITracker.COLUMN_NAME_GENDER,DBStructure.BMITracker.COLUMN_NAME_WAIST};
+        String selection = DBStructure.BMITracker._ID+"=?";
+        String [] selectionArgs = {"1"};
+
+        return sqLiteDatabase.query(DBStructure.BMITracker.TABLE_NAME,projection,selection,selectionArgs,null,null,null);
+
+
+    }
+
+
+   public int updateValues(String height, String weight , String waist){
+
+        SQLiteDatabase db = getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(DBStructure.BMITracker.COLUMN_NAME_HEIGHT,height);
+        values.put(DBStructure.BMITracker.COLUMN_NAME_WEIGHT,weight);
+        values.put(DBStructure.BMITracker.COLUMN_NAME_WAIST,waist);
+
+        String  selection = DBStructure.BMITracker._ID+ " LIKE?";
+        String[] selectionArgs ={"1"};
+
+        int count = db.update(DBStructure.BMITracker.TABLE_NAME,values,selection,selectionArgs);
+
+        return count ;
 
     }
 }

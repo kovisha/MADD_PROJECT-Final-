@@ -74,23 +74,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.435" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName23"
-        android:layout_width="176dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="232dp"
-        android:autofillHints="@string/waistn"
-        android:ems="10"
-        android:text="@string/result"
-        android:textAlignment="center"
-        android:textColor="@color/prjctBtnTextclr"
-        android:textColorHint="?attr/colorButtonNormal"
-        android:textSize="19sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435" />
-
     <Button
         android:id="@+id/waist_done"
         android:layout_width="153dp"
@@ -108,14 +91,14 @@
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="393dp"
-        android:layout_height="183dp"
+        android:layout_width="395dp"
+        android:layout_height="144dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.804">
+        app:layout_constraintVertical_bias="0.73">
 
         <TableRow
             android:layout_width="match_parent"
@@ -124,7 +107,7 @@
 
 
             <TextView
-                android:layout_width="178dp"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#32396e"
@@ -136,7 +119,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_width="174dp"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#32396e"
@@ -157,7 +140,7 @@
 
 
             <TextView
-                android:layout_width="26dp"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#32396e"
@@ -169,7 +152,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#32396e"
@@ -190,7 +173,7 @@
 
 
             <TextView
-                android:layout_width="26dp"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#32396e"
@@ -202,7 +185,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#32396e"
@@ -219,12 +202,11 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#32396e"
             android:padding="5dp">
 
 
             <TextView
-                android:layout_width="103dp"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#32396e"
@@ -236,9 +218,10 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#32396e"
                 android:fontFamily="@font/capriola"
                 android:text=" More than 63%"
                 android:textAlignment="center"
@@ -248,6 +231,25 @@
 
 
         </TableRow>
+
+
+
     </TableLayout>
+
+    <TextView
+        android:id="@+id/WTHpercentage"
+        android:layout_width="139dp"
+        android:layout_height="42dp"
+        android:fontFamily="@font/cambo"
+        android:gravity="center"
+
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.971"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.426" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

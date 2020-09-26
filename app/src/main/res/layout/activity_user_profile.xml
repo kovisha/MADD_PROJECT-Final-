@@ -114,86 +114,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.73" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/edit_heightval"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColorHint="@android:color/darker_gray"
-        android:textSize="19sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView31"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.781"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName31"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/edit_weightval"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColorHint="@android:color/darker_gray"
-        android:textSize="19sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView32"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.786"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/edit_ageval"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColorHint="@android:color/darker_gray"
-        android:textSize="19sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView35"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.786"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName33"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/edit_genderval"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColorHint="@android:color/darker_gray"
-        android:textSize="19sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView36"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.791"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName34"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/edit_waistval"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColorHint="@android:color/darker_gray"
-        android:textSize="19sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView38"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.796"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.741" />
-
     <Button
         android:id="@+id/button4"
         android:layout_width="140dp"
@@ -308,5 +228,75 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.244"
         app:srcCompat="@android:drawable/ic_menu_camera" />
+
+    <TextView
+        android:id="@+id/prof_height"
+        android:layout_width="178dp"
+        android:layout_height="42dp"
+        android:gravity="center"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.879"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.394" />
+
+    <TextView
+        android:id="@+id/prof_weight"
+        android:layout_width="178dp"
+        android:layout_height="42dp"
+        android:gravity="center"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.879"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481" />
+
+    <TextView
+        android:id="@+id/prof_Age"
+        android:layout_width="178dp"
+        android:layout_height="42dp"
+        android:gravity="center"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.879"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.567" />
+
+    <TextView
+        android:id="@+id/prof_gender"
+        android:layout_width="178dp"
+        android:layout_height="42dp"
+        android:gravity="center"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.879"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.657" />
+
+    <TextView
+        android:id="@+id/prof_waist"
+        android:layout_width="178dp"
+        android:layout_height="42dp"
+        android:gravity="center"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.879"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.74" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
