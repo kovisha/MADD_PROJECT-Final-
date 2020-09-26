@@ -2,7 +2,10 @@ package com.example.project_madd;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,14 +15,23 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 public class PeriodSettingsHome extends AppCompatActivity {
 
-    Button PeriodLength , CycleLength , OvuLength;
+    Button PeriodLength , CycleLength , OvuLength ,createNotifications;
     String periodLength , PCycleLength , fertilityLength ,  AvgCycleLength;
     TextView tvOvule , tvGo,tvPeriod;
-
+    Switch notifySwitch;
 
 
     @Override
@@ -30,6 +42,36 @@ public class PeriodSettingsHome extends AppCompatActivity {
         Intent intent = getIntent();
         Intent myintent = getIntent();
 
+
+        /**********************Saving the state of switch for notiications******************************************/
+
+        notifySwitch = findViewById(R.id.notifySwitch);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("SwitchEnable",MODE_PRIVATE);
+        notifySwitch.setChecked(sharedPreferences.getBoolean("switchValue",true));
+
+        notifySwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(notifySwitch.isChecked()){
+                    SharedPreferences.Editor editor = getSharedPreferences("SwitchEnable",MODE_PRIVATE).edit();
+                    editor.putBoolean("switchValue",true);
+                    editor.apply();
+                    notifySwitch.setChecked(true);
+                    Toast.makeText(getApplicationContext(), "Period Reminders On", Toast.LENGTH_SHORT).show();
+                }
+
+                else{
+                    SharedPreferences.Editor editor = getSharedPreferences("SwitchEnable",MODE_PRIVATE).edit();
+                    editor.putBoolean("switchValue",false);
+                    editor.apply();
+                    notifySwitch.setChecked(false);
+                    Toast.makeText(getApplicationContext(), "Reminders Off", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        /**********************Emd of Saving the state of switch for notiications******************************************/
 
 
         /**************************************setting the user preferred cyclelength*************************************************/
@@ -72,31 +114,45 @@ public class PeriodSettingsHome extends AppCompatActivity {
 
 
 
+        /****************************************************************************************/
+        /*********************************Creating notification Manager*************************/
 
 
+        createNotifications = findViewById(R.id.notify);
+        createNotifications.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+/************************Getting the predicted next period date via a shared preference******************************************/
+                SharedPreferences startDate = getSharedPreferences("SaveStartDate", Context.MODE_PRIVATE);
+                String myDate = startDate.getString("StartDate","Data Not found");
 
 
+                int deductionDays = 2;
+
+                final Calendar c = Calendar.getInstance();
+
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+                try {
+                    Date date1 =sdf.parse(myDate);
+                    c.setTime(date1);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                c.add(Calendar.DATE, (deductionDays * -1));  // number of days to subtract
 
 
+                Intent notifyIntent = new Intent(getApplicationContext(),Period_Notification_reciever.class);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),101,notifyIntent,PendingIntent.FLAG_UPDATE_CURRENT);
 
-        /****************Handling the cycle length with avg and user entered value and switch*****************/
+                AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+                alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
 
-       /* PCycleLength = intent.getStringExtra("CycleSetLength"); //getting the user decided cycle length
-        AvgCycleLength = switchIntent.getStringExtra("AverageValue");//getting the avg value through switch
 
-        if(PCycleLength == ""){
-            tv1 = findViewById(R.id.getCycleLength);
-            tv1.setText(AvgCycleLength);
-        }
-
-        else {
-            tv1 = findViewById(R.id.getCycleLength);
-            tv1.setText(PCycleLength);
-        }
-
-        /* End of Handling the cycle length with avg and user entered value and switch*/
-
-        //fertilityLength = intent.getStringExtra("FertilitySetLength"); //getting the user decided fertile length
+            }
+        });
 
 
 

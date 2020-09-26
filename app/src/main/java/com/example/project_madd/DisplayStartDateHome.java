@@ -3,7 +3,9 @@ package com.example.project_madd;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -39,6 +41,9 @@ public class DisplayStartDateHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_start_date_home);
 
+        SharedPreferences sharedPreferences;
+
+
         Intent intent = getIntent(); //get intent from add Period activity
 
         /*************Retrieve start date values from retrieve method here**********************/
@@ -56,9 +61,12 @@ public class DisplayStartDateHome extends AppCompatActivity {
             displayStartDate = findViewById(R.id.displayStartDate);
             displayStartDate.setText(startDate);//display the retrieved start date here
 
+
+
            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-            int menstrualDays = 28;
+
+          int menstrualDays = 28;
 
             Calendar c = Calendar.getInstance();
             try{
@@ -69,13 +77,19 @@ public class DisplayStartDateHome extends AppCompatActivity {
             }
 
 
-            c.add(Calendar.DAY_OF_MONTH,menstrualDays); //add  days to predict the next period date.
+            c.add(Calendar.DAY_OF_MONTH, menstrualDays); //add  days to predict the next period date.
 
             String nextPeriodDate=sdf.format(c.getTime());
 
 
             displayNextStartDate = findViewById(R.id.displayNextPeriodDate);
             displayNextStartDate.setText(nextPeriodDate); // display the retrieved next start date here
+
+            /**********************************Save nextStart date as a shared preference*************************************************************/
+            sharedPreferences = getSharedPreferences("SaveStartDate", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("StartDate",displayNextStartDate.getText().toString());
+            editor.apply();
         }
 
 

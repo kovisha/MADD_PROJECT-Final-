@@ -28,7 +28,6 @@ public class SetCycleLength extends AppCompatActivity {
     Button inc1, dec1, pCycleLengthConfirm;
     TextView tv1;
     int count1;
-    //TextView calCycleLength;
      SwitchCompat simpleSwitch;
 
     SharedPreferences sharedPreferences;

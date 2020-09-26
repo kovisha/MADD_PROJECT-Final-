@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/myNotification"
+        android:layout_width="match_parent"
+        android:layout_height="231dp"
+        android:background="@color/projectBgcolor"
+        android:fontFamily="@font/cambo"
+        android:text="YOUR PERIOD IS EXPECTED TO START IN 2 DAYS"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="50sp" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="match_parent"
+        android:layout_height="499dp"
+        app:srcCompat="@drawable/tapimg4" />
+</LinearLayout>
