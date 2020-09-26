@@ -18,6 +18,7 @@ import com.example.project_madd.Database.DBStructure;
 
 public class viewMyWater extends AppCompatActivity {
 
+    //attributes
     Button btnTips;
     Button btnAddDrink;
 
@@ -26,23 +27,34 @@ public class viewMyWater extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_my_water);
 
+        //instance of db helper
         DBOpenHelper dbHelper=new DBOpenHelper(this);
+
+        //db instance
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = dbHelper.getInfo(db);
 
+        //retrieving values when the class is created
         while(cursor.moveToNext()){
+            //retrieving total amount
             String totalAmt = cursor.getString(cursor.getColumnIndex(DBStructure.Water2.COL3_WATER2));
+            //getting the id of text view
             TextView txtTotal = findViewById(R.id.totalAmt);
+            //setting the value textView
             txtTotal.setText(totalAmt+" ml");
 
+            //retrieving the drank amount
             String drankAmt = cursor.getString(cursor.getColumnIndex(DBStructure.Water2.COL4_WATER2));
+            //getting the id of text view
             TextView txtDrank = findViewById(R.id.DrankAmt);
+            //setting the value textView
             txtDrank.setText(drankAmt+" ml");
 
+            //retrieving the remaining amount
             String remainingAmt = cursor.getString(cursor.getColumnIndex(DBStructure.Water2.COL5_WATER2));
-            //Double totRemain = Double.parseDouble(remainingAmt) - Double.parseDouble(drankAmt);
+            //getting the id of text view
             TextView txtRemain = findViewById(R.id.remainingAmt);
-            //txtRemain.setText(totRemain.toString()+" ml");
+            //setting the value textView
             txtRemain.setText(remainingAmt+" ml");
 
         }
@@ -51,7 +63,7 @@ public class viewMyWater extends AppCompatActivity {
     }
 
 
-    //----------------------------------- MENU -----------------------------------------------------------------------------------
+    /********************************************* MENU OPTIONS ********************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu,menu);
@@ -77,9 +89,9 @@ public class viewMyWater extends AppCompatActivity {
 
         else
             return super.onOptionsItemSelected(item);
-    }
- //------------------------------------------------ END OF MENU --------------------------------------------------------------------------------------
+    }//end of menu options
 
+    /********************************************* ON CLICK METHODS TO VIEW TIPS ********************************************************/
     public void viewTips(View view){
         btnTips = findViewById(R.id.btnMoreWater);
         btnTips.setOnClickListener(new View.OnClickListener() {
@@ -91,9 +103,9 @@ public class viewMyWater extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }//end of method
 
-    }
-
+    /******************************************* ON CLICK METHOD TO ADD DRINK **********************************************************/
     public void addDrink(View view){
         btnAddDrink = findViewById(R.id.btnAddDrink);
         btnAddDrink.setOnClickListener(new View.OnClickListener() {
@@ -106,7 +118,7 @@ public class viewMyWater extends AppCompatActivity {
             }
         });
 
-    }
+    }//end of method
 
 
 

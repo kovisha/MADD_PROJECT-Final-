@@ -22,6 +22,7 @@ public class tips_and_more extends AppCompatActivity {
 
     }
 
+    /********************************************* MENU OPTIONS ********************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu,menu);
@@ -47,8 +48,10 @@ public class tips_and_more extends AppCompatActivity {
 
         else
             return super.onOptionsItemSelected(item);
-    }
+    }//end of menu options
 
+
+    /********************************************* ON CLICK METHOD TO MOVE TO NEXT ACTIVITY ********************************************************/
     public void moreTips(View view){
         btnFlavour = findViewById(R.id.btnFlavourWater);
         btnFlavour.setOnClickListener(new View.OnClickListener() {

@@ -2,6 +2,8 @@ package com.example.project_madd.model;
 
 public class Water {
 
+
+    //Water Class Attributes
     private Integer weight;
     private Integer exerciseTime;
     private Double total;
@@ -9,6 +11,7 @@ public class Water {
     private Double remaining;
 
 
+    //Overloaded constructor
     public Water(Integer weight, Integer exerciseTime, Double total, Double drank, Double remaining) {
         this.weight = weight;
         this.exerciseTime = exerciseTime;
@@ -17,6 +20,7 @@ public class Water {
         this.remaining = remaining;
     }
 
+    //getters and setters
     public Integer getWeight() {
         return weight;
     }

@@ -28,6 +28,7 @@ import java.util.List;
 public class water_calculation extends AppCompatActivity{
 
 
+    //attributes
     Button waterCalc;
     EditText etWgt;
     RadioGroup rgTime;
@@ -38,12 +39,13 @@ public class water_calculation extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_water_calculation);
 
+        //getting the id's of required components
         etWgt = findViewById(R.id.edtWeight);
         rgTime = findViewById(R.id.ExTime);
 
     }
 
- //------------------------------------------ MENU -------------------------------------------------------------------------
+ /***************************************************** MENU OPTIONS *************************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu,menu);
@@ -69,58 +71,65 @@ public class water_calculation extends AppCompatActivity{
 
         else
             return super.onOptionsItemSelected(item);
-    }
-//------------------------------------------ END OF MENU ------------------------------------------------------------------------------------
+    }//End of menu options
 
+
+    /************************************on click method of button to calculate and insert values to db and move to next activity ************************************/
     public void waterCalcDone(View view){
 
+        //getting the id of checked radio button
         int id = rgTime.getCheckedRadioButtonId();
         rbTime = (RadioButton)findViewById(id);
 
+        //instance of the db helper class
         DBOpenHelper dbHelper=new DBOpenHelper(this);
 
-        Double tot = (Integer.parseInt(etWgt.getText().toString())/30.0);
-        Double ex = ((Integer.parseInt(rbTime.getText().toString())/30.0)*0.35);
-        Double finalTot = (tot + ex)*1000;
+        //convert weight obtained to string
+        String weight = etWgt.getText().toString();
 
-        long val=dbHelper.addWater(Integer.parseInt(etWgt.getText().toString()),Integer.parseInt(rbTime.getText().toString()),finalTot);
+        //validation for null values
+        if (!weight.isEmpty()) {
 
-        if(val>0)
-        {
-            Intent i = new Intent(water_calculation.this,viewMyWater.class);
-            Toast.makeText(this,"Your Water Amount Calculated!",Toast.LENGTH_SHORT).show();
-            startActivity(i);
-        }
-        else
-        {
-            Intent i = new Intent(water_calculation.this,water_calculation.class);
-            //Toast.makeText(this,"Data NOT successful",Toast.LENGTH_SHORT).show();
-        }
+            //calculating the total amount
+            Double tot = (Integer.parseInt(etWgt.getText().toString()) / 30.0);
+            Double ex = ((Integer.parseInt(rbTime.getText().toString()) / 30.0) * 0.35);
+            Double finalTot = (tot + ex) * 1000;
 
+            //call to insert method
+            long val = dbHelper.addWater(Integer.parseInt(etWgt.getText().toString()), Integer.parseInt(rbTime.getText().toString()), finalTot);
 
-        /*waterCalc = findViewById(R.id.btnWaterCalcDone);
-        waterCalc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(water_calculation.this
-                        , viewMyWater.class);
-                Toast.makeText(getApplicationContext(),"Calculating Your Water",Toast.LENGTH_SHORT).show();
-                startActivity(intent);
+            //redirecting on success and remaining on failure
+            if (val > 0) {
+                Intent i = new Intent(water_calculation.this, viewMyWater.class);
+                Toast.makeText(this, "Your Water Amount Calculated!", Toast.LENGTH_SHORT).show();
+                startActivity(i);
+            } else {
+                Intent i = new Intent(water_calculation.this, water_calculation.class);
+                Toast.makeText(this, "Failed to calculate water", Toast.LENGTH_SHORT).show();
             }
-        });*/
+        }
+        else{
+            //requesting input if field is null
+            Toast.makeText(water_calculation.this,"Please enter your weight!",Toast.LENGTH_SHORT).show();
+        }
+    }//end of method
 
-    }
 
+    /*************************************** on click method when cancelled******************************************/
     public void exitWaterTrack(View view){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
         // Setting Alert Dialog Title
         alertDialogBuilder.setTitle("Cancel!!");
+
         // Icon Of Alert Dialog
         alertDialogBuilder.setIcon(R.drawable.warning);
+
         // Setting Alert Dialog Message
         alertDialogBuilder.setMessage("Do you really want to cancel??");
         alertDialogBuilder.setCancelable(false);
 
+        //positive response action
         alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 
             @Override
@@ -130,6 +139,7 @@ public class water_calculation extends AppCompatActivity{
             }
         });
 
+        //negative response action
         alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -137,7 +147,7 @@ public class water_calculation extends AppCompatActivity{
             }
         });
 
-
+        //creating and displaying alert dialog box
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }

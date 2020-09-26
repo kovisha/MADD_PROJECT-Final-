@@ -183,7 +183,7 @@
         android:id="@+id/btnDeleteRecords"
         android:layout_width="338dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="44dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/aldrich"
         android:onClick="deleteRecords"
@@ -192,14 +192,14 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/btnResetRecords"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.452"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnResetRecords"
         android:layout_width="338dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="164dp"
+        android:layout_marginBottom="56dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/aldrich"
         android:onClick="resetRecords"
@@ -209,9 +209,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/divider14"
-        app:layout_constraintVertical_bias="0.589" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnReminder"
@@ -230,5 +228,20 @@
         app:layout_constraintEnd_toStartOf="@+id/reminderSwitch"
         app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnChangeWeight"
+        android:layout_width="283dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_corners"
+        android:fontFamily="@font/aldrich"
+        android:onClick="resetWeight"
+        android:text="Change My Weight"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

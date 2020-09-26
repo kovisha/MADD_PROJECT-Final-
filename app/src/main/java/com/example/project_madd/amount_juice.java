@@ -31,14 +31,16 @@ public class amount_juice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amount_juice);
 
+        //getting the ids of required components
         seekBarJuiceAmt = findViewById(R.id.seekBarJuiceAmount);
         txtJuiceAmt = findViewById(R.id.txtJuiceAmount);
         btnTeaAmountSelected = findViewById(R.id.btnJuiceAmount);
 
+        //setting the method when seek bar value is changed
         seekBarJuiceAmt.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-                txtJuiceAmt.setText(progress+" ml");
+                txtJuiceAmt.setText(progress+" ");//setting the progress value to text view
             }
 
             @Override
@@ -82,10 +84,11 @@ public class amount_juice extends AppCompatActivity {
 
         else
             return super.onOptionsItemSelected(item);
-    }/************************************* END OF MENU *******************************************************************************/
+    }//end of menu
 
-    /********************************** ADD JUICE *********************************************************************************/
 
+
+    /********************************************* UPDATING AMOUNT WHEN A NEW AMOUNT IS ADDED ********************************************************/
     public void updateAmount(View view){
         DBOpenHelper dbHelper=new DBOpenHelper(this);
 
@@ -131,14 +134,18 @@ public class amount_juice extends AppCompatActivity {
     /******************************************CANCEL ADD JUICE ************************************************************************/
     public void cancelJuice(View v){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
         // Setting Alert Dialog Title
         alertDialogBuilder.setTitle("Cancel Drink!!");
+
         // Icon Of Alert Dialog
         alertDialogBuilder.setIcon(R.drawable.warning);
+
         // Setting Alert Dialog Message
         alertDialogBuilder.setMessage("Do you really want to cancel??");
         alertDialogBuilder.setCancelable(false);
 
+        //positive response action
         alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 
             @Override
@@ -148,6 +155,7 @@ public class amount_juice extends AppCompatActivity {
             }
         });
 
+        //negative response action
         alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -155,7 +163,7 @@ public class amount_juice extends AppCompatActivity {
             }
         });
 
-
+        //creating and displaying alert dialog box
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }

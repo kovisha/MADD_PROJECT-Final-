@@ -32,14 +32,16 @@ public class amount_milk extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amount_milk);
 
+        //getting the ids of required components
         seekBarMilkAmt = findViewById(R.id.seekBarMilkAmount);
         txtMilkAmt = findViewById(R.id.txtMilkAmount);
         btnMilkAmtSelected = findViewById(R.id.btnMilkAmount);
 
+        //setting the method when seek bar value is changed
         seekBarMilkAmt.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-                txtMilkAmt.setText(progress+" ml");
+                txtMilkAmt.setText(progress+" ");//setting the progress value to text view
             }
 
             @Override
@@ -143,6 +145,7 @@ public class amount_milk extends AppCompatActivity {
         alertDialogBuilder.setMessage("Do you really want to cancel??");
         alertDialogBuilder.setCancelable(false);
 
+        //positive response action
         alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 
             @Override
@@ -152,6 +155,7 @@ public class amount_milk extends AppCompatActivity {
             }
         });
 
+        //positive response action
         alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -159,7 +163,7 @@ public class amount_milk extends AppCompatActivity {
             }
         });
 
-
+        //creating and displaying alert dialog box
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }

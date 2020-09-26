@@ -12,12 +12,14 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "Health_App.db";
 
+    //constructor
     public DBOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        //creating the database
         String SQL_CREATE_ENTRIES_3 =
                 "CREATE TABLE " + DBStructure.Water2.TABLE_NAME1 + " (" +
                         DBStructure.Water2._ID + " INTEGER PRIMARY KEY," +
@@ -38,7 +40,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     }
 
 
-    //----------------------------------------------Method to insert Values To water Table----------------------------------------
+    /**************************************** Method to insert Values To water Table *******************************************/
     public long addWater(Integer weight,Integer ExtTime,Double Total){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -56,7 +58,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     //End of method insert
 
 
-    //----------------------------------------------- Retrieve Method Water ------------------------------------------------------------------------
+    /**************************************** Method to retrieve Values from water Table *******************************************/
     public Cursor getInfo(SQLiteDatabase sqLiteDatabase){
         //SQLiteDatabase db = getReadableDatabase();
 
@@ -69,7 +71,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
         String selection = DBStructure.Water2._ID +"=?";
 
-        String[] selectionArgs = {"1"};
+        String[] selectionArgs = {"4"};
 
         return sqLiteDatabase.query(
                 DBStructure.Water2.TABLE_NAME1,
@@ -85,7 +87,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     //end of retrieve method
 
 
-    //------------------------------------------------------- UPDATE AFTER DRINKING ---------------------------------------------------
+    /**************************************** Method to update after drinking water *******************************************/
     public int updateInfo(Double amount,Double remain){
         SQLiteDatabase db = getReadableDatabase();
 
@@ -94,7 +96,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         contentValues.put(DBStructure.Water2.COL5_WATER2 , remain);
 
         String selection = DBStructure.Water2._ID + " LIKE ?";
-        String[] selectionArgs = {"1"};
+        String[] selectionArgs = {"4"};
 
         int count = db.update(
                 DBStructure.Water2.TABLE_NAME1,
@@ -109,18 +111,18 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     //end of update method
 
 
-    //--------------------------------------------- DELETING RECORDS ----------------------------------------------------------------
+    /**************************************** Method to delete records *******************************************/
     public void deleteRecord(){
         SQLiteDatabase db = getReadableDatabase();
 
         String selection = DBStructure.Water2._ID + " LIKE ?";
 
-        String selectionArgs[] = {"1"};
+        String selectionArgs[] = {"5"};
         db.delete(DBStructure.Water2.TABLE_NAME1 , selection , selectionArgs);
     }//End of records deletion
 
 
-    //--------------------------------------------- RETRIEVE DRANK AMOUNT--------------------------------------------------------------------
+    /**************************************** Method to retrieve drank amount *******************************************/
     public Double getDrank(){
         SQLiteDatabase db = getReadableDatabase();
 
@@ -130,7 +132,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         };
 
         String selection = DBStructure.Water2._ID + " LIKE ?";
-        String[] selectionArgs = {"1"};
+        String[] selectionArgs = {"4"};
 
 
         Cursor cursor = db.query(
@@ -155,7 +157,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
 
 
-    //------------------------------------- RETRIEVE REAMINING AMOUNT -----------------------------------------------------------------------------
+    /**************************************** Method to retrieve remaining amount *******************************************/
     public Double getRemainingAmt(){
         SQLiteDatabase db = getReadableDatabase();
 
@@ -165,7 +167,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         };
 
         String selection = DBStructure.Water2._ID + " LIKE ?";
-        String[] selectionArgs = {"1"};
+        String[] selectionArgs = {"4"};
 
 
         Cursor cursor = db.query(
@@ -185,7 +187,54 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         cursor.close();
 
         return amountDrank;
-    }
+    }//end of method to retrieve drank amount
+
+
+    /********************************************************* METHOD TO UPDATE TIME *******************************************************************/
+    public int updateTime(Integer newVal){
+        SQLiteDatabase db = getReadableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DBStructure.Water2.COL2_WATER2,newVal);
+
+
+        String selection = DBStructure.Water2._ID + " LIKE ?";
+        String[] selectionArgs = {"5"};
+
+        int count = db.update(
+                DBStructure.Water2.TABLE_NAME1,
+                contentValues,
+                selection,
+                selectionArgs
+        );
+
+        return count;
+
+    }//end of update time method
+
+
+    /***************************************************** METHOD TO UPDATE WEIGHT ******************************************************************/
+    public int updateWgt(Integer weight){
+        SQLiteDatabase db = getReadableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DBStructure.Water2.COL1_WATER2,weight);
+
+
+        String selection = DBStructure.Water2._ID + " LIKE ?";
+        String[] selectionArgs = {"5"};
+
+        int count = db.update(
+                DBStructure.Water2.TABLE_NAME1,
+                contentValues,
+                selection,
+                selectionArgs
+        );
+
+        return count;
+
+    }//end of method update weight
+
 
 
 

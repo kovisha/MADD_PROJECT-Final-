@@ -31,14 +31,16 @@ public class amount_tea extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amount_tea);
 
+        //getting the ids of required components
         seekBarTeaAmt = findViewById(R.id.seekBarTeaAmount);
         txtTeaAmt = findViewById(R.id.txtTeaAmount);
         btnTeaAmtSelected = findViewById(R.id.btnTeaAmount);
 
+        //setting the method when seek bar value is changed
         seekBarTeaAmt.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-                txtTeaAmt.setText(progress+" ml");
+                txtTeaAmt.setText(progress+" ");//setting the progress value to text view
             }
 
             @Override
@@ -133,14 +135,18 @@ public class amount_tea extends AppCompatActivity {
 
     public void cancelTea(View v){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
         // Setting Alert Dialog Title
         alertDialogBuilder.setTitle("Cancel Drink!!");
+
         // Icon Of Alert Dialog
         alertDialogBuilder.setIcon(R.drawable.warning);
+
         // Setting Alert Dialog Message
         alertDialogBuilder.setMessage("Do you really want to cancel??");
         alertDialogBuilder.setCancelable(false);
 
+        //positive response action
         alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 
             @Override
@@ -150,6 +156,7 @@ public class amount_tea extends AppCompatActivity {
             }
         });
 
+        //negative response action
         alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -157,7 +164,7 @@ public class amount_tea extends AppCompatActivity {
             }
         });
 
-
+        //creating and displaying alert dialog box
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }

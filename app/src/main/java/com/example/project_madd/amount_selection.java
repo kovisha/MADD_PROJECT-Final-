@@ -32,14 +32,16 @@ public class amount_selection extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amount_selection);
 
+        //getting the ids of required components
         seekBar = findViewById(R.id.seekBarAmnt);
         txtViewAmt = findViewById(R.id.textAmount);
         btnWaterSelected = findViewById(R.id.btnAmountSelected);
 
+        //setting the method when seek bar value is changed
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-                txtViewAmt.setText(progress+" ");
+                txtViewAmt.setText(progress+" ");//setting the progress value to text view
             }
 
             @Override
@@ -53,46 +55,23 @@ public class amount_selection extends AppCompatActivity {
             }
         });
 
-
-       /* btnWaterSelected.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               // Intent i = new Intent(amount_selection.this,viewMyWater.class);
-                //startActivity(i);
-
-                //Creating the LayoutInflater instance
-                LayoutInflater li = getLayoutInflater();
-
-                //Getting the View object as defined in the custom toast.xml file
-                View layout = li.inflate(R.layout.custom_toast_water,(ViewGroup) findViewById(R.id.custom_toast_water));
-
-                //Creating the Toast object
-                Toast toast = new Toast(getApplicationContext());
-                toast.setDuration(Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
-                toast.setView(layout);
-                toast.show();
-
-                Intent i = new Intent(amount_selection.this,viewMyWater.class);
-                startActivity(i);
-            }
-        });*/
     }
 
 
-    //Update method to call the update in DB HELPER----------------------------------------------------
+    /********************************************* UPDATING AMOUNT WHEN A NEW AMOUNT IS ADDED ********************************************************/
     public void updateAmount(View view){
+        //instance of db helper
         DBOpenHelper dbHelper=new DBOpenHelper(this);
 
+        //Retrieving the drank amount
         Double drankAlready = dbHelper.getDrank();
         Double totDrank = Double.parseDouble(txtViewAmt.getText().toString())+drankAlready;
 
-        //Double amount = Double.parseDouble(txtViewAmt.getText().toString());
-
+        //retrieving the remaining amount
         Double remainingAlready = dbHelper.getRemainingAmt();
         Double totRemaining = remainingAlready - Double.parseDouble(txtViewAmt.getText().toString());
 
-
+        //calling the method in db helper to update
         int val=dbHelper.updateInfo(totDrank,totRemaining);
 
         if(val>0)
@@ -111,6 +90,7 @@ public class amount_selection extends AppCompatActivity {
             toast.setView(layout);
             toast.show();
 
+            //moving to next activity using intent
             Intent i = new Intent(amount_selection.this,viewMyWater.class);
             startActivity(i);
 
@@ -123,7 +103,7 @@ public class amount_selection extends AppCompatActivity {
 
 
 
-    //--------------------------------------------- MENU ---------------------------------------------------------------------------
+    /********************************************* MENU OPTIONS ********************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu,menu);
@@ -149,21 +129,24 @@ public class amount_selection extends AppCompatActivity {
 
         else
             return super.onOptionsItemSelected(item);
-    }
-
-    //------------------------------------- END OF MENU -----------------------------------------------------------------------------------------
+    }//end of menu
 
 
+    /********************************************* ON CLICK METHOD WHEN CANCELLED ADDITION OF DRINK ********************************************************/
     public void cancelDrink(View v){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
         // Setting Alert Dialog Title
         alertDialogBuilder.setTitle("Cancel Drink!!");
+
         // Icon Of Alert Dialog
         alertDialogBuilder.setIcon(R.drawable.warning);
+
         // Setting Alert Dialog Message
         alertDialogBuilder.setMessage("Do you really want to cancel??");
         alertDialogBuilder.setCancelable(false);
 
+        //positive response action
         alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 
             @Override
@@ -173,6 +156,7 @@ public class amount_selection extends AppCompatActivity {
             }
         });
 
+        //negative response action
         alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -180,7 +164,7 @@ public class amount_selection extends AppCompatActivity {
             }
         });
 
-
+        //creating and displaying alert box
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }

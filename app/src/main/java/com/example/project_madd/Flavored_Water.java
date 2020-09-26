@@ -21,8 +21,10 @@ public class Flavored_Water extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flavored__water);
 
+        //getting the id of button
         btnLearnMore = findViewById(R.id.btnLearnMore);
 
+        //setting an implicit intent to move to browser
         btnLearnMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,6 +38,7 @@ public class Flavored_Water extends AppCompatActivity {
 
     }
 
+    /********************************************* MENU OPTIONS ********************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu,menu);
@@ -61,7 +64,7 @@ public class Flavored_Water extends AppCompatActivity {
 
         else
             return super.onOptionsItemSelected(item);
-    }
+    }//end of menu
 
 
 

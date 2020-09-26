@@ -16,6 +16,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -26,25 +28,32 @@ import java.util.Calendar;
 public class Settings extends AppCompatActivity {
 
     Switch switch1;
-    Button btnExercise, btnGoals;
+    Button btnExercise, btnGoals , btnWeight;
     Dialog myDialog;
+    RadioGroup rgNewTime;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        //dialog instance for popup
         myDialog = new Dialog(this);
+
         //reminder Switch Method
         switch1 = (Switch) findViewById(R.id.reminderSwitch);
 
+        //using shared preference to keep switch on/off state saved
         SharedPreferences sharedPreferences = getSharedPreferences("save", MODE_PRIVATE);
         switch1.setChecked(sharedPreferences.getBoolean("value", true));
 
+        //on click method for switch
         switch1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                //if switch is on
                 if(switch1.isChecked()){
                     SharedPreferences.Editor editor = getSharedPreferences("save",MODE_PRIVATE).edit();
                     editor.putBoolean("value",true);
@@ -53,8 +62,11 @@ public class Settings extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Reminders On" , Toast.LENGTH_SHORT).show();
 
 
+                    //---------------------- NOTIFICATION -----------------------------------------------------------------
+                    //getting calender instance for notifications
                     Calendar cal = Calendar.getInstance();
 
+                    //setting time
                     cal.set(Calendar.HOUR_OF_DAY,16);
                     cal.set(Calendar.MINUTE,24);
                     cal.set(Calendar.SECOND,25);
@@ -65,7 +77,8 @@ public class Settings extends AppCompatActivity {
                     alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,cal.getTimeInMillis(),AlarmManager.INTERVAL_HOUR,pendingIntent);
 
 
-                }else{
+                }//else if switch is off
+                else{
                     SharedPreferences.Editor editor = getSharedPreferences("save",MODE_PRIVATE).edit();
                     editor.putBoolean("value",false);
                     editor.apply();
@@ -78,20 +91,11 @@ public class Settings extends AppCompatActivity {
         });
 
 
-        /*switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b == true){
-                    Toast.makeText(getApplicationContext(),"Reminders On" , Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(getApplicationContext(),"Reminders Off" , Toast.LENGTH_SHORT).show();
-                }
-            }
-        });*/
 
 
     }
 
+    /********************************************* MENU OPTIONS ********************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu,menu);
@@ -117,10 +121,10 @@ public class Settings extends AppCompatActivity {
 
         else
             return super.onOptionsItemSelected(item);
-    }
+    }//end of menu options
 
 
-    //navigate to change goals
+    /********************************************* NAVIGATE TO CHANGE GOALS ********************************************************/
         public void changeGoals(View view){
 
             btnGoals = findViewById(R.id.btnChangeGoals);
@@ -135,24 +139,61 @@ public class Settings extends AppCompatActivity {
         }
 
 
-
+    /********************************************* POP UP TO CHANGE EXERCISE TIME ********************************************************/
        public void changeExercise(View view) {
-           //btnExercise = findViewById(R.id.btnChangeExerciseTime);
            myDialog.setContentView(R.layout.popup);
            btnExercise = (Button) myDialog.findViewById(R.id.btnChangeExerciseTime);
            Button btnReset = (Button) myDialog.findViewById(R.id.btnSetTime);
+           rgNewTime = (RadioGroup)myDialog.findViewById(R.id.timeGroup);
+
+
            btnReset.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View view) {
-                   myDialog.dismiss();
+                   changeTime(rgNewTime);//calling update method to change the time
                }
            });
 
            myDialog.show();
-       }
+       }//end of on click
+
+    /********************************************* UPDATE METHOD TO CHANGE THE TIME ********************************************************/
+    public void changeTime(RadioGroup rgNewTime){
+        DBOpenHelper dbHelper=new DBOpenHelper(this);
+        //System.out.println("Look here 2");
+       // System.out.println(rgNewTime);
+        RadioButton radioButton = (RadioButton) myDialog.findViewById(rgNewTime.getCheckedRadioButtonId());
+        //System.out.println("look here 3:"+radioButton.getText().toString());
+
+        //calling the update method in db helper
+        long val=dbHelper.updateTime(Integer.parseInt(radioButton.getText().toString()));
+
+        if(val>0)
+        {
+            myDialog.dismiss();
+        }
+        else
+        {
+            Toast.makeText(this,"Update Failed",Toast.LENGTH_SHORT).show();
+            myDialog.dismiss();
+        }
+    }//end of method
 
 
-       //delete records----------------------------------------------------------------------------
+    /********************************************* ON CLICK METHOD TO UPDATE WEIGHT ********************************************************/
+       public void resetWeight(View view){
+            btnWeight = findViewById(R.id.btnChangeWeight);
+            btnWeight.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(Settings.this,change_weight.class);
+                    startActivity(i);
+                }
+            });
+       }//end of method
+
+
+    /********************************************* DELETE RECORDS METHOD ********************************************************/
        public void deleteRecords(final View v){
            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
            // Setting Alert Dialog Title
@@ -163,15 +204,17 @@ public class Settings extends AppCompatActivity {
            alertDialogBuilder.setMessage("Are You sure? Do you want to delete your water records?");
            alertDialogBuilder.setCancelable(false);
 
+           //set positive response
            alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 
                @Override
                public void onClick(DialogInterface arg0, int arg1) {
-                    deleteData(v);
-                  // Toast.makeText(Settings.this, "Your records are deleted!", Toast.LENGTH_SHORT).show();
+                    deleteData(v);//call te delete method
+
                }
            });
 
+           //set negative response
            alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                @Override
                public void onClick(DialogInterface dialog, int which) {
@@ -180,12 +223,26 @@ public class Settings extends AppCompatActivity {
            });
 
 
+           //create and show alert dialog box
            AlertDialog alertDialog = alertDialogBuilder.create();
            alertDialog.show();
-       }
+       }//end of method
+
+    /********************************************* THE DELETE METHOD ********************************************************/
+    public void deleteData(View view)
+    {
+        //db instance
+        DBOpenHelper dbHelper=new DBOpenHelper(this);
+
+        //calling the delete method in db helper
+        dbHelper.deleteRecord();
+
+        Toast.makeText(this,"deleted successfully",Toast.LENGTH_SHORT).show();
+
+    }
 
 
-       //--------------------------------- RESET RECORDS -------------------------------------------------------------------------------------------
+    /********************************************* THE DELETE METHOD ********************************************************/
        public void resetRecords(View v){
            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
            // Setting Alert Dialog Title
@@ -211,23 +268,17 @@ public class Settings extends AppCompatActivity {
                }
            });
 
-
+            //create and show alert dialog box
            AlertDialog alertDialog = alertDialogBuilder.create();
            alertDialog.show();
 
        }
 
 
-       //----------------------------------- METHOD TO CALL DELETE METHOD ----------------------------------------------------------------
-       public void deleteData(View view)
-       {
-           DBOpenHelper dbHelper=new DBOpenHelper(this);
 
-           dbHelper.deleteRecord();
 
-           Toast.makeText(this,"deleted successfully",Toast.LENGTH_SHORT).show();
 
-       }
+
 
 
 }

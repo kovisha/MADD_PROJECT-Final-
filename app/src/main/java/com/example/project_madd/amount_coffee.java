@@ -31,14 +31,16 @@ public class amount_coffee extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amount_coffee);
 
+        //getting the ids of required components
         seekCoffee = findViewById(R.id.seekBarCoffeeAmt);
         txtCoffee = findViewById(R.id.textAmount);
         btnCoffeeAmtSelected = findViewById(R.id.btnCoffeeAmnt);
 
+        //setting the method when seek bar value is changed
         seekCoffee.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-                txtCoffee.setText(progress+" ");
+                txtCoffee.setText(progress+" ");//setting the progress value to text view
             }
 
             @Override
@@ -52,15 +54,10 @@ public class amount_coffee extends AppCompatActivity {
             }
         });
 
-        /*btnCoffeeAmtSelected.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(amount_coffee.this,viewMyWater.class);
-                startActivity(i);
-            }
-        });*/
+
     }
 
+    /********************************************* UPDATING AMOUNT WHEN A NEW AMOUNT IS ADDED ********************************************************/
     public void updateAmount(View view){
         DBOpenHelper dbHelper=new DBOpenHelper(this);
 
@@ -99,11 +96,11 @@ public class amount_coffee extends AppCompatActivity {
         {
             Toast.makeText(this,"Could Not update! ",Toast.LENGTH_SHORT).show();
         }
-    }
+    }//end of method
 
 
 
-    //-------------------------------------------- MENU --------------------------------------------------------------------------
+    /********************************************* MENU OPTIONS ********************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu,menu);
@@ -129,22 +126,25 @@ public class amount_coffee extends AppCompatActivity {
 
         else
             return super.onOptionsItemSelected(item);
-    }
-
-//----------------------------- END OF MENU----------------------------------------------------------------------------------------------------
+    }//end of menu
 
 
-    //-------------------------CANCEL ADD DRINK-------------------------------------------------------------------------------
+
+    /********************************************* ON CLICK METHOD WHEN CANCELLED ADDITION OF DRINK ********************************************************/
     public void cancelCoffee(View v){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
         // Setting Alert Dialog Title
         alertDialogBuilder.setTitle("Cancel Drink!!");
+
         // Icon Of Alert Dialog
         alertDialogBuilder.setIcon(R.drawable.warning);
+
         // Setting Alert Dialog Message
         alertDialogBuilder.setMessage("Do you really want to cancel??");
         alertDialogBuilder.setCancelable(false);
 
+        //positive response action
         alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 
             @Override
@@ -154,6 +154,7 @@ public class amount_coffee extends AppCompatActivity {
             }
         });
 
+        //negative response action
         alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -161,7 +162,7 @@ public class amount_coffee extends AppCompatActivity {
             }
         });
 
-
+        //creating and displaying alert dialog box
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }

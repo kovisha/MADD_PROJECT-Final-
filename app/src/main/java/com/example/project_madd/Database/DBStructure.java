@@ -4,9 +4,13 @@ import android.provider.BaseColumns;
 
 public class DBStructure {
 
+    /***********Class containing table and column names***************************/
+
+    /************* Constructor *****************************/
     public DBStructure() {
     }
 
+    /***************** Table and columns ********************************/
     public static class Water2 implements BaseColumns {
         public static final String TABLE_NAME1 = "waterTracker";
         public static final String COL1_WATER2 = "weight";

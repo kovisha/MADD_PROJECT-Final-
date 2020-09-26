@@ -8,6 +8,7 @@ import android.content.Intent;
 
 import androidx.core.app.NotificationCompat;
 
+//receiver class for notification broadcast
 public class ReminderWater extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {

@@ -82,7 +82,6 @@
             android:backgroundTint="@color/popUpbtn"
             android:fontFamily="@font/aldrich"
             android:gravity="center"
-            android:onClick="changeTheTime"
             android:text="@string/changed"
             android:textColor="@color/prjctBtnTextclr"
             android:textSize="20sp" />

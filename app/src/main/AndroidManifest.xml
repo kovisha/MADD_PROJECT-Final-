@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.project_madd">
 
-    <uses-permission android:name="android.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.SET_ALARM" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".change_weight"></activity>
         <activity android:name=".settings_goals" />
         <activity android:name=".Dashboard_Male" />
         <activity android:name=".amount_coffee" />
@@ -23,10 +24,7 @@
         <activity android:name=".Flavored_Water" />
         <activity android:name=".Settings" />
         <activity android:name=".tips_and_more" />
-        <activity android:name=".viewMyWater" >
-
-        </activity>
-
+        <activity android:name=".viewMyWater"></activity>
         <activity android:name=".water_calculation" />
         <activity android:name=".Water_home" />
         <activity android:name=".MenstrualHome" />
@@ -40,7 +38,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".ReminderWater"/>
+        <receiver android:name=".ReminderWater" />
 
         <meta-data
             android:name="preloaded_fonts"

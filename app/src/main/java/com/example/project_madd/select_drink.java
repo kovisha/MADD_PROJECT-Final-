@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class select_drink extends AppCompatActivity {
 
-   // TextView textAmt;
+
     ImageView imageWater , imageCoffee , imageMilk , imageTea, imageJuice;
 
     @Override
@@ -22,12 +22,14 @@ public class select_drink extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_drink);
 
+        //getting the id's of image views
         imageWater = findViewById(R.id.imgWater);
         imageCoffee = findViewById(R.id.imgCoffee);
         imageMilk = findViewById(R.id.imgMilk);
         imageTea = findViewById(R.id.imgTea);
         imageJuice = findViewById(R.id.imgJuice);
 
+        //setting on click methods for image clicks
         imageWater.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,6 +76,7 @@ public class select_drink extends AppCompatActivity {
         });
     }
 
+    /********************************************* MENU OPTIONS ********************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu,menu);
@@ -99,5 +102,5 @@ public class select_drink extends AppCompatActivity {
 
         else
             return super.onOptionsItemSelected(item);
-    }
+    }//end of menu
 }

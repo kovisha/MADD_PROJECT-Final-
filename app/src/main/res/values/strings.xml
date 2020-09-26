@@ -21,7 +21,7 @@
     <string name="water_calculation_title">LET\'S GET STARTED</string>
     <string name="preference">Select Your Preference</string>
     <string name="water_calculation_units">Unit : </string>
-    <string name="water_calculation_weight">Weight : </string>
+    <string name="water_calculation_weight">Weight in kg : </string>
     <string name="water_calculation_exercise">Exercise Time In Minutes : </string>
 
     <string-array name="units_array">
