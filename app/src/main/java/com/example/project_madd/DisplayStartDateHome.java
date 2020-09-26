@@ -31,7 +31,7 @@ import java.util.TimeZone;
 
 public class DisplayStartDateHome extends AppCompatActivity {
 
-    String takeExtra1;
+    String startDate;
     ImageView v2;
     TextView displayStartDate ,startDateCaption, displayNextStartDate;
     Button btn2;
@@ -53,7 +53,7 @@ public class DisplayStartDateHome extends AppCompatActivity {
         Cursor cursor = dbOpenHelper.readStartDate(database);
 
         while(cursor.moveToNext()) {
-            String startDate = cursor.getString(cursor.getColumnIndex(DBStructure.PeriodTracker.COLUMN_NAME_START_DATE));
+             startDate = cursor.getString(cursor.getColumnIndex(DBStructure.PeriodTracker.COLUMN_NAME_START_DATE));
 
             startDateCaption = findViewById(R.id.getStartDate);
             startDateCaption.setText("Start Date");
@@ -62,9 +62,7 @@ public class DisplayStartDateHome extends AppCompatActivity {
             displayStartDate.setText(startDate);//display the retrieved start date here
 
 
-
            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
 
           int menstrualDays = 28;
 
@@ -80,7 +78,6 @@ public class DisplayStartDateHome extends AppCompatActivity {
             c.add(Calendar.DAY_OF_MONTH, menstrualDays); //add  days to predict the next period date.
 
             String nextPeriodDate=sdf.format(c.getTime());
-
 
             displayNextStartDate = findViewById(R.id.displayNextPeriodDate);
             displayNextStartDate.setText(nextPeriodDate); // display the retrieved next start date here

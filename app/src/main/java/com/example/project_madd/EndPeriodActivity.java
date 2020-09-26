@@ -131,15 +131,20 @@ public class EndPeriodActivity extends AppCompatActivity {
 
         endDate = getEndDate.getText().toString();
 
-        long val = dbOpenHelper.updatePeriodEndDate(endDate);
+        if(!endDate.isEmpty()) {
 
 
-        if(val > 0){
-            Toast.makeText(getApplicationContext(), " End Date update success", Toast.LENGTH_SHORT).show();
+            long val = dbOpenHelper.updatePeriodEndDate(endDate);
 
+            if (val > 0) {
+                Toast.makeText(getApplicationContext(), " End Date update success", Toast.LENGTH_SHORT).show();
+
+            } else {
+                Toast.makeText(getApplicationContext(), " End Date update failed", Toast.LENGTH_SHORT).show();
+            }
         }
         else{
-            Toast.makeText(getApplicationContext(), " End Date update failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(EndPeriodActivity.this, "Please enter End Date", Toast.LENGTH_SHORT).show();
         }
 
 
