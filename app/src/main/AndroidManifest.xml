@@ -23,7 +23,10 @@
         <activity android:name=".Flavored_Water" />
         <activity android:name=".Settings" />
         <activity android:name=".tips_and_more" />
-        <activity android:name=".viewMyWater" />
+        <activity android:name=".viewMyWater" >
+
+        </activity>
+
         <activity android:name=".water_calculation" />
         <activity android:name=".Water_home" />
         <activity android:name=".MenstrualHome" />

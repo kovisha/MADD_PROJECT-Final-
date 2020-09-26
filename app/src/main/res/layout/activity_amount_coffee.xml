@@ -95,6 +95,7 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/aldrich"
+        android:onClick="updateAmount"
         android:text="Done"
         android:textColor="@color/prjctBtnTextclr"
         android:textSize="22sp"

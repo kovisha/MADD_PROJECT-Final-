@@ -86,11 +86,12 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
 
     //------------------------------------------------------- UPDATE AFTER DRINKING ---------------------------------------------------
-    public int updateInfo(Double amount){
+    public int updateInfo(Double amount,Double remain){
         SQLiteDatabase db = getReadableDatabase();
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(DBStructure.Water2.COL4_WATER2 , amount);
+        contentValues.put(DBStructure.Water2.COL5_WATER2 , remain);
 
         String selection = DBStructure.Water2._ID + " LIKE ?";
         String[] selectionArgs = {"1"};
@@ -114,8 +115,78 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
         String selection = DBStructure.Water2._ID + " LIKE ?";
 
-        String selectionArgs[] = {"2"};
+        String selectionArgs[] = {"1"};
         db.delete(DBStructure.Water2.TABLE_NAME1 , selection , selectionArgs);
+    }//End of records deletion
+
+
+    //--------------------------------------------- RETRIEVE DRANK AMOUNT--------------------------------------------------------------------
+    public Double getDrank(){
+        SQLiteDatabase db = getReadableDatabase();
+
+        String[] projection = {
+
+                DBStructure.Water2.COL4_WATER2
+        };
+
+        String selection = DBStructure.Water2._ID + " LIKE ?";
+        String[] selectionArgs = {"1"};
+
+
+        Cursor cursor = db.query(
+                DBStructure.Water2.TABLE_NAME1,
+                projection,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null
+        );
+
+        cursor.moveToFirst();
+        Double amountDrank = Double.parseDouble(cursor.getString(0));
+
+
+        cursor.close();
+
+        return amountDrank;
+
+    }//END of retrieve drank amount
+
+
+
+    //------------------------------------- RETRIEVE REAMINING AMOUNT -----------------------------------------------------------------------------
+    public Double getRemainingAmt(){
+        SQLiteDatabase db = getReadableDatabase();
+
+        String[] projection = {
+
+                DBStructure.Water2.COL5_WATER2
+        };
+
+        String selection = DBStructure.Water2._ID + " LIKE ?";
+        String[] selectionArgs = {"1"};
+
+
+        Cursor cursor = db.query(
+                DBStructure.Water2.TABLE_NAME1,
+                projection,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null
+        );
+
+        cursor.moveToFirst();
+        Double amountDrank = Double.parseDouble(cursor.getString(0));
+
+
+        cursor.close();
+
+        return amountDrank;
     }
+
+
 
 }

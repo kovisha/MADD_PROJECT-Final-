@@ -64,10 +64,16 @@ public class amount_coffee extends AppCompatActivity {
     public void updateAmount(View view){
         DBOpenHelper dbHelper=new DBOpenHelper(this);
 
-        Double amount = (Double.parseDouble(txtCoffee.getText().toString()))*0.8;
+        Double drankAlready = dbHelper.getDrank();
+        Double totDrank = (Double.parseDouble(txtCoffee.getText().toString())*0.8)+drankAlready;
+
+        //Double amount = Double.parseDouble(txtViewAmt.getText().toString());
+
+        Double remainingAlready = dbHelper.getRemainingAmt();
+        Double totRemaining = remainingAlready - (Double.parseDouble(txtCoffee.getText().toString())*0.8);
 
 
-        int val=dbHelper.updateInfo(amount);
+        int val=dbHelper.updateInfo(totDrank,totRemaining);
 
         if(val>0)
         {

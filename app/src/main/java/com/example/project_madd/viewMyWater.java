@@ -40,9 +40,10 @@ public class viewMyWater extends AppCompatActivity {
             txtDrank.setText(drankAmt+" ml");
 
             String remainingAmt = cursor.getString(cursor.getColumnIndex(DBStructure.Water2.COL5_WATER2));
-            Double totRemain = Double.parseDouble(remainingAmt) - Double.parseDouble(drankAmt);
+            //Double totRemain = Double.parseDouble(remainingAmt) - Double.parseDouble(drankAmt);
             TextView txtRemain = findViewById(R.id.remainingAmt);
-            txtRemain.setText(totRemain.toString()+" ml");
+            //txtRemain.setText(totRemain.toString()+" ml");
+            txtRemain.setText(remainingAmt+" ml");
 
         }
 

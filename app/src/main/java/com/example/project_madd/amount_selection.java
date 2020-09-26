@@ -84,10 +84,16 @@ public class amount_selection extends AppCompatActivity {
     public void updateAmount(View view){
         DBOpenHelper dbHelper=new DBOpenHelper(this);
 
-        Double amount = Double.parseDouble(txtViewAmt.getText().toString());
+        Double drankAlready = dbHelper.getDrank();
+        Double totDrank = Double.parseDouble(txtViewAmt.getText().toString())+drankAlready;
+
+        //Double amount = Double.parseDouble(txtViewAmt.getText().toString());
+
+        Double remainingAlready = dbHelper.getRemainingAmt();
+        Double totRemaining = remainingAlready - Double.parseDouble(txtViewAmt.getText().toString());
 
 
-        int val=dbHelper.updateInfo(amount);
+        int val=dbHelper.updateInfo(totDrank,totRemaining);
 
         if(val>0)
         {

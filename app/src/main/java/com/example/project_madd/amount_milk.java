@@ -7,13 +7,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.project_madd.Database.DBOpenHelper;
 
 public class amount_milk extends AppCompatActivity {
 
@@ -48,15 +53,11 @@ public class amount_milk extends AppCompatActivity {
             }
         });
 
-        btnMilkAmtSelected.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(amount_milk.this,viewMyWater.class);
-                startActivity(i);
-            }
-        });
+
     }
 
+
+    /**************************** MENU ****************************************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu,menu);
@@ -83,7 +84,55 @@ public class amount_milk extends AppCompatActivity {
         else
             return super.onOptionsItemSelected(item);
     }
+    /************************************************* END OF MENU *************************************************************************/
 
+
+
+    /************************************* METHOD add milk ************************************************************/
+
+    public void updateAmount(View view) {
+        DBOpenHelper dbHelper = new DBOpenHelper(this);
+
+        Double drankAlready = dbHelper.getDrank();
+        Double totDrank = (Double.parseDouble(txtMilkAmt.getText().toString())*0.88) + drankAlready;
+
+        //Double amount = Double.parseDouble(txtViewAmt.getText().toString());
+
+        Double remainingAlready = dbHelper.getRemainingAmt();
+        Double totRemaining = remainingAlready - (Double.parseDouble(txtMilkAmt.getText().toString())*0.88);
+
+
+        int val = dbHelper.updateInfo(totDrank, totRemaining);
+
+        if (val > 0) {
+
+            //Creating the LayoutInflater instance
+            LayoutInflater li = getLayoutInflater();
+
+            //Getting the View object as defined in the custom toast.xml file
+            View layout = li.inflate(R.layout.custom_toast_milk, (ViewGroup) findViewById(R.id.custom_toast_milk));
+
+            //Creating the Toast object
+            Toast toast = new Toast(getApplicationContext());
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+            toast.setView(layout);
+            toast.show();
+
+            Intent i = new Intent(amount_milk.this, viewMyWater.class);
+            startActivity(i);
+
+        } else {
+            Toast.makeText(this, "Could Not update! ", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /************************************ END of add milk *************************************************************/
+
+
+
+
+    /***************************** Method cancel Add drink **********************************************************************/
     public void cancelMilk(View v){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         // Setting Alert Dialog Title
@@ -114,6 +163,8 @@ public class amount_milk extends AppCompatActivity {
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }
+
+    /************************* END of cancel Drink ******************************************************************/
 
 
 }
