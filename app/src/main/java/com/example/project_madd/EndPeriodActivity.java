@@ -25,7 +25,13 @@ import android.widget.Toast;
 import com.example.project_madd.Database.DBOpenHelper;
 import com.example.project_madd.Database.DBStructure;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.DayOfWeek;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 public class EndPeriodActivity extends AppCompatActivity {
 
@@ -34,8 +40,9 @@ public class EndPeriodActivity extends AppCompatActivity {
     EditText eText,getEndDate;
     Button btnGet , eConfirm ;
     Dialog myDialog;
-    TextView displayStartDate , displayEndDate;
-    String startDate,endDate;
+    TextView displayStartDate , displayEndDate , BleedDisplay;
+    String startDate,endDate,bleeding;
+    long bleedingDays;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +86,8 @@ public class EndPeriodActivity extends AppCompatActivity {
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                eText.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                                //eText.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                                eText.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
                             }
                         }, year, month, day);
                 picker.show();
@@ -91,9 +99,18 @@ public class EndPeriodActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //Toast.makeText(getApplicationContext(), "Your record is being processed!",Toast.LENGTH_SHORT).show();
 
                 updateEndDate(view); //calling the update end date method during add end date button click
+
+                Toast.makeText(getApplicationContext(), "Bleeding days are processed!",Toast.LENGTH_SHORT).show();
+
+
+                try {
+                    calPeriod(view); //calling the method to calculate period date.
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
 
             }
         });
@@ -120,7 +137,6 @@ public class EndPeriodActivity extends AppCompatActivity {
         if(val > 0){
             Toast.makeText(getApplicationContext(), " End Date update success", Toast.LENGTH_SHORT).show();
 
-
         }
         else{
             Toast.makeText(getApplicationContext(), " End Date update failed", Toast.LENGTH_SHORT).show();
@@ -141,6 +157,23 @@ public class EndPeriodActivity extends AppCompatActivity {
         else{
             Toast.makeText(getApplicationContext(), " Record Deletion  failed", Toast.LENGTH_SHORT).show();
         }
+    }
+
+
+
+    public void  calPeriod(View view) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+        Date firstDate = sdf.parse(startDate);
+        Date secondDate = sdf.parse(endDate);
+
+        long difInMillies= Math.abs(secondDate.getTime() - firstDate.getTime());
+        long diff = TimeUnit.DAYS.convert(difInMillies,TimeUnit.MILLISECONDS);
+
+
+        String dayDifference = Long.toString(diff);
+
+        BleedDisplay = findViewById(R.id.textBleed);
+        BleedDisplay.setText(dayDifference);
     }
 
 
@@ -201,7 +234,6 @@ public class EndPeriodActivity extends AppCompatActivity {
 
                 deletePeriodRecord(view);
 
-                //Toast.makeText(getApplicationContext(),"Deleting record",Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(EndPeriodActivity.this , MenstrualHome.class);
                 startActivity(intent);

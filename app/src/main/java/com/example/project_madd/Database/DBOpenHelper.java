@@ -81,7 +81,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
         String [] projections={DBStructure.PeriodTracker.COLUMN_NAME_START_DATE};
         String selection=DBStructure.PeriodTracker._ID+"=?" ;
-        String [] selectionArgs = {"1"};
+        String [] selectionArgs = {"28"};
 
 
         return sqLiteDatabase.query(DBStructure.PeriodTracker.TABLE_NAME,projections,selection,selectionArgs,null,null,null);
@@ -99,7 +99,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         values.put(DBStructure.PeriodTracker.COLUMN_NAME_END_DATE,endDate);
 
         String selection = DBStructure.PeriodTracker._ID + " LIKE ?";
-        String [] selectionArgs = {"1"};
+        String [] selectionArgs = {"28"};
 
         long updatedEndDate = db.update(DBStructure.PeriodTracker.TABLE_NAME,values,selection,selectionArgs);
 
@@ -113,7 +113,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
 
         String selection = DBStructure.PeriodTracker._ID+" LIKE ?";
-        String [] selectionArgs = {"20"};
+        String [] selectionArgs = {"28"};
 
         long deleteRecord = db.delete(DBStructure.PeriodTracker.TABLE_NAME,selection,selectionArgs);
 

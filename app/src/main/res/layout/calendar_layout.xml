@@ -121,8 +121,44 @@
     <GridView
         android:id="@+id/gridView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="400dp"
         android:background="@color/popUpColor"
         android:numColumns="7" />
+
+    <TextView
+        android:id="@+id/retrieveStartDate"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Start Date"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:id="@+id/viewMyStartDate"/>
+
+    <TextView
+        android:id="@+id/retrieveEndDate"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Expected End Date"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:id="@+id/viewMyEndDate"/>
 
 </LinearLayout>

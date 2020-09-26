@@ -24,6 +24,8 @@ public class DisplayCalendar extends AppCompatActivity {
         setContentView(R.layout.activity_display_calendar);
 
         customCalendarView = (CustomCalendarView) findViewById(R.id.custom_calendar_view);
+
+
     }
 
 

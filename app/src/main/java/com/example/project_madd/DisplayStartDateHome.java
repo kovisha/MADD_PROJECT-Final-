@@ -14,13 +14,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.project_madd.Database.DBOpenHelper;
 import com.example.project_madd.Database.DBStructure;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 
 public class DisplayStartDateHome extends AppCompatActivity {
 
@@ -46,20 +51,27 @@ public class DisplayStartDateHome extends AppCompatActivity {
 
             startDateCaption = findViewById(R.id.getStartDate);
             startDateCaption.setText("Start Date");
+
             displayStartDate = findViewById(R.id.displayStartDate);
             displayStartDate.setText(startDate);//display the retrieved start date here
 
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+           SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+            int menstrualDays = 28;
+
             Calendar c = Calendar.getInstance();
             try{
-                c.setTime(sdf.parse(startDate));
+               c.setTime(sdf.parse(startDate));
+
             } catch (ParseException e) {
                 e.printStackTrace();
             }
 
-            c.add(Calendar.DAY_OF_MONTH,34); //add  days to predict the next period date.
+
+            c.add(Calendar.DAY_OF_MONTH,menstrualDays); //add  days to predict the next period date.
 
             String nextPeriodDate=sdf.format(c.getTime());
+
 
             displayNextStartDate = findViewById(R.id.displayNextPeriodDate);
             displayNextStartDate.setText(nextPeriodDate); // display the retrieved next start date here

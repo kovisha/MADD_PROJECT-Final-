@@ -57,7 +57,8 @@ public class AddPeriodActivity extends AppCompatActivity {
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                eText.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                               // eText.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                                eText.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth );
                             }
                         }, year, month, day);
                 picker.show();
@@ -102,14 +103,6 @@ public class AddPeriodActivity extends AppCompatActivity {
 
         startActivity(secondIntent);
     }
-
-
-
-
-
-
-
-
 
 
 
