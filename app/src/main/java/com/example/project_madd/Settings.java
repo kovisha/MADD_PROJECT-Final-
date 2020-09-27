@@ -10,6 +10,8 @@ import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,9 +21,11 @@ import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.project_madd.Database.DBOpenHelper;
+import com.example.project_madd.Database.DBStructure;
 
 import java.util.Calendar;
 
@@ -242,8 +246,8 @@ public class Settings extends AppCompatActivity {
     }
 
 
-    /********************************************* THE DELETE METHOD ********************************************************/
-       public void resetRecords(View v){
+    /********************************************* THE ON CLICK OF RESET ********************************************************/
+       public void resetRecords(final View v){
            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
            // Setting Alert Dialog Title
            alertDialogBuilder.setTitle("Reset Record!");
@@ -257,6 +261,7 @@ public class Settings extends AppCompatActivity {
 
                @Override
                public void onClick(DialogInterface arg0, int arg1) {
+                   resetInfo(v);
                    Toast.makeText(Settings.this, "Your records are reset!", Toast.LENGTH_SHORT).show();
                }
            });
@@ -274,8 +279,35 @@ public class Settings extends AppCompatActivity {
 
        }
 
+    /********************************************* THE RESET METHOD ********************************************************/
+    public void resetInfo(View view){
+        //instance of db helper
+        DBOpenHelper dbHelper=new DBOpenHelper(this);
+
+        Integer weight = dbHelper.getResetInfo();
+        Integer exerciseTime = dbHelper.getResetExTime();
+
+        Double total = weight / 30.0;
+        Double extra = (exerciseTime / 30.0) * 0.35;
+        Double resetTot = (total + extra) * 1000;
+
+        long val=dbHelper.resetMyInfo(resetTot);
+
+        if(val>0)
+        {
+            Intent i = new Intent(Settings.this,Settings.class);
+            Toast.makeText(this,"Reset success!",Toast.LENGTH_SHORT).show();
+            startActivity(i);
+        }
+        else
+        {
+            Intent i = new Intent(Settings.this,Settings.class);
+            Toast.makeText(this,"Reset failed!",Toast.LENGTH_SHORT).show();
+            startActivity(i);
+        }
 
 
+    }
 
 
 

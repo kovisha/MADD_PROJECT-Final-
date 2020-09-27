@@ -236,6 +236,95 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     }//end of method update weight
 
 
+    /***************************************************** METHOD TO RETRIEVE WEIGHT ******************************************************************/
+    public Integer getResetInfo(){
+        SQLiteDatabase db = getReadableDatabase();
+
+        String[] projection = {
+
+                DBStructure.Water2.COL1_WATER2
+        };
+
+        String selection = DBStructure.Water2._ID + " LIKE ?";
+        String[] selectionArgs = {"4"};
+
+
+        Cursor cursor = db.query(
+                DBStructure.Water2.TABLE_NAME1,
+                projection,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null
+        );
+
+        cursor.moveToFirst();
+        Integer weight = Integer.parseInt(cursor.getString(0));
+        cursor.close();
+
+        return weight;
+
+    }//End of method
+
+
+    /***************************************************** METHOD TO RETRIEVE EXERCISE ******************************************************************/
+    public Integer getResetExTime(){
+        SQLiteDatabase db = getReadableDatabase();
+
+        String[] projection = {
+
+                DBStructure.Water2.COL2_WATER2
+        };
+
+        String selection = DBStructure.Water2._ID + " LIKE ?";
+        String[] selectionArgs = {"4"};
+
+
+        Cursor cursor = db.query(
+                DBStructure.Water2.TABLE_NAME1,
+                projection,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null
+        );
+
+        cursor.moveToFirst();
+        Integer exTime = Integer.parseInt(cursor.getString(0));
+        cursor.close();
+
+        return exTime;
+
+    }//end of method
+
+    /***************************************************** METHOD TO UPDATE WEIGHT ******************************************************************/
+    public int resetMyInfo(Double totalAmt){
+        SQLiteDatabase db = getReadableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DBStructure.Water2.COL3_WATER2,totalAmt);
+        contentValues.put(DBStructure.Water2.COL4_WATER2,0.00);
+        contentValues.put(DBStructure.Water2.COL5_WATER2,totalAmt);
+
+
+        String selection = DBStructure.Water2._ID + " LIKE ?";
+        String[] selectionArgs = {"4"};
+
+        int count = db.update(
+                DBStructure.Water2.TABLE_NAME1,
+                contentValues,
+                selection,
+                selectionArgs
+        );
+
+        return count;
+
+    }//end of method update weight
+
+
+
 
 
 }
