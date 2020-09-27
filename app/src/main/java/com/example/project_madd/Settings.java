@@ -241,6 +241,8 @@ public class Settings extends AppCompatActivity {
         //calling the delete method in db helper
         dbHelper.deleteRecord();
 
+        //intent
+        Intent i = new Intent(Settings.this,DashBoard.class);
         Toast.makeText(this,"deleted successfully",Toast.LENGTH_SHORT).show();
 
     }
@@ -295,7 +297,7 @@ public class Settings extends AppCompatActivity {
 
         if(val>0)
         {
-            Intent i = new Intent(Settings.this,Settings.class);
+            Intent i = new Intent(Settings.this,viewMyWater.class);
             Toast.makeText(this,"Reset success!",Toast.LENGTH_SHORT).show();
             startActivity(i);
         }
