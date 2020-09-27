@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -48,7 +49,7 @@ public class DashBoard extends AppCompatActivity {
 
     }
 
- /*   public void settingsHome(View view){
+   /* public void settingsHome(View view){
 
         btnS = findViewById(R.id.settingsHome);
         btnS.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +67,7 @@ public class DashBoard extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    @Override
+   @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int menuId = item.getItemId();
         if (menuId == R.id.settings_icon){

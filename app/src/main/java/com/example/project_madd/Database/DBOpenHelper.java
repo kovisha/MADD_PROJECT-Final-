@@ -108,13 +108,17 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     }
 
 
-   public int updateValues(String height, String weight , String waist){
+   public int updateValues(String height, String weight , String waist,String bmi , String bmr,String  whpercentage){
 
         SQLiteDatabase db = getReadableDatabase();
         ContentValues values = new ContentValues();
         values.put(DBStructure.BMITracker.COLUMN_NAME_HEIGHT,height);
         values.put(DBStructure.BMITracker.COLUMN_NAME_WEIGHT,weight);
         values.put(DBStructure.BMITracker.COLUMN_NAME_WAIST,waist);
+        values.put(DBStructure.BMITracker.COLUMN_NAME_BMI,bmi);
+        values.put(DBStructure.BMITracker.COLUMN_NAME_BMR,bmr);
+        values.put(DBStructure.BMITracker.COLUMN_NAME_WHPERCENTAGE,whpercentage);
+
 
         String  selection = DBStructure.BMITracker._ID+ " LIKE?";
         String[] selectionArgs ={"1"};

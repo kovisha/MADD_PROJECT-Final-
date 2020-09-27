@@ -16,6 +16,9 @@ import com.example.project_madd.Database.DBStructure;
 public class UpdateAttributes extends AppCompatActivity {
 
     EditText height_edit, weight_edit, waist_edit;
+    double bmi = 0;
+    double bmr = 0;
+    double wth = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,10 +38,30 @@ public class UpdateAttributes extends AppCompatActivity {
              String weight = cursor.getString(cursor.getColumnIndex(DBStructure.BMITracker.COLUMN_NAME_WEIGHT));
              String height = cursor.getString(cursor.getColumnIndex(DBStructure.BMITracker.COLUMN_NAME_HEIGHT));
             String  waist = cursor.getString(cursor.getColumnIndex(DBStructure.BMITracker.COLUMN_NAME_WAIST));
+            String gender  = cursor.getString(cursor.getColumnIndex(DBStructure.BMITracker.COLUMN_NAME_GENDER));
+            String age = cursor.getString(cursor.getColumnIndex(DBStructure.BMITracker.COLUMN_NAME_AGE));
 
              double w = Double.parseDouble(weight);
              double h = Double.parseDouble(height);
              double wh = Double.parseDouble(waist);
+             int a = Integer.parseInt(age);
+              bmi = (w/((h/100)*(h/100)));
+
+            if(gender.equals("Male")){
+
+                bmr  = (double) ((10 * w)+(6.25 * h)-(5 * a)+5 );
+
+
+            }
+
+            if(gender.equals("Female")){
+
+                bmr  = (float) (66.5+(13.75 * w)+(5.0 * h)-(6.7 *a ));
+
+
+            }
+
+            wth  = ((w/h)* 100);
 
 
             height_edit.setText(String.format("%.2f", h) );
@@ -54,9 +77,14 @@ public class UpdateAttributes extends AppCompatActivity {
 
     public void updateInfo(View view) {
 
+        String bmi_update = Double.toString(bmi);
+        String bmr_update = Double.toString(bmr);
+        String wth_update = Double.toString(wth);
+
+
         DBOpenHelper dbHelper = new DBOpenHelper(this);
 
-        int val = dbHelper.updateValues(height_edit.getText().toString(),weight_edit.getText().toString(),waist_edit.getText().toString());
+        int val = dbHelper.updateValues(height_edit.getText().toString(),weight_edit.getText().toString(),waist_edit.getText().toString(),bmi_update,bmr_update,wth_update);
 
         if (val > 0) {
 

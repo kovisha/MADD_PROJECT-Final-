@@ -39,44 +39,7 @@ public class CommonAttributesActivity extends AppCompatActivity {
         female = findViewById(R.id.femaleGender);
         btnd = findViewById(R.id.Add);
         waist = findViewById(R.id.waist);
-
-        /*btnd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-               validateFields();
-
-            }
-        });*/
-
     }
-
-/*    private void validateFields() {
-
-        String a = age.getText().toString();
-        String h = height.getText().toString();
-        String w = weight.getText().toString();
-        String wa = waist.getText().toString();
-
-        if (TextUtils.isEmpty(a)) {
-            Toast.makeText(this,"Please Enter Age",Toast.LENGTH_SHORT).show();
-        }
-
-        if (TextUtils.isEmpty(h)) {
-            Toast.makeText(this,"Please Enter Height",Toast.LENGTH_SHORT).show();
-        }
-
-        if (TextUtils.isEmpty(w)) {
-            Toast.makeText(this,"Please Enter Weight",Toast.LENGTH_SHORT).show();
-        }
-
-        if (TextUtils.isEmpty(wa)) {
-            Toast.makeText(this,"Please Enter Waist",Toast.LENGTH_SHORT).show();
-        }
-
-
-    }
-*/
 
     public void addDetails(View view) {
 
@@ -120,30 +83,29 @@ public class CommonAttributesActivity extends AppCompatActivity {
 
         }
 
-
-
-
-        float waistpercentage = ((W/H)* 100 );
+        float waistpercentage = ((W/H)* 100);
 
         DBOpenHelper dbOpenHelper = new DBOpenHelper(this);
-        long val = dbOpenHelper.addDetails(height.getText().toString(),weight.getText().toString(),age.getText().toString(),gender,waist.getText().toString(),bmi,bmr,waistpercentage);
-
-
-        if (val > 0) {
-
-            Toast.makeText(this, "Data successfully inserted!!!", Toast.LENGTH_SHORT).show();
-
-
+        if (getH.isEmpty() || getA.isEmpty() || getW.isEmpty() || getWaist.isEmpty()) {
+            Toast.makeText(this,"Please fill all the fileds...",Toast.LENGTH_SHORT).show();
         }
-
         else {
+            long val = dbOpenHelper.addDetails(height.getText().toString(), weight.getText().toString(), age.getText().toString(), gender, waist.getText().toString(), bmi, bmr, waistpercentage);
 
-            Toast.makeText(this, "Data not inserted!!!", Toast.LENGTH_SHORT).show();
+
+            if (val > 0) {
+
+                Toast.makeText(this, "Data successfully inserted!!!", Toast.LENGTH_SHORT).show();
+
+
+            } else {
+
+                Toast.makeText(this, "Data not inserted!!!", Toast.LENGTH_SHORT).show();
+
+            }
+
 
         }
-
-
-
 
 
     }
