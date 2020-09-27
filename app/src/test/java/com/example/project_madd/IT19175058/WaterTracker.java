@@ -1,5 +1,6 @@
 package com.example.project_madd.IT19175058;
 
+import com.example.project_madd.amount_coffee;
 import com.example.project_madd.amount_selection;
 import com.example.project_madd.water_calculation;
 
@@ -45,6 +46,29 @@ public class WaterTracker {
     public void calcRemaining_isCorrect(){
         Double results = amtSelection.calRemaining(1850.00,500.00);
         assertEquals(1350.00,results,0.001);
+    }
+
+
+    /****************************************** test case for calculating drank amounts and remaining amounts in other drinks ************************************/
+    private amount_coffee amtCoffee;
+
+    @Before
+    public void setup3(){
+        amtCoffee = new amount_coffee();
+    }
+
+    //drank amount check
+    @Test
+    public void calcDrank2_isCorrect(){
+        Double results = amtCoffee.calcDrank(500.00,80.00);
+        assertEquals(564.00,results,0.001);
+    }
+
+    //remaining amount check
+    @Test
+    public void calcRemaining2_isCorrect(){
+        Double results = amtCoffee.calRemaining(1350.00,80.00);
+        assertEquals(1286.00,results,0.001);
     }
 
 

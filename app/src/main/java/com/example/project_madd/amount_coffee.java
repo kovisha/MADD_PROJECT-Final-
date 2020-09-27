@@ -62,12 +62,15 @@ public class amount_coffee extends AppCompatActivity {
         DBOpenHelper dbHelper=new DBOpenHelper(this);
 
         Double drankAlready = dbHelper.getDrank();
-        Double totDrank = (Double.parseDouble(txtCoffee.getText().toString())*0.8)+drankAlready;
+       // Double totDrank = (Double.parseDouble(txtCoffee.getText().toString())*0.8)+drankAlready;
 
-        //Double amount = Double.parseDouble(txtViewAmt.getText().toString());
+        Double amt = Double.parseDouble(txtCoffee.getText().toString());
+
+        Double totDrank = calcDrank(drankAlready,amt);
 
         Double remainingAlready = dbHelper.getRemainingAmt();
-        Double totRemaining = remainingAlready - (Double.parseDouble(txtCoffee.getText().toString())*0.8);
+        Double totRemaining = calRemaining(remainingAlready,amt);
+       // Double totRemaining = remainingAlready - (Double.parseDouble(txtCoffee.getText().toString())*0.8);
 
 
         int val=dbHelper.updateInfo(totDrank,totRemaining);
@@ -97,6 +100,16 @@ public class amount_coffee extends AppCompatActivity {
             Toast.makeText(this,"Could Not update! ",Toast.LENGTH_SHORT).show();
         }
     }//end of method
+
+    /******************************************** CALCULATING THE DRANK AMOUNT *******************************************************************/
+    public Double calcDrank(Double drankAlready,Double amountNow){
+        return (drankAlready+(amountNow*0.8));
+    }
+
+    /******************************************** CALCULATING THE REMAINING AMOUNT *******************************************************************/
+    public Double calRemaining(Double remain, Double amt) {
+        return(remain - (amt*0.8));
+    }
 
 
 
