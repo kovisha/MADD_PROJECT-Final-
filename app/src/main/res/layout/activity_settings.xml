@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg"
+    android:background="@color/projectBgcolor"
     tools:context=".Settings">
 
     <TextView
@@ -51,20 +51,19 @@
 
     <Switch
         android:id="@+id/reminderSwitch"
-        android:layout_width="161dp"
+        android:layout_width="63dp"
         android:layout_height="37dp"
+        android:layout_marginEnd="12dp"
         android:background="@color/projectBgcolor"
         android:fontFamily="@font/bubblegum_sans"
-        android:text="@string/settings_reminder"
         android:textColor="@color/prjctBtnTextclr"
         android:textColorHint="@color/prjctBtnTextclr"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.771"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.159" />
+        app:layout_constraintVertical_bias="0.155"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <View
         android:id="@+id/divider8"
@@ -79,35 +78,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.235" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="87dp"
-        android:layout_height="71dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.286"
-        app:srcCompat="@drawable/scale" />
-
-    <Button
-        android:id="@+id/btnChangeUnits"
-        android:layout_width="120dp"
-        android:layout_height="48dp"
-        android:background="@drawable/rounded_corners"
-        android:fontFamily="@font/aldrich"
-        android:onClick="changeUnits"
-        android:text="@string/settings_unit"
-        android:textColor="@color/prjctBtnTextclr"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.742"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298" />
 
     <View
         android:id="@+id/divider12"
@@ -129,10 +99,10 @@
         android:layout_height="71dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintHorizontal_bias="0.164"
         app:layout_constraintStart_toStartOf="@+id/divider12"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.443"
+        app:layout_constraintVertical_bias="0.283"
         app:srcCompat="@drawable/goals" />
 
     <Button
@@ -144,13 +114,13 @@
         android:onClick="changeGoals"
         android:text="@string/settings_goals"
         android:textColor="@color/prjctBtnTextclr"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintHorizontal_bias="0.847"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.452" />
+        app:layout_constraintVertical_bias="0.307" />
 
     <View
         android:id="@+id/divider13"
@@ -172,10 +142,10 @@
         android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintHorizontal_bias="0.158"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.601"
+        app:layout_constraintVertical_bias="0.439"
         app:srcCompat="@drawable/time" />
 
     <View
@@ -194,34 +164,84 @@
 
     <Button
         android:id="@+id/btnChangeExerciseTime"
-        android:layout_width="153dp"
-        android:layout_height="56dp"
+        android:layout_width="165dp"
+        android:layout_height="51dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/aldrich"
         android:onClick="changeExercise"
         android:text="@string/settings_exercise"
         android:textColor="@color/prjctBtnTextclr"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintHorizontal_bias="0.837"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.594" />
+        app:layout_constraintVertical_bias="0.438" />
 
     <Button
         android:id="@+id/btnDeleteRecords"
-        android:layout_width="355dp"
-        android:layout_height="71dp"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="44dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/aldrich"
+        android:onClick="deleteRecords"
         android:text="@string/settings_delete"
         android:textColor="@color/prjctBtnTextclr"
-        android:textSize="25sp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnResetRecords"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnResetRecords"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/rounded_corners"
+        android:fontFamily="@font/aldrich"
+        android:onClick="resetRecords"
+        android:text="@string/resetWater"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnReminder"
+        android:layout_width="115dp"
+        android:layout_height="44dp"
+        android:background="@drawable/rounded_corners"
+        android:fontFamily="@font/aldrich"
+        android:text="@string/settings_reminder"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textColorHighlight="@color/prjctBtnTextclr"
+        android:textColorHint="@color/prjctBtnTextclr"
+        android:textColorLink="@color/prjctBtnTextclr"
+        android:textCursorDrawable="@color/prjctBtnTextclr"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/reminderSwitch"
+        app:layout_constraintEnd_toStartOf="@+id/reminderSwitch"
+        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnChangeWeight"
+        android:layout_width="283dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_corners"
+        android:fontFamily="@font/aldrich"
+        android:onClick="resetWeight"
+        android:text="Change My Weight"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.762" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,8 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.project_madd">
 
+    <uses-permission android:name="android.permission.SET_ALARM" />
+    <uses-feature android:name="android.hardware.camera2"
+        android:required="true"/>
 
-    <uses-permission android:name="android.permission.SET_ALARM"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,6 +13,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".UpdateAttributes"></activity>
+        <activity android:name=".Flavored_Water" />
+        <activity android:name=".settings_goals" />
+        <activity android:name=".change_weight" />
+        <activity android:name=".amount_tea" />
+        <activity android:name=".amount_juice" />
+        <activity android:name=".amount_milk" />
+        <activity android:name=".amount_coffee" />
+        <activity android:name=".amount_selection" />
+        <activity android:name=".select_drink" />
+        <activity android:name=".Dashboard_Male" />
         <activity android:name=".Settings_Home_Common" />
         <activity android:name=".User_profile" />
         <activity android:name=".waistHeight_calculation" />
@@ -22,10 +35,8 @@
         <activity android:name=".water_calculation" />
         <activity android:name=".viewMyWater" />
         <activity android:name=".tips_and_more" />
-        <activity android:name=".add_drink" />
         <activity android:name=".Water_home" />
         <activity android:name=".Settings" />
-        <activity android:name=".Flavored_Water" />
         <activity android:name=".AddNote" />
         <activity android:name=".setOvulationLength" />
         <activity android:name=".SetCycleLength" />
@@ -45,9 +56,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".PeriodReminder" />
 
-        <activity android:name=".PeriodReminder"/>
-       <receiver android:name=".Period_Notification_reciever"/>
+        <receiver android:name=".Period_Notification_reciever" />
+        <receiver android:name=".ReminderWater" />
 
         <meta-data
             android:name="preloaded_fonts"

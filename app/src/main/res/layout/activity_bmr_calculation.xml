@@ -7,6 +7,23 @@
     android:background="@color/projectBgcolor"
     tools:context=".bmr_calculation">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@color/projectBtns"
+        android:fontFamily="@font/cambo"
+        android:text="Select Activity Level"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.233"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.163" />
+
+
     <Button
         android:id="@+id/bmr_done"
         android:layout_width="153dp"
@@ -18,88 +35,51 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
 
     <Button
-        android:id="@+id/bmr_done2"
-        android:layout_width="234dp"
+        android:id="@+id/instructions"
+        android:layout_width="200dp"
         android:layout_height="40dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/aldrich"
-        android:text="click me"
-        android:textAlignment="gravity"
+        android:text="View Instructions"
+        android:textAllCaps="false"
         android:textColor="@color/prjctBtnTextclr"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.183" />
+        app:layout_constraintVertical_bias="0.976" />
 
     <EditText
-        android:id="@+id/calo_val"
-        android:layout_width="205dp"
-        android:layout_height="40dp"
+        android:id="@+id/bmrval"
+        android:layout_width="317dp"
+        android:layout_height="52dp"
         android:backgroundTint="@android:color/black"
         android:ems="10"
         android:fontFamily="@font/capriola"
         android:inputType="textPersonName"
-        android:text="@string/caloo"
         android:textAlignment="center"
         android:textColor="@color/prjctBtnTextclr"
         android:textSize="19sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.094" />
-
-    <EditText
-        android:id="@+id/bmival"
-        android:layout_width="140dp"
-        android:layout_height="40dp"
-        android:backgroundTint="@android:color/black"
-        android:ems="10"
-        android:fontFamily="@font/capriola"
-        android:inputType="textPersonName"
-        android:text="@string/bmrr"
-        android:textAlignment="center"
-        android:textColor="@color/prjctBtnTextclr"
-        android:textSize="19sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.059"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.094" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="400dp"
-        android:layout_height="111dp"
-        android:background="@color/projectBtns"
-        android:fontFamily="@font/cambo"
-        android:text="@string/classi"
-        android:textAlignment="center"
-        android:textColor="@color/prjctBtnTextclr"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.275" />
+        app:layout_constraintVertical_bias="0.059" />
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="142dp"
-        android:layout_height="53dp"
+        android:layout_width="323dp"
+        android:layout_height="46dp"
         android:backgroundTintMode="add"
         android:fontFamily="@font/capriola"
         android:text="@string/bmr"
@@ -108,295 +88,115 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.043" />
+        app:layout_constraintVertical_bias="0.001" />
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="237dp"
-        android:layout_height="31dp"
-        android:backgroundTint="#719E3D"
-        android:backgroundTintMode="add"
-        android:fontFamily="@font/capriola"
-        android:text="@string/calo"
+
+    <RadioGroup
+        android:id="@+id/activity"
+        android:layout_width="322dp"
+        android:layout_height="187dp"
+        android:layout_marginTop="96dp"
         android:textAlignment="center"
-        android:textColor="@color/projectText"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.921"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.043" />
+        app:layout_constraintTop_toBottomOf="@+id/bmrval"
+        app:layout_constraintVertical_bias="0.300">
 
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="22dp"
-        android:layout_height="28dp"
-        android:layout_marginEnd="268dp"
-        android:elevation="@android:dimen/thumbnail_width"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.189"
-        app:srcCompat="@android:drawable/ic_dialog_info" />
-
-    <TableLayout
-        android:layout_width="404dp"
-        android:layout_height="238dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.653">
-
-        <TableRow
+        <RadioButton
+            android:id="@+id/sedentary"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#32396e"
-            android:padding="5dp">
+            android:layout_height="35dp"
+            android:fontFamily="@font/capriola"
+            android:text="Sedentary"
+            android:textColor="@color/projectText"
+            android:textSize="19sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/cambo"
-                android:text="Activity"
-                android:textAlignment="center"
-                android:textColor="@color/projectText"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+        <RadioButton
+            android:id="@+id/light"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:fontFamily="@font/capriola"
+            android:text="Lightly Active"
+            android:textColor="@color/projectText"
+            android:textSize="19sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/cambo"
-                android:text="Description"
-                android:textAlignment="center"
-                android:textColor="@color/projectText"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+        <RadioButton
+            android:id="@+id/moderate"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:fontFamily="@font/capriola"
+            android:text="Moderately Active"
+            android:textColor="@color/projectText"
+            android:textSize="19sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/cambo"
-                android:text="TDEE"
-                android:textAlignment="center"
-                android:textColor="@color/projectText"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+        <RadioButton
+            android:id="@+id/active"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:fontFamily="@font/capriola"
+            android:text="Very Active"
+            android:textColor="@color/projectText"
+            android:textSize="19sp" />
 
-
-        </TableRow>
-
-        <TableRow
-            android:background="#3d4580"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/cambo"
-                android:text="Sedentary"
-                android:textColor="@color/projectText"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/cambo"
-                android:text="Little or No Excercise"
-                android:textAlignment="center"
-                android:textColor="@color/projectText"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/cambo"
-                android:text="1.2*Bmr"
-                android:textAlignment="center"
-                android:textColor="@color/projectText"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:background="#3d4580"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/cambo"
-                android:text="Lightly Active"
-                android:textColor="@color/projectText"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/cambo"
-                android:text="sports 1-3 days/week"
-                android:textAlignment="center"
-                android:textColor="@color/projectText"
-                android:textSize="15dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/cambo"
-                android:text="1.375*Bmr"
-                android:textAlignment="center"
-                android:textColor="@color/projectText"
-                android:textSize="15dp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:background="#3d4580"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/cambo"
-                android:text="Moderately Active"
-                android:textColor="@color/projectText"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/cambo"
-                android:text="sports 3-5 days/week"
-                android:textAlignment="center"
-                android:textColor="@color/projectText"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/cambo"
-                android:text="1.55*Bmr"
-                android:textAlignment="center"
-                android:textColor="@color/projectText"
-                android:textSize="15dp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:background="#3d4580"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/cambo"
-                android:text="Very Active"
-                android:textColor="@color/projectText"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/cambo"
-                android:text="sports 6-7 days/week"
-                android:textAlignment="center"
-                android:textColor="@color/projectText"
-                android:textSize="15dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/cambo"
-                android:text="1.725*Bmr"
-                android:textAlignment="center"
-                android:textColor="@color/projectText"
-                android:textSize="15dp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:background="#3d4580"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/cambo"
-                android:text="Extremely Active"
-                android:textColor="@color/projectText"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/cambo"
-                android:text="physical job/daily training"
-                android:textAlignment="center"
-                android:textColor="@color/projectText"
-                android:textSize="15dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/cambo"
-                android:text="1.9*bmr "
-                android:textAlignment="center"
-                android:textColor="@color/projectText"
-                android:textSize="15dp"
-                android:textStyle="bold" />
-        </TableRow>
-
-    </TableLayout>
+        <RadioButton
+            android:id="@+id/extremeActive"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:fontFamily="@font/capriola"
+            android:text="Extremely Active"
+            android:textColor="@color/projectText"
+            android:textSize="19sp" />
+    </RadioGroup>
 
     <TextView
-        android:id="@+id/textView24"
-        android:layout_width="225dp"
-        android:layout_height="67dp"
+        android:id="@+id/bmr_comment"
+        android:layout_width="384dp"
+        android:layout_height="61dp"
         android:fontFamily="@font/capriola"
-        android:text="@string/wish_bmr"
         android:textAlignment="center"
         android:textColor="@color/projectText"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.592"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.87" />
+        app:layout_constraintVertical_bias="0.916" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="252dp"
+        android:layout_height="44dp"
+        android:background="@drawable/rounded_corners"
+        android:onClick="caloriesCalculate"
+        android:text="Calculate Calories|Day"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/bmr_comment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity"
+        app:layout_constraintVertical_bias="0.195" />
+
+    <EditText
+        android:id="@+id/calPerDay"
+        android:layout_width="256dp"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="@color/prjctBtnTextclr"
+        app:layout_constraintBottom_toTopOf="@+id/bmr_comment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button5"
+        app:layout_constraintVertical_bias="0.377" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

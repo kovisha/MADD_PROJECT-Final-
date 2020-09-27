@@ -53,9 +53,11 @@
     /*********************************************Maryam**************************************************************************/
 
     <string name="moveToDashboard">Dashboard</string>
+
     <string name="menu1">Home</string>
     <string name="menu2">Settings</string>
     <string name="menu3">My Account</string>
+
 
     <string name="Water_home_title">SET YOUR GOALS</string>
     <string name="Water_home_goal1">Stay Hydrated</string>
@@ -64,15 +66,25 @@
     <string name="Water_home_goal4">Get Fit</string>
 
     <string name="water_calculation_title">LET\'S GET STARTED</string>
-    <string name="preference">Select your preference</string>
-    <string name="water_calculation_units">Select Your Preferred Unit</string>
-    <string name="water_calculation_weight">Enter Your Weight</string>
-    <string name="water_calculation_exercise">Select Your Approximate Time Of Exercise</string>
+    <string name="preference">Select Your Preference</string>
+    <string name="water_calculation_units">Unit : </string>
+    <string name="water_calculation_weight">Weight in kg : </string>
+    <string name="water_calculation_exercise">Exercise Time In Minutes : </string>
 
     <string-array name="units_array">
         <item>Metric</item>
         <item>Imperial</item>
         <item>US</item>
+    </string-array>
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
     </string-array>
 
     <string-array name="exercise_array">
@@ -82,6 +94,7 @@
         <item>1 hour</item>
         <item>2 hour</item>
     </string-array>
+
 
     <string name="maxDate">31/12/2020</string>
     <string name="minDate">01/01/2020</string>
@@ -95,8 +108,10 @@
     <string name="moreTools">Facts To Know</string>
     <string name="flavouredDrink">Flavoured Drinking</string>
 
+
     <string name="AddMore">ADD TO YOUR KNOWLEDGE</string>
     <string name="Flavoured">FLAVOUR YOUR DRINK</string>
+
 
     <string name="water_tip1">1. Drink 2 cups of water before every meal</string>
     <string name="water_tip2">2. Drink a glass of water after you wake up</string>
@@ -115,6 +130,7 @@
     <string name="recipe3">Few pieces of  ORANGE , A FENNEL and A GINGER plus your WATER </string>
     <string name="recipe4">Few pieces of  APPLE , A CINNAMON plus your WATER </string>
 
+
     <string name="settingsPage">SETTINGS</string>
     <string name="settings_reminder">Reminder</string>
     <string name="settings_unit">Units</string>
@@ -124,7 +140,19 @@
 
     <string name="chooseUnit">Select Unit</string>
     <string name="chooseTime">Select Time</string>
+    <string name="time1">00</string>
+    <string name="time2">30</string>
+    <string name="time3">45</string>
+    <string name="time4">60</string>
+    <string name="time5">90</string>
     <string name="changed">Reset</string>
+
+
+    /*-----------------------NEW STRINGS---------------------------------------------*/
+    <string name="addDrinkTopic">SELECT A DRINK</string>
+    <string name="addAmountTopic">Select Amount in ml</string>
+    <string name="resetWater">Reset My Water</string>
+
 
     /*********************************************Krushy**************************************************************************/
 
@@ -204,7 +232,7 @@
     <string name="camera">Change your profile </string>
     <string name="fat">FAT </string>
     <string name="fatval">22% </string>
-    <string name="bmiTips"> Tips for u ! </string>
+    <string name="bmiTips"> Tips for u ! Click me ! </string>
     <string name="menu_item1"> Home</string>
     <string name="menu_item2"> My Profile</string>
     <string name="menu_item3"> Settings</string>
@@ -213,8 +241,8 @@
 
 
     <string name="CAge">Age</string>
-    <string name="CWeight">Weight</string>
-    <string name="CHeight">Height</string>
+    <string name="CWeight">Weight(Kg)</string>
+    <string name="CHeight">Height(Cm)</string>
     <string name="CGender">Gender</string>
     <string name="CInfo">Your Information</string>
     <string name="CAgeHint">21</string>
@@ -235,14 +263,11 @@
     <string name="signUpfrag_signUpBtn">SIGN UP</string>
 
 
-
-
     /*--------------------------------------------Common-------------------------------------------------------------------------------*/
-    <string name="settings_water_tracker">Personalize Water Tracker</string>
-    <string name="settings_period_tracker">Personalize Period Tracker</string>
-    <string name="settings_BMI_tracker">Personalize BMI Tracker</string>
-    <string name="settingsHeader">Personalize</string>
-
+    <string name="SettingsTopic">PERSONALIZE</string>
+    <string name="BMISettings">Personalize BMI Tracker</string>
+    <string name="WATERSettings">Personalize Water Tracker</string>
+    <string name="PERIODSettings">Personalize Period Tracker</string>
 
 
 

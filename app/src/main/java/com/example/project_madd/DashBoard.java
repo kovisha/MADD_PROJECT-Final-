@@ -12,7 +12,7 @@ import android.widget.Button;
 
 public class DashBoard extends AppCompatActivity {
 
-    Button btnP ,btnS , btnW;
+    Button btnP ,btnB , btnW;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +32,19 @@ public class DashBoard extends AppCompatActivity {
              }
          });
 
-
     }
+
+    public void BMIHome(View view){
+        btnB = findViewById(R.id.btnBMI);
+        btnB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DashBoard.this , bmi_Home.class);
+                startActivity(intent);
+            }
+        });
+    }
+
 
     public void WaterHome(View view){
         btnW = findViewById(R.id.btnWater);
@@ -47,17 +58,7 @@ public class DashBoard extends AppCompatActivity {
         });
     }
 
-    public void settingsHome(View view){
 
-        btnS = findViewById(R.id.settingsHome);
-        btnS.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(DashBoard.this , PeriodSettingsHome.class);
-                startActivity(intent);
-            }
-        });
-        }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -76,6 +77,11 @@ public class DashBoard extends AppCompatActivity {
         }
         else if(menuId == R.id.home_icon){
             Intent intent = new Intent(DashBoard.this , DashBoard.class);
+            startActivity(intent);
+            return true;
+        }
+        else if(menuId == R.id.profile_icon){
+            Intent intent = new Intent(DashBoard.this , User_profile.class);
             startActivity(intent);
             return true;
         }

@@ -2,36 +2,31 @@ package com.example.project_madd.Model;
 
 public class Water {
 
-            private Integer userID;
-            private String units;
-            private Integer exerciseTime;
-            private Integer totalAmount;
-            private Integer drankAmount;
-            private Integer remaining;
 
-    public Water(Integer userID, String units, Integer exerciseTime, Integer totalAmount, Integer drankAmount, Integer remaining) {
-        this.userID = userID;
-        this.units = units;
+    //Water Class Attributes
+    private Integer weight;
+    private Integer exerciseTime;
+    private Double total;
+    private Double drank;
+    private Double remaining;
+
+
+    //Overloaded constructor
+    public Water(Integer weight, Integer exerciseTime, Double total, Double drank, Double remaining) {
+        this.weight = weight;
         this.exerciseTime = exerciseTime;
-        this.totalAmount = totalAmount;
-        this.drankAmount = drankAmount;
+        this.total = total;
+        this.drank = drank;
         this.remaining = remaining;
     }
 
-    public Integer getUserID() {
-        return userID;
+    //getters and setters
+    public Integer getWeight() {
+        return weight;
     }
 
-    public void setUserID(Integer userID) {
-        this.userID = userID;
-    }
-
-    public String getUnits() {
-        return units;
-    }
-
-    public void setUnits(String units) {
-        this.units = units;
+    public void setWeight(Integer weight) {
+        this.weight = weight;
     }
 
     public Integer getExerciseTime() {
@@ -42,27 +37,27 @@ public class Water {
         this.exerciseTime = exerciseTime;
     }
 
-    public Integer getTotalAmount() {
-        return totalAmount;
+    public Double getTotal() {
+        return total;
     }
 
-    public void setTotalAmount(Integer totalAmount) {
-        this.totalAmount = totalAmount;
+    public void setTotal(Double total) {
+        this.total = total;
     }
 
-    public Integer getDrankAmount() {
-        return drankAmount;
+    public Double getDrank() {
+        return drank;
     }
 
-    public void setDrankAmount(Integer drankAmount) {
-        this.drankAmount = drankAmount;
+    public void setDrank(Double drank) {
+        this.drank = drank;
     }
 
-    public Integer getRemaining() {
+    public Double getRemaining() {
         return remaining;
     }
 
-    public void setRemaining(Integer remaining) {
+    public void setRemaining(Double remaining) {
         this.remaining = remaining;
     }
 }

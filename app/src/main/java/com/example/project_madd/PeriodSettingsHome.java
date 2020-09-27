@@ -221,6 +221,11 @@ public class PeriodSettingsHome extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
+        else if(menuId == R.id.profile_icon){
+            Intent intent = new Intent(PeriodSettingsHome.this , User_profile.class);
+            startActivity(intent);
+            return true;
+        }
         else
             return super.onOptionsItemSelected(item);
     }

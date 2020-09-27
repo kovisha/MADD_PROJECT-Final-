@@ -9,23 +9,6 @@
     tools:context=".bmi_calculation">
 
     <TextView
-        android:id="@+id/text_bmi3"
-        android:layout_width="147dp"
-        android:layout_height="42dp"
-        android:backgroundTintMode="add"
-        android:fontFamily="@font/capriola"
-        android:text="@string/fat"
-        android:textAlignment="center"
-        android:textColor="@color/projectText"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.628"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
-
-    <TextView
         android:id="@+id/text_bmi2"
         android:layout_width="142dp"
         android:layout_height="35dp"
@@ -61,11 +44,10 @@
         app:layout_constraintVertical_bias="0.034" />
 
     <TextView
-        android:id="@+id/text_bmrComment"
+        android:id="@+id/text_bmiComment"
         android:layout_width="344dp"
         android:layout_height="32dp"
         android:fontFamily="@font/capriola"
-        android:text="@string/btxt6"
         android:textAlignment="center"
         android:textColor="@color/projectText"
         android:textSize="20sp"
@@ -94,7 +76,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.333" />
 
-    <EditText
+    <TextView
         android:id="@+id/textclass3_2"
         android:layout_width="235dp"
         android:layout_height="44dp"
@@ -112,7 +94,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.569" />
 
-    <EditText
+    <TextView
         android:id="@+id/textclass4_2"
         android:layout_width="235dp"
         android:layout_height="44dp"
@@ -130,7 +112,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.633" />
 
-    <EditText
+    <TextView
         android:id="@+id/textclass6_2"
         android:layout_width="235dp"
         android:layout_height="44dp"
@@ -148,7 +130,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.761" />
 
-    <EditText
+    <TextView
         android:id="@+id/textclass8_2"
         android:layout_width="235dp"
         android:layout_height="44dp"
@@ -166,7 +148,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.889" />
 
-    <EditText
+    <TextView
         android:id="@+id/textclass7_2"
         android:layout_width="235dp"
         android:layout_height="44dp"
@@ -184,7 +166,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.825" />
 
-    <EditText
+    <TextView
         android:id="@+id/Textclass5_2"
         android:layout_width="235dp"
         android:layout_height="44dp"
@@ -202,7 +184,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.697" />
 
-    <EditText
+    <TextView
         android:id="@+id/editTextTextPersonName6"
         android:layout_width="235dp"
         android:layout_height="44dp"
@@ -220,7 +202,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.505" />
 
-    <EditText
+    <TextView
         android:id="@+id/textclass1_2"
         android:layout_width="253dp"
         android:layout_height="47dp"
@@ -238,7 +220,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.441" />
 
-    <EditText
+    <TextView
         android:id="@+id/textclass1_1"
         android:layout_width="150dp"
         android:layout_height="44dp"
@@ -246,6 +228,7 @@
         android:fontFamily="@font/capriola"
         android:inputType="textPersonName"
         android:text="@string/bmi1"
+        android:textColor="@color/projectText"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -254,7 +237,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.441" />
 
-    <EditText
+    <TextView
         android:id="@+id/textclass2_1"
         android:layout_width="150dp"
         android:layout_height="44dp"
@@ -271,7 +254,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.505" />
 
-    <EditText
+    <TextView
         android:id="@+id/textclass3_1"
         android:layout_width="150dp"
         android:layout_height="44dp"
@@ -288,7 +271,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.569" />
 
-    <EditText
+    <TextView
         android:id="@+id/textclass7_1"
         android:layout_width="150dp"
         android:layout_height="44dp"
@@ -305,7 +288,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.825" />
 
-    <EditText
+    <TextView
         android:id="@+id/textclass8_1"
         android:layout_width="150dp"
         android:layout_height="44dp"
@@ -321,7 +304,7 @@
         app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/textclass6_1"
         android:layout_width="150dp"
         android:layout_height="44dp"
@@ -338,7 +321,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.761" />
 
-    <EditText
+    <TextView
         android:id="@+id/textclass5_1"
         android:layout_width="150dp"
         android:layout_height="44dp"
@@ -355,7 +338,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.697" />
 
-    <EditText
+    <TextView
         android:id="@+id/textclass4_1"
         android:layout_width="150dp"
         android:layout_height="44dp"
@@ -372,14 +355,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.633" />
 
-    <EditText
+    <TextView
         android:id="@+id/val_bmi"
         android:layout_width="140dp"
         android:layout_height="40dp"
         android:ems="10"
-        android:fontFamily="@font/capriola"
+        android:fontFamily="@font/cambo"
         android:inputType="textPersonName"
-        android:text="@string/bmivalue"
         android:textAlignment="center"
         android:textColor="@color/prjctBtnTextclr"
         android:textSize="19sp"
@@ -391,14 +373,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.085" />
 
-    <EditText
+    <TextView
         android:id="@+id/val_ideal"
         android:layout_width="236dp"
         android:layout_height="43dp"
         android:ems="10"
-        android:fontFamily="@font/capriola"
+        android:fontFamily="@font/cambo"
         android:inputType="textPersonName"
-        android:text="@string/bmiideal"
         android:textAlignment="center"
         android:textColor="@color/prjctBtnTextclr"
         android:textSize="19sp"
@@ -410,29 +391,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.085" />
 
-    <EditText
-        android:id="@+id/val_ideal3"
-        android:layout_width="145dp"
-        android:layout_height="51dp"
-        android:ems="10"
-        android:fontFamily="@font/capriola"
-        android:inputType="textPersonName"
-        android:text="@string/fatval"
-        android:textAlignment="center"
-        android:textColor="@color/prjctBtnTextclr"
-        android:textSize="19sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.981" />
-
     <Button
         android:id="@+id/tips_bmi"
-        android:layout_width="184dp"
-        android:layout_height="32dp"
+        android:layout_width="268dp"
+        android:layout_height="37dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/projectBtns"
         android:fontFamily="@font/aldrich"
@@ -460,9 +422,8 @@
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.981" />
+        app:layout_constraintTop_toBottomOf="@+id/textclass8_1"
+        app:layout_constraintVertical_bias="0.384" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

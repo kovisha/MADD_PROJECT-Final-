@@ -17,6 +17,7 @@
         android:onClick="PeriodHome"
         android:text="@string/PeriodsDashboard"
         android:textColor="@color/prjctBtnTextclr"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
@@ -34,6 +35,7 @@
         android:onClick="WaterHome"
         android:text="@string/WaterDashboard"
         android:textColor="@color/prjctBtnTextclr"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/btnBMI"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.547"
@@ -49,25 +51,12 @@
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/projectBgcolor"
         android:fontFamily="@font/aldrich"
+        android:onClick="BMIHome"
         android:text="@string/BMIDashboard"
         android:textColor="@color/prjctBtnTextclr"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btnMens"
         app:layout_constraintStart_toStartOf="@+id/btnMens" />
-
-
-    <Button
-        android:id="@+id/settingsHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="settingsHome"
-        android:text="setingsHome"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.847" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
