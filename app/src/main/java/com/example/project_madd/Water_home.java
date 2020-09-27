@@ -38,7 +38,7 @@ public class Water_home extends AppCompatActivity {
         int menuId = item.getItemId();
 
         if (menuId == R.id.settings_icon){
-            Intent intent = new Intent(Water_home.this , Settings.class);
+            Intent intent = new Intent(Water_home.this , Settings_Home_Common.class);
             startActivity(intent);
             return true;
 

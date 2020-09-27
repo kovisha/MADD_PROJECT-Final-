@@ -1,48 +1,36 @@
 package com.example.project_madd;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-public class settings_goals extends AppCompatActivity {
+public class Settings_Home_Common extends AppCompatActivity {
 
-    Button btnSettingsGoalDone, btnSettingsGoalCancel;
+
+    Button btnWaterSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings_goals);
+        setContentView(R.layout.activity_settings__home__common);
 
-        btnSettingsGoalCancel = findViewById(R.id.btnCancelGoals);
-        btnSettingsGoalDone = findViewById(R.id.btnGoalsChanged);
-
-        btnSettingsGoalDone.setOnClickListener(new View.OnClickListener() {
+        btnWaterSettings = findViewById(R.id.btnWaterTrack);
+        btnWaterSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(settings_goals.this,Settings.class);
-                Toast.makeText(getApplicationContext(), "Changes Applied", Toast.LENGTH_SHORT).show();
-                startActivity(i);
-            }
-        });
-
-        btnSettingsGoalCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(settings_goals.this,Settings.class);
+                Intent i = new Intent(Settings_Home_Common.this,Settings.class);
                 startActivity(i);
             }
         });
     }
 
+    /********************************************* MENU OPTIONS ********************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu,menu);
@@ -54,19 +42,19 @@ public class settings_goals extends AppCompatActivity {
         int menuId = item.getItemId();
 
         if (menuId == R.id.settings_icon){
-            Intent intent = new Intent(settings_goals.this , Settings_Home_Common.class);
+            Intent intent = new Intent(Settings_Home_Common.this , Settings_Home_Common.class);
             startActivity(intent);
             return true;
             //startActivity(new Intent(this,viewMyWater.class));
         }
 
         else if(menuId == R.id.home_icon){
-            Intent intent = new Intent(settings_goals.this , DashBoard.class);
+            Intent intent = new Intent(Settings_Home_Common.this , DashBoard.class);
             startActivity(intent);
             return true;
         }
 
         else
             return super.onOptionsItemSelected(item);
-    }
+    }//end of menu options
 }

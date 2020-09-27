@@ -29,12 +29,14 @@ public class DBOpenHelper extends SQLiteOpenHelper {
                         DBStructure.Water2.COL4_WATER2+ " DOUBLE," +
                         DBStructure.Water2.COL5_WATER2+ " DOUBLE)";
 
+        //executing the create query
         db.execSQL(SQL_CREATE_ENTRIES_3);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
+        //upgrading query execution
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+DBStructure.Water2.TABLE_NAME1);
         onCreate(sqLiteDatabase);
     }

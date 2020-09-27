@@ -34,7 +34,7 @@ public class tips_and_more extends AppCompatActivity {
         int menuId = item.getItemId();
 
         if (menuId == R.id.settings_icon){
-            Intent intent = new Intent(tips_and_more.this , Settings.class);
+            Intent intent = new Intent(tips_and_more.this , Settings_Home_Common.class);
             startActivity(intent);
             return true;
             //startActivity(new Intent(this,viewMyWater.class));

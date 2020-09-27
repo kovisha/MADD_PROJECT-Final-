@@ -71,7 +71,7 @@ public class amount_milk extends AppCompatActivity {
         int menuId = item.getItemId();
 
         if (menuId == R.id.settings_icon){
-            Intent intent = new Intent(amount_milk.this , Settings.class);
+            Intent intent = new Intent(amount_milk.this , Settings_Home_Common.class);
             startActivity(intent);
             return true;
             //startActivity(new Intent(this,viewMyWater.class));

@@ -75,7 +75,7 @@ public class viewMyWater extends AppCompatActivity {
         int menuId = item.getItemId();
 
         if (menuId == R.id.settings_icon){
-            Intent intent = new Intent(viewMyWater.this , Settings.class);
+            Intent intent = new Intent(viewMyWater.this , Settings_Home_Common.class);
             startActivity(intent);
             return true;
             //startActivity(new Intent(this,viewMyWater.class));

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/settings"
+    tools:context=".Settings_Home_Common">
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="316dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="44dp"
+        android:background="@color/projectBtns"
+        android:fontFamily="@font/cambo"
+        android:text="@string/SettingsTopic"
+        android:textAlignment="gravity"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="45sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnWaterTrack"
+        android:layout_width="347dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:fontFamily="@font/aldrich"
+        android:text="@string/WATERSettings"
+        android:textColor="@color/projectBtns"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnPeriodTrack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnPeriodTrack"
+        android:layout_width="347dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:fontFamily="@font/aldrich"
+        android:text="@string/PERIODSettings"
+        android:textColor="@color/projectBtns"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnBMITrack"
+        android:layout_width="347dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:fontFamily="@font/aldrich"
+        android:text="@string/BMISettings"
+        android:textColor="@color/projectBtns"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnWaterTrack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -106,5 +106,10 @@
     <string name="addAmountTopic">Select Amount in ml</string>
     <string name="resetWater">Reset My Water</string>
 
+    <string name="SettingsTopic">PERSONALIZE</string>
+    <string name="BMISettings">Personalize BMI Tracker</string>
+    <string name="WATERSettings">Personalize Water Tracker</string>
+    <string name="PERIODSettings">Personalize Period Tracker</string>
+
 
 </resources>

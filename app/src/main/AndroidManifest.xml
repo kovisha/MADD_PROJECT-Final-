@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".change_weight"></activity>
+        <activity android:name=".Settings_Home_Common"></activity>
+        <activity android:name=".change_weight" />
         <activity android:name=".settings_goals" />
         <activity android:name=".Dashboard_Male" />
         <activity android:name=".amount_coffee" />
@@ -24,7 +25,7 @@
         <activity android:name=".Flavored_Water" />
         <activity android:name=".Settings" />
         <activity android:name=".tips_and_more" />
-        <activity android:name=".viewMyWater"></activity>
+        <activity android:name=".viewMyWater" />
         <activity android:name=".water_calculation" />
         <activity android:name=".Water_home" />
         <activity android:name=".MenstrualHome" />
