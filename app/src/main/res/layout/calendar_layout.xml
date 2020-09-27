@@ -129,35 +129,39 @@
         android:id="@+id/retrieveStartDate"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:fontFamily="@font/aldrich"
         android:gravity="center"
         android:text="Start Date"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/viewMyStartDate"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:gravity="center"
 
+        android:fontFamily="@font/aldrich"
+        android:gravity="center"
         android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
-        android:id="@+id/viewMyStartDate"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/retrieveEndDate"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:fontFamily="@font/aldrich"
         android:gravity="center"
         android:text="Expected End Date"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/viewMyEndDate"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:fontFamily="@font/aldrich"
         android:gravity="center"
         android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
-        android:id="@+id/viewMyEndDate"/>
+        android:textStyle="bold" />
 
 </LinearLayout>

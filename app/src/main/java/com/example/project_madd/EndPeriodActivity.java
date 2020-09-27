@@ -102,14 +102,6 @@ public class EndPeriodActivity extends AppCompatActivity {
 /*********************************************calling the update end date method during add end date button click***********************************************************************/
                 updateEndDate(view);
 
-               // Toast.makeText(getApplicationContext(), "Bleeding days are processed!",Toast.LENGTH_SHORT).show();
-
-
-                /*try {
-                    calPeriod(view); //calling the method to calculate period date.
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }*/
 /***************************************Calculating the bleedingDays**************************************************************************************/
                 try {
                    long finalCalculation =  calculateMyPeriod(startDate,endDate);

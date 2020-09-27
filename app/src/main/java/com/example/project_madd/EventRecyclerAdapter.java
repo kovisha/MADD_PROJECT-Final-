@@ -18,6 +18,7 @@ public class EventRecyclerAdapter extends RecyclerView.Adapter<EventRecyclerAdap
     Context context;
     ArrayList<Events> arrayList;
 
+    /*****************Initialize events arraylist**********************/
     public EventRecyclerAdapter(Context context, ArrayList<Events> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
@@ -39,11 +40,13 @@ public class EventRecyclerAdapter extends RecyclerView.Adapter<EventRecyclerAdap
         holder.time.setText(events.getTIME());
     }
 
+    /*****************Get the number of events(moods and symptoms) added***************************/
     @Override
     public int getItemCount() {
         return arrayList.size();
     }
 
+    /*****************Initialise variable to show events added my user*********************************************************/
     public class myViewHolder extends  RecyclerView.ViewHolder{
 
         TextView dateText , event , time;

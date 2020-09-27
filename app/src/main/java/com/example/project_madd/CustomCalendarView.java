@@ -47,12 +47,15 @@ public class CustomCalendarView extends LinearLayout {
     Calendar calendar = Calendar.getInstance(Locale.ENGLISH);
     Context context;
 
+    /**************************Initialising format of calendar dates*****************************************************/
+
     SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM yyyy",Locale.ENGLISH);
     SimpleDateFormat monthFormat = new SimpleDateFormat("MMMM ",Locale.ENGLISH);
     SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy",Locale.ENGLISH);
     SimpleDateFormat eventDateFormat = new SimpleDateFormat("yyyy-MM-dd",Locale.ENGLISH);
 
 
+    /***************************Array Lists to store user entered moods and symptoms and days of entries**********************************/
     List<Date> dates = new ArrayList<>();
     List<Events> events = new ArrayList<>();
     public CustomCalendarView(Context context) {
@@ -65,6 +68,7 @@ public class CustomCalendarView extends LinearLayout {
         initializeLayout();
         setupCalendar();
 
+        /***************************Buttons to navigate back and forth in calendar*********/
         PreviousButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,14 +86,14 @@ public class CustomCalendarView extends LinearLayout {
         });
 
 
-
+/***********************************Method to handle a single grid in calendar*****************************************************/
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 
             @Override
             public void onItemClick( AdapterView<?> adapterView, View view, int position, long id) {
 
-                Toast.makeText(getContext(), "Onclick invoked", Toast.LENGTH_SHORT).show();
+                /*******************************On click o grid add event alert wil appear******************************************/
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setCancelable(true);
 
@@ -98,6 +102,8 @@ public class CustomCalendarView extends LinearLayout {
                 final TextView eventTime = addView.findViewById(R.id.eventTime);
                 ImageButton setTime = addView.findViewById(R.id.setEventTime);
                 Button addEvent = addView.findViewById(R.id.addEvent);
+
+                /**************************Setting the time of event*******************************************/
                 setTime.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -105,6 +111,7 @@ public class CustomCalendarView extends LinearLayout {
                         int hours = calendar.get(Calendar.HOUR_OF_DAY);
                         int minutes = calendar.get(Calendar.MINUTE);
 
+                        /**************************Initialise timepicker*******************************************/
                         TimePickerDialog timePickerDialog = new TimePickerDialog(addView.getContext(), R.style.Theme_AppCompat_Light_Dialog, new TimePickerDialog.OnTimeSetListener() {
                             @Override
                             public void onTimeSet(TimePicker timePicker, int hourOfday, int minute) {
@@ -126,6 +133,8 @@ public class CustomCalendarView extends LinearLayout {
                 final String date = eventDateFormat.format(dates.get(position));
                 final String month = dateFormat.format(dates.get(position));
                 final String year = dateFormat.format(dates.get(position));
+
+                /*****************************Saving the added event**********************************************/
                 addEvent.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -143,7 +152,7 @@ public class CustomCalendarView extends LinearLayout {
 
 
         });
-
+/********************User could view the events if long clicked*********************************************************************/
         gridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
@@ -153,7 +162,7 @@ public class CustomCalendarView extends LinearLayout {
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setCancelable(true);
 
-
+/*****************************************Show events layout invoked****************************************************/
                 View showView = LayoutInflater.from(getContext()).inflate(R.layout.show_eventd_layout,null);
 
                 RecyclerView recyclerView = showView.findViewById(R.id.eventsRv);
@@ -176,7 +185,7 @@ public class CustomCalendarView extends LinearLayout {
 
     }
 
-
+/**************************Read events on a particular day and add it to an arraylist***********************************/
     private ArrayList<Events> collectEventByDate(String date){
         ArrayList<Events> arrayList = new ArrayList<>();
         DBOpenHelper dbOpenHelper = new DBOpenHelper(context);
@@ -203,6 +212,7 @@ public class CustomCalendarView extends LinearLayout {
 
     }
 
+    /***********************Insert event to database*************************************/
     private void saveEvent(String event, String time , String date , String month , String year){
 
         DBOpenHelper dbOpenHelper = new DBOpenHelper(context);
@@ -221,6 +231,7 @@ public class CustomCalendarView extends LinearLayout {
         gridView=findViewById(R.id.gridView);
     }
 
+    /*******************Setup the format o calendar for each month*************************************/
     private void setupCalendar(){
         String currentDate = dateFormat.format(calendar.getTime());
         CurrentDate.setText(currentDate);
@@ -242,8 +253,10 @@ public class CustomCalendarView extends LinearLayout {
         gridView.setAdapter(myGridAdapter);
     }
 
+    /****************Retrieve events of a particular day from database and store it in events arraylist*******************/
+
     private void collectEventsPerMonth(String month,String year){
-        events.clear();
+        events.clear();//clear arraylist so previous events wont add up
         DBOpenHelper dbOpenHelper = new DBOpenHelper(context);
         SQLiteDatabase database = dbOpenHelper.getReadableDatabase();
         Cursor cursor = dbOpenHelper.readEventsPerMonth(month,year,database);

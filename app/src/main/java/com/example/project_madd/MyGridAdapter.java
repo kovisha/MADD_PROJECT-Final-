@@ -2,6 +2,9 @@ package com.example.project_madd;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +16,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 
 import com.example.project_madd.Model.Events;
 import com.example.project_madd.R;
@@ -35,7 +40,7 @@ public class MyGridAdapter extends ArrayAdapter {
     LayoutInflater inflater;
 
 
-
+        /*******************Handle single grid in calendar*************************************************************/
 
     public MyGridAdapter(@NonNull Context context,  List<Date> dates, Calendar currentDate, List<Events> events) {
         super(context, R.layout.single_cell_layout);
@@ -61,18 +66,23 @@ public class MyGridAdapter extends ArrayAdapter {
         int currentYear = currentDate.get(Calendar.YEAR);
 
 
-
+       /**********************If view is null just display the grids of the calendar********************************/
         View view = convertView;
         if(view==null){
             view=inflater.inflate(R.layout.single_cell_layout,parent,false);
 
         }
 
-        if(displayMonth==currentMonth && displayYear==currentYear){
+        /****************If day number belongs to month display grid as white in color****************************/
+        /*if(displayMonth==currentMonth && displayYear==currentYear){
             view.setBackgroundColor(getContext().getResources().getColor(R.color.popUpColor));
+        }*/
+
+        if(displayMonth==10 && displayYear == 2020 && dayNo >=1 && dayNo <= 6){
+            view.setBackgroundColor(getContext().getResources().getColor(R.color.btnColor));
         }
 
-
+        /*****************If day number doesn't belong to month grid color becomes light blue  *****************************************/
         else{
             view.setBackgroundColor(Color.parseColor("#9dc7c7"));
         }
@@ -90,8 +100,7 @@ public class MyGridAdapter extends ArrayAdapter {
             if(dayNo == eventCalendar.get(Calendar.DAY_OF_MONTH)&& displayMonth==eventCalendar.get(Calendar.MONTH)+1 && displayYear==eventCalendar.get(Calendar.YEAR)){
                 arrayList.add(events.get(i).getEVENT());
                 Event_Number.setText(arrayList.size()+" events");
-                view.setBackgroundColor(Color.parseColor("#000000"));
-                Toast.makeText(getContext(), "Events highlighted", Toast.LENGTH_SHORT).show();
+
             }
         }
 
@@ -125,4 +134,6 @@ public class MyGridAdapter extends ArrayAdapter {
     public Object getItem(int position) {
         return dates.get(position);
     }
+
+
 }

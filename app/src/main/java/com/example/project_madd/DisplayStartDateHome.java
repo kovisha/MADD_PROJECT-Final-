@@ -62,22 +62,11 @@ public class DisplayStartDateHome extends AppCompatActivity {
             displayStartDate.setText(startDate);//display the retrieved start date here
 
 
-           /*SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
-          int menstrualDays = 28;
-
-            Calendar c = Calendar.getInstance();
-            try{
-               c.setTime(sdf.parse(startDate));
-
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-
-
-            c.add(Calendar.DAY_OF_MONTH, menstrualDays); //add  days to predict the next period date.
-
-            String nextPeriodDate=sdf.format(c.getTime());*/
+          /*************Save the period start date as a shared preference to send it to calendar view********************/
+          sharedPreferences = getSharedPreferences("UserStartDate",Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor1 = sharedPreferences.edit();
+            editor1.putString("UserStartDateValue", displayStartDate.getText().toString());
+            editor1.apply();
 
 /****************************Calling the method to calculate and predict next period date*****************************************/
            String finalNextDate = nextStartDate(startDate,28);
@@ -85,7 +74,7 @@ public class DisplayStartDateHome extends AppCompatActivity {
             displayNextStartDate = findViewById(R.id.displayNextPeriodDate);
             displayNextStartDate.setText(finalNextDate); // display the retrieved next start date here
 
-            /**********************************Save nextStart date as a shared preference*************************************************************/
+            /**********************************Save nextStart date as a shared preference to send it to period notifier*************************************************************/
             sharedPreferences = getSharedPreferences("SaveStartDate", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("StartDate",displayNextStartDate.getText().toString());
