@@ -1,5 +1,6 @@
 package com.example.project_madd;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -49,7 +50,7 @@ public class DashBoard extends AppCompatActivity {
 
     }
 
-   /* public void settingsHome(View view){
+    /*public void settingsHome(View view){
 
         btnS = findViewById(R.id.settingsHome);
         btnS.setOnClickListener(new View.OnClickListener() {

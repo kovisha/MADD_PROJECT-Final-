@@ -41,6 +41,8 @@ public class CommonAttributesActivity extends AppCompatActivity {
         waist = findViewById(R.id.waist);
     }
 
+
+    /*insert values to the table*/
     public void addDetails(View view) {
 
         if (Gender.getCheckedRadioButtonId() == R.id.maleGender) {
@@ -58,38 +60,42 @@ public class CommonAttributesActivity extends AppCompatActivity {
         String getWaist = waist.getText().toString();
 
 
-        float H=Float.parseFloat(getH);
-        float W=Float.parseFloat(getW);
-        int A = Integer.parseInt(getA);
-        float wa = Float.parseFloat(getWaist);
-
-
-        float newH=H/100;
-        float bmi=W/(newH*newH);
-
-        if(gender.equals("Male")){
-
-            bmr  = (float) ((10 * W)+(6.25 * H)-(5 * A)+5 );
-            Intent intent =new Intent(CommonAttributesActivity.this,page3.class);
-            startActivity(intent);
-
-        }
-
-        if(gender.equals("Female")){
-
-            bmr  = (float) (66.5+(13.75 * W)+(5.0 * H)-(6.7 *A ));
-            Intent intent =new Intent(CommonAttributesActivity.this,page4.class);
-            startActivity(intent);
-
-        }
-
-        float waistpercentage = ((W/H)* 100);
 
         DBOpenHelper dbOpenHelper = new DBOpenHelper(this);
         if (getH.isEmpty() || getA.isEmpty() || getW.isEmpty() || getWaist.isEmpty()) {
             Toast.makeText(this,"Please fill all the fileds...",Toast.LENGTH_SHORT).show();
         }
         else {
+
+            float H=Float.parseFloat(getH);
+            float W=Float.parseFloat(getW);
+            int A = Integer.parseInt(getA);
+            float wa = Float.parseFloat(getWaist);
+
+
+           // float newH=H/100;
+            float bmi=BMIcalc(H,W);
+
+            if(gender.equals("Male")){
+
+                bmr  = BMRforMen(W,H,A);
+                Intent intent =new Intent(CommonAttributesActivity.this,page3.class);
+                startActivity(intent);
+
+            }
+
+            if(gender.equals("Female")){
+
+                bmr  = BMRforwoMen(W,H,A);
+                Intent intent =new Intent(CommonAttributesActivity.this,page4.class);
+                startActivity(intent);
+
+            }
+
+            float waistpercentage = WTHcalc(H,W);
+
+
+
             long val = dbOpenHelper.addDetails(height.getText().toString(), weight.getText().toString(), age.getText().toString(), gender, waist.getText().toString(), bmi, bmr, waistpercentage);
 
 
@@ -108,6 +114,37 @@ public class CommonAttributesActivity extends AppCompatActivity {
         }
 
 
+    }
+
+
+    public float BMIcalc(float height , float weight){
+
+        float h = (height/100)*(height/100) ;
+        float bmiFinal =  weight / h;
+        return bmiFinal ;
+
+    }
+
+    public float BMRforMen(float weight , float height , int age ){
+
+
+        float bmrFinalmen = (float) ((10 * weight)+(6.25 * height)-(5 * age)+5 );
+        return bmrFinalmen ;
+    }
+
+    public float BMRforwoMen(float weight , float height , int age ){
+
+
+        float bmrFinalwomen = (float) (66.5+(13.75 * weight)+(5.0 * height)-(6.7 *age));
+        return bmrFinalwomen ;
+    }
+
+
+    public float WTHcalc(float height, float weight){
+
+        float waistpercentage = ((weight/height)* 100);
+
+        return waistpercentage;
     }
 
 

@@ -10,12 +10,16 @@ import androidx.annotation.Nullable;
 
 public class DBOpenHelper extends SQLiteOpenHelper {
 
+
+    /*Declare database name*/
     public static final String DATABASE_NAME = "HealthTracker.db";
 
     public DBOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
 
+
+    /*create table for the BMI tracker*/
     @Override
     public void onCreate(SQLiteDatabase db) {
 
@@ -38,6 +42,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
     }
 
+    /*insert details to the BMI tracker*/
     public long addDetails(String height , String weight , String age , String gender , String waist , float bmi, float bmr , float whpercentage){
 
         float h = Float.parseFloat(height);
@@ -62,6 +67,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
     }
 
+    /*read BMI from BMI tracker*/
     public Cursor readBmi(SQLiteDatabase sqLiteDatabase){
 
         String [] projection = {DBStructure.BMITracker.COLUMN_NAME_BMI,DBStructure.BMITracker.COLUMN_NAME_HEIGHT};
@@ -73,6 +79,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
     }
 
+    /*read BMR from BMI tracker*/
     public Cursor readBmr(SQLiteDatabase sqLiteDatabase){
 
         String [] projection = {DBStructure.BMITracker.COLUMN_NAME_BMR,DBStructure.BMITracker.COLUMN_NAME_BMI};
@@ -84,6 +91,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
     }
 
+    /*read WTH from BMI tracker*/
     public Cursor readWTH(SQLiteDatabase sqLiteDatabase){
 
         String [] projection = {DBStructure.BMITracker.COLUMN_NAME_WHPERCENTAGE};
@@ -95,6 +103,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
     }
 
+    /*read ALL from BMI tracker*/
     public Cursor UserProfile(SQLiteDatabase sqLiteDatabase){
 
         String [] projection = {DBStructure.BMITracker.COLUMN_NAME_HEIGHT,DBStructure.BMITracker.COLUMN_NAME_WEIGHT,DBStructure.BMITracker.COLUMN_NAME_AGE,
@@ -107,7 +116,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
     }
 
-
+    /*update details from BMI tracker*/
    public int updateValues(String height, String weight , String waist,String bmi , String bmr,String  whpercentage){
 
         SQLiteDatabase db = getReadableDatabase();
@@ -130,6 +139,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     }
 
 
+    /*Delete all from BMI tracker*/
     public void deleteInfo(){
 
         SQLiteDatabase sqLiteDatabase = getReadableDatabase() ;

@@ -121,7 +121,7 @@ public class User_profile extends AppCompatActivity {
 
         myDialog.show();
 
-        delete.setOnClickListener(new View.OnClickListener() {
+      /*  delete.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -150,7 +150,7 @@ public class User_profile extends AppCompatActivity {
 
 
             }
-        });
+        });*/
 
 
 

@@ -133,24 +133,6 @@
         app:layout_constraintVertical_bias="0.867" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="180dp"
-        android:layout_height="47dp"
-        android:background="@drawable/rounded_corners"
-        android:fontFamily="@font/aldrich"
-        android:text="Change units"
-        android:textAlignment="center"
-        android:textColor="@color/prjctBtnTextclr"
-        android:textSize="18sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.457"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.959" />
-
-    <Button
         android:id="@+id/btn_delete"
         android:layout_width="140dp"
         android:layout_height="46dp"

@@ -9,6 +9,8 @@
     <color name="color3">#98FB98</color>
     <color name="color4">#8FBC8F</color>
 
+    <color name="PopUp">#ffffff</color>
+
 
     /********************************************Common*************************************************************************/
     <color name="colorPrimary">#000000</color> /*action bar*/

@@ -35,7 +35,7 @@ public class bmi_tips extends AppCompatActivity {
             }
         });
 
-        /*****************retrieve bmi from database *************/
+        /*****************retrieve bmi and show tips  *************/
         DBOpenHelper dbOpenHelper = new DBOpenHelper(this);
         SQLiteDatabase sqLiteDatabase = dbOpenHelper.getReadableDatabase();
 
