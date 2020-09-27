@@ -243,7 +243,8 @@ public class Settings extends AppCompatActivity {
 
         //intent
         Intent i = new Intent(Settings.this,DashBoard.class);
-        Toast.makeText(this,"deleted successfully",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Deleted successfully",Toast.LENGTH_SHORT).show();
+        startActivity(i);
 
     }
 

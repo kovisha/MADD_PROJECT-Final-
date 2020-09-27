@@ -7,11 +7,15 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.project_madd.Database.DBOpenHelper;
 import com.example.project_madd.Database.DBStructure;
@@ -50,12 +54,32 @@ public class viewMyWater extends AppCompatActivity {
             //setting the value textView
             txtDrank.setText(drankAmt+" ml");
 
+
             //retrieving the remaining amount
             String remainingAmt = cursor.getString(cursor.getColumnIndex(DBStructure.Water2.COL5_WATER2));
             //getting the id of text view
             TextView txtRemain = findViewById(R.id.remainingAmt);
             //setting the value textView
-            txtRemain.setText(remainingAmt+" ml");
+            if(Double.parseDouble(remainingAmt)<=0.00){
+                txtRemain.setText("0 ml");//if amount reached set to zero
+            }else {
+                txtRemain.setText(remainingAmt + " ml");//else set the remaining
+            }
+
+            if (Double.parseDouble(totalAmt)<= Double.parseDouble(drankAmt)){
+                //Creating the LayoutInflater instance
+                LayoutInflater li = getLayoutInflater();
+
+                //Getting the View object as defined in the custom toast.xml file
+                View layout = li.inflate(R.layout.custom_toast_welldone,(ViewGroup) findViewById(R.id.custom_toast_welldone));
+
+                //Creating the Toast object
+                Toast toast = new Toast(getApplicationContext());
+                toast.setDuration(Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+                toast.setView(layout);
+                toast.show();
+            }
 
         }
 
