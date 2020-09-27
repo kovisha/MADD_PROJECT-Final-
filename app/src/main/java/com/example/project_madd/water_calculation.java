@@ -91,9 +91,12 @@ public class water_calculation extends AppCompatActivity{
         if (!weight.isEmpty()) {
 
             //calculating the total amount
-            Double tot = (Integer.parseInt(etWgt.getText().toString()) / 30.0);
-            Double ex = ((Integer.parseInt(rbTime.getText().toString()) / 30.0) * 0.35);
-            Double finalTot = (tot + ex) * 1000;
+            //Double tot = (Integer.parseInt(etWgt.getText().toString()) / 30.0);
+            //Double ex = ((Integer.parseInt(rbTime.getText().toString()) / 30.0) * 0.35);
+            //Double finalTot = (tot + ex) * 1000;
+
+            //calling the method for calculation
+            Double finalTot = total(Integer.parseInt(weight),Integer.parseInt(rbTime.getText().toString()));
 
             //call to insert method
             long val = dbHelper.addWater(Integer.parseInt(etWgt.getText().toString()), Integer.parseInt(rbTime.getText().toString()), finalTot);
@@ -113,6 +116,15 @@ public class water_calculation extends AppCompatActivity{
             Toast.makeText(water_calculation.this,"Please enter your weight!",Toast.LENGTH_SHORT).show();
         }
     }//end of method
+
+    /************************************** calculating total water needed ***********************************************/
+    public Double total(Integer weight,Integer time){
+
+        Double tot = weight / 30.0;
+        Double ex = (time / 30.0) * 0.35;
+        Double finalTot = (tot + ex) * 1000;
+        return finalTot;
+    }
 
 
     /*************************************** on click method when cancelled******************************************/

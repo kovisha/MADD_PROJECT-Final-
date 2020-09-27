@@ -65,11 +65,15 @@ public class amount_selection extends AppCompatActivity {
 
         //Retrieving the drank amount
         Double drankAlready = dbHelper.getDrank();
-        Double totDrank = Double.parseDouble(txtViewAmt.getText().toString())+drankAlready;
+        //Double totDrank = Double.parseDouble(txtViewAmt.getText().toString())+drankAlready;
+        Double amt = Double.parseDouble(txtViewAmt.getText().toString());
+
+        Double totDrank = calcDrank(drankAlready,amt);
 
         //retrieving the remaining amount
         Double remainingAlready = dbHelper.getRemainingAmt();
-        Double totRemaining = remainingAlready - Double.parseDouble(txtViewAmt.getText().toString());
+        Double totRemaining = calRemaining(remainingAlready,amt);
+       // Double totRemaining = remainingAlready - Double.parseDouble(txtViewAmt.getText().toString());
 
         //calling the method in db helper to update
         int val=dbHelper.updateInfo(totDrank,totRemaining);
@@ -130,6 +134,16 @@ public class amount_selection extends AppCompatActivity {
         else
             return super.onOptionsItemSelected(item);
     }//end of menu
+
+    /******************************************** CALCULATING THE DRANK AMOUNT *******************************************************************/
+    public Double calcDrank(Double drankAlready,Double amountNow){
+        return (drankAlready+amountNow);
+    }
+
+    /******************************************** CALCULATING THE REMAINING AMOUNT *******************************************************************/
+    public Double calRemaining(Double remain, Double amt){
+        return(remain - amt);
+    }
 
 
     /********************************************* ON CLICK METHOD WHEN CANCELLED ADDITION OF DRINK ********************************************************/
