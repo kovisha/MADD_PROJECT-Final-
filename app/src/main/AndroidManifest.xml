@@ -27,6 +27,7 @@
         <activity android:name=".bmi_tips" />
         <activity android:name=".bmi_calculation">
 
+
         </activity>
         <activity android:name=".bmi_Home">
 
@@ -34,11 +35,7 @@
         </activity>
         <activity android:name=".User_profile">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
 
 
@@ -53,6 +50,13 @@
         <activity android:name=".MenstrualHome" />
         <activity android:name=".DashBoard" />
         <activity android:name=".CommonAttributesActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
 
 
 

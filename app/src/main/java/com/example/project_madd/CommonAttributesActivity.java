@@ -79,7 +79,7 @@ public class CommonAttributesActivity extends AppCompatActivity {
             if(gender.equals("Male")){
 
                 bmr  = BMRforMen(W,H,A);
-                Intent intent =new Intent(CommonAttributesActivity.this,page3.class);
+                Intent intent =new Intent(CommonAttributesActivity.this,bmi_calculation.class);
                 startActivity(intent);
 
             }
@@ -87,7 +87,7 @@ public class CommonAttributesActivity extends AppCompatActivity {
             if(gender.equals("Female")){
 
                 bmr  = BMRforwoMen(W,H,A);
-                Intent intent =new Intent(CommonAttributesActivity.this,page4.class);
+                Intent intent =new Intent(CommonAttributesActivity.this,bmi_calculation.class);
                 startActivity(intent);
 
             }

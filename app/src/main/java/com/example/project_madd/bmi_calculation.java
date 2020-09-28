@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -21,8 +22,11 @@ import java.text.DecimalFormat;
 
 public class bmi_calculation extends AppCompatActivity {
 
-  EditText bmi_value , ideal_w;
-  TextView tv;
+    TextView bmi_value , ideal_w;
+    TextView tv;
+
+    TextView result1,result2,result3,result4,result5,result6,result7,result8;
+    TextView result1_1,result2_1,result3_1,result4_1,result5_1,result6_1,result7_1,result8_1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,6 +93,67 @@ public class bmi_calculation extends AppCompatActivity {
             else {
                 tv.setText("Over Weight , Time for a run!!!");
             }
+
+
+            if(v<16){
+                result1= findViewById(R.id.textclass1_1);
+                result1.setTextColor(Color.RED);
+                result1_1 = findViewById(R.id.textclass1_2);
+                result1_1.setTextColor(Color.RED);
+
+            }
+            else if(16<=v && v<=16.9){
+                result2= findViewById(R.id.textclass2_1);
+                result2.setTextColor(Color.RED);
+                result2_1 = findViewById(R.id.textclass2_2);
+                result2_1.setTextColor(Color.RED);
+
+            }
+            else if(17<=v && v<=18.4){
+                result3= findViewById(R.id.textclass3_1);
+                result3.setTextColor(Color.RED);
+                result3_1 = findViewById(R.id.textclass3_2);
+                result3_1.setTextColor(Color.RED);
+
+            }
+            else if(18.5<=v && v<=24.9){
+                result4= findViewById(R.id.textclass4_1);
+                result4.setTextColor(Color.RED);
+                result4_1 = findViewById(R.id.textclass4_2);
+                result4_1.setTextColor(Color.RED);
+
+            }
+            else if(25<=v && v<=29.9){
+                result5= findViewById(R.id.textclass5_1);
+                result5.setTextColor(Color.RED);
+                result5_1 = findViewById(R.id.textclass5_2);
+                result5_1.setTextColor(Color.RED);
+
+            }
+            else if(30<=v && v<=34.9){
+                result6= findViewById(R.id.textclass6_1);
+                result6.setTextColor(Color.RED);
+                result6_1 = findViewById(R.id.textclass6_2);
+                result6_1.setTextColor(Color.RED);
+
+            }
+
+            else if(35<=v && v>39.9){
+                result7= findViewById(R.id.textclass7_1);
+                result7.setTextColor(Color.RED);
+                result7_1 = findViewById(R.id.textclass7_2);
+                result7_1.setTextColor(Color.RED);
+
+            }
+
+            else{
+                result8= findViewById(R.id.textclass8_1);
+                result8.setTextColor(Color.RED);
+                result8_1 = findViewById(R.id.textclass8_2);
+                result8_1.setTextColor(Color.RED);
+
+            }
+
 
 
         }
