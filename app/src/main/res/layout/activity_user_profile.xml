@@ -115,7 +115,7 @@
         app:layout_constraintVertical_bias="0.73" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btn_edit"
         android:layout_width="140dp"
         android:layout_height="46dp"
         android:background="@drawable/rounded_corners"
@@ -138,13 +138,13 @@
         android:layout_height="46dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/aldrich"
-        android:onClick="showPopup"
+        android:onClick="deleteAlert"
         android:text="@string/delete"
         android:textAlignment="center"
         android:textColor="@color/prjctBtnTextclr"
         android:textSize="18sp"
         android:textStyle="normal"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button4"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_edit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.756"
         app:layout_constraintStart_toStartOf="parent" />

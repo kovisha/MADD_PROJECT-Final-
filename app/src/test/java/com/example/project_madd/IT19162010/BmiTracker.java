@@ -24,7 +24,7 @@ public class BmiTracker {
     public void BMI_iscorrect(){
 
         float results  = commonAttributesActivity.BMIcalc(155,55);
-        assertEquals(24.9489,results,0.001);
+        assertEquals(22.892820358276367,results,0.001);
     }
 
     @Test

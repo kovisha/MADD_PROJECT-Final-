@@ -1,9 +1,11 @@
 package com.example.project_madd;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -33,12 +35,16 @@ public class User_profile extends AppCompatActivity {
 
     TextView tv1,tv2,tv3,tv4,tv5;
 
+    Button edit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
         img = findViewById(R.id.imgview);
+        myDialog = new Dialog(this);
+        edit = findViewById(R.id.btn_edit);
 
         /*****************retrieve userprofile from database *************/
         DBOpenHelper dbOpenHelper = new DBOpenHelper(this);
@@ -75,7 +81,19 @@ public class User_profile extends AppCompatActivity {
 
 
 
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(User_profile.this,UpdateAttributes.class);
+                startActivity(intent);
+
+            }
+        });
+
     }
+
+
 
     public void takepicture(View view){
 
@@ -111,52 +129,46 @@ public class User_profile extends AppCompatActivity {
 
     }
 
-   
+    public void deleteAlert(final View view){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
-    public void showPopup(View view){
+        // Setting Alert Dialog Title
+        alertDialogBuilder.setTitle("Confirm Delete..!!!");
 
-       Button delete;
+        // Icon Of Alert Dialog
+        alertDialogBuilder.setIcon(R.drawable.ic_baseline_help_24);
 
-        delete = findViewById(R.id.btn_delete);
+        // Setting Alert Dialog Message
+        alertDialogBuilder.setMessage("Are you sure,You want to delete record?");
+        alertDialogBuilder.setCancelable(false);
 
-        myDialog.show();
-
-      /*  delete.setOnClickListener(new View.OnClickListener() {
-
+        alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(DialogInterface dialogInterface, int i) {
 
-                Button confirm , cancel;
+                deleteData(view);
 
-                myDialog.setContentView(R.layout.popup);
-
-                confirm = myDialog.findViewById(R.id.btn_delete_yes);
-                cancel = myDialog.findViewById(R.id.btn_delete_no);
-
-                cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        myDialog.dismiss();
-                    }
-                });
-
-                confirm.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(User_profile.this,bmi_Home.class);
-                        startActivity(intent);
-                    }
-                });
-
-
+                Toast.makeText(getApplicationContext(),"Successfully deleted...",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(User_profile.this , CommonAttributesActivity.class);
+                startActivity(intent);
             }
-        });*/
+        });
 
 
+
+        alertDialogBuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                Toast.makeText(getApplicationContext(),"You clicked on Cancel",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Dialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
 
 
     }
-
 
 
 
