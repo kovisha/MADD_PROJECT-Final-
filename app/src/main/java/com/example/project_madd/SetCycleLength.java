@@ -21,6 +21,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.project_madd.Database.DBOpenHelper;
+
 public class SetCycleLength extends AppCompatActivity {
 
 
@@ -28,7 +30,8 @@ public class SetCycleLength extends AppCompatActivity {
     Button inc1, dec1, pCycleLengthConfirm;
     TextView tv1;
     int count1;
-     SwitchCompat simpleSwitch;
+     Switch CycleSwitch;
+    String enteredCycleLength;
 
     SharedPreferences sharedPreferences;
 
@@ -48,7 +51,9 @@ public class SetCycleLength extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 count1++;
-                tv1.setText(count1 + " Days");
+                String userCycleLength = Integer.toString(count1);
+                tv1.setText(userCycleLength);
+
             }
         });
 
@@ -56,7 +61,8 @@ public class SetCycleLength extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 count1--;
-                tv1.setText(count1 + " Days");
+                String userCycleLength = Integer.toString(count1);
+                tv1.setText(userCycleLength);
             }
         });
 
@@ -70,16 +76,66 @@ public class SetCycleLength extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("Value",tv1.getText().toString());
                 editor.apply();
+                Toast.makeText(getApplicationContext(), "Your Preference Saved", Toast.LENGTH_SHORT).show();
             }
         });
 
         btGo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                enteredCycleLength=  tv1.getText().toString();
+                Integer CUserLength = Integer.parseInt(enteredCycleLength);
+                addUserCycle(CUserLength);
+
                 Intent intent = new Intent(getApplicationContext(),PeriodSettingsHome.class);
                 startActivity(intent);
             }
         });
+
+        /**********************Saving the state of switch for avg cycle length******************************************/
+        CycleSwitch= findViewById(R.id.switch2);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("CycleSwitch",MODE_PRIVATE);
+        CycleSwitch.setChecked(sharedPreferences.getBoolean("EnableAvgCycle",true));
+
+        CycleSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(CycleSwitch.isChecked()){
+                    SharedPreferences.Editor editor = getSharedPreferences("CycleSwitch",MODE_PRIVATE).edit();
+                    editor.putBoolean("EnableAvgCycle",true);
+                    editor.apply();
+                    CycleSwitch.setChecked(true);
+                    Toast.makeText(getApplicationContext(), "Average Lengths Set", Toast.LENGTH_SHORT).show();
+                }
+
+                else{
+                    SharedPreferences.Editor editor = getSharedPreferences("CycleSwitch",MODE_PRIVATE).edit();
+                    editor.putBoolean("EnableAvgCycle",false);
+                    editor.apply();
+                    CycleSwitch.setChecked(false);
+                    Toast.makeText(getApplicationContext(), "Your Choice is added", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
+    }
+
+    /**********User Period Length update method************************/
+    public void addUserCycle(Integer CLengthUser) {
+
+        DBOpenHelper dbOpenHelper = new DBOpenHelper(this);
+
+        long val = dbOpenHelper.updateUserCycleLength( CLengthUser);
+
+        if (val > 0) {
+            Toast.makeText(getApplicationContext(), " User Cycle length update success", Toast.LENGTH_SHORT).show();
+
+        } else {
+            Toast.makeText(getApplicationContext(), " User Cycle Length update failed", Toast.LENGTH_SHORT).show();
+        }
 
 
     }

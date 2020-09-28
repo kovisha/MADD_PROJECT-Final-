@@ -16,7 +16,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.project_madd.Database.DBOpenHelper;
 
 public class SetPeriodLength extends AppCompatActivity {
 
@@ -25,6 +29,8 @@ public class SetPeriodLength extends AppCompatActivity {
     TextView tv;
     int count;
     TextView periodLength;
+    String enteredPeriodLength;
+    Switch savePeriodLength;
 
     SharedPreferences sharedPreferences;
 
@@ -43,7 +49,9 @@ public class SetPeriodLength extends AppCompatActivity {
            @Override
            public void onClick(View view) {
                count++;
-               tv.setText(count + " Days");
+               String userPeriodLength = Integer.toString(count);
+               tv.setText(userPeriodLength);
+
            }
        });
 
@@ -51,7 +59,9 @@ public class SetPeriodLength extends AppCompatActivity {
            @Override
            public void onClick(View view) {
                count--;
-               tv.setText(count+ " Days");
+               String userPeriodLength = Integer.toString(count);
+               tv.setText(userPeriodLength);
+
            }
        });
 
@@ -65,38 +75,69 @@ public class SetPeriodLength extends AppCompatActivity {
                SharedPreferences.Editor editor = sharedPreferences.edit();
                editor.putString("Value3",tv.getText().toString());
                editor.apply();
+               Toast.makeText(getApplicationContext(), "Your Preference Saved", Toast.LENGTH_SHORT).show();
            }
        });
 
        btGo.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
+               enteredPeriodLength=  tv.getText().toString();
+               Integer PUserLength = Integer.parseInt(enteredPeriodLength);
+               addUserPeriod(PUserLength);
+
                Intent intent = new Intent(getApplicationContext(),PeriodSettingsHome.class);
                startActivity(intent);
            }
        });
 
+        /**********************Saving the state of switch for avg period length******************************************/
+       savePeriodLength = findViewById(R.id.PeriodSwitch);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("PeriodSwitch",MODE_PRIVATE);
+        savePeriodLength.setChecked(sharedPreferences.getBoolean("EnableAvgPeriod",true));
+
+       savePeriodLength.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               if(savePeriodLength.isChecked()){
+                   SharedPreferences.Editor editor = getSharedPreferences("PeriodSwitch",MODE_PRIVATE).edit();
+                   editor.putBoolean("EnableAvgPeriod",true);
+                   editor.apply();
+                   savePeriodLength.setChecked(true);
+                   Toast.makeText(getApplicationContext(), "Average Period Length Set", Toast.LENGTH_SHORT).show();
+               }
+
+               else{
+                   SharedPreferences.Editor editor = getSharedPreferences("PeriodSwitch",MODE_PRIVATE).edit();
+                   editor.putBoolean("EnableAvgPeriod",false);
+                   editor.apply();
+                   savePeriodLength.setChecked(false);
+                   Toast.makeText(getApplicationContext(), "Your Choice is added", Toast.LENGTH_SHORT).show();
+               }
+           }
+       });
+
+
+
     }
 
-   /* public void confirmPeriodLength(View view){
+    /**********User Period Length update method************************/
+    public void addUserPeriod(Integer PLengthUser) {
 
-            PLenConfirm = findViewById(R.id.PlengthSettingBtn);
-            PLenConfirm.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    periodLength = findViewById(R.id.calculation);
-                    String userPeriodLength = periodLength.getText().toString();
+        DBOpenHelper dbOpenHelper = new DBOpenHelper(this);
 
-                    Intent intent = new Intent(SetPeriodLength.this , PeriodSettingsHome.class);
+            long val = dbOpenHelper.updateUserPeriodLength( PLengthUser);
 
-                    intent.putExtra("PeriodSetLength" , userPeriodLength);
+            if (val > 0) {
+                Toast.makeText(getApplicationContext(), " User Period length update success", Toast.LENGTH_SHORT).show();
 
-                    startActivity(intent);
+            } else {
+                Toast.makeText(getApplicationContext(), " User Period Length update failed", Toast.LENGTH_SHORT).show();
+            }
 
-                }
-            });
 
-    }*/
+    }
 
     public void PeriodInfoMessage(View view){
         final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);

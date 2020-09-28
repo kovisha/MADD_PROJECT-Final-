@@ -8,9 +8,9 @@
     <TextView
         android:id="@+id/myNotification"
         android:layout_width="match_parent"
-        android:layout_height="231dp"
+        android:layout_height="209dp"
         android:background="@color/projectBgcolor"
-        android:fontFamily="@font/cambo"
+        android:fontFamily="@font/aldrich"
         android:text="YOUR PERIOD IS EXPECTED TO START IN 2 DAYS"
         android:textColor="@color/prjctBtnTextclr"
         android:textSize="50sp" />

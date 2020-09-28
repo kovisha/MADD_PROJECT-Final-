@@ -81,7 +81,7 @@ public class PeriodSettingsHome extends AppCompatActivity {
 
         String value = result.getString("Value","Data Not found");
 
-        tvGo.setText(value);
+        tvGo.setText(value + " Days");
         /*********************************************End of user preferred cycleLength*********************************************/
 
 
@@ -94,7 +94,7 @@ public class PeriodSettingsHome extends AppCompatActivity {
 
         String value2 = result2.getString("Value2","Data Not found");
 
-        tvOvule.setText(value2);
+        tvOvule.setText(value2 +" Days");
 
         /*********************************************End of user preferred ovuleLength*********************************************/
 
@@ -107,7 +107,7 @@ public class PeriodSettingsHome extends AppCompatActivity {
 
         String value3 = result3.getString("Value3","Data Not found");
 
-        tvPeriod.setText(value3);
+        tvPeriod.setText(value3 + " Days");
 
 
         /*********************************************End of user preferred PeriodLength*********************************************/

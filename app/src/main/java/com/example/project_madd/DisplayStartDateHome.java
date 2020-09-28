@@ -35,6 +35,8 @@ public class DisplayStartDateHome extends AppCompatActivity {
     ImageView v2;
     TextView displayStartDate ,startDateCaption, displayNextStartDate;
     Button btn2;
+    int  periodCycleLength;
+    String finalNextDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +55,20 @@ public class DisplayStartDateHome extends AppCompatActivity {
         Cursor cursor = dbOpenHelper.readStartDate(database);
 
         while(cursor.moveToNext()) {
-             startDate = cursor.getString(cursor.getColumnIndex(DBStructure.PeriodTracker.COLUMN_NAME_START_DATE));
+            startDate = cursor.getString(cursor.getColumnIndex(DBStructure.PeriodTracker.COLUMN_NAME_START_DATE));
+
+        }
+
+        /*************Retrieve Menstrual cycle values from retrieve method here**********************/
+
+        DBOpenHelper dbOpenHelper2 = new DBOpenHelper(this);
+        SQLiteDatabase database2 = dbOpenHelper2.getReadableDatabase();
+        Cursor cursor2 = dbOpenHelper2.readCycleLength(database2);
+
+        while(cursor2.moveToNext()) {
+            periodCycleLength = cursor2.getInt(cursor2.getColumnIndex(DBStructure.PeriodTracker.COLUMN_NAME_C_LENGTH));
+
+        }
 
             startDateCaption = findViewById(R.id.getStartDate);
             startDateCaption.setText("Start Date");
@@ -69,17 +84,22 @@ public class DisplayStartDateHome extends AppCompatActivity {
             editor1.apply();
 
 /****************************Calling the method to calculate and predict next period date*****************************************/
-           String finalNextDate = nextStartDate(startDate,28);
 
-            displayNextStartDate = findViewById(R.id.displayNextPeriodDate);
-            displayNextStartDate.setText(finalNextDate); // display the retrieved next start date here
 
-            /**********************************Save nextStart date as a shared preference to send it to period notifier*************************************************************/
-            sharedPreferences = getSharedPreferences("SaveStartDate", Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString("StartDate",displayNextStartDate.getText().toString());
-            editor.apply();
-        }
+                finalNextDate = nextStartDate(startDate, periodCycleLength);
+
+
+                displayNextStartDate = findViewById(R.id.displayNextPeriodDate);
+                displayNextStartDate.setText(finalNextDate); // display the retrieved next start date here
+
+                updateNextPeriodStart(finalNextDate);
+
+                /**********************************Save nextStart date as a shared preference to send it to period notifier*************************************************************/
+                sharedPreferences = getSharedPreferences("SaveStartDate", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("StartDate", displayNextStartDate.getText().toString());
+                editor.apply();
+
 
 
     }
@@ -103,6 +123,23 @@ public class DisplayStartDateHome extends AppCompatActivity {
         String nextPeriodDate=sdf.format(c.getTime());
 
         return nextPeriodDate;
+    }
+
+    /**********User Next Period Start date update method************************/
+    public void updateNextPeriodStart(String nextStartDate) {
+
+        DBOpenHelper dbOpenHelper = new DBOpenHelper(this);
+
+        long val = dbOpenHelper.updateNextPeriodStartDay( nextStartDate);
+
+        if (val > 0) {
+            Toast.makeText(getApplicationContext(), " Next Period date update success", Toast.LENGTH_SHORT).show();
+
+        } else {
+            Toast.makeText(getApplicationContext(), " Next Period date update failed", Toast.LENGTH_SHORT).show();
+        }
+
+
     }
 
 

@@ -50,13 +50,13 @@
         <activity android:name=".DashBoard" />
         <activity android:name=".CommonAttributesActivity" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".PeriodReminder" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+        <activity android:name=".PeriodReminder"/>
 
         <receiver android:name=".Period_Notification_reciever" />
         <receiver android:name=".ReminderWater" />

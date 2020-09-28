@@ -19,6 +19,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import com.example.project_madd.Database.DBOpenHelper;
+import com.example.project_madd.Database.DBStructure;
 import com.example.project_madd.Model.Events;
 import com.example.project_madd.R;
 
@@ -38,7 +40,9 @@ public class MyGridAdapter extends ArrayAdapter {
     Calendar currentDate;
     List<Events> events;
     LayoutInflater inflater;
-
+    String startDate;
+    Integer periodLength;
+    int  firstDay,lastday ;
 
         /*******************Handle single grid in calendar*************************************************************/
 
@@ -65,26 +69,52 @@ public class MyGridAdapter extends ArrayAdapter {
         int currentMonth = currentDate.get(Calendar.MONTH)+1;
         int currentYear = currentDate.get(Calendar.YEAR);
 
+        /******************************Retrieve details from database for the calendar view*********************************************************/
 
-       /**********************If view is null just display the grids of the calendar********************************/
+        DBOpenHelper dbOpenHelper = new DBOpenHelper(getContext());
+        SQLiteDatabase database = dbOpenHelper.getReadableDatabase();
+        Cursor cursor = dbOpenHelper.calendarViewDetails(database);
+
+        while(cursor.moveToNext()) {
+            startDate = cursor.getString(cursor.getColumnIndex(DBStructure.PeriodTracker.COLUMN_NAME_START_DATE));
+            periodLength = cursor.getInt(cursor.getColumnIndex(DBStructure.PeriodTracker.COLUMN_NAME_P_LENGTH));
+        }
+
+        try {
+            Date myDate =new SimpleDateFormat("yyyy-MM-dd").parse(startDate);
+            Calendar c = Calendar.getInstance();
+            c.setTime(myDate);
+            firstDay = c.get(Calendar.DAY_OF_MONTH);
+
+            lastday = firstDay + periodLength;
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+
+
+        /**********************If view is null just display the grids of the calendar********************************/
         View view = convertView;
         if(view==null){
             view=inflater.inflate(R.layout.single_cell_layout,parent,false);
 
         }
 
+
         /****************If day number belongs to month display grid as white in color****************************/
         /*if(displayMonth==currentMonth && displayYear==currentYear){
             view.setBackgroundColor(getContext().getResources().getColor(R.color.popUpColor));
         }*/
 
-        if(displayMonth==10 && displayYear == 2020 && dayNo >=1 && dayNo <= 6){
-            view.setBackgroundColor(getContext().getResources().getColor(R.color.btnColor));
+        if(displayMonth==currentMonth  && displayYear==currentYear && dayNo >= firstDay && dayNo <= lastday){
+            view.setBackgroundColor(getContext().getResources().getColor(R.color.Highlighter));
         }
 
         /*****************If day number doesn't belong to month grid color becomes light blue  *****************************************/
         else{
-            view.setBackgroundColor(Color.parseColor("#9dc7c7"));
+            view.setBackgroundColor(Color.parseColor("#fafafa"));
         }
 
         TextView Day_Number = view.findViewById(R.id.calendar_days);
@@ -106,6 +136,9 @@ public class MyGridAdapter extends ArrayAdapter {
 
         return view;
     }
+
+
+
 
     private Date convertStringToDate(String eventDate){
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);

@@ -1,7 +1,7 @@
 <resources>
 
     /*********************************************Kovisha**************************************************************************/
-    <string name="app_name">Elite!</string>
+    <string name="app_name">Holistic Wellness</string>
     <string name="HomeStart">Get Started</string>
     <string name="moveToNext">Next</string>
     <string name="addRecordBtn">Add Record</string>

@@ -2,6 +2,7 @@ package com.example.project_madd;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -14,8 +15,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.project_madd.Database.DBOpenHelper;
 
 public class setOvulationLength extends AppCompatActivity {
 
@@ -23,6 +27,8 @@ public class setOvulationLength extends AppCompatActivity {
     Button ovuleLengthSet , incFertile , deFertile;
     TextView fertilityLength , tv4;
     int counterFertile;
+    String enteredFertileLength;
+    Switch ovulationSave;
 
     SharedPreferences sharedPreferences;
 
@@ -43,7 +49,9 @@ public class setOvulationLength extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 counterFertile++;
-                tv4.setText(counterFertile + " Days");
+                String userOvuleLength = Integer.toString(counterFertile);
+                tv4.setText(userOvuleLength);
+
             }
         });
 
@@ -51,7 +59,8 @@ public class setOvulationLength extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 counterFertile--;
-                tv4.setText(counterFertile + " Days");
+                String userOvuleLength = Integer.toString(counterFertile);
+                tv4.setText(userOvuleLength);
             }
         });
 
@@ -65,16 +74,68 @@ public class setOvulationLength extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("Value2",tv4.getText().toString());
                 editor.apply();
+                Toast.makeText(getApplicationContext(), "Your Preference Saved", Toast.LENGTH_SHORT).show();
             }
         });
 
         btGo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                enteredFertileLength =  tv4.getText().toString();
+                Integer OUserLength = Integer.parseInt(enteredFertileLength);
+                addUserOvulation(OUserLength);
+
                 Intent myintent = new Intent(getApplicationContext(),PeriodSettingsHome.class);
                 startActivity(myintent);
             }
         });
+
+        /**********************Saving the state of switch for avg ovulation length******************************************/
+        ovulationSave = findViewById(R.id.OvulationSwitch);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("OvulationSwitch",MODE_PRIVATE);
+        ovulationSave.setChecked(sharedPreferences.getBoolean("EnableAvgOvulation",true));
+
+        ovulationSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(ovulationSave.isChecked()){
+                    SharedPreferences.Editor editor = getSharedPreferences("OvulationSwitch",MODE_PRIVATE).edit();
+                    editor.putBoolean("EnableAvgOvulation",true);
+                    editor.apply();
+                    ovulationSave.setChecked(true);
+                    Toast.makeText(getApplicationContext(), "Average Ovulation Length Set", Toast.LENGTH_SHORT).show();
+                }
+
+                else{
+                    SharedPreferences.Editor editor = getSharedPreferences("OvulationSwitch",MODE_PRIVATE).edit();
+                    editor.putBoolean("EnableAvgOvulation",false);
+                    editor.apply();
+                    ovulationSave.setChecked(false);
+                    Toast.makeText(getApplicationContext(), "Your Choice is added", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+
+    }
+
+    /**********User Ovulation Length update method************************/
+    public void addUserOvulation(Integer OLengthUser) {
+
+        DBOpenHelper dbOpenHelper = new DBOpenHelper(this);
+
+        long val = dbOpenHelper.updateUserOvulationLength( OLengthUser);
+
+        if (val > 0) {
+            Toast.makeText(getApplicationContext(), " User Ovulation length update success", Toast.LENGTH_SHORT).show();
+
+        } else {
+            Toast.makeText(getApplicationContext(), " User Ovulation Length update failed", Toast.LENGTH_SHORT).show();
+        }
 
 
     }

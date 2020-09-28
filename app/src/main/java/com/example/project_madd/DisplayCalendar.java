@@ -26,6 +26,7 @@ public class DisplayCalendar extends AppCompatActivity {
     CustomCalendarView customCalendarView;
     String startDate;
     TextView viewMyStartDate,viewExpectedEndDate;
+    int periodLength;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,18 +47,32 @@ public class DisplayCalendar extends AppCompatActivity {
         while(cursor.moveToNext()) {
             startDate = cursor.getString(cursor.getColumnIndex(DBStructure.PeriodTracker.COLUMN_NAME_START_DATE));
 
+        }
+        /*******************************End of start date retrieval****************************************************/
+
             viewMyStartDate = findViewById(R.id.viewMyStartDate);
 
             viewMyStartDate.setText(startDate); //retrieve start date from database and display it here
 
+        /******************************Retrieve period length from database*********************************************************/
+
+        DBOpenHelper dbOpenHelper2 = new DBOpenHelper(this);
+        SQLiteDatabase database2 = dbOpenHelper2.getReadableDatabase();
+        Cursor cursor2 = dbOpenHelper2.readPeriodLength(database2);
+
+        while(cursor2.moveToNext()) {
+            periodLength = cursor2.getInt(cursor2.getColumnIndex(DBStructure.PeriodTracker.COLUMN_NAME_P_LENGTH));
+        }
+        /*******************************End of period length retrieval****************************************************/
+
+
             /******************************Call method to Calculate expected period end date *********************************************************/
 
-            String finalExpectedEndDate = expectedPeriodEndDate(startDate,5);
+            String finalExpectedEndDate = expectedPeriodEndDate(startDate,periodLength);
 
             viewExpectedEndDate = findViewById(R.id.viewMyEndDate);
             viewExpectedEndDate.setText(finalExpectedEndDate); //setting the expected  end date which is the addition of start date and 5 days of average period days.
-        }
-        /*******************************End of start date retrieval****************************************************/
+
 
 
     }

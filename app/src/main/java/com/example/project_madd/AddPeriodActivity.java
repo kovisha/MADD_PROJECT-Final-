@@ -30,6 +30,7 @@ public class AddPeriodActivity extends AppCompatActivity {
     Button btnGet , confirmEnd;
     TextView tvw;
     EditText getStartDate;
+    Integer pLength,cLength,OLength;
 
     public String StartDate;
 
@@ -98,10 +99,13 @@ public class AddPeriodActivity extends AppCompatActivity {
         getStartDate = findViewById(R.id.enterDateInput); //get date input in addPeriod activity
 
         StartDate= getStartDate.getText().toString();
+        pLength = 5;
+        cLength = 28;
+        OLength = 14;
 
         if(!StartDate.isEmpty()) {
 
-            long val = dbOpenHelper.addMenstrualStartDate(StartDate);
+            long val = dbOpenHelper.addMenstrualStartDate(StartDate,pLength,cLength,OLength);
 
             if (val > 0) {
                 Toast.makeText(getApplicationContext(), " Start Date insertion success", Toast.LENGTH_SHORT).show();

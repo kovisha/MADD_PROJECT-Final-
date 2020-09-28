@@ -109,6 +109,10 @@ public class EndPeriodActivity extends AppCompatActivity {
                    String dayDifference = Long.toString(finalCalculation);
                     BleedDisplay = findViewById(R.id.textBleed);
                      BleedDisplay.setText(dayDifference);
+
+                    updateBleedingDays(dayDifference);
+
+
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
@@ -117,6 +121,24 @@ public class EndPeriodActivity extends AppCompatActivity {
             }
         });
 
+
+
+    }
+
+    /*******************************Bleeding days update method***********************************************************************************/
+
+    public void updateBleedingDays(String bleedingDays) {
+
+        DBOpenHelper dbOpenHelper = new DBOpenHelper(this);
+
+        long val = dbOpenHelper.updateBleedingDays(bleedingDays);
+
+        if (val > 0) {
+            Toast.makeText(getApplicationContext(), " Bleeding days update success", Toast.LENGTH_SHORT).show();
+
+        } else {
+            Toast.makeText(getApplicationContext(), " Bleeding days update failed", Toast.LENGTH_SHORT).show();
+        }
 
 
     }
@@ -177,27 +199,10 @@ public class EndPeriodActivity extends AppCompatActivity {
         long diff = TimeUnit.DAYS.convert(difInMillies,TimeUnit.MILLISECONDS);
 
 
-        //String dayDifference = Long.toString(diff);
-
-        //BleedDisplay = findViewById(R.id.textBleed);
-       // BleedDisplay.setText(dayDifference);
         return  diff;
     }
 
-   /* public void  calPeriod(View view) throws ParseException {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
-        Date firstDate = sdf.parse(startDate);
-        Date secondDate = sdf.parse(endDate);
 
-        long difInMillies= Math.abs(secondDate.getTime() - firstDate.getTime());
-        long diff = TimeUnit.DAYS.convert(difInMillies,TimeUnit.MILLISECONDS);
-
-
-        String dayDifference = Long.toString(diff);
-
-        BleedDisplay = findViewById(R.id.textBleed);
-        BleedDisplay.setText(dayDifference);
-    }*/
 
 
     /***********************************************navigate back to home page ****************************************************/
@@ -212,30 +217,7 @@ public class EndPeriodActivity extends AppCompatActivity {
             }
         });
     }
-/*************
-    public void showPopup(View view){
-        Button confirm , cancel;
-        myDialog.setContentView(R.layout.confirmpopup);
 
-        cancel = myDialog.findViewById(R.id.cnclDelete);
-        confirm = myDialog.findViewById(R.id.cnfrmdlt);
-
-        myDialog.show();
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                myDialog.dismiss();
-            }
-        });
-
-        confirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(EndPeriodActivity.this , MenstrualHome.class);
-                startActivity(intent);
-            }
-        });
-    }****************/
 
 /*************************display alert before deleting record****************************/
     public void deleteAlert(final View view){
