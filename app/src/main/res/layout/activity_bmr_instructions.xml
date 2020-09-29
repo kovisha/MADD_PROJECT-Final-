@@ -10,8 +10,8 @@
 
     <TextView
         android:id="@+id/textView21"
-        android:layout_width="292dp"
-        android:layout_height="54dp"
+        android:layout_width="304dp"
+        android:layout_height="57dp"
         android:background="@color/projectBtns"
         android:fontFamily="@font/cambo"
         android:text="@string/ins"

@@ -133,10 +133,10 @@ public class DisplayStartDateHome extends AppCompatActivity {
         long val = dbOpenHelper.updateNextPeriodStartDay( nextStartDate);
 
         if (val > 0) {
-            Toast.makeText(getApplicationContext(), " Next Period date update success", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), " Next Period date Updated", Toast.LENGTH_SHORT).show();
 
         } else {
-            Toast.makeText(getApplicationContext(), " Next Period date update failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), " Couldn't Update! Please Retry", Toast.LENGTH_SHORT).show();
         }
 
 

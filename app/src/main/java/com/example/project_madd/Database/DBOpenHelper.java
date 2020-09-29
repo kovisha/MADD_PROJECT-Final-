@@ -345,6 +345,21 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
 
 
+    /****************************Retrieve details to display Period Records*******************************/
+
+    public Cursor MenstrualRecords(SQLiteDatabase sqLiteDatabase){
+
+        String [] projections={DBStructure.PeriodTracker.COLUMN_NAME_START_DATE,DBStructure.PeriodTracker.COLUMN_NAME_END_DATE,DBStructure.PeriodTracker.COLUMN_NAME_BLEEDING_DAYS,DBStructure.PeriodTracker.COLUMN_NAME_P_LENGTH,DBStructure.PeriodTracker.COLUMN_NAME_C_LENGTH};
+        String selection=DBStructure.PeriodTracker._ID+"=?" ;
+        String [] selectionArgs = {"12"};
+
+
+        return sqLiteDatabase.query(DBStructure.PeriodTracker.TABLE_NAME,projections,selection,selectionArgs,null,null,null);
+
+    }
+
+
+
     /***********************************************************************************************************************/
     /*******************************************Methods to manage the calendar activity in Period Tracker*******************/
     public void saveEvent(String event,String time,String date,String month,String year,SQLiteDatabase database){

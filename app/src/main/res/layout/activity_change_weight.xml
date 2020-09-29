@@ -10,8 +10,8 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="390dp"
-        android:layout_height="37dp"
+        android:layout_width="392dp"
+        android:layout_height="43dp"
         android:layout_marginTop="76dp"
         android:background="@color/projectBtns"
         android:fontFamily="@font/cambo"

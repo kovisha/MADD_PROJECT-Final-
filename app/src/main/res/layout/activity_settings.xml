@@ -47,7 +47,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.134"
-        app:srcCompat="@drawable/bell" />
+        app:srcCompat="@drawable/bellnew" />
 
     <Switch
         android:id="@+id/reminderSwitch"
@@ -103,7 +103,7 @@
         app:layout_constraintStart_toStartOf="@+id/divider12"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.283"
-        app:srcCompat="@drawable/goals" />
+        app:srcCompat="@drawable/goalnew" />
 
     <Button
         android:id="@+id/btnChangeGoals"
@@ -146,7 +146,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.439"
-        app:srcCompat="@drawable/time" />
+        app:srcCompat="@drawable/timenew" />
 
     <View
         android:id="@+id/divider14"

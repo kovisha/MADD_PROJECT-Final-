@@ -103,8 +103,8 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="279dp"
-        android:layout_height="53dp"
+        android:layout_width="281dp"
+        android:layout_height="59dp"
         android:background="@color/projectBtns"
         android:fontFamily="@font/cambo"
         android:text="@string/btxt3"

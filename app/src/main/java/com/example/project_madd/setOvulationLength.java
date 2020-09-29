@@ -24,11 +24,11 @@ import com.example.project_madd.Database.DBOpenHelper;
 public class setOvulationLength extends AppCompatActivity {
 
     Button btSave,btGo;
-    Button ovuleLengthSet , incFertile , deFertile;
-    TextView fertilityLength , tv4;
+    Button  incFertile , deFertile;
+    TextView  tv4;
     int counterFertile;
     String enteredFertileLength;
-    Switch ovulationSave;
+    SwitchCompat ovulationSave;
 
     SharedPreferences sharedPreferences;
 
@@ -106,7 +106,7 @@ public class setOvulationLength extends AppCompatActivity {
                     editor.putBoolean("EnableAvgOvulation",true);
                     editor.apply();
                     ovulationSave.setChecked(true);
-                    Toast.makeText(getApplicationContext(), "Average Ovulation Length Set", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Average Settings On", Toast.LENGTH_SHORT).show();
                 }
 
                 else{
@@ -131,10 +131,10 @@ public class setOvulationLength extends AppCompatActivity {
         long val = dbOpenHelper.updateUserOvulationLength( OLengthUser);
 
         if (val > 0) {
-            Toast.makeText(getApplicationContext(), " User Ovulation length update success", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Data updated", Toast.LENGTH_SHORT).show();
 
         } else {
-            Toast.makeText(getApplicationContext(), " User Ovulation Length update failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Update failed.Please retry!", Toast.LENGTH_SHORT).show();
         }
 
 

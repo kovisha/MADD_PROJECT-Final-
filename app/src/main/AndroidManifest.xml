@@ -3,8 +3,10 @@
     package="com.example.project_madd">
 
     <uses-permission android:name="android.permission.SET_ALARM" />
-    <uses-feature android:name="android.hardware.camera2"
-        android:required="true"/>
+
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdateAttributes"></activity>
+        <activity android:name=".View_Delete_PeriodRecord"
+            android:parentActivityName=".DisplayCalendar"></activity>
+        <activity android:name=".UpdateAttributes" />
         <activity android:name=".Flavored_Water" />
         <activity android:name=".settings_goals" />
         <activity android:name=".change_weight" />
@@ -37,26 +41,35 @@
         <activity android:name=".tips_and_more" />
         <activity android:name=".Water_home" />
         <activity android:name=".Settings" />
-        <activity android:name=".AddNote" />
-        <activity android:name=".setOvulationLength" />
-        <activity android:name=".SetCycleLength" />
-        <activity android:name=".SetPeriodLength" />
-        <activity android:name=".PeriodSettingsHome" />
+        <activity android:name=".setOvulationLength"
+            android:parentActivityName=".PeriodSettingsHome"/>
+        <activity android:name=".SetCycleLength"
+            android:parentActivityName=".PeriodSettingsHome"/>
+        <activity android:name=".SetPeriodLength"
+            android:parentActivityName=".PeriodSettingsHome"/>
+        <activity android:name=".PeriodSettingsHome"
+            android:parentActivityName=".Settings_Home_Common"/>
         <activity android:name=".DisplayCalendar" />
-        <activity android:name=".EndPeriodActivity" />
-        <activity android:name=".DisplayStartDateHome" />
-        <activity android:name=".AddPeriodActivity" />
-        <activity android:name=".MenstrualHome" />
-        <activity android:name=".DashBoard" />
+        <activity android:name=".EndPeriodActivity"
+            android:parentActivityName=".DisplayStartDateHome"/>
+        <activity android:name=".DisplayStartDateHome"
+            android:parentActivityName=".AddPeriodActivity"/>
+        <activity android:name=".AddPeriodActivity"
+            android:parentActivityName=".MenstrualHome"/>
+        <activity android:name=".MenstrualHome"
+            android:parentActivityName=".DashBoard"/>
+        <activity android:name=".DashBoard"
+            android:parentActivityName=".CommonAttributesActivity"
+            />
         <activity android:name=".CommonAttributesActivity" />
         <activity android:name=".MainActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
-        <activity android:name=".PeriodReminder"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".PeriodReminder" />
 
         <receiver android:name=".Period_Notification_reciever" />
         <receiver android:name=".ReminderWater" />

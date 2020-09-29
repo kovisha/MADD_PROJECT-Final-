@@ -11,10 +11,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MenstrualHome extends AppCompatActivity {
 
-    Button btn1 ,btn2 , btn3;
+    Button btn2 ;
     ImageView v1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,8 @@ public class MenstrualHome extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MenstrualHome.this , DisplayCalendar.class);
                 startActivity(intent);
+
+                Toast.makeText(getApplicationContext(), "Lets analyse your records", Toast.LENGTH_SHORT).show();
             }
         });
     }

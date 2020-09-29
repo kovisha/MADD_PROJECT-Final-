@@ -11,13 +11,25 @@
         android:layout_height="209dp"
         android:background="@color/projectBgcolor"
         android:fontFamily="@font/aldrich"
-        android:text="YOUR PERIOD IS EXPECTED TO START IN 2 DAYS"
+        android:gravity="center_horizontal|center_vertical"
+        android:text=" Your Period Is Expected To Start In 2 Days"
         android:textColor="@color/prjctBtnTextclr"
         android:textSize="50sp" />
 
     <ImageView
         android:id="@+id/imageView15"
         android:layout_width="match_parent"
-        android:layout_height="499dp"
+        android:layout_height="wrap_content"
         app:srcCompat="@drawable/tapimg4" />
+
+    <Button
+        android:id="@+id/NotiicationSeen"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="@color/popUpbtn"
+        android:text="Ready!"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 </LinearLayout>

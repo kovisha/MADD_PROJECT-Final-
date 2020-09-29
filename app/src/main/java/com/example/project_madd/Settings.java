@@ -249,7 +249,7 @@ public class Settings extends AppCompatActivity {
         //intent
         Intent i = new Intent(Settings.this,DashBoard.class);
         Toast.makeText(this,"deleted successfully",Toast.LENGTH_SHORT).show();
-
+        startActivity(i);
     }
 
 
@@ -303,7 +303,6 @@ public class Settings extends AppCompatActivity {
         if(val>0)
         {
             Intent i = new Intent(Settings.this,viewMyWater.class);
-            Toast.makeText(this,"Reset success!",Toast.LENGTH_SHORT).show();
             startActivity(i);
         }
         else

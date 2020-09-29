@@ -134,10 +134,10 @@ public class EndPeriodActivity extends AppCompatActivity {
         long val = dbOpenHelper.updateBleedingDays(bleedingDays);
 
         if (val > 0) {
-            Toast.makeText(getApplicationContext(), " Bleeding days update success", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Prediction processed!", Toast.LENGTH_SHORT).show();
 
         } else {
-            Toast.makeText(getApplicationContext(), " Bleeding days update failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Something went wrong ,Retry!", Toast.LENGTH_SHORT).show();
         }
 
 
@@ -161,10 +161,10 @@ public class EndPeriodActivity extends AppCompatActivity {
             long val = dbOpenHelper.updatePeriodEndDate(endDate);
 
             if (val > 0) {
-                Toast.makeText(getApplicationContext(), " End Date update success", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), " End Date Updated", Toast.LENGTH_SHORT).show();
 
             } else {
-                Toast.makeText(getApplicationContext(), " End Date update failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), " Update Failed.Please Retry", Toast.LENGTH_SHORT).show();
             }
         }
         else{
@@ -184,7 +184,7 @@ public class EndPeriodActivity extends AppCompatActivity {
         }
 
         else{
-            Toast.makeText(getApplicationContext(), " Record Deletion  failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), " Delete Failed.Please Retry ", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -201,7 +201,6 @@ public class EndPeriodActivity extends AppCompatActivity {
 
         return  diff;
     }
-
 
 
 
@@ -251,7 +250,7 @@ public class EndPeriodActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                Toast.makeText(getApplicationContext(),"You clicked on Cancel",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Great! You have changed your mind",Toast.LENGTH_SHORT).show();
             }
         });
 

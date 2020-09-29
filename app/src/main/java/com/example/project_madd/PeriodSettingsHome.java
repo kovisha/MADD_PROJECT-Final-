@@ -29,7 +29,6 @@ import java.util.concurrent.TimeUnit;
 public class PeriodSettingsHome extends AppCompatActivity {
 
     Button PeriodLength , CycleLength , OvuLength ,createNotifications;
-    String periodLength , PCycleLength , fertilityLength ,  AvgCycleLength;
     TextView tvOvule , tvGo,tvPeriod;
     Switch notifySwitch;
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dashboard__1_"
+    android:background="@drawable/dashboardnew"
     tools:context=".DashBoard">
 
     <Button
@@ -27,8 +27,8 @@
 
     <Button
         android:id="@+id/btnWater"
-        android:layout_width="358dp"
-        android:layout_height="74dp"
+        android:layout_width="352dp"
+        android:layout_height="62dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/projectBgcolor"
         android:fontFamily="@font/aldrich"
@@ -45,8 +45,8 @@
 
     <Button
         android:id="@+id/btnBMI"
-        android:layout_width="312dp"
-        android:layout_height="68dp"
+        android:layout_width="352dp"
+        android:layout_height="62dp"
         android:layout_marginBottom="44dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/projectBgcolor"

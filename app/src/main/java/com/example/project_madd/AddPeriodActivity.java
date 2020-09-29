@@ -27,7 +27,7 @@ public class AddPeriodActivity extends AppCompatActivity {
 
     DatePickerDialog picker; /*declaring calendar date picker*/
     EditText eText;
-    Button btnGet , confirmEnd;
+    Button btnGet ;
     TextView tvw;
     EditText getStartDate;
     Integer pLength,cLength,OLength;
@@ -71,7 +71,7 @@ public class AddPeriodActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //Toast.makeText(getApplicationContext() , "Your record is ready to be added!",Toast.LENGTH_SHORT).show(); //display message
+
                 addStartDate(view);
 
             }
@@ -108,10 +108,10 @@ public class AddPeriodActivity extends AppCompatActivity {
             long val = dbOpenHelper.addMenstrualStartDate(StartDate,pLength,cLength,OLength);
 
             if (val > 0) {
-                Toast.makeText(getApplicationContext(), " Start Date insertion success", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), " Period Tracking Initiated", Toast.LENGTH_SHORT).show();
                 //tvw.setText("Tap the tick icon to confirm"); //remove this after data insertion is done
             } else {
-                Toast.makeText(getApplicationContext(), " Start Date insertion failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), " Initiations Failed", Toast.LENGTH_SHORT).show();
             }
 
             Intent secondIntent = new Intent(AddPeriodActivity.this, DisplayStartDateHome.class);//navigate back to home page
@@ -120,7 +120,7 @@ public class AddPeriodActivity extends AppCompatActivity {
         }
 
         else{
-            Toast.makeText(AddPeriodActivity.this, "Please enter Start Date", Toast.LENGTH_SHORT).show();
+            Toast.makeText(AddPeriodActivity.this, "Please Enter Start Date", Toast.LENGTH_SHORT).show();
         }
     }
 

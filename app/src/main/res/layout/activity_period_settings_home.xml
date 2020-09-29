@@ -10,12 +10,13 @@
 
     <TextView
         android:id="@+id/PSettings"
-        android:layout_width="348dp"
-        android:layout_height="66dp"
+        android:layout_width="345dp"
+        android:layout_height="53dp"
+        android:background="@color/projectBtns"
         android:fontFamily="@font/cambo"
         android:text="@string/PSettingCaption"
         android:textAlignment="center"
-        android:textColor="@color/projectText"
+        android:textColor="@color/prjctBtnTextclr"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,8 +39,8 @@
 
     <Button
         android:id="@+id/PLengthSet"
-        android:layout_width="265dp"
-        android:layout_height="80dp"
+        android:layout_width="271dp"
+        android:layout_height="60dp"
         android:layout_marginStart="16dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/projectBtns"
@@ -55,8 +56,8 @@
 
     <Button
         android:id="@+id/PCyclelnSet"
-        android:layout_width="265dp"
-        android:layout_height="80dp"
+        android:layout_width="271dp"
+        android:layout_height="60dp"
         android:layout_marginStart="16dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/projectBtns"
@@ -72,8 +73,8 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="265dp"
-        android:layout_height="80dp"
+        android:layout_width="271dp"
+        android:layout_height="60dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/projectBtns"
         android:fontFamily="@font/aldrich"
@@ -96,7 +97,7 @@
         android:layout_height="79dp"
         android:fontFamily="@font/capriola"
         android:hint="@string/HintSet1"
-        android:textColor="@color/prjctBtnTextclr"
+        android:textColor="@color/projectText"
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/PLengthSet"
         app:layout_constraintEnd_toEndOf="parent"
@@ -109,7 +110,7 @@
         android:layout_height="70dp"
         android:fontFamily="@font/capriola"
         android:hint="@string/HintSEt2"
-        android:textColor="@color/prjctBtnTextclr"
+        android:textColor="@color/projectText"
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/PCyclelnSet"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,7 +123,7 @@
         android:layout_height="70dp"
         android:fontFamily="@font/capriola"
         android:hint="@string/HIntSEt3"
-        android:textColor="@color/prjctBtnTextclr"
+        android:textColor="@color/projectText"
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -141,12 +142,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.897" />
+        app:layout_constraintVertical_bias="0.893" />
 
     <Button
         android:id="@+id/notify"
-        android:layout_width="265dp"
-        android:layout_height="80dp"
+        android:layout_width="271dp"
+        android:layout_height="60dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/projectBtns"
         android:fontFamily="@font/aldrich"

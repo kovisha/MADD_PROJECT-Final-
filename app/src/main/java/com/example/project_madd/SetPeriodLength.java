@@ -2,6 +2,7 @@ package com.example.project_madd;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -25,12 +26,12 @@ import com.example.project_madd.Database.DBOpenHelper;
 public class SetPeriodLength extends AppCompatActivity {
 
     Button btSave,btGo;
-    Button inc , dec , PLenConfirm;
+    Button inc , dec ;
     TextView tv;
     int count;
-    TextView periodLength;
+
     String enteredPeriodLength;
-    Switch savePeriodLength;
+    SwitchCompat savePeriodLength;
 
     SharedPreferences sharedPreferences;
 
@@ -105,7 +106,7 @@ public class SetPeriodLength extends AppCompatActivity {
                    editor.putBoolean("EnableAvgPeriod",true);
                    editor.apply();
                    savePeriodLength.setChecked(true);
-                   Toast.makeText(getApplicationContext(), "Average Period Length Set", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(getApplicationContext(), "Average Settings On", Toast.LENGTH_SHORT).show();
                }
 
                else{
@@ -130,10 +131,10 @@ public class SetPeriodLength extends AppCompatActivity {
             long val = dbOpenHelper.updateUserPeriodLength( PLengthUser);
 
             if (val > 0) {
-                Toast.makeText(getApplicationContext(), " User Period length update success", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Data updated", Toast.LENGTH_SHORT).show();
 
             } else {
-                Toast.makeText(getApplicationContext(), " User Period Length update failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Update failed.Please retry!", Toast.LENGTH_SHORT).show();
             }
 
 

@@ -21,8 +21,8 @@
 
         <Button
             android:id="@+id/calendarNavigaetBtn"
-            android:layout_width="420dp"
-            android:layout_height="96dp"
+            android:layout_width="382dp"
+            android:layout_height="61dp"
             android:background="@drawable/rounded_corners"
             android:backgroundTint="@color/projectBtns"
             android:fontFamily="@font/aldrich"
@@ -34,7 +34,7 @@
             android:textSize="40sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.551"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.905" />
@@ -88,8 +88,8 @@
 
         <ImageView
             android:id="@+id/imageViewCalendar"
-            android:layout_width="137dp"
-            android:layout_height="96dp"
+            android:layout_width="92dp"
+            android:layout_height="94dp"
             android:contentDescription="@string/ViewCalendarBtn"
             android:elevation="@android:dimen/thumbnail_width"
             app:layout_constraintBottom_toBottomOf="@+id/calendarNavigaetBtn"

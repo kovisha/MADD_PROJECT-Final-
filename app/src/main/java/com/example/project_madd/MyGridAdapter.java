@@ -69,6 +69,8 @@ public class MyGridAdapter extends ArrayAdapter {
         int currentMonth = currentDate.get(Calendar.MONTH)+1;
         int currentYear = currentDate.get(Calendar.YEAR);
 
+
+
         /******************************Retrieve details from database for the calendar view*********************************************************/
 
         DBOpenHelper dbOpenHelper = new DBOpenHelper(getContext());

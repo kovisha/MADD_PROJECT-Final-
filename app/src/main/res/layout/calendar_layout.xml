@@ -121,7 +121,7 @@
     <GridView
         android:id="@+id/gridView"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="271dp"
         android:background="@color/popUpColor"
         android:numColumns="7" />
 
@@ -167,5 +167,16 @@
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/recordsBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="@color/popUpbtn"
+        android:fontFamily="@font/aldrich"
+        android:text="My Latest Record"
+        android:textColor="@color/prjctBtnTextclr"
+        android:textSize="24sp" />
 
 </LinearLayout>

@@ -12,9 +12,10 @@
         android:id="@+id/PeriodLengthCaption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/projectBtns"
         android:fontFamily="@font/cambo"
         android:text="@string/PSetting1"
-        android:textColor="@color/projectText"
+        android:textColor="@color/prjctBtnTextclr"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,7 +112,7 @@
         android:elevation="@android:dimen/thumbnail_width"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.942"
+        app:layout_constraintHorizontal_bias="0.996"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.055" />
@@ -176,8 +177,8 @@
 
     <Button
         android:id="@+id/SaveBtn"
-        android:layout_width="234dp"
-        android:layout_height="71dp"
+        android:layout_width="304dp"
+        android:layout_height="51dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/btnColor"
         android:text="Save"

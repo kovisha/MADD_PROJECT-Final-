@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,6 +29,7 @@ public class DisplayCalendar extends AppCompatActivity {
     String startDate;
     TextView viewMyStartDate,viewExpectedEndDate;
     int periodLength;
+    Button periodRecords;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,8 @@ public class DisplayCalendar extends AppCompatActivity {
         setContentView(R.layout.activity_display_calendar);
 
         customCalendarView = (CustomCalendarView) findViewById(R.id.custom_calendar_view);
+
+
 
 
         /*******************************Retrieve start date and expected end date in calendar view*********************************************/
@@ -73,9 +78,21 @@ public class DisplayCalendar extends AppCompatActivity {
             viewExpectedEndDate = findViewById(R.id.viewMyEndDate);
             viewExpectedEndDate.setText(finalExpectedEndDate); //setting the expected  end date which is the addition of start date and 5 days of average period days.
 
+        periodRecords = findViewById(R.id.recordsBtn);
+        periodRecords.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DisplayCalendar.this,View_Delete_PeriodRecord.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
+
+
+
+
 
 
     /************************Calculating expected period end date*********************************************************/

@@ -9,19 +9,20 @@
 
     <TextView
         android:id="@+id/fertileCaption"
-        android:layout_width="243dp"
-        android:layout_height="97dp"
+        android:layout_width="245dp"
+        android:layout_height="98dp"
+        android:background="@color/projectBtns"
         android:fontFamily="@font/cambo"
         android:text="@string/PSetting3"
         android:textAlignment="center"
-        android:textColor="@color/projectText"
+        android:textColor="@color/prjctBtnTextclr"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.041" />
+        app:layout_constraintVertical_bias="0.057" />
 
     <View
         android:id="@+id/divider4"
@@ -66,10 +67,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/incrementer2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354" />
+        app:layout_constraintVertical_bias="0.351" />
 
     <TextView
         android:id="@+id/textView5"
@@ -123,14 +123,13 @@
         android:id="@+id/FertileLengthbtnSet"
         android:layout_width="115dp"
         android:layout_height="68dp"
+        android:layout_marginStart="48dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/projectBtns"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.945"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fertileCaption"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintVertical_bias="0.054" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/OvulationSwitch"
@@ -167,20 +166,19 @@
         android:id="@+id/imageView12"
         android:layout_width="132dp"
         android:layout_height="73dp"
-        android:layout_marginEnd="16dp"
         android:elevation="@android:dimen/thumbnail_width"
-        app:layout_constraintBottom_toBottomOf="@+id/FertileLengthbtnSet"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.419"
         app:layout_constraintStart_toStartOf="@+id/FertileLengthbtnSet"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.047"
         app:srcCompat="@drawable/ic_baseline_check_24" />
 
     <Button
         android:id="@+id/SaveBtn"
-        android:layout_width="303dp"
-        android:layout_height="65dp"
+        android:layout_width="304dp"
+        android:layout_height="51dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/btnColor"
         android:text="Save"

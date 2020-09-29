@@ -27,10 +27,10 @@ public class SetCycleLength extends AppCompatActivity {
 
 
     Button btSave,btGo;
-    Button inc1, dec1, pCycleLengthConfirm;
+    Button inc1, dec1;
     TextView tv1;
     int count1;
-     Switch CycleSwitch;
+     SwitchCompat CycleSwitch;
     String enteredCycleLength;
 
     SharedPreferences sharedPreferences;
@@ -76,7 +76,7 @@ public class SetCycleLength extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("Value",tv1.getText().toString());
                 editor.apply();
-                Toast.makeText(getApplicationContext(), "Your Preference Saved", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Your Preference Saved!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -107,7 +107,7 @@ public class SetCycleLength extends AppCompatActivity {
                     editor.putBoolean("EnableAvgCycle",true);
                     editor.apply();
                     CycleSwitch.setChecked(true);
-                    Toast.makeText(getApplicationContext(), "Average Lengths Set", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Average Settings On", Toast.LENGTH_SHORT).show();
                 }
 
                 else{
@@ -123,7 +123,7 @@ public class SetCycleLength extends AppCompatActivity {
 
     }
 
-    /**********User Period Length update method************************/
+    /**********User Cycle Length update method************************/
     public void addUserCycle(Integer CLengthUser) {
 
         DBOpenHelper dbOpenHelper = new DBOpenHelper(this);
@@ -131,10 +131,10 @@ public class SetCycleLength extends AppCompatActivity {
         long val = dbOpenHelper.updateUserCycleLength( CLengthUser);
 
         if (val > 0) {
-            Toast.makeText(getApplicationContext(), " User Cycle length update success", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), " Data updated", Toast.LENGTH_SHORT).show();
 
         } else {
-            Toast.makeText(getApplicationContext(), " User Cycle Length update failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), " Update failed.Please retry!", Toast.LENGTH_SHORT).show();
         }
 
 
