@@ -13,7 +13,7 @@
         android:id="@+id/custom_toast_image"
         android:layout_width="128dp"
         android:layout_height="131dp"
-        android:src="@drawable/juicenew"
+        android:src="@drawable/juice"
         tools:ignore="MissingConstraints" />
 
     <TextView

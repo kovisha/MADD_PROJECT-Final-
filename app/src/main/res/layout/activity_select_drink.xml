@@ -32,7 +32,7 @@
         android:backgroundTint="@color/projectBtns"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDrinkAdd"
-        app:srcCompat="@drawable/waterdrinknew" />
+        app:srcCompat="@drawable/water" />
 
     <TextView
         android:id="@+id/textView31"
@@ -59,7 +59,7 @@
         android:backgroundTint="@color/projectBtns"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgWater"
-        app:srcCompat="@drawable/coffeenew" />
+        app:srcCompat="@drawable/coffee" />
 
     <ImageView
         android:id="@+id/imgMilk"
@@ -71,7 +71,7 @@
         android:backgroundTint="@color/projectBtns"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgCoffee"
-        app:srcCompat="@drawable/milknew" />
+        app:srcCompat="@drawable/milk" />
 
     <ImageView
         android:id="@+id/imgTea"
@@ -83,7 +83,7 @@
         android:backgroundTint="@color/projectBtns"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgMilk"
-        app:srcCompat="@drawable/teanew" />
+        app:srcCompat="@drawable/tea" />
 
     <ImageView
         android:id="@+id/imgJuice"
@@ -95,7 +95,7 @@
         android:backgroundTint="@color/projectBtns"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgTea"
-        app:srcCompat="@drawable/juicenew" />
+        app:srcCompat="@drawable/juice" />
 
     <TextView
         android:id="@+id/textView32"
