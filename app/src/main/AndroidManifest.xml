@@ -4,7 +4,7 @@
 
     <uses-feature
         android:name="android.hardware.camera2"
-        android:required="true"/>
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -13,33 +13,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdateAttributes">
-
-
-
-        </activity>
-        <activity android:name=".spinner"></activity>
+        <activity android:name=".UpdateAttributes"></activity>
+        <activity android:name=".spinner" />
         <activity android:name=".Settings_Home_Common" />
         <activity android:name=".signIn_signUp" />
-        <activity android:name=".waistHeight_calculation" />
+        <activity android:name=".waistHeight_calculation" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".bmr_instructions" />
-        <activity android:name=".bmr_calculation"></activity>
+        <activity android:name=".bmr_calculation">
+
+        </activity>
         <activity android:name=".bmi_tips" />
-        <activity android:name=".bmi_calculation">
-
-
-        </activity>
-        <activity android:name=".bmi_Home">
-
-
-        </activity>
-        <activity android:name=".User_profile">
-
-
-
-
-
-        </activity>
+        <activity android:name=".bmi_calculation"></activity>
+        <activity android:name=".bmi_Home"></activity>
+        <activity android:name=".User_profile"></activity>
         <activity android:name=".page7" />
         <activity android:name=".page6" />
         <activity android:name=".page5" />
@@ -49,18 +42,7 @@
         <activity android:name=".Water_home" />
         <activity android:name=".MenstrualHome" />
         <activity android:name=".DashBoard" />
-        <activity android:name=".CommonAttributesActivity">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-
-
-
-        </activity>
+        <activity android:name=".CommonAttributesActivity"></activity>
         <activity android:name=".MainActivity" />
 
         <meta-data

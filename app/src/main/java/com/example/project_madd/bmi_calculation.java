@@ -118,9 +118,9 @@ public class bmi_calculation extends AppCompatActivity {
             }
             else if(18.5<=v && v<=24.9){
                 result4= findViewById(R.id.textclass4_1);
-                result4.setTextColor(Color.RED);
+                result4.setTextColor(Color.GREEN);
                 result4_1 = findViewById(R.id.textclass4_2);
-                result4_1.setTextColor(Color.RED);
+                result4_1.setTextColor(Color.GREEN);
 
             }
             else if(25<=v && v<=29.9){

@@ -30,6 +30,8 @@ public class bmr_calculation extends AppCompatActivity {
     double val =0 ;
     double getVal = 0;
 
+    String bmi  = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,14 +49,7 @@ public class bmr_calculation extends AppCompatActivity {
             }
         });
 
-        ins = findViewById(R.id.instructions);
-        ins.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(bmr_calculation.this,bmr_instructions.class);
-                startActivity(intent);
-            }
-        });
+
 
 
 
@@ -71,7 +66,7 @@ public class bmr_calculation extends AppCompatActivity {
         while (cursor.moveToNext()) {
 
             String bmr = cursor.getString(cursor.getColumnIndex(DBStructure.BMITracker.COLUMN_NAME_BMR));
-            String bmi = cursor.getString(cursor.getColumnIndex(DBStructure.BMITracker.COLUMN_NAME_BMI));
+             bmi = cursor.getString(cursor.getColumnIndex(DBStructure.BMITracker.COLUMN_NAME_BMI));
 
             v = Double.parseDouble(bmr);
             String v1 = String.format("%.2f", v);
@@ -93,6 +88,16 @@ public class bmr_calculation extends AppCompatActivity {
             }
 
         }
+
+        ins = findViewById(R.id.instructions);
+        ins.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(bmr_calculation.this,bmr_instructions.class);
+                intent.putExtra("BMI",bmi);
+                startActivity(intent);
+            }
+        });
 
 
     }
