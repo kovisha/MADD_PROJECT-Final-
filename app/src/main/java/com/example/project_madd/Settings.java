@@ -155,6 +155,8 @@ public class Settings extends AppCompatActivity {
                @Override
                public void onClick(View view) {
                    changeTime(rgNewTime);//calling update method to change the time
+                   Toast.makeText(getApplicationContext(),"Update Success",Toast.LENGTH_SHORT).show();
+
                }
            });
 
@@ -175,6 +177,7 @@ public class Settings extends AppCompatActivity {
         if(val>0)
         {
             myDialog.dismiss();
+
         }
         else
         {
