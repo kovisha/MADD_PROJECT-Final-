@@ -146,7 +146,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.439"
-        app:srcCompat="@drawable/time" />
+        app:srcCompat="@drawable/timenew" />
 
     <View
         android:id="@+id/divider14"

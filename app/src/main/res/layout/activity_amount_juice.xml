@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/projectBgcolor"
+    android:onClick="cancelJuice"
     tools:context=".amount_juice">
 
     <TextView
@@ -97,6 +98,7 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/aldrich"
+        android:onClick="updateAmount"
         android:text="Done"
         android:textColor="@color/prjctBtnTextclr"
         android:textSize="22sp"

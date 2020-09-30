@@ -12,24 +12,56 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Settings_Home_Common"></activity>
-        <activity android:name=".change_weight" />
-        <activity android:name=".settings_goals" />
-        <activity android:name=".Dashboard_Male" />
-        <activity android:name=".amount_coffee" />
-        <activity android:name=".select_drink" />
-        <activity android:name=".amount_juice" />
-        <activity android:name=".amount_tea" />
-        <activity android:name=".amount_milk" />
-        <activity android:name=".amount_selection" />
-        <activity android:name=".Flavored_Water" />
-        <activity android:name=".Settings" />
-        <activity android:name=".tips_and_more" />
-        <activity android:name=".viewMyWater" />
-        <activity android:name=".water_calculation" />
-        <activity android:name=".Water_home" />
+        <activity android:name=".Settings_Home_Common" />
+        <activity android:name=".change_weight"
+            android:parentActivityName=".Settings"
+            />
+        <activity android:name=".settings_goals"
+            android:parentActivityName=".Settings"
+            />
+        <activity android:name=".Dashboard_Male"
+            android:parentActivityName=".CommonAttributesActivity"
+            />
+        <activity android:name=".amount_coffee"
+            android:parentActivityName=".select_drink"
+            />
+        <activity android:name=".select_drink"
+            android:parentActivityName=".viewMyWater"
+            />
+        <activity android:name=".amount_juice"
+            android:parentActivityName=".select_drink"
+            />
+        <activity android:name=".amount_tea"
+            android:parentActivityName=".select_drink"
+            />
+        <activity android:name=".amount_milk"
+            android:parentActivityName=".select_drink"
+            />
+        <activity android:name=".amount_selection"
+            android:parentActivityName=".select_drink"
+            />
+        <activity android:name=".Flavored_Water"
+            android:parentActivityName=".tips_and_more"
+            />
+        <activity android:name=".Settings"
+            android:parentActivityName=".Settings_Home_Common"
+            />
+        <activity android:name=".tips_and_more"
+            android:parentActivityName=".select_drink"
+            />
+        <activity android:name=".viewMyWater"
+            android:parentActivityName=".water_calculation"
+            />
+        <activity android:name=".water_calculation"
+            android:parentActivityName="Water_home"
+            />
+        <activity android:name=".Water_home"
+            android:parentActivityName=".DashBoard"
+            />
         <activity android:name=".MenstrualHome" />
-        <activity android:name=".DashBoard" />
+        <activity android:name=".DashBoard"
+            android:parentActivityName=".CommonAttributesActivity"
+            />
         <activity android:name=".CommonAttributesActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

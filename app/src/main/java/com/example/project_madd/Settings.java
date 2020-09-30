@@ -299,7 +299,6 @@ public class Settings extends AppCompatActivity {
         if(val>0)
         {
             Intent i = new Intent(Settings.this,viewMyWater.class);
-            Toast.makeText(this,"Reset success!",Toast.LENGTH_SHORT).show();
             startActivity(i);
         }
         else
