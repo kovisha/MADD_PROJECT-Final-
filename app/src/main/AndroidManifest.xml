@@ -15,53 +15,111 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".View_Delete_PeriodRecord"
             android:parentActivityName=".DisplayCalendar"></activity>
-        <activity android:name=".UpdateAttributes" />
-        <activity android:name=".Flavored_Water" />
-        <activity android:name=".settings_goals" />
-        <activity android:name=".change_weight" />
-        <activity android:name=".amount_tea" />
-        <activity android:name=".amount_juice" />
-        <activity android:name=".amount_milk" />
-        <activity android:name=".amount_coffee" />
-        <activity android:name=".amount_selection" />
-        <activity android:name=".select_drink" />
-        <activity android:name=".Dashboard_Male" />
+
+        <activity android:name=".UpdateAttributes"
+            android:parentActivityName=".bmi_Home"/>
+
+        <activity android:name=".Flavored_Water"
+            android:parentActivityName=".tips_and_more"/>
+
+        <activity android:name=".settings_goals"
+            android:parentActivityName=".Settings"/>
+
+        <activity android:name=".change_weight"
+            android:parentActivityName=".Settings"/>
+
+        <activity android:name=".amount_tea"
+            android:parentActivityName=".select_drink"/>
+
+        <activity android:name=".amount_juice"
+            android:parentActivityName=".select_drink"/>
+
+        <activity android:name=".amount_milk"
+            android:parentActivityName=".select_drink"/>
+
+        <activity android:name=".amount_coffee"
+            android:parentActivityName=".select_drink"/>
+
+        <activity android:name=".amount_selection"
+            android:parentActivityName=".select_drink"/>
+
+        <activity android:name=".select_drink"
+            android:parentActivityName=".viewMyWater"/>
+
+        <activity android:name=".Dashboard_Male"
+            android:parentActivityName=".CommonAttributesActivity"/>
+
         <activity android:name=".Settings_Home_Common" />
-        <activity android:name=".User_profile" />
-        <activity android:name=".waistHeight_calculation" />
-        <activity android:name=".bmr_instructions" />
-        <activity android:name=".bmr_calculation" />
-        <activity android:name=".bmi_tips" />
-        <activity android:name=".bmi_Home" />
-        <activity android:name=".bmi_calculation" />
-        <activity android:name=".water_calculation" />
-        <activity android:name=".viewMyWater" />
-        <activity android:name=".tips_and_more" />
-        <activity android:name=".Water_home" />
+
+        <activity android:name=".User_profile"
+            android:parentActivityName=".DashBoard"/>
+
+        <activity android:name=".waistHeight_calculation"
+            android:parentActivityName=".bmi_Home"/>
+
+        <activity android:name=".bmr_instructions"
+            android:parentActivityName=".bmr_calculation"/>
+
+        <activity android:name=".bmr_calculation"
+            android:parentActivityName=".bmi_Home"/>
+
+        <activity android:name=".bmi_tips"
+            android:parentActivityName=".bmi_calculation"/>
+
+        <activity android:name=".bmi_Home"
+            android:parentActivityName=".DashBoard"/>
+
+        <activity android:name=".bmi_calculation"
+            android:parentActivityName=".bmi_Home"/>
+
+        <activity android:name=".water_calculation"
+            android:parentActivityName=".Water_home"/>
+
+        <activity android:name=".viewMyWater"
+            android:parentActivityName=".water_calculation"/>
+
+        <activity android:name=".tips_and_more"
+            android:parentActivityName=".select_drink"/>
+
+        <activity android:name=".Water_home"
+            android:parentActivityName=".DashBoard"/>
+
         <activity android:name=".Settings" />
+
         <activity android:name=".setOvulationLength"
             android:parentActivityName=".PeriodSettingsHome"/>
+
         <activity android:name=".SetCycleLength"
             android:parentActivityName=".PeriodSettingsHome"/>
+
         <activity android:name=".SetPeriodLength"
             android:parentActivityName=".PeriodSettingsHome"/>
+
         <activity android:name=".PeriodSettingsHome"
             android:parentActivityName=".Settings_Home_Common"/>
+
         <activity android:name=".DisplayCalendar" />
+
         <activity android:name=".EndPeriodActivity"
             android:parentActivityName=".DisplayStartDateHome"/>
+
         <activity android:name=".DisplayStartDateHome"
             android:parentActivityName=".AddPeriodActivity"/>
+
         <activity android:name=".AddPeriodActivity"
             android:parentActivityName=".MenstrualHome"/>
+
         <activity android:name=".MenstrualHome"
             android:parentActivityName=".DashBoard"/>
+
         <activity android:name=".DashBoard"
-            android:parentActivityName=".CommonAttributesActivity"
-            />
+            android:parentActivityName=".CommonAttributesActivity" />
+
         <activity android:name=".CommonAttributesActivity" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -69,6 +127,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".PeriodReminder" />
 
         <receiver android:name=".Period_Notification_reciever" />
