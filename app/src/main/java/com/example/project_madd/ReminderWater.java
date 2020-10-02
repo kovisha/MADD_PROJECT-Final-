@@ -20,8 +20,8 @@ public class ReminderWater extends BroadcastReceiver {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context,"NotifyWater")
                 .setSmallIcon(R.drawable.ic_baseline_notifications_24)
-                .setContentTitle("It's time to Drink Water!")
-                .setContentText("")
+                .setContentTitle("It's time for Hydration!!")
+                .setContentText("Tap to add drink")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setAutoCancel(true);
 
