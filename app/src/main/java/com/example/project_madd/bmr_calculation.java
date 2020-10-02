@@ -1,6 +1,5 @@
 package com.example.project_madd;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -31,6 +30,8 @@ public class bmr_calculation extends AppCompatActivity {
     double val =0 ;
     double getVal = 0;
 
+    String bmi  = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,14 +49,7 @@ public class bmr_calculation extends AppCompatActivity {
             }
         });
 
-        ins = findViewById(R.id.instructions);
-        ins.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(bmr_calculation.this,bmr_instructions.class);
-                startActivity(intent);
-            }
-        });
+
 
 
 
@@ -72,7 +66,7 @@ public class bmr_calculation extends AppCompatActivity {
         while (cursor.moveToNext()) {
 
             String bmr = cursor.getString(cursor.getColumnIndex(DBStructure.BMITracker.COLUMN_NAME_BMR));
-            String bmi = cursor.getString(cursor.getColumnIndex(DBStructure.BMITracker.COLUMN_NAME_BMI));
+            bmi = cursor.getString(cursor.getColumnIndex(DBStructure.BMITracker.COLUMN_NAME_BMI));
 
             v = Double.parseDouble(bmr);
             String v1 = String.format("%.2f", v);
@@ -94,6 +88,16 @@ public class bmr_calculation extends AppCompatActivity {
             }
 
         }
+
+        ins = findViewById(R.id.instructions);
+        ins.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(bmr_calculation.this,bmr_instructions.class);
+                intent.putExtra("BMI",bmi);
+                startActivity(intent);
+            }
+        });
 
 
     }
@@ -130,36 +134,6 @@ public class bmr_calculation extends AppCompatActivity {
 
 
 
-    }
-
-    /********************************************************Menu code************************************************************************/
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.my_menu,menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int menuId = item.getItemId();
-        if (menuId == R.id.settings_icon){
-            Intent intent = new Intent(bmr_calculation.this , Settings_Home_Common.class);
-            startActivity(intent);
-            return true;
-            //startActivity(new Intent(this,viewMyWater.class));
-        }
-        else if(menuId == R.id.home_icon){
-            Intent intent = new Intent(bmr_calculation.this , DashBoard.class);
-            startActivity(intent);
-            return true;
-        }
-        else if(menuId == R.id.profile_icon){
-            Intent intent = new Intent(bmr_calculation.this , User_profile.class);
-            startActivity(intent);
-            return true;
-        }
-        else
-            return super.onOptionsItemSelected(item);
     }
 
 

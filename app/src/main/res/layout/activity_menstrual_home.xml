@@ -74,8 +74,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="196dp"
-            android:layout_height="655dp"
+            android:layout_width="208dp"
+            android:layout_height="662dp"
             android:contentDescription="@string/HomeStart"
             android:onClick="addRecord"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -84,7 +84,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.71"
-            app:srcCompat="@drawable/ss" />
+            app:srcCompat="@drawable/vector" />
 
         <ImageView
             android:id="@+id/imageViewCalendar"

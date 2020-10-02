@@ -174,7 +174,7 @@ public class EndPeriodActivity extends AppCompatActivity {
 
     }
 
-    public void deletePeriodRecord(View view){
+    /*public void deletePeriodRecord(View view){
         DBOpenHelper dbOpenHelper = new DBOpenHelper(this);
 
         long val = dbOpenHelper.deletePeriodRecord();
@@ -186,7 +186,7 @@ public class EndPeriodActivity extends AppCompatActivity {
         else{
             Toast.makeText(getApplicationContext(), " Delete Failed.Please Retry ", Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
 
 
     public  long calculateMyPeriod(String startDate,String endDate) throws ParseException {
@@ -219,7 +219,7 @@ public class EndPeriodActivity extends AppCompatActivity {
 
 
 /*************************display alert before deleting record****************************/
-    public void deleteAlert(final View view){
+   /* public void deleteAlert(final View view){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         // Setting Alert Dialog Title
@@ -258,7 +258,7 @@ public class EndPeriodActivity extends AppCompatActivity {
         alertDialog.show();
 
 
-    }
+    }*/
 
     /**************************************Menu code************************************/
 

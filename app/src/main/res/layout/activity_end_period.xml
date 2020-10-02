@@ -136,24 +136,6 @@
         app:layout_constraintVertical_bias="0.358" />
 
     <Button
-        android:id="@+id/buttonDelete"
-        android:layout_width="123dp"
-        android:layout_height="59dp"
-        android:background="@drawable/rounded_corners"
-        android:backgroundTint="@color/projectBtns"
-        android:fontFamily="@font/aldrich"
-        android:onClick="deleteAlert"
-        android:text="@string/PDelete"
-        android:textColor="@android:color/background_light"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.952" />
-
-    <Button
         android:id="@+id/endConfirm"
         android:layout_width="109dp"
         android:layout_height="58dp"

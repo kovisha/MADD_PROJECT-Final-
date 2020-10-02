@@ -114,7 +114,7 @@ public class SetPeriodLength extends AppCompatActivity {
                    editor.putBoolean("EnableAvgPeriod",false);
                    editor.apply();
                    savePeriodLength.setChecked(false);
-                   Toast.makeText(getApplicationContext(), "Your Choice is added", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(getApplicationContext(), "Your Choice will be added", Toast.LENGTH_SHORT).show();
                }
            }
        });

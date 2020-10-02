@@ -101,7 +101,7 @@ public class View_Delete_PeriodRecord extends AppCompatActivity {
                 deletePeriodRecord(view);
 
 
-                Intent intent = new Intent(View_Delete_PeriodRecord.this , MenstrualHome.class);
+                Intent intent = new Intent(View_Delete_PeriodRecord.this , DashBoard.class);
                 startActivity(intent);
             }
         });
