@@ -122,11 +122,6 @@ public class Settings extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
-        else if(menuId == R.id.profile_icon){
-            Intent intent = new Intent(Settings.this , User_profile.class);
-            startActivity(intent);
-            return true;
-        }
 
         else
             return super.onOptionsItemSelected(item);
@@ -160,6 +155,8 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 changeTime(rgNewTime);//calling update method to change the time
+                Toast.makeText(getApplicationContext(),"Update Success",Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -180,6 +177,7 @@ public class Settings extends AppCompatActivity {
         if(val>0)
         {
             myDialog.dismiss();
+
         }
         else
         {
@@ -248,8 +246,9 @@ public class Settings extends AppCompatActivity {
 
         //intent
         Intent i = new Intent(Settings.this,DashBoard.class);
-        Toast.makeText(this,"deleted successfully",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Deleted successfully",Toast.LENGTH_SHORT).show();
         startActivity(i);
+
     }
 
 

@@ -13,7 +13,7 @@ import com.example.project_madd.Model.PeriodTracker;
 /***********************************************************Methods to handle crud operations***********************************************/
 public class DBOpenHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME="Health_System.db"; //initializing name of database.
+    public static final String DATABASE_NAME="HolisticWellness.db"; //initializing name of database.
 
     public DBOpenHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -163,7 +163,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
         String [] projections={DBStructure.PeriodTracker.COLUMN_NAME_START_DATE};
         String selection=DBStructure.PeriodTracker._ID+"=?" ;
-        String [] selectionArgs = {"20"};
+        String [] selectionArgs = {"1"};
 
 
         return sqLiteDatabase.query(DBStructure.PeriodTracker.TABLE_NAME,projections,selection,selectionArgs,null,null,null);
@@ -181,7 +181,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         values.put(DBStructure.PeriodTracker.COLUMN_NAME_END_DATE,endDate);
 
         String selection = DBStructure.PeriodTracker._ID + " LIKE ?";
-        String [] selectionArgs = {"20"};
+        String [] selectionArgs = {"1"};
 
 
         long updatedEndDate = db.update(DBStructure.PeriodTracker.TABLE_NAME,values,selection,selectionArgs);
@@ -196,7 +196,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
 
         String selection = DBStructure.PeriodTracker._ID+" LIKE ?";
-        String [] selectionArgs = {"20"};
+        String [] selectionArgs = {"1"};
 
         long deleteRecord = db.delete(DBStructure.PeriodTracker.TABLE_NAME,selection,selectionArgs);
 
@@ -215,7 +215,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         values.put(DBStructure.PeriodTracker.COLUMN_NAME_P_LENGTH,plength);
 
         String selection = DBStructure.PeriodTracker._ID + " LIKE ?";
-        String [] selectionArgs = {"20"};
+        String [] selectionArgs = {"1"};
 
 
         long updateUserPeriodLength = db.update(DBStructure.PeriodTracker.TABLE_NAME,values,selection,selectionArgs);
@@ -232,7 +232,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         values.put(DBStructure.PeriodTracker.COLUMN_NAME_C_LENGTH,cLength);
 
         String selection = DBStructure.PeriodTracker._ID + " LIKE ?";
-        String [] selectionArgs = {"20"};
+        String [] selectionArgs = {"1"};
 
 
         long updateUserCycleLength = db.update(DBStructure.PeriodTracker.TABLE_NAME,values,selection,selectionArgs);
@@ -249,7 +249,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         values.put(DBStructure.PeriodTracker.COLUMN_NAME_O_LENGTH,oLength);
 
         String selection = DBStructure.PeriodTracker._ID + " LIKE ?";
-        String [] selectionArgs = {"20"};
+        String [] selectionArgs = {"1"};
 
 
         long updateUserOvuleLength = db.update(DBStructure.PeriodTracker.TABLE_NAME,values,selection,selectionArgs);
@@ -266,7 +266,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         values.put(DBStructure.PeriodTracker.COLUMN_NAME_NEXT_START_DATE,nextDate);
 
         String selection = DBStructure.PeriodTracker._ID + " LIKE ?";
-        String [] selectionArgs = {"20"};
+        String [] selectionArgs = {"1"};
 
 
         long updateNextStartDate = db.update(DBStructure.PeriodTracker.TABLE_NAME,values,selection,selectionArgs);
@@ -283,7 +283,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         values.put(DBStructure.PeriodTracker.COLUMN_NAME_BLEEDING_DAYS,bdays);
 
         String selection = DBStructure.PeriodTracker._ID + " LIKE ?";
-        String [] selectionArgs = {"20"};
+        String [] selectionArgs = {"1"};
 
 
         long updateBleedingDays = db.update(DBStructure.PeriodTracker.TABLE_NAME,values,selection,selectionArgs);
@@ -300,7 +300,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
         String [] projections={DBStructure.PeriodTracker.COLUMN_NAME_P_LENGTH};
         String selection=DBStructure.PeriodTracker._ID+"=?" ;
-        String [] selectionArgs = {"20"};
+        String [] selectionArgs = {"1"};
 
 
         return sqLiteDatabase.query(DBStructure.PeriodTracker.TABLE_NAME,projections,selection,selectionArgs,null,null,null);
@@ -313,7 +313,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
         String [] projections={DBStructure.PeriodTracker.COLUMN_NAME_C_LENGTH};
         String selection=DBStructure.PeriodTracker._ID+"=?" ;
-        String [] selectionArgs = {"20"};
+        String [] selectionArgs = {"1"};
 
 
         return sqLiteDatabase.query(DBStructure.PeriodTracker.TABLE_NAME,projections,selection,selectionArgs,null,null,null);
@@ -326,7 +326,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
         String [] projections={DBStructure.PeriodTracker.COLUMN_NAME_O_LENGTH};
         String selection=DBStructure.PeriodTracker._ID+"=?" ;
-        String [] selectionArgs = {"20"};
+        String [] selectionArgs = {"1"};
 
 
         return sqLiteDatabase.query(DBStructure.PeriodTracker.TABLE_NAME,projections,selection,selectionArgs,null,null,null);
@@ -339,7 +339,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
         String [] projections={DBStructure.PeriodTracker.COLUMN_NAME_START_DATE,DBStructure.PeriodTracker.COLUMN_NAME_P_LENGTH};
         String selection=DBStructure.PeriodTracker._ID+"=?" ;
-        String [] selectionArgs = {"20"};
+        String [] selectionArgs = {"1"};
 
 
         return sqLiteDatabase.query(DBStructure.PeriodTracker.TABLE_NAME,projections,selection,selectionArgs,null,null,null);
@@ -354,7 +354,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
         String [] projections={DBStructure.PeriodTracker.COLUMN_NAME_START_DATE,DBStructure.PeriodTracker.COLUMN_NAME_END_DATE,DBStructure.PeriodTracker.COLUMN_NAME_BLEEDING_DAYS,DBStructure.PeriodTracker.COLUMN_NAME_P_LENGTH,DBStructure.PeriodTracker.COLUMN_NAME_C_LENGTH};
         String selection=DBStructure.PeriodTracker._ID+"=?" ;
-        String [] selectionArgs = {"20"};
+        String [] selectionArgs = {"1"};
 
 
         return sqLiteDatabase.query(DBStructure.PeriodTracker.TABLE_NAME,projections,selection,selectionArgs,null,null,null);
@@ -435,7 +435,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
         String selection = DBStructure.Water2._ID +"=?";
 
-        String[] selectionArgs = {"2"};
+        String[] selectionArgs = {"1"};
 
         return sqLiteDatabase.query(
                 DBStructure.Water2.TABLE_NAME1,
@@ -460,7 +460,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         contentValues.put(DBStructure.Water2.COL5_WATER2 , remain);
 
         String selection = DBStructure.Water2._ID + " LIKE ?";
-        String[] selectionArgs = {"2"};
+        String[] selectionArgs = {"1"};
 
         int count = db.update(
                 DBStructure.Water2.TABLE_NAME1,
@@ -481,7 +481,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
         String selection = DBStructure.Water2._ID + " LIKE ?";
 
-        String selectionArgs[] = {"2"};
+        String selectionArgs[] = {"1"};
         db.delete(DBStructure.Water2.TABLE_NAME1 , selection , selectionArgs);
     }//End of records deletion
 
@@ -496,7 +496,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         };
 
         String selection = DBStructure.Water2._ID + " LIKE ?";
-        String[] selectionArgs = {"2"};
+        String[] selectionArgs = {"1"};
 
 
         Cursor cursor = db.query(
@@ -531,7 +531,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         };
 
         String selection = DBStructure.Water2._ID + " LIKE ?";
-        String[] selectionArgs = {"2"};
+        String[] selectionArgs = {"1"};
 
 
         Cursor cursor = db.query(
@@ -563,7 +563,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
 
         String selection = DBStructure.Water2._ID + " LIKE ?";
-        String[] selectionArgs = {"2"};
+        String[] selectionArgs = {"1"};
 
         int count = db.update(
                 DBStructure.Water2.TABLE_NAME1,
@@ -586,7 +586,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
 
         String selection = DBStructure.Water2._ID + " LIKE ?";
-        String[] selectionArgs = {"2"};
+        String[] selectionArgs = {"1"};
 
         int count = db.update(
                 DBStructure.Water2.TABLE_NAME1,
@@ -610,7 +610,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         };
 
         String selection = DBStructure.Water2._ID + " LIKE ?";
-        String[] selectionArgs = {"2"};
+        String[] selectionArgs = {"1"};
 
 
         Cursor cursor = db.query(
@@ -642,7 +642,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         };
 
         String selection = DBStructure.Water2._ID + " LIKE ?";
-        String[] selectionArgs = {"2"};
+        String[] selectionArgs = {"1"};
 
 
         Cursor cursor = db.query(
@@ -674,7 +674,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
 
         String selection = DBStructure.Water2._ID + " LIKE ?";
-        String[] selectionArgs = {"2"};
+        String[] selectionArgs = {"1"};
 
         int count = db.update(
                 DBStructure.Water2.TABLE_NAME1,

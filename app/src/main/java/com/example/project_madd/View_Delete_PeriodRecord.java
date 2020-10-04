@@ -1,5 +1,6 @@
 package com.example.project_madd;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -9,6 +10,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -121,4 +124,36 @@ public class View_Delete_PeriodRecord extends AppCompatActivity {
 
 
     }
+
+    /********************************************************Menu code************************************************************************/
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.my_menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int menuId = item.getItemId();
+        if (menuId == R.id.settings_icon){
+            Intent intent = new Intent(View_Delete_PeriodRecord.this , Settings_Home_Common.class);
+            startActivity(intent);
+            return true;
+            //startActivity(new Intent(this,viewMyWater.class));
+        }
+        else if(menuId == R.id.home_icon){
+            Intent intent = new Intent(View_Delete_PeriodRecord.this , DashBoard.class);
+            startActivity(intent);
+            return true;
+        }
+
+        else if(menuId == R.id.profile_icon){
+            Intent intent = new Intent(View_Delete_PeriodRecord.this , User_profile.class);
+            startActivity(intent);
+            return true;
+        }
+        else
+            return super.onOptionsItemSelected(item);
+    }
+
 }

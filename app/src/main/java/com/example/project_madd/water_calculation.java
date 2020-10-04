@@ -152,6 +152,7 @@ public class water_calculation extends AppCompatActivity{
             @Override
             public void onClick(DialogInterface arg0, int arg1) {
                 Intent i = new Intent(water_calculation.this,Water_home.class);
+                Toast.makeText(water_calculation.this, "Hoping Your Comeback!", Toast.LENGTH_SHORT).show();
                 startActivity(i);
             }
         });
