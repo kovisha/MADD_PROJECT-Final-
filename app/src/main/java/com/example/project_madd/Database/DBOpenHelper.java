@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 
 public class DBOpenHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "Health_App.db";
+    public static final String DATABASE_NAME = "HolisticWellness.db";
 
     //constructor
     public DBOpenHelper(Context context) {
