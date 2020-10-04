@@ -36,6 +36,7 @@ public class viewMyWater extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_my_water);
 
+
         //instance of db helper
         DBOpenHelper dbHelper = new DBOpenHelper(this);
 
@@ -59,41 +60,6 @@ public class viewMyWater extends AppCompatActivity {
             TextView txtDrank = findViewById(R.id.DrankAmt);
             //setting the value textView
             txtDrank.setText(drankAmt + " ml");
-
-//            //Instantiate new Timer
-//            final Timer timer = new Timer();
-//            // Creates a Calendar object that specifies a specific time of day
-//            Calendar cal = Calendar.getInstance();
-//            cal.setTimeInMillis(System.currentTimeMillis());
-////            cal.set(Calendar.HOUR_OF_DAY, 20);
-////            cal.set(Calendar.MINUTE, 57);
-//            cal.set(Calendar.SECOND, 60);
-////            cal.set(Calendar.MILLISECOND, 00);
-//            final Date date = cal.getTime();
-//            System.out.println("here look");
-//            System.out.println(date);
-//            System.out.println(cal.getTime());
-//            try {
-//
-//                runOnUiThread(new Runnable() {
-//
-//                    @Override
-//                    public void run() {
-//                        TimerTask timerTask = new TimerTask() {
-//                            @Override
-//                            public void run() {
-//                                TextView txtDrank = findViewById(R.id.DrankAmt);
-//                                //setting the value textView
-//                                txtDrank.setText(0 + " ml");
-//                            }
-//                        };
-//                        timer.schedule(timerTask, date);
-//                    }
-//                });
-//
-//            } catch (Exception e) {
-//                System.out.println(e);
-//            }
 
 
             //retrieving the remaining amount

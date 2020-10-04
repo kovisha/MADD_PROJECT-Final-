@@ -73,6 +73,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
         String selection = DBStructure.Water2._ID +"=?";
 
+
         String[] selectionArgs = {"1"};
 
         return sqLiteDatabase.query(
@@ -119,7 +120,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
         String selection = DBStructure.Water2._ID + " LIKE ?";
 
-        String selectionArgs[] = {"5"};
+        String selectionArgs[] = {"1"};
         db.delete(DBStructure.Water2.TABLE_NAME1 , selection , selectionArgs);
     }//End of records deletion
 
