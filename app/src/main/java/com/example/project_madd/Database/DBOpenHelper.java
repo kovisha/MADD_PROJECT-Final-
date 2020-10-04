@@ -12,7 +12,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
 
     /*Declare database name*/
-    public static final String DATABASE_NAME = "HealthTracker.db";
+    public static final String DATABASE_NAME = "HolisticWellness.db";
 
     public DBOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);

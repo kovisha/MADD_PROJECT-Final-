@@ -21,8 +21,9 @@ import com.example.project_madd.Database.DBStructure;
 
 public class bmr_calculation extends AppCompatActivity {
 
-    TextView tv;
-    EditText bmrEt ,cal ;
+    TextView tv,bmrEt,cal;
+
+
     RadioGroup group ;
     double constant = 0;
     double calorie = 0;
