@@ -114,7 +114,7 @@ public class setOvulationLength extends AppCompatActivity {
                     editor.putBoolean("EnableAvgOvulation",false);
                     editor.apply();
                     ovulationSave.setChecked(false);
-                    Toast.makeText(getApplicationContext(), "Your Choice is added", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Your Choice will be added", Toast.LENGTH_SHORT).show();
                 }
 
             }

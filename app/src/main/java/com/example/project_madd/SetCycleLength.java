@@ -115,7 +115,7 @@ public class SetCycleLength extends AppCompatActivity {
                     editor.putBoolean("EnableAvgCycle",false);
                     editor.apply();
                     CycleSwitch.setChecked(false);
-                    Toast.makeText(getApplicationContext(), "Your Choice is added", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Your Choice will be added", Toast.LENGTH_SHORT).show();
                 }
             }
         });

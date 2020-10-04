@@ -157,11 +157,13 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
     /**********************************Retrieve start date method*******************************************/
 
+
+
     public Cursor readStartDate(SQLiteDatabase sqLiteDatabase){
 
         String [] projections={DBStructure.PeriodTracker.COLUMN_NAME_START_DATE};
         String selection=DBStructure.PeriodTracker._ID+"=?" ;
-        String [] selectionArgs = {"17"};
+        String [] selectionArgs = {"20"};
 
 
         return sqLiteDatabase.query(DBStructure.PeriodTracker.TABLE_NAME,projections,selection,selectionArgs,null,null,null);
@@ -179,7 +181,8 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         values.put(DBStructure.PeriodTracker.COLUMN_NAME_END_DATE,endDate);
 
         String selection = DBStructure.PeriodTracker._ID + " LIKE ?";
-        String [] selectionArgs = {"17"};
+        String [] selectionArgs = {"20"};
+
 
         long updatedEndDate = db.update(DBStructure.PeriodTracker.TABLE_NAME,values,selection,selectionArgs);
 
@@ -193,7 +196,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
 
         String selection = DBStructure.PeriodTracker._ID+" LIKE ?";
-        String [] selectionArgs = {"17"};
+        String [] selectionArgs = {"20"};
 
         long deleteRecord = db.delete(DBStructure.PeriodTracker.TABLE_NAME,selection,selectionArgs);
 
@@ -212,7 +215,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         values.put(DBStructure.PeriodTracker.COLUMN_NAME_P_LENGTH,plength);
 
         String selection = DBStructure.PeriodTracker._ID + " LIKE ?";
-        String [] selectionArgs = {"17"};
+        String [] selectionArgs = {"20"};
 
 
         long updateUserPeriodLength = db.update(DBStructure.PeriodTracker.TABLE_NAME,values,selection,selectionArgs);
@@ -229,7 +232,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         values.put(DBStructure.PeriodTracker.COLUMN_NAME_C_LENGTH,cLength);
 
         String selection = DBStructure.PeriodTracker._ID + " LIKE ?";
-        String [] selectionArgs = {"17"};
+        String [] selectionArgs = {"20"};
 
 
         long updateUserCycleLength = db.update(DBStructure.PeriodTracker.TABLE_NAME,values,selection,selectionArgs);
@@ -246,7 +249,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         values.put(DBStructure.PeriodTracker.COLUMN_NAME_O_LENGTH,oLength);
 
         String selection = DBStructure.PeriodTracker._ID + " LIKE ?";
-        String [] selectionArgs = {"17"};
+        String [] selectionArgs = {"20"};
 
 
         long updateUserOvuleLength = db.update(DBStructure.PeriodTracker.TABLE_NAME,values,selection,selectionArgs);
@@ -263,7 +266,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         values.put(DBStructure.PeriodTracker.COLUMN_NAME_NEXT_START_DATE,nextDate);
 
         String selection = DBStructure.PeriodTracker._ID + " LIKE ?";
-        String [] selectionArgs = {"17"};
+        String [] selectionArgs = {"20"};
 
 
         long updateNextStartDate = db.update(DBStructure.PeriodTracker.TABLE_NAME,values,selection,selectionArgs);
@@ -280,7 +283,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         values.put(DBStructure.PeriodTracker.COLUMN_NAME_BLEEDING_DAYS,bdays);
 
         String selection = DBStructure.PeriodTracker._ID + " LIKE ?";
-        String [] selectionArgs = {"17"};
+        String [] selectionArgs = {"20"};
 
 
         long updateBleedingDays = db.update(DBStructure.PeriodTracker.TABLE_NAME,values,selection,selectionArgs);
@@ -297,7 +300,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
         String [] projections={DBStructure.PeriodTracker.COLUMN_NAME_P_LENGTH};
         String selection=DBStructure.PeriodTracker._ID+"=?" ;
-        String [] selectionArgs = {"17"};
+        String [] selectionArgs = {"20"};
 
 
         return sqLiteDatabase.query(DBStructure.PeriodTracker.TABLE_NAME,projections,selection,selectionArgs,null,null,null);
@@ -310,7 +313,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
         String [] projections={DBStructure.PeriodTracker.COLUMN_NAME_C_LENGTH};
         String selection=DBStructure.PeriodTracker._ID+"=?" ;
-        String [] selectionArgs = {"17"};
+        String [] selectionArgs = {"20"};
 
 
         return sqLiteDatabase.query(DBStructure.PeriodTracker.TABLE_NAME,projections,selection,selectionArgs,null,null,null);
@@ -323,7 +326,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
         String [] projections={DBStructure.PeriodTracker.COLUMN_NAME_O_LENGTH};
         String selection=DBStructure.PeriodTracker._ID+"=?" ;
-        String [] selectionArgs = {"17"};
+        String [] selectionArgs = {"20"};
 
 
         return sqLiteDatabase.query(DBStructure.PeriodTracker.TABLE_NAME,projections,selection,selectionArgs,null,null,null);
@@ -336,7 +339,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
         String [] projections={DBStructure.PeriodTracker.COLUMN_NAME_START_DATE,DBStructure.PeriodTracker.COLUMN_NAME_P_LENGTH};
         String selection=DBStructure.PeriodTracker._ID+"=?" ;
-        String [] selectionArgs = {"17"};
+        String [] selectionArgs = {"20"};
 
 
         return sqLiteDatabase.query(DBStructure.PeriodTracker.TABLE_NAME,projections,selection,selectionArgs,null,null,null);
@@ -351,7 +354,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
         String [] projections={DBStructure.PeriodTracker.COLUMN_NAME_START_DATE,DBStructure.PeriodTracker.COLUMN_NAME_END_DATE,DBStructure.PeriodTracker.COLUMN_NAME_BLEEDING_DAYS,DBStructure.PeriodTracker.COLUMN_NAME_P_LENGTH,DBStructure.PeriodTracker.COLUMN_NAME_C_LENGTH};
         String selection=DBStructure.PeriodTracker._ID+"=?" ;
-        String [] selectionArgs = {"17"};
+        String [] selectionArgs = {"20"};
 
 
         return sqLiteDatabase.query(DBStructure.PeriodTracker.TABLE_NAME,projections,selection,selectionArgs,null,null,null);

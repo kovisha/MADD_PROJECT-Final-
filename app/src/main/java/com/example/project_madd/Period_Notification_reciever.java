@@ -22,8 +22,8 @@ public class Period_Notification_reciever extends BroadcastReceiver {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context).setContentIntent(pendingIntent)
                 .setSmallIcon(R.drawable.ic_baseline_notifications_24)
-                .setContentTitle("Notification Title")
-                .setContentText("Notification text")
+                .setContentTitle("Expect Your Period in 2 more days!!!")
+                .setContentText("")
                 .setAutoCancel(true);
 
         notificationManager.notify(101,builder.build());

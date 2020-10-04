@@ -138,7 +138,7 @@
         android:layout_height="46dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/aldrich"
-        android:onClick="showPopup"
+        android:onClick="deleteAlert"
         android:text="@string/delete"
         android:textAlignment="center"
         android:textColor="@color/prjctBtnTextclr"

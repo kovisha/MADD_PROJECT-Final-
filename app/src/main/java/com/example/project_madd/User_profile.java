@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -113,14 +115,54 @@ public class User_profile extends AppCompatActivity {
     }
 
 
+    public void deleteAlert(final View view){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
-    public void showPopup(View view){
+        // Setting Alert Dialog Title
+        alertDialogBuilder.setTitle("Confirm Delete..!!!");
+
+        // Icon Of Alert Dialog
+        alertDialogBuilder.setIcon(R.drawable.ic_baseline_help_24);
+
+        // Setting Alert Dialog Message
+        alertDialogBuilder.setMessage("Are you sure,You want to delete record?");
+        alertDialogBuilder.setCancelable(false);
+
+        alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                deleteData(view);
+
+                Toast.makeText(getApplicationContext(),"Successfully deleted...",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(User_profile.this , CommonAttributesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+        alertDialogBuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                Toast.makeText(getApplicationContext(),"You clicked on Cancel",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Dialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+
+
+    }
+
+   /* public void showPopup(View view){
 
         Button delete;
 
         delete = findViewById(R.id.btn_delete);
 
-        myDialog.show();
+        myDialog.show();*/
 
       /*  delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,7 +190,7 @@ public class User_profile extends AppCompatActivity {
 
 
 
-    }
+
 
     /********************************************************Menu code************************************************************************/
     @Override

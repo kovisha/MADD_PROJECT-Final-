@@ -107,7 +107,7 @@ public class DisplayStartDateHome extends AppCompatActivity {
     public String nextStartDate(String startDate , int menstrualDays){
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
+        
 
         Calendar c = Calendar.getInstance();
         try{
